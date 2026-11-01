@@ -32,6 +32,16 @@ def build(C):
         st[d]=apply(frames[fi],s,rows,rm)
     out=[st['down'],st['up'],st['left']]
     for d in ('down','up','left'):
+        if d+'_wf' in C:
+            for s0,rows in C[d+'_wf']:
+                w=shift(st[d])
+                for i,row in enumerate(rows):
+                    assert len(row)==16,(row,len(row))
+                    for x,ch in enumerate(row):
+                        if ch=='?': continue
+                        w[s0+i][x]=0 if ch=='.' else H.index(ch)
+                out.append(w)
+            continue
         for alt in C[d+'_w']:
             w=shift(st[d])
             for i,row in enumerate(alt):
