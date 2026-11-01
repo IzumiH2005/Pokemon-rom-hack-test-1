@@ -22,3 +22,18 @@ Sprite overworld 16x32 complet (9 frames : face, dos, profil, 2 pas de marche pa
 - `aventurine.png` et `aventurine.pal` : la planche finale et sa palette.
 - `avk.py`, `av4.py` (poses fixes), `av5.py` (marche) : le dessin pixel par pixel.
 - `install_av.py` : installe la planche et enregistre le PNJ dans le moteur.
+
+## Retouche : coiffure (v2)
+
+La coupe a été redessinée pixel par pixel, à partir d'un zoom sur la tête et des images de référence :
+- **Face** : raie sur la gauche, frange en mèches pointues qui balaie vers la droite et couvre en partie l'œil gauche, petites pointes vers l'extérieur au niveau des oreilles, mèches latérales jusqu'à la mâchoire.
+- **Profil** : frange qui tombe sur le front, nuque en pointes.
+- **Dos** : mèches en couches et nuque dentelée au lieu d'un arrondi lisse.
+- Le haut du crâne est plus plat, pour casser l'effet « casque ».
+
+Les animations de marche suivent automatiquement, car elles ne modifient que le corps.
+
+Fichiers :
+- `4_cheveux_avant_apres.png` : comparaison avant/après ; `5_cheveux_en_jeu.png` : résultat dans l'émulateur.
+- `av4b.py` : nouvelles poses fixes ; `av6.py` : animations de marche.
+- Installation : `python3 install_av.py av6` puis `make`.
