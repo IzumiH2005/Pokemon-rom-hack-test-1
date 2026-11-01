@@ -28,7 +28,7 @@ C['mom']=dict(src='mom',pal='npc_4',
  up_w=[["...7666666667...","....7ee7........"],["...7666666667...",".........7ee7..."]],
  left_w=[["....7666667.....","...7eee7........"],["....7666667.....",".....7eee7......"]],
 )
-from bv5 import B as _B
+from bv6 import B as _B
 C['brendan']=_B
 
 C['may']=dict(src='may/walking',pal='may',
