@@ -32,6 +32,8 @@ ce qui est faisable, ce qui demande du travail, ce qu'il faut écarter.
 - Nouvelles cartes et nouveaux décors : faisable (tests 1, 2 et 4 : carte japonaise, intérieurs, cadre de dialogue).
 - Nouveaux objets : faisable (données + icône 24x24, petite taille donc dessinable).
 - Dialogues, scripts, événements : faisable (test 3).
+- Carte de région (Carte de Ville, carte de vol) : modifiable et redessinable (test 12 : nouvelle île).
+  Limite : 256 tuiles de 8x8 différentes pour toute la carte. Si on refait les cartes du jeu, on peut réadapter la carte de région.
 
 ## 5. Apparence des dresseurs : modifier oui, créer non
 
