@@ -32,6 +32,7 @@ ce qui est faisable, ce qui demande du travail, ce qu'il faut écarter.
 - Nouvelles cartes et nouveaux décors : faisable (tests 1, 2 et 4 : carte japonaise, intérieurs, cadre de dialogue).
 - Nouveaux objets : faisable (données + icône 24x24, petite taille donc dessinable).
 - Dialogues, scripts, événements : faisable (test 3).
+- Animations de capacités et effets sur la carte (météo, particules) : faisable (test 11, pétales de sakura).
 
 ## 5. Apparence des dresseurs : modifier oui, créer non
 
