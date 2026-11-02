@@ -32,7 +32,6 @@ ce qui est faisable, ce qui demande du travail, ce qu'il faut écarter.
 - Nouvelles cartes et nouveaux décors : faisable (tests 1, 2 et 4 : carte japonaise, intérieurs, cadre de dialogue).
 - Nouveaux objets : faisable (données + icône 24x24, petite taille donc dessinable).
 - Dialogues, scripts, événements : faisable (test 3).
-- Animations de capacités et effets sur la carte (météo, particules) : faisable (test 11, pétales de sakura).
 
 ## 5. Apparence des dresseurs : modifier oui, créer non
 
@@ -41,8 +40,16 @@ ce qui est faisable, ce qui demande du travail, ce qu'il faut écarter.
 - Créer un sprite de combat entièrement nouveau : écarté (tests 7, 9, 10, N, Porypal : résultat pas au niveau).
 - Contournement : réutiliser un sprite existant d'un autre jeu (point 2).
 
+## 6. Effets visuels : nouvelles capacités, nouvelles météos, VFX
+
+- Nouvelles capacités (techniques) : faisable, avec leurs propres animations de combat
+  (sprites d'effet, trajectoires, teinte du fond, flash, secousse, sons). Test 11 : « Tempête Sakura ».
+- Nouvelles météos sur la carte : faisable (test 11 : pétales de sakura qui tombent, défilent avec le décor).
+- Autres VFX sur la carte ou en combat (particules, effets d'ambiance) : faisable.
+- Les petits sprites d'effet (8x8 à 32x32) se dessinent bien, contrairement aux grands sprites de dresseurs.
+
 ## Comment s'en servir pour l'histoire
 
 - Un personnage important doit avoir un sprite de combat existant quelque part (Émeraude, Rouge Feu, Or/Argent, HGSS)
   ou pouvoir être une variante retouchée d'un sprite existant.
-- Lieux, Pokémon, objets, mécaniques : presque aucune limite.
+- Lieux, Pokémon, objets, mécaniques, capacités, météos, effets visuels : presque aucune limite.
