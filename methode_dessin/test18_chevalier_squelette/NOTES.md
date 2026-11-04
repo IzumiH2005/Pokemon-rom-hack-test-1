@@ -36,6 +36,14 @@ Voir `etapes_chevalier.png`.
 - Garde d'épée en fil de 1 px → garde de 4 px centrée sur le haut de la lame, quillons.
 - Trou de 3 rangées dans la cape (y77-79) → comblé.
 - Volute isolée qui flottait trop loin sous la cape → retirée.
+- **Retour : cape et panache trop rigides** (diagonales droites, bandes parallèles, bord presque rectiligne).
+  - Panache refait (`c21_panache.py`) : 3 rubans en S posés point par point, épaisseur qui s'affine
+    jusqu'à une pointe recourbée, cœur lumineux le long de chaque ruban, étincelles près des pointes.
+    Il occupe maintenant tout l'espace libre à gauche du heaume.
+  - Cape refaite (`c28_cape.py`) : bord droit qui gonfle puis s'évase jusqu'à x120, 4 grands plis en S
+    qui se resserrent vers l'épaule, flanc éclairé large à gauche de chaque crête et flanc d'ombre court
+    à droite, 5 lambeaux de longueurs différentes qui se courbent vers la droite en descendant.
+  - Nouvel outil `../outils/tube.py` : peint un ruban émissif autour d'une ligne médiane posée à la main.
 
 ## Défauts restants
 - Le soleret reste un peu « en escalier » ; la pointe pourrait être arrondie.
