@@ -1,0 +1,5 @@
+rect A 5 11 10 11
+rect A 85 11 90 11
+vline z 46 8 10
+px z 47 9
+vline z 49 8 10

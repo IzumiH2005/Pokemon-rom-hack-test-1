@@ -1,0 +1,16 @@
+hline s 3 16 1
+hline m 1 62 4
+hline k 1 62 6
+hline m 2 61 10
+hline k 2 61 12
+vline m 30 7 9
+vline m 5 7 27
+vline k 10 7 27
+vline k 9 7 27
+hline k 5 10 13
+hline q 4 11 28
+vline m 53 7 27
+vline k 58 7 27
+vline k 57 7 27
+hline k 53 58 13
+hline q 52 59 28

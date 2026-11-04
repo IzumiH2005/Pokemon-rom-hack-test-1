@@ -1,0 +1,9 @@
+rect A 0 1 47 3
+px A 0 0 1 0 2 0 47 0 46 0 45 0
+rect l 1 4 46 6
+rect l 2 10 45 12
+rect l 22 7 25 9
+rect l 5 7 10 27
+rect A 4 28 11 31
+rect l 37 7 42 27
+rect A 36 28 43 31
