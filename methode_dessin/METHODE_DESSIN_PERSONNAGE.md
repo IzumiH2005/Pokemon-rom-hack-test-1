@@ -10,7 +10,10 @@ rampes de couleurs, lumière).
 Chaque règle nouvelle porte sa source :
 - **[Z]** *Apprendre à tout dessiner avec Zephy* (Leber et Hollants) ;
 - **[M]** le livre de dessin manga (Arienne Coudert) ;
-- **[T1]** une leçon du test 1.
+- **[T1]** une leçon du test 1 ;
+- **[I]** les 10 planches d'illustration fournies : canons à 7 et 8 têtes, tête de face
+  et en 3/4, main en 6 étapes, torses en boîtes, torse en 4 étapes, écorchés
+  simplifiés en couleur, visage pas à pas.
 
 Les règles des livres sont adaptées au pixel art : un « trait épais » devient un contour
 plus sombre, un « crayon 2B » devient un ton de la rampe, etc.
@@ -53,6 +56,15 @@ plus sombre, un « crayon 2B » devient un ton de la rampe, etc.
   - « C » (courbe), pour les volumes ;
   - « S » (ondulée), pour la fluidité, avec modération : cheveux, tissus.
   On commence en « I », on arrondit en « C », on finit par les « S ».
+- **R11. Utiliser TOUTES ses connaissances d'anatomie [I].** Tu sais comment un corps est
+  fait : os, articulations, muscles, amplitudes de mouvement, répartition du poids.
+  Tu dois t'en servir à **chaque** étape, pas seulement au moment des détails.
+  - Avant de tracer un membre, se demander : quel os est dessous, quelle articulation
+    le relie, dans quel sens elle plie, quel muscle est étiré, lequel est contracté.
+  - Une pose ou une forme impossible anatomiquement est une erreur, même si elle « a l'air
+    bien » à ×1.
+  - La section « Anatomie et articulations » ci-dessous est la liste minimale. Elle ne
+    remplace pas ce que tu sais : elle t'oblige à le vérifier.
 
 ## Règles implicites (ce que les livres font sans le dire)
 
@@ -87,6 +99,125 @@ chaque exemple pas à pas, et elles sont aussi obligatoires.
 - **I9. Observer la référence à chaque étape [Z].** On revient à la référence à chaque
   étape et pas seulement au début. Le regard alterne sans cesse entre la référence et le
   dessin.
+- **I10. Les articulations sont dessinées comme des formes [I].** Dans toutes les planches,
+  épaules, coudes, poignets, hanches, genoux et chevilles sont des **cercles ou
+  disques**, posés avant les segments. Les membres sont des cylindres tendus **entre**
+  ces cercles.
+- **I11. Une ligne de centre traverse chaque masse [I].** Tête, cage, bassin, et même
+  chaque doigt reçoivent une ligne médiane. Elle tourne avec la masse et dit son
+  orientation.
+- **I12. Les lignes de construction dépassent [I].** Les lignes des épaules, des yeux et
+  du maillage débordent un peu de la forme. Elles appartiennent au volume entier, pas au
+  seul contour visible.
+
+## Anatomie et articulations — logique obligatoire [I] (R11)
+
+Ces règles s'appliquent dès l'étape 2. On les revérifie à l'étape 11.
+
+### A. Types d'articulations et sens de pliage
+
+| Articulation | Type | Ce qu'elle peut faire | Erreur interdite |
+|---|---|---|---|
+| Épaule | rotule (boule) | tourne dans tous les sens ; le bras levé au-dessus de l'horizontale **entraîne l'omoplate et la clavicule**, donc l'épaule monte | bras levé avec une épaule restée basse et plate |
+| Coude | charnière | plie **seulement vers l'avant**, jusqu'à ~145° ; tendu, il est presque droit | coude plié vers l'arrière ou sur le côté |
+| Avant-bras | rotation (radius autour du cubitus) | la main tourne paume en haut / en bas ; c'est l'avant-bras qui tourne, pas le coude | paume retournée sans torsion des muscles de l'avant-bras |
+| Poignet | ellipsoïde | plie vers l'avant (beaucoup), vers l'arrière (moins), un peu sur les côtés | main pliée à 90° sur le côté |
+| Hanche | rotule, plus emboîtée que l'épaule | jambe en avant (beaucoup), en arrière (peu, ~20°), sur le côté (~45°) | jambe en arrière très haut sans bascule du bassin |
+| Genou | charnière | plie **seulement vers l'arrière** ; la rotule reste devant et monte quand on s'accroupit | genou plié vers l'avant, rotule qui disparaît |
+| Cheville | charnière + un peu de rotation | pied vers le haut (~20°), vers le bas (~45°) | pied à angle droit en position pointée |
+| Cou | colonne de 7 vertèbres | penche, tourne (~80° de chaque côté), se plie en avant plus qu'en arrière | tête tournée à 180°, cou cassé à angle vif |
+| Taille (colonne lombaire) | flexible | la cage et le bassin tournent et s'inclinent **l'un par rapport à l'autre** | torse rigide d'un seul bloc dans une pose dynamique |
+
+### B. Longueurs et raccourcis
+
+- La longueur d'un os **ne change jamais** : en 3/4 ou en raccourci, il paraît plus court
+  mais ses deux articulations restent à la même distance en 3D. Écrire les longueurs en
+  données une fois, puis seulement les projeter.
+- Bras : épaule→coude ≈ coude→poignet (le bras est légèrement plus long). La main fait à
+  peu près la longueur du visage (menton → racine des cheveux) [I].
+- Jambe : hanche→genou ≈ genou→cheville. Le pied fait ≈ 1 tête de long.
+- Bras le long du corps [I] : coude au niveau de la taille (bas de la cage), poignet au
+  niveau de l'entrejambe, bout des doigts vers le milieu de la cuisse.
+- Les deux côtés du corps ont les **mêmes longueurs**. Un bras plus court qu'un autre doit
+  s'expliquer par un raccourci.
+
+### C. Comment un membre se raccorde
+
+- **Épaule [I] :** le deltoïde est une coque qui couvre la tête de l'humérus et **dépasse la
+  cage** sur le côté. Le pectoral passe **sous** le deltoïde et s'accroche au bras. Les
+  trapèzes descendent en pente du cou à l'épaule : le cou n'entre jamais à angle droit
+  dans des épaules horizontales.
+- **Hanche [I] :** la jambe s'attache sur le **côté** du bassin, pas en dessous. La cuisse
+  part en diagonale de l'extérieur de la hanche vers l'intérieur du genou ; le sartorius
+  suit cette diagonale.
+- **Cou [I] :** il part de **derrière** la mâchoire et sous les oreilles ; les deux
+  sterno-cléido-mastoïdiens forment un V de derrière les oreilles au creux du sternum.
+  La nuque commence plus haut que la gorge (sous l'arrière du crâne).
+- **Coude et genou [I] :** à l'articulation, le membre est plus étroit et plus « osseux » ;
+  les muscles gonflent au-dessus et en dessous.
+
+### D. Rythme du contour (muscles décalés) [I]
+
+- Les bosses musculaires d'un membre ne sont **jamais face à face** à la même hauteur. Elles
+  alternent :
+  - **cuisse :** l'extérieur est bombé haut (vaste externe) et l'intérieur bombé bas, juste
+    au-dessus du genou (vaste interne, en goutte) ;
+  - **mollet :** l'extérieur est bombé **haut** et l'intérieur bombé **plus bas** ;
+  - **bras :** le deltoïde est en haut et dehors, le biceps devant et le triceps derrière,
+    plus haut que le biceps ;
+  - **avant-bras :** il est large et musclé près du coude (brachioradial, la « dent » qui
+    part du bras et passe le coude), fin et plat près du poignet.
+- Résultat : le contour d'un membre est une suite de courbes « C » alternées, en léger S,
+  jamais deux parenthèses symétriques ().
+
+### E. Torse : deux masses et une liaison souple [I]
+
+- **Cage thoracique = un œuf** (ou une boîte), plus haut que large. Son bas forme une arche
+  en V renversé (arc costal) au milieu.
+- **Bassin = un bol ou une boîte** plus petit, sous un espace libre : la taille, où il n'y
+  a que des muscles (abdominaux, obliques).
+- Les deux masses **tournent, se penchent et s'inclinent séparément**. Chacune a sa propre
+  ligne de centre et sa croix de maillage. La ligne de centre du torse devient une
+  courbe en S quand le corps se tord.
+- Les sphères des épaules se posent aux coins hauts et extérieurs de la cage.
+- Muscles de face : pectoraux (deux plaques sous les clavicules), grand droit de
+  l'abdomen (6 à 8 blocs qui rétrécissent vers le bas, jusqu'au pubis), obliques sur les
+  côtés, dentelé sous l'aisselle. De dos : trapèze en losange, grand dorsal en V jusqu'à la
+  taille, fessiers (moyen en haut et sur le côté, grand en bas).
+- **Poitrine :** elle est posée **sur** la cage et suit son orientation et son maillage. Le
+  haut part sous la clavicule. Elle n'est jamais collée à plat devant une cage vue de
+  profil.
+
+### F. Différences homme / femme (même anatomie, formes différentes) [I][Z]
+
+| | Homme | Femme |
+|---|---|---|
+| Épaules | ≈ 2 à 2,3 têtes, deltoïdes larges | ≈ 1,8 à 2 têtes, plus tombantes |
+| Cage | grande, pectoraux en plaques | plus petite et courte |
+| Taille | peu marquée (rectangle) | marquée (sablier) |
+| Bassin | étroit, plus haut | plus large, plus bas ; hanches ≈ largeur des épaules |
+| Cuisses | droites | partent plus en diagonale vers les genoux, plus d'écart en haut |
+| Cou | épais, ≈ largeur de la mâchoire | fin |
+| Bras au repos | à peine écartés | coudes plus près de la taille |
+
+### G. Poids et équilibre
+
+- La ligne de gravité part du creux du cou et tombe sur le pied d'appui, ou entre les deux
+  pieds si le poids est réparti.
+- Le côté qui porte : hanche haute, jambe tendue, muscles de la cuisse contractés (plus
+  ronds). Le côté libre : genou un peu fléchi, hanche basse.
+- Un objet lourd tenu d'une main fait pencher le torse **du côté opposé** pour compenser.
+
+### H. Pixel art : comment appliquer l'anatomie à petite taille
+
+- Même si une articulation fait 1 px, sa **position** vient des données anatomiques, et la
+  direction du pliage doit être juste.
+- **À partir de 32 px de haut :** marquer le coude et le genou par un pixel de rétrécissement
+  ou un changement de pente du contour. Marquer le deltoïde par une petite bosse qui
+  dépasse de la cage.
+- **À partir de 64 px :** appliquer le rythme décalé (D) au contour des membres.
+- Au-delà, ajouter les plans musculaires (E) dans l'ombrage, comme des facettes, à la
+  manière des écorchés simplifiés.
 
 ---
 
@@ -135,6 +266,25 @@ Ajouts v2 :
   - les genoux sont au milieu des jambes ;
   - les **coudes** sont au niveau du bas de la cage thoracique ;
   - les **poignets** sont au niveau du pubis.
+- **Colonne de têtes [I].** Comme sur les planches, dessiner à gauche du personnage une
+  pile de cercles de hauteur H : 7 pour un canon réaliste, 8 pour un canon héroïque
+  ou de mode. Chaque repère se lit sur cette colonne.
+
+  | Repère | Canon 7 têtes [I] | Canon 8 têtes [I] |
+  |---|---|---|
+  | Menton | 1 | 1 |
+  | Ligne des épaules | ≈ 1,3 | ≈ 1,3 |
+  | Tétons, aisselles | ≈ 2 | 2 |
+  | Bas de la cage, coudes | ≈ 2,6 à 3 | 3 (nombril) |
+  | Haut du bassin | ≈ 3,2 | ≈ 3,4 |
+  | Entrejambe, poignets | ≈ 3,7 à 4 | 4 (moitié exacte) |
+  | Bout des doigts | ≈ 4,6 (mi-cuisse) | ≈ 4,8 à 5 |
+  | Genoux (centre de la rotule) | ≈ 5,2 | ≈ 5,8 à 6 |
+  | Chevilles | ≈ 6,7 | ≈ 7,6 |
+  | Plante des pieds | 7 | 8 |
+
+  Le canon de 8 têtes allonge surtout **les jambes**. La tête et le torse gardent presque
+  les mêmes repères.
 - **Cadre et repères [Z].** Tracer le rectangle qui contient le personnage, puis marquer
   sur ses bords les repères de hauteur et de largeur (deux couleurs, cf. R7).
   Chaque grande masse se place d'abord comme un rectangle dans ce cadre.
@@ -177,7 +327,10 @@ Ajouts v2 :
   - les longueurs des os sont symétriques à gauche et à droite (sauf raccourci voulu) ;
   - la pose exprime l'intention de l'étape 0 ;
   - [T1] les pieds ne sont pas joints et alignés comme au garde-à-vous, sauf si
-    l'intention le demande.
+    l'intention le demande ;
+  - [I] chaque articulation plie dans son sens et reste dans son amplitude (tableau A) ;
+  - les longueurs d'os en données n'ont pas changé (B) ;
+  - la ligne de gravité tombe sur l'appui (G).
 
 ## Étape 3 — Volumes (le mannequin)
 
@@ -189,6 +342,20 @@ centre, sa taille et son inclinaison :
   - les lignes de l'étape 3b.
 - **cage thoracique :** un œuf ou une boîte inclinée ; **bassin :** une boîte, un bol ou un
   triangle [Z]. Ces deux masses s'inclinent en sens opposés en contrapposto.
+- **Torse en 3 passes [I] :**
+  1. deux **boîtes**, la cage et le bassin, chacune avec sa croix de centre ; on fixe leur
+     rotation et leur inclinaison séparément ;
+  2. on arrondit : œuf pour la cage, avec l'arc costal en V renversé en bas, sphères des
+     épaules aux coins hauts, bol du bassin ;
+  3. anatomie : clavicules, pectoraux ou poitrine, ligne médiane, nombril, obliques,
+     tracés sur le maillage des deux masses.
+- **Torse dessiné d'un geste [I]** (variante pour les poses vivantes) :
+  1. une forme en trapèze effilé : ligne des épaules, ligne de centre **courbe**, ligne de
+     taille ;
+  2. cylindre du cou, sphère de l'épaule, triangle du sternum ;
+  3. ellipses de maillage sur la cage, puis le bassin ; cercle du coude **sur la ligne de
+     taille**, cercle du poignet ;
+  4. formes finales sur le maillage.
 - **cou :** un cylindre, qui part de l'arrière du crâne et entre dans le torse vers l'avant.
 - **membres :** des cylindres effilés. La cuisse est plus large que le mollet, le bras plus
   large que l'avant-bras. Formes simplifiées [Z] :
@@ -200,9 +367,36 @@ centre, sa taille et son inclinaison :
   la cage ; abdominaux jusqu'au pubis. On change la morphologie en changeant **la taille**
   des formes : un sablier donne une taille fine, un rectangle donne un corps robuste.
   L'anatomie, elle, ne change pas.
+- **Mannequin articulé [I].** Ordre obligatoire, comme sur les planches de canon :
+  1. tête (ovale) et ligne de centre ;
+  2. barre des épaules et cage (forme à bas arrondi) ;
+  3. bassin en triangle pointe en bas, ou en slip ;
+  4. **cercles d'articulations** : épaules, coudes, poignets, hanches, genoux,
+     chevilles ;
+  5. cylindres entre les cercles ;
+  6. mains en blocs, pieds en cales.
+  Les cercles des épaules débordent de la cage, et les rotules sont des disques posés
+  devant le genou.
 - **mains :** un bloc pour la paume (≈ taille du visage, du menton au milieu du front), avec
   un pouce séparé. Les doigts sont groupés en mitaine si la taille est petite. Les
   cylindres des doigts s'emboîtent dans le cube de la paume [Z].
+- **Main en 6 étapes [I]** (obligatoire dès que la main dépasse 6 px) :
+  1. **Paume :** un trapèze légèrement bombé, plus large du côté des jointures que du côté
+     du poignet.
+  2. **Jointures :** 4 cercles posés sur un **arc**, pas sur une ligne droite. Le majeur est
+     le plus haut. L'arc se creuse quand la main se ferme.
+  3. **Doigts :** chaque doigt fait 3 phalanges, en cercles et cylindres, de plus en plus
+     courtes vers le bout. Le majeur est le plus long, puis l'annulaire et l'index (presque
+     égaux), puis l'auriculaire, qui arrive à la dernière articulation de l'annulaire.
+     Les doigts pliés suivent l'arc des jointures et convergent légèrement.
+  4. **Pouce :** il part du **côté du poignet**, pas du bord de la paume. Une masse
+     triangulaire charnue (l'éminence thénar) le relie à la paume. Il n'a que 2
+     phalanges visibles, et son bout arrive à peu près à la base de l'index.
+  5. **Contour :** il enveloppe les cercles, avec des articulations légèrement gonflées et
+     les segments entre elles un peu plus fins.
+  6. **Trait final :** plus épais sur les bords dans l'ombre et aux superpositions, fin
+     ailleurs. Les bouts des doigts sont arrondis et carrés, et on marque l'ongle s'il y a
+     la place.
 - **pieds :** une cale ou un triangle, aussi long qu'une tête environ.
 - **Choix des volumes [Z].** Le cube donne de la solidité, la sphère de la douceur, le
   cylindre est entre les deux. C'est un choix de style, à garder cohérent (I5).
@@ -233,6 +427,49 @@ rectangle, goutte inversée…
 - **Personne âgée :** visage plus long et plus étroit.
 - Cou : deux lignes qui descendent de la mâchoire. [T1] Vérifier sa longueur : un cou nu
   trop long a été le principal défaut du test 1.
+
+**Construction de face, pas à pas [I]** :
+1. Tracer un cercle pour le crâne et une ligne verticale de centre, qui descend sous le
+   cercle jusqu'au menton.
+2. **Mâchoire :** deux lignes descendent des côtés du cercle, à peu près verticales puis
+   en angle vers le menton. Le menton est un petit segment plat, pas une pointe, sauf en
+   manga très stylisé. Il se trouve à environ 1/2 à 2/3 du diamètre du cercle sous celui-ci.
+3. **Lignes horizontales :**
+   - les sourcils, juste au-dessus du milieu de la hauteur totale ;
+   - les **yeux à mi-hauteur de la tête complète** (crâne + mâchoire), sauf en manga, où
+     ils sont un peu plus bas ;
+   - le **bas du nez au bas du cercle** ;
+   - la bouche au tiers entre le nez et le menton.
+4. **Yeux :** des amandes posées sur leur ligne, séparées d'**une largeur d'œil**. La
+   paupière supérieure est plus épaisse et plus sombre que l'inférieure. Le coin extérieur
+   est un peu plus haut ou au même niveau que le coin intérieur.
+5. **Sourcils :** ils suivent l'arcade et commencent au-dessus du coin intérieur de l'œil.
+6. **Nez puis bouche :** la largeur du nez ≈ l'écart entre les yeux ; les coins de la
+   bouche sont à l'aplomb des pupilles ou un peu en dedans.
+7. **Oreilles :** de la ligne des sourcils (ou des yeux) jusqu'au bas du nez, collées aux
+   côtés du cercle, là où il rencontre la mâchoire.
+8. **Cou :** il part de l'intérieur de la mâchoire, un peu en retrait de ses angles. Deux
+   lignes diagonales (les sterno-cléido-mastoïdiens) vont de derrière les oreilles au creux
+   du sternum. Les trapèzes descendent en pente vers les épaules.
+9. Les cheveux en dernier, **au-dessus** du cercle (masse plus grande que le crâne).
+
+**Construction en 3/4 (méthode Loomis) [I] :**
+1. Sphère du crâne.
+2. **On coupe le côté :** un cercle aplati (plan latéral) se dessine sur le côté de la
+   sphère tournée. Le centre de ce cercle est l'endroit où la tête pivote ; l'oreille
+   se place juste derrière et en dessous de ce centre.
+3. **Ligne des sourcils :** elle fait le tour de la sphère en suivant le maillage. Elle
+   passe sur le haut du cercle latéral.
+4. **Ligne de centre :** elle est **courbe**. Elle suit l'avant de la sphère, puis descend
+   devant pour former le plan du visage (front, arête du nez, menton).
+5. **Plan du visage :** sous la sphère, un bloc qui va de l'arcade au menton. Sa face
+   avant est plate, et ses côtés reculent vers les oreilles.
+6. **Mâchoire :** de l'arrière du cercle latéral, sous l'oreille, une ligne descend à l'angle
+   de la mâchoire, puis repart vers le menton.
+7. Le cou part **sous et derrière** la mâchoire. La ligne de la nuque part de la base du
+   crâne, plus haut et plus en arrière que la gorge.
+8. Le côté éloigné du visage est raccourci : l'œil du fond est plus étroit, et l'arcade et
+   la pommette peuvent couper son contour.
 
 **Guides obligatoires [M].** Tracer toujours :
 - la ligne verticale du centre du visage ;
@@ -458,6 +695,14 @@ décidée, mais il ne décide pas de la forme.
   - près des paupières et en haut de l'iris ;
   - à l'intérieur et à l'arrière de la masse de cheveux ;
   - sous la frange, sur le front.
+- **Ombrer par plans musculaires [I].** Sur un corps visible (bras nus, torse, jambes) et
+  à partir de 64 px de haut, chaque grand muscle est un **plan à facettes**, comme dans les
+  écorchés simplifiés.
+  - Le plan tourné vers la lumière prend le ton clair, celui qui s'en détourne le ton
+    d'ombre.
+  - Les limites suivent les séparations entre muscles : deltoïde et biceps, pectoral et
+    deltoïde, les blocs des abdominaux, vaste interne et rotule.
+  - Un vêtement moulant garde ces plans, en plus doux.
 - **Style manga [M] :** du cel shading, c'est-à-dire des aplats nets et pas de dégradés. On
   garde des zones blanches ou très claires pour les reflets : le bandeau de lumière sur
   les cheveux, les reflets des yeux.
@@ -524,6 +769,12 @@ Répondre honnêtement :
 6. L'objectif principal de l'étape 0 est-il atteint ?
 7. À côté de la référence, le dessin tient-il la comparaison ? Sinon, quelle étape est en
    cause ?
+8. **Anatomie (R11)** :
+   - Chaque articulation est-elle plausible : sens de pliage, amplitude ?
+   - Le deltoïde dépasse-t-il la cage ? Le cou part-il de derrière la mâchoire ?
+   - Le pouce part-il du poignet, et les jointures suivent-elles un arc ?
+   - Les bosses des membres sont-elles décalées ?
+   - La cage et le bassin sont-ils deux masses distinctes ?
 
 **Bilan [Z].** Noter **3 points réussis** puis **3 points à améliorer**. Les 3 points à
 améliorer deviennent les objectifs du prochain dessin.
