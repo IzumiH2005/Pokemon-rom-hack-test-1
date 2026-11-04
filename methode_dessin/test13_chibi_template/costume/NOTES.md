@@ -35,3 +35,4 @@ la tenue changent ; corps, peau, yeux et trait du template restent ceux du test 
 - Un reflet h en haut à gauche donne l'effet plaqué et brillant.
 - Abandonné : des pointes à la nuque derrière les oreilles. Trop fines, elles se lisaient comme des couettes ou des antennes.
 - Retour suivant : « base des cheveux trop haute ». La naissance des cheveux est descendue de 2 rangées : la peau du front commence à la rangée 13 au centre au lieu de 11. Les lignes de mèches ont été prolongées d'autant.
+- Retour suivant : « des cheveux plaqués ne doivent pas être volumineux ». La masse ne dépasse plus le trait du crâne que de 1 px, sans bosse au sommet ni débord sur les côtés. La silhouette du personnage suit donc presque exactement le crâne du template. Leçon : pour une coiffure plaquée, c'est le dessin des mèches et le reflet qui montrent le style, pas le volume.

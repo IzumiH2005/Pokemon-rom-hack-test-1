@@ -1,22 +1,11 @@
-# c06 calque cheveux (toile 32x39) : coiffé en arrière, front haut dégagé
-# volume à l'avant du sommet (les cheveux remontent puis partent vers l'arrière)
-hline H 13 18 2
-hline H 11 21 3
-hline H 10 22 4
-hline H 9 23 5
-hline H 8 23 6
-hline H 7 24 7
-rect H 7 8 24 12
-# naissance des cheveux en M, plus basse : le centre du front commence à la rangée 13
+# c06 calque cheveux (toile 32x39) : plaqués en arrière, collés au crâne (1 px d'épaisseur au-dessus du trait)
+hline H 12 19 6
+hline H 10 21 7
+hline H 9 22 8
+hline H 8 23 9
+rect H 7 10 24 12
+# naissance des cheveux en M : le centre du front commence à la rangée 13
 hline H 7 11 13
 hline H 20 24 13
 hline H 7 9 14
 hline H 22 24 14
-# côtés serrés jusqu'aux pattes
-hline H 7 8 14
-hline H 23 24 14
-hline H 7 8 15
-hline H 23 24 15
-# léger débord à l'arrière de la tête (la masse repoussée derrière)
-rows H 10 6 6 6 6 6 6 6 6
-rows H 10 25 25 25 25 25 25 25 25
