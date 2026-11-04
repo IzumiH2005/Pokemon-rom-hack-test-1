@@ -1,6 +1,7 @@
 # Lina, portrait anime de 3/4, construit en courbes puis passé en pixels (méthode C11).
 import numpy as np
 from vec import *
+from tete import Tete
 
 # 15 couleurs + transparent (GBA). Rampes avec décalage de teinte : ombres vers le violet,
 # lumières vers le jaune ; le contour est un violet-marine, pas du noir.
@@ -13,7 +14,8 @@ PAL = {
  'W': (234, 242, 248),                                                # blanc bleuté
  'r': (250, 142, 82), 'q': (212, 76, 66),                             # veste ; ombre = 4
 }
-TETE = (52, 37, 27)       # centre et rayon de la sphère du crâne (unités)
+TETE = (52, 37, 27)       # sphère qui sert à la lumière des cheveux (unités)
+LOOMIS = Tete(51, 39, 20, lacet=28, tangage=5, roulis=-5)   # la tête construite (C12)
 
 def construire(S):
     k = S / 100
@@ -30,13 +32,13 @@ def construire(S):
     poser(masque(dos, S), 'dos', lumiere - .5)
     veste = chemin((4, 100), ((7, 86), (20, 77), (36, 74)), (50, 77), (63, 71), ((76, 73), (90, 80), (96, 100)))
     poser(masque(veste, S), 'veste', 1.1 - np.hypot(X - 20, (Y - 80) * 1.3) / 34)
-    cou = chemin((45, 60), (59, 57), (60, 76), (45, 77))
-    poser(masque(cou, S), 'cou', 0)
+    poser(masque(LOOMIS.cou(77), S), 'cou', 0)
     col = chemin((39, 74), (51, 90), (65, 69), (60, 68), (51, 82), (45, 73))
     poser(masque(col, S), 'col', 0)
-    visage = chemin((30, 30), ((28, 42), (28, 52), (33, 59)), ((36, 64), (40, 67.5), (44, 68)),
-                    ((52, 67), (62, 60), (67, 52)), ((70, 46), (70, 37), (68, 28)), (50, 22))
-    poser(masque(visage, S), 'peau', 0)
+    poser(masque(LOOMIS.oreille(1), S), 'oreille', 0)
+    visage = masque(LOOMIS.contour(), S)
+    poser(visage, 'peau', 0)
+    poser(visage & masque(LOOMIS.plan_cote(1), S), 'peau', 1)    # val 1 = plan de côté
     calotte = ((X - cx) / 26.5) ** 2 + ((Y - 35) / 25) ** 2 <= 1
     poser(calotte & (Y < 33), 'cal', lumiere)
     meches = [   # (racine, ctrl, ctrl, pointe, largeur) : côtés puis frange, de l'arrière vers l'avant
@@ -85,7 +87,8 @@ def ombrer(lab, val, X, Y, nx, ny, S):
     for d in range(1, max(2, round(2.2 * k)) + 1):
         Z = voisin(round(d * .5), d); sous |= np.char.startswith(Z, 'm') | (Z == 'band')
     G[peau & sous] = '2'
-    G[peau & (X > 62) & (Y > 44)] = '2'                      # joue côté ombre
+    G[peau & (val > .5)] = '2'                               # plan de côté (Loomis) à l'ombre
+    G[lab == 'oreille'] = '2'
     menton = np.zeros((S, S), bool)
     for d in range(1, round(4 * k) + 1): menton |= voisin(0, d) == 'peau'
     G[(lab == 'cou') & menton] = '3'
@@ -174,26 +177,28 @@ def ferme(G, cx, cy, w, h, ext):
     G[round(cy + h * .12) + 1][xo] = 'O'
 
 def visage(G, S, expr='sourire'):
-    k = S / 100
-    P = lambda x, y: (x * k, y * k)
+    """Traits posés depuis la tête 3D : yeux sur la ligne des yeux, nez et bouche sur l'axe."""
+    k = S / 100; T = LOOMIS
+    P = lambda p: (p[0] * k, p[1] * k)
     ew = {48: (4, 5, 5, 6), 64: (6, 7, 7, 8), 96: (9, 11, 11, 12)}[S]
-    oeil(G, *P(37.5, 47.5), ew[0], ew[1], -1, S)          # œil lointain, plus étroit
-    if expr == 'clin': ferme(G, *P(56.5, 47), ew[2], ew[3], 1)
-    else: oeil(G, *P(56.5, 47), ew[2], ew[3], 1, S)
+    (xl, yl), fl = T.regard(-1); (xp, yp), fp = T.regard(1)
+    oeil(G, xl * k, yl * k, ew[0], ew[1], -1, S)          # œil lointain, raccourci
+    if expr == 'clin': ferme(G, xp * k, yp * k, ew[2], ew[3], 1)
+    else: oeil(G, xp * k, yp * k, ew[2], ew[3], 1, S)
     if S >= 64:
         haut = 2 if expr == 'surprise' else 0
-        sourcil(G, 37.5 * k, 47.5 * k - ew[1] / 2 - 1, ew[0] + 1, -1, haut + (1 if S >= 96 else 0))
-        sourcil(G, 57 * k, 47 * k - ew[3] / 2 - 1, ew[2] + 1, 1, haut + (1 if S >= 96 else 0))
-    # joues : bande rose + hachures
-    for (cx, cy, rx) in ((37, 57, 4), (60, 56, 5)):
+        sourcil(G, xl * k, yl * k - ew[1] / 2 - 1, ew[0] + 1, -1, haut + (1 if S >= 96 else 0))
+        sourcil(G, (xp + .5) * k, yp * k - ew[3] / 2 - 1, ew[2] + 1, 1, haut + (1 if S >= 96 else 0))
+    # joues : une bande rose sous chaque œil, sur la pommette
+    for (q, rx) in ((T.p2((-.45, .62, .78)), 3.5), (T.p2((.45, .62, .78)), 5)):
         for y in range(S):
             for x in range(S):
-                if abs((x + .5) / k - cx) / rx + abs((y + .5) / k - cy) / 1.4 <= 1 and G[y][x] in '12':
+                if abs((x + .5) / k - q[0]) / rx + abs((y + .5) / k - q[1]) / 1.4 <= 1 and G[y][x] in '12':
                     G[y][x] = 'k'
-    xn, yn = round(41.5 * k), round(55.5 * k)               # nez : un plan d'ombre
+    xn, yn = [round(v) for v in P(T.point('nez'))]          # nez : un plan d'ombre, côté ombre
     G[yn][xn] = '3'
     if S >= 96: G[yn + 1][xn + 1] = '3'; G[yn - 1][xn - 1] = '1'
-    xm, ym = round(45 * k), round(61.5 * k)                  # bouche ouverte, souriante
+    xm, ym = [round(v) for v in P(T.point('bouche', .06))]  # bouche ouverte, souriante
     B = {48: ['44'], 64: ['O44', '.k'], 96: ['4OOO4', '.Okk', '..k']}[S]
     if S >= 96 and expr == 'clin': B = ['4OOOO4', '.OWkk', '..kk']
     if S >= 96 and expr == 'surprise': B = ['.44', '4OO4', '4Ok4', '.44']; ym -= 1

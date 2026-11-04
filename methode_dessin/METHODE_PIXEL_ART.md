@@ -1,4 +1,4 @@
-# Méthode de pixel art — objets et personnages (v7)
+# Méthode de pixel art — objets et personnages (v8)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
@@ -10,7 +10,7 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 - la **partie B** donne les étapes de construction d'un **objet** ;
 - la **partie C** donne les étapes de construction d'un **personnage** (anatomie, visage,
   cheveux) ; **C10** donne les règles par taille (8 à 128 px) ; **C11** donne la méthode du
-  portrait anime (3/4, mèches, yeux, couleurs) ;
+  portrait anime (3/4, mèches, yeux, couleurs) ; **C12** construit le visage (Loomis + anime) ;
 - un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels ;
 - la section **A4b** (simplifier) s'applique dès qu'une taille est imposée.
 
@@ -18,8 +18,8 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 [I] planches d'anatomie fournies · [C] planches sur les cheveux fournies ·
 [R] recherches (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de
 lisibilité d'icônes, simplification des formes) · [P] planches fournies (cheveux, œil, arche,
-cristal, flamme, déclinaisons par taille, projections) · [T1]…[T6] leçons de nos propres tests ·
-[A] analyse de portraits anime en pixel art fournis en exemple (règles reformulées).
+cristal, flamme, déclinaisons par taille, projections) · [T1]…[T7] leçons de nos propres tests ·
+[L] méthode Loomis et tutoriels de visage anime (règles reformulées) · [A] analyse de portraits anime en pixel art fournis en exemple (règles reformulées).
 
 ---
 
@@ -984,6 +984,64 @@ de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
 - Mèche fine qui traverse la joue : elle se lit comme une cicatrice si elle croise le rose
   des joues. Elle doit s'arrêter au-dessus.
 
+## C12. Construire le visage : Loomis + proportions anime [L][R][T7]
+
+Le visage du test 6 était raté : une forme ronde dessinée à la main, bas du visage écrasé,
+mâchoire molle, pas de menton. Le bon ordre : on **construit la tête en volume**, puis on
+tire de ce volume le contour, la mâchoire, les ombres et la place des traits.
+
+### A. La tête en deux pièces (Loomis)
+1. **Une boule pour le crâne.** De côté, on la coupe à plat sur les deux faces : ces
+   « plans de côté » sont des disques (≈ 70 % du rayon depuis le centre). La tempe, la
+   pommette et l'oreille sont sur ce plan.
+2. **L'axe du visage** : une ligne qui passe au milieu du front, du nez et du menton. Elle
+   se courbe avec la boule quand la tête tourne ; c'est elle qui montre où regarde le visage.
+3. **Les lignes en travers**, perpendiculaires à l'axe et courbées sur la boule : sourcils,
+   yeux, base du nez, bouche, menton.
+4. **La mâchoire** est la seconde pièce : du dessous de l'oreille (angle de la mâchoire,
+   placé **en arrière**) jusqu'au menton, en ligne presque droite.
+
+### B. Proportions anime (fille ou jeune garçon), rayon du crâne = 1
+| Repère | Position |
+|---|---|
+| haut du crâne | −1 |
+| sourcils | ≈ 0 (milieu de la boule) |
+| ligne des yeux | ≈ +0,3 : un peu **sous** le milieu de la tête entière |
+| base du nez | à mi-chemin des yeux au menton |
+| bouche | au tiers entre le nez et le menton |
+| menton | ≈ +1,45 à +1,5 |
+| oreille | de la ligne des yeux à celle du nez |
+| écart des yeux | centres à ≈ ±0,5 ; l'écart vaut ~ une largeur d'œil |
+| cou | étroit (≈ 0,6 de rayon de large), planté sous le crâne, **derrière** le menton |
+
+Menton étroit et pointu (forme en V). Garçon plus âgé ou homme : menton plus large et plus
+bas, angle de mâchoire plus marqué. Chibi : la partie menton est moitié plus courte.
+
+### C. La vue de 3/4 (le cas qui rate le plus)
+- Côté **lointain** : le contour descend du crâne, fait une petite **bosse de pommette**
+  juste sous l'œil, puis file droit au menton. On ne voit pas l'angle de la mâchoire.
+- Côté **proche** : le contour suit le crâne jusqu'à l'oreille, puis la mâchoire part de
+  l'oreille et rejoint le menton en ligne longue.
+- L'axe se déplace vers le côté lointain ; l'œil lointain est **plus étroit** (raccourci)
+  et plus près du bord ; le nez dépasse vers le côté lointain.
+- Le plan de côté proche est une **zone d'ombre nette** quand la lumière vient de l'autre
+  côté : de la tempe à la pommette, puis à l'angle de mâchoire.
+- Le cou est décalé vers l'arrière : de 3/4, il part sous l'oreille et la joue, pas sous le menton.
+
+### D. En code (fichier `test6_portraits/tete.py`)
+On place une douzaine de points en 3D (pommettes, angles de mâchoire, coins du menton, axe),
+on tourne la tête (lacet, tangage, roulis) et on projette. **Contour du visage = enveloppe
+convexe du cercle du crâne et des points de mâchoire** : la bosse de pommette côté lointain
+et la ligne de mâchoire côté proche sortent toutes seules. Les yeux, le nez et la bouche
+sont des points 3D projetés ; le raccourci de l'œil lointain vient de l'orientation de
+sa surface. La planche `construction_tete.png` montre la tête chauve à 0°, 25° et 45°.
+
+### E. Contrôle du visage
+- Couvrir les cheveux : la tête chauve doit déjà être juste.
+- Mesurer : yeux un peu sous le milieu, nez à mi-chemin, bouche au tiers.
+- En 3/4 : bosse de pommette côté lointain, mâchoire droite côté proche, menton sur l'axe.
+- Le cou ne part pas du menton.
+
 ---
 
 ## Résumé
@@ -992,7 +1050,7 @@ de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
 volumes et terminateur → simplification (A4b) → forme iconique → silhouette → contour →
 palette → lumière selon la matière → variation de couleur → détails → nettoyage → contrôle en situation.
 
-**Personnage :** intention et références → proportions → pose → volumes → visage →
+**Personnage :** intention et références → proportions → pose → volumes → visage construit (C12) →
 vêtements → cheveux → table par taille (C10) → (portrait anime : C11) → silhouette → contour → palette → ombres à la main → détails →
 nettoyage → contrôle avec la référence.
 

@@ -22,7 +22,7 @@ def chemin(*segs):
 def masque(poly, S, u=100):
     """Remplit un polygone (coordonnées en unités 0..u) : test au centre de chaque pixel."""
     k = S / u
-    P = poly * k
+    P = np.asarray(poly, float) * k
     ys, xs = np.mgrid[0:S, 0:S] + .5
     inside = np.zeros((S, S), bool)
     x0, y0 = P[:, 0], P[:, 1]; x1, y1 = np.roll(x0, -1), np.roll(y0, -1)
