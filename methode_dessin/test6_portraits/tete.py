@@ -40,8 +40,10 @@ def enveloppe(P):
 def miroir(p): return (-p[0], p[1], p[2])
 
 class Tete:
-    def __init__(self, cx, cy, R, lacet=28, tangage=5, roulis=-5):
+    def __init__(self, cx, cy, R, lacet=28, tangage=5, roulis=-5, mach=None):
         self.cx, self.cy, self.R = cx, cy, R
+        # mach = (pommette, gonion, joue_bas, coin_menton) : remplace la mâchoire par défaut
+        self.mach = mach or (POMMETTE, GONION, JOUE_BAS, MENTON_C)
         self.M = rot(lacet, tangage, roulis)
     def tourne(self, p): return self.M @ np.asarray(p, float)
     def proj(self, p):
@@ -49,7 +51,7 @@ class Tete:
         return np.array([self.cx + self.R * q[0], self.cy + self.R * q[1], q[2]])
     def p2(self, p): return tuple(self.proj(p)[:2])
     def machoire(self):
-        cote = [POMMETTE, GONION, JOUE_BAS, MENTON_C]
+        cote = list(self.mach)
         return cote + [miroir(p) for p in cote] + [PROFIL['menton']]
     def contour(self):
         """Contour du visage = enveloppe du cercle du crâne et des points de mâchoire."""
@@ -69,7 +71,7 @@ class Tete:
     def plan_cote(self, s=1):
         """Plan de côté de Loomis (tempe → pommette → angle de mâchoire → arrière) :
         c'est lui qui passe à l'ombre quand la lumière vient de l'autre côté."""
-        pts = [(.74, -.05, .67), (.82, .32, .52), POMMETTE, GONION, (.55, 1.1, -.4), (1.1, .4, -.5), (1.1, -.4, -.3)]
+        pts = [(.74, -.05, .67), (.82, .32, .52), self.mach[0], self.mach[1], (.55, 1.1, -.4), (1.1, .4, -.5), (1.1, -.4, -.3)]
         return [self.p2(np.array(p) * (s, 1, 1)) for p in pts]
     def regard(self, s):
         """Centre de l'œil (sur la sphère), et facteur de raccourci horizontal."""
@@ -100,5 +102,5 @@ class Tete:
         for s in (-1, 1):
             r = np.sqrt(1 - .7 ** 2)
             g['cote%+d' % s] = arc(lambda t: (s * .7, r * np.sin(t), r * np.cos(t)), np.linspace(0, 2 * np.pi, 60))
-            g['mach%+d' % s] = [tuple(self.proj(np.array(p) * (s, 1, 1))) for p in (OREILLE, GONION, JOUE_BAS, MENTON_C)] + [tuple(self.proj(PROFIL['menton']))]
+            g['mach%+d' % s] = [tuple(self.proj(np.array(p) * (s, 1, 1))) for p in (OREILLE,) + tuple(self.mach[1:])] + [tuple(self.proj(PROFIL['menton']))]
         return g

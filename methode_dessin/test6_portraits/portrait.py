@@ -41,7 +41,9 @@ VUES = {
     ],
     houpe=((55, 9), (55, 2), (63, 1), (65, 6)),
     dos_sombre=.35, lum_x=.55, iris=(.38, .47), oeil_loin=.72, dx_yeux=(1.2, .5), joues=(3, 4.5), dx_nez=-.04, dx_bouche=.05),
- 'face': dict(tete=Tete(50, 37, 22, lacet=0, tangage=4, roulis=0),
+ 'face': dict(tete=Tete(50, 37, 24, lacet=0, tangage=4, roulis=0,
+                      # joue pleine jusqu'à la ligne du nez, puis diagonale vers un menton pointu
+                      mach=((.94, .45, .30), (.86, .86, .00), (.52, 1.22, .36), (.13, 1.46, .50))),
     # bob symétrique ; la frange a sa raie un peu à droite pour ne pas faire « casque »
     dos=chemin((21, 36), ((21, 14), (36, 6), (50, 6)), ((64, 6), (79, 14), (79, 36)),
                ((79, 52), (81, 62), (83, 70)), (77, 68), (74, 72), (69, 66), (31, 66), (26, 72),
@@ -270,7 +272,7 @@ def nettoyer(G, tours=2):
         for y in range(1, S - 1):
             for x in range(1, S - 1):
                 c = G[y][x]
-                if c in '.O': continue
+                if c in '.O4': continue      # contours (y compris le trait chaud du menton) intacts
                 v = [G[y + dy][x + dx] for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
                 if c not in v:
                     cand = [n for n in v if n not in '.O']

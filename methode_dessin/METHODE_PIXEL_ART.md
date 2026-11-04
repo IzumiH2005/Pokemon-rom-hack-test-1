@@ -1069,6 +1069,9 @@ Règles reprises de tutoriels Loomis et anime, puis vérifiées en comptant les 
 5. **Oreilles** entre la ligne des sourcils et celle du nez.
 6. **Lumière de face.** La lumière vient d'en haut et un peu de face. Sinon, toute la moitié basse des cheveux tombe dans la teinte la plus sombre et fait une masse plate.
 
+7. **Joues pleines jusqu'à la ligne du nez.** Pour un visage anime de face qui ne soit pas trop mince, la largeur à la ligne du nez vaut environ 85 % de la largeur à la ligne des yeux. Ensuite seulement, deux diagonales presque droites descendent vers un menton pointu. À la ligne de la bouche, il reste environ 65 %. Si la mâchoire se resserre dès les yeux, le visage devient un long « V » trop mince. C'était l'erreur du test 8, relevée par l'utilisatrice. Le crâne doit aussi être assez gros par rapport au carré de cheveux : à 96 px, le rayon est de 24, pas 22.
+8. **Le trait du menton doit être continu.** Le nettoyage des pixels isolés ne doit pas toucher au trait chaud (4). Sinon, la diagonale de la mâchoire, faite de pixels en escalier, se transforme en pointillés.
+
 Tailles d'œil retenues pour la vue de face : 11×12 à 96 px, 8×9 à 64 px et 6×7 à 48 px.
 
 ## Résumé
