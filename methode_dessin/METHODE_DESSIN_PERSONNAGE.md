@@ -1,4 +1,4 @@
-# Méthode de dessin de personnage en pixel art — règles obligatoires (v3)
+# Méthode de dessin de personnage en pixel art — règles obligatoires (v3.1)
 
 Ce document oblige à dessiner comme un artiste : on construit d'abord, on détaille ensuite.
 Il réunit la méthode classique du dessin de figure (Loomis, Vilppu, ligne d'action,
@@ -17,7 +17,10 @@ Chaque règle nouvelle porte sa source :
 - **[v3]** format libre = dessin d'illustrateur (R12), simplifier la forme mais jamais
   l'anatomie (R13), carte des muscles (section I) ;
 - **[R]** une recherche d'astuces de dessin et de pixel art (Proko, Loomis, Bridgman,
-  tutoriels d'anticrénelage et de lisibilité).
+  tutoriels d'anticrénelage et de lisibilité) ;
+- **[C]** les planches sur les cheveux fournies (v3.1) : ligne des cheveux, volume,
+  couleur, texture, franges, coiffures attachées, tresses, crânes rasés ;
+- **[T2]** une leçon du test 2 (samouraï dessinée directement, pixel par pixel).
 
 Les règles des livres sont adaptées au pixel art : un « trait épais » devient un contour
 plus sombre, un « crayon 2B » devient un ton de la rampe, etc.
@@ -674,16 +677,117 @@ Sans ces lignes, la symétrie des yeux dérive.
   Un grand élément vaut mieux que beaucoup de petits.
 - **Formes dynamiques [Z].** Une fois placées, les formes géométriques deviennent
   asymétriques et irrégulières (I4).
-- **Cheveux [M] :**
-  - les cheveux se dessinent en **mèches et touffes**, jamais en fils ;
-  - on les découpe en 4 zones : devant (frange), côtés, arrière, dessus ;
-  - la masse de cheveux est **un peu plus grande que le crâne** : jamais collée à la boule de
-    l'étape 3 ;
-  - 3 à 5 mèches de frange suffisent pour une coiffure simple ;
-  - une mèche qui contraste (direction ou couleur) donne du caractère ;
-  - on superpose les mèches puis on efface les lignes cachées.
+- **Cheveux :** voir l'étape 4b, obligatoire dès qu'il y a des cheveux.
 - **Contrôle :** les plis et motifs suivent le maillage (I6), et on lit les trois niveaux de
   formes.
+
+## Étape 4b — Cheveux [M][C][T2]
+
+Les cheveux sont un volume posé sur le crâne, pas une perruque plate. Ils se dessinent
+après la tête de l'étape 3b et avant la silhouette.
+
+### 1. Toujours partir du crâne chauve
+- Dessiner d'abord **la tête sans cheveux** (boule et mâchoire de l'étape 3b). Les cheveux
+  se posent dessus ensuite, jamais avant. Pareil pour un crâne rasé ou un motif rasé :
+  le motif vient en tout dernier, quand la coiffure est finie.
+- **Estimer le volume** avant les mèches : tracer une enveloppe autour du crâne. Plus
+  l'enveloppe est proche du crâne, plus les cheveux paraissent fins ou plaqués. Plus elle
+  est loin, plus ils paraissent épais. Des cheveux trop plats et collés font « gras » :
+  en cas de doute, donner un peu de volume.
+- La masse est donc **un peu plus grande que le crâne** [M], **sauf** pour des cheveux
+  tirés en arrière ou attachés : là, ils épousent la rondeur du crâne, 1 à 2 px au-dessus.
+- Des cheveux longs paraissent plus fins en haut et plus gonflés en bas, car leur poids
+  tire sur les racines. Les pointes s'arrondissent un peu quand elles touchent les épaules.
+
+### 2. La ligne des cheveux (à tracer avant toute mèche)
+- **Règle de hauteur :** chez un adulte, la distance de la ligne des cheveux au haut des
+  yeux est égale à la distance des yeux au nez. La tête se coupe en 4 bandes égales :
+  sommet → ligne des cheveux → yeux → nez → menton.
+- Un enfant a le bas du visage plus court : son front paraît presque deux fois plus grand.
+  **Ne jamais mettre un front d'enfant à un adulte**, sinon il a l'air dégarni.
+- Trois formes de base : **arrondie, en M, plate**. On part de la ligne standard, puis on
+  la modifie.
+- Il y a aussi une **ligne de côté** : elle descend devant l'oreille (pattes) puis contourne
+  l'oreille par l'arrière jusqu'à la nuque.
+- Une ligne qui recule suit la courbe du crâne : elle commence en M et finit en arc.
+- Les cheveux plaqués, tirés ou coiffés en arrière **partent de la ligne des cheveux** :
+  leurs racines suivent sa forme.
+
+### 3. Le point de convergence (cheveux attachés)
+- Toute coiffure attachée a un **point d'attache**. Chaque mèche tirée va **vers ce point**,
+  en suivant la rondeur du crâne. On place ce point à l'étape 2, comme une articulation.
+- **Queue haute :** l'attache se voit bien, même de face. Si la queue est longue, elle
+  retombe autour de la nuque ou des épaules.
+- **Queue basse :** au lieu d'épouser le crâne, les cheveux pendent autour de la tête vers
+  l'attache. Vue de face, elle ne se voit que si elle est épaisse.
+- **Attache lâche :** les cheveux font un léger bouffant et se courbent vers l'élastique.
+- **Couettes :** les deux attaches sont à la même hauteur, alignées avec les yeux, et
+  **derrière les oreilles**. Trop en avant, elles paraissent bizarres.
+- **Demi-queue :** au-dessus, les cheveux vont vers l'attache. Dans la queue elle-même, on
+  les dessine comme s'ils étaient libres.
+- Vue de dos : pas de lignes horizontales. Des lignes verticales un peu inclinées, qui
+  partent de la ligne des cheveux.
+
+### 4. Les mèches
+- Des **mèches et touffes**, jamais des fils [M]. **Varier l'épaisseur et la longueur** de
+  chaque mèche : des mèches identiques font une grille.
+- **Pointe nette :** deux traits qui convergent dans le même sens. En pixel art, une
+  pointe finit sur **1 pixel**, jamais sur un bout carré.
+- Les cheveux en pointes paraissent plus vivants quand les pointes les plus longues sont
+  à l'arrière de la tête. On règle leur hauteur avec un demi-cercle autour du crâne : le
+  demi-cercle suit la courbe de la tête.
+- **Coupe en couches :** des mèches de longueurs différentes, comme des plumes d'aile.
+- **Ondulé :** des formes en « S », pas en demi-cercles. Un trait de base, un trait
+  parallèle pour faire la mèche, puis quelques traits fins pour le mouvement. Une onde
+  trop serrée devient une boucle.
+- **Bouclé :** décider le volume avec un ovale, puis des demi-cercles qui rapetissent vers
+  les racines et les pointes. Les pointes des boucles tournent vers la tête, dans plusieurs
+  sens.
+- **Anglaises (spirales) :** un cône qui se vrille, comme un coquillage. La pointe finit
+  en cornet de glace. L'ombre suit la spirale, et les parties du fond sont dans l'ombre.
+- **Tresse :** tracer la taille et la direction, couper en 3 bandes, poser des « Y », puis
+  arrondir. Elle finit sur une pointe arrondie avec quelques mèches libres.
+- **Cheveux longs libres :** ils suivent le contour des épaules et de la poitrine. Ils ne
+  tombent jamais tout droit comme des baguettes.
+- Plus les cheveux sont longs, plus ils sont lourds, et plus ils tombent sur les côtés et
+  dans le dos.
+- Ajouter **quelques mèches libres** pour faire naturel : sur le front, sur une tresse,
+  devant l'oreille.
+
+### 5. Franges et raie
+- **Frange de face :** droite, en M, ou ondulée. Varier l'épaisseur des mèches.
+- **Mèches de côté :** elles partent de la zone entre les yeux et les oreilles. Elles
+  peuvent être rangées derrière l'oreille, coupées droit, bouffantes, très longues ou
+  tirées en arrière.
+- **Raie :** on la place grâce aux traits du visage, par exemple « presque au centre de
+  l'œil gauche ». Le point où les deux côtés se rejoignent donne la raie. Ce repère reste
+  juste quand la tête tourne.
+- **Symétrique ou non :** même symétrique, une coiffure a de petites variations dans la
+  longueur et la direction des mèches.
+
+### 6. Couleur, ombre et reflets
+- **Cheveux clairs :** peu de contour. Seules les ombres sont marquées.
+- **Cheveux moyens :** un mélange de tons moyens et d'ombres franches.
+- **Cheveux foncés :** presque toute la masse est sombre, et les reflets sont facultatifs.
+  En pixel art, la masse est en tons 2 et 3, et le ton clair est réservé au reflet.
+- **Reflet en arc :** le reflet suit la courbe du crâne. À hauteur des yeux, c'est un arc
+  doux, jamais une barre plate. Vu d'en haut, il se courbe vers le front. Vu d'en bas, il
+  se courbe vers le haut.
+- On découpe ce reflet **en tirets qui suivent le sens des mèches**. Ce sont de petits traits
+  fins qui vont vers le point d'attache ou vers les pointes.
+- **L'ombre suit le sens des cheveux.** Dans une mèche longue, on alterne des pointes
+  claires et sombres en zigzag, dans le sens de la pousse.
+- Ombre portée : un pixel d'ombre de peau sous les mèches qui tombent sur le front.
+  L'arrière du crâne, la nuque et le dessous de l'attache sont dans l'ombre.
+
+### 7. Contrôle des cheveux
+- La ligne des cheveux est-elle à la bonne hauteur (cheveux → yeux = yeux → nez) ?
+- Toutes les mèches attachées vont-elles vers le point d'attache ?
+- Chaque pointe finit-elle sur 1 px ? Les mèches ont-elles des épaisseurs différentes ?
+- Le reflet est-il un arc découpé en mèches, et pas une bande plate ?
+- Les cheveux longs suivent-ils les épaules ? Les pointes se voient-elles, ou sont-elles
+  cachées derrière un bras **[T2]** ?
+
 
 ## Étape 5 — Silhouette
 
@@ -901,6 +1005,8 @@ Répondre honnêtement :
    - Reste-t-il un bras « tube », un torse « rectangle », une cuisse sans rythme ?
    - Le côté pincé et le côté étiré de la pose se voient-ils ?
    - Si le format était libre, le canevas était-il assez grand pour tout dessiner (R12) ?
+10. **Cheveux (étape 4b)** : la ligne des cheveux, le point d'attache, les pointes à 1 px,
+    le reflet en arc et le sens des ombres sont-ils justes ?
 
 **Bilan [Z].** Noter **3 points réussis** puis **3 points à améliorer**. Les 3 points à
 améliorer deviennent les objectifs du prochain dessin.
@@ -911,7 +1017,7 @@ Corriger, puis refaire la planche.
 
 ## Résumé en une phrase
 
-**Intention et références → proportions → pose → volumes → visage → vêtements et
-cheveux → silhouette → contour → palette → ombres à la main → détails → nettoyage →
+**Intention et références → proportions → pose → volumes → visage → vêtements →
+cheveux (crâne chauve, ligne, point d'attache) → silhouette → contour → palette → ombres à la main → détails → nettoyage →
 contrôle avec la référence.** Un calque par concept, du grand au petit. On ne pose pas un
 pixel de détail tant que la structure n'est pas juste.
