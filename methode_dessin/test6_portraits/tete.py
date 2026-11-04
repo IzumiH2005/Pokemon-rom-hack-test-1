@@ -64,7 +64,7 @@ class Tete:
         """Cou : cylindre étroit planté sous le crâne, un peu en arrière du menton."""
         h = (bas - self.cy) / self.R
         a = np.linspace(0, 2 * np.pi, 32)
-        pts = [self.p2((.30 * np.sin(t), y, -.20 + .30 * np.cos(t))) for t in a for y in (.70, h)]
+        pts = [self.p2((.26 * np.sin(t), y, -.20 + .26 * np.cos(t))) for t in a for y in (.70, h)]
         return enveloppe(pts)
     def plan_cote(self, s=1):
         """Plan de côté de Loomis (tempe → pommette → angle de mâchoire → arrière) :

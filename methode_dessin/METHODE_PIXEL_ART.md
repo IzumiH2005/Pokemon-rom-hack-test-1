@@ -1042,6 +1042,20 @@ sa surface. La planche `construction_tete.png` montre la tête chauve à 0°, 25
 - En 3/4 : bosse de pommette côté lointain, mâchoire droite côté proche, menton sur l'axe.
 - Le cou ne part pas du menton.
 
+### F. Erreurs vues au test 7 (et corrections)
+- **Trop de petites mèches** : des rayures partout. Mieux vaut 6 à 8 grandes mèches de frange
+  qui se chevauchent, avec un trait de séparation **seulement vers la pointe**.
+- **Front dégarni** entre les mèches : la frange doit couvrir le front ; le peu de peau qui se
+  voit dessous est à l'ombre.
+- **Bandeau, sourcils épais** : du bruit sur la frange. Sourcils de 1 px, accessoires seulement
+  s'ils servent le personnage.
+- **Plan de côté en plaque carrée** sur la joue : en anime, une bande étroite le long de la
+  mâchoire suffit.
+- **Buste en dôme et cou interminable** : les épaules tombent depuis le cou ; le col arrive
+  peu sous le menton ; le cou est fin.
+- **Ombre de veste en bloc vertical** : la limite d'ombre suit le corps (en biais).
+- **Contour de la peau** en trait chaud, pas en marine : le visage paraît plus doux.
+
 ---
 
 ## Résumé
