@@ -1,0 +1,12 @@
+# œil gauche : paupière, blanc grisé, iris rouge lumineux, ombre dessous
+ligne a 1 43 47 48 46 55 47
+px i 45 48 46 48 53 48
+px o 48 48 50 48 49 49
+px p 49 48
+ligne b 1 46 50 52 50
+# œil droit : paupière qui remonte vers l'extérieur
+ligne a 1 71 46 76 45 84 45
+px i 72 47 73 47 78 47 79 47
+px o 74 46 76 46 75 47 74 47
+px p 75 46
+ligne b 1 73 48 80 48

@@ -1,0 +1,9 @@
+# quelques mèches brunes dans la masse sombre du bas
+ligne b 1 30 60 29 76 28 92 27 108
+ligne b 1 36 64 35 82 34 100 33 116
+ligne d 1 33 70 32 86
+ligne b 1 90 64 91 80 92 96 94 108
+ligne d 1 94 70 95 84
+# oreille gauche dans l'ombre
+poly c 36 58 39 57 41 62 40 68 37 69 35 64
+ligne e 1 38 60 39 65
