@@ -1,4 +1,4 @@
-# Test 14 : cheveux en appliquant C6b
+# Test 14 : cheveux en appliquant C6 (ex-C6b)
 
 Personnage original sur le même corps que le test 13 (toile 32×39, `etape01_base.txt` =
 corps et visage du costume sans cheveux). Tenue recolorée en vert sauge par la palette.
@@ -8,7 +8,7 @@ cheveux de dos plus sombres, une mèche rebelle sur le dessus. Lumière en haut 
 Fichiers : `cheveux.py` (calque posé à la main, coordonnées commentées), `rendu.py`
 (rendu, situation sur herbe, planche), `etape02_masse` → `etape03_ombre` → `etape04_final`.
 
-## Ce qui vient de C6b
+## Ce qui vient de C6 (ex-C6b)
 - Rampe 3 valeurs + reflet, avec glissement de teinte : orange (h) → rouge auburn (H) →
   bordeaux froid (D) → prune (X) ; reflet pêche pâle (L).
 - Frange en 3 touffes de 2 px qui s'affinent à 1 px, pointes au-dessus des yeux.
