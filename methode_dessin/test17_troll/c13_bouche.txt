@@ -1,0 +1,40 @@
+# MUSEAU sous le nez (x>=36), sillon nasogénien b + lumière f au-dessus
+63 36 ddddeeeeeeeeeeeddddddddddddddddccccccccccccccbb
+64 36 dddeeffffeeeeeeeeeeddddddddddddddcccccccccccccbb
+65 37 bddeffffffeeeeeeeeeddddddddddddddcccccccccccbbb
+66 37 bbddeefffffeeeeeeeeeddddddddddddddcccccccccbbb
+67 37 cbbddeeeffffeeeeeeeeeddddddddddddcccccccccbbbb
+68 37 ccbbbddeeeffffeeeeeeeddddddddddddcccccccccbbbb
+69 37 cccbbbddeeefffeeeeeeeedddddddddddccccccccbbbbb
+70 37 ccccbbbbddeeeeeeeeeeeeeddddddddddccccccccbbbbb
+71 37 dccccbbbbddeeeeeeeeeeeedddddddddcccccccccbbbbb
+72 37 ddcccccbbbbddddeeeeeeeedddddddddccccccccbbbbbb
+73 37 dddcccccbbbbbdddddddddddddddddddccccccccbbbbbb
+74 36 ddddddcccccbbbbbbddddddddddddddcccccccccbbbbbbb
+75 35 eedddddcccccccbbbbbbbccccccccccccccccccbbbbbbbbb
+76 34 eeeddddddcccccccccbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+# LIGNE DE BOUCHE (coins qui tombent) + LÈVRE INFÉRIEURE qui avance (prognathie)
+77 33 deeddddccccbbbbaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbb
+78 31 2Oiiiiiiiiiiiiiiiiiiiiiiiiiiiijjbbbbbbbbbbbbbbbbbb
+79 30 dffffggfffffffffffffffffffffiiiiiijbbbbbbbbbbbbbbbbb
+80 30 dfffffffffffffffffffffffffffffeeeiiiijbbbbbbbbbbbbbb
+81 30 deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeddiiibbbbbbbbbbbbbb
+82 30 deeeeeeeeeeeeeeeeeeedddddddddddddddddaibbbbbbbbbbbbb
+83 30 ddddddddddddddddddddddddddddddddccccccbabbbbbbbbbbbb
+84 30 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+# MENTON / MÂCHOIRE : face avant éclairée, côté qui tourne, dessous en ombre
+85 30 deeffffeeeeeeeddddddddddddddddddddcccccccccccbbbbbbb
+86 30 deffggffeeeeeeeddddddddddddddddddcccccccccccbbbbbbb
+87 30 defgggffeeeeeeeddddddddddddddddddcccccccccccbbbbbbb
+88 30 deffgffeeeeeeeedddddddddddddddddcccccccccccbbbbbbba
+89 31 deffffeeeeeeeeddddddddddddddddcccccccccccbbbbbbbba
+90 31 deeffeeeeeeeeddddddddddddddcccccccccccccbbbbbbbbaa
+91 32 deeeeeeeeeddddddddddddcccccccccccccccbbbbbbbbbbaa
+92 33 ddeeedddddddddddcccccccccccccccccbbbbbbbbbbbbaaa
+93 34 bdddddddcccccccccccccccccbbbbbbbbbbbbbbbbbaaaa
+94 35 bbcccccccccbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaa
+95 37 ObbbbbbbbbbbbaaaaaaaaaaaaaaaaaaaaaaaaaO
+# OCCLUSION sous la mâchoire (le cou disparaît dans le poitrail)
+96 38 OOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaOO
+97 40 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+98 42 abaaaaaaaaaaaaaaaaaaaaaaaaaaaaabba

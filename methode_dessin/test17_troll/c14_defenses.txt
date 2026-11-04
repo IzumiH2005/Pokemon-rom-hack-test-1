@@ -1,0 +1,34 @@
+# DÉFENSE PROCHE : cône courbé vers l'extérieur, flanc gauche éclairé, anneaux de croissance
+61 61 O
+62 60 tzO
+63 59 tzxO
+64 59 zzxvO
+65 58 tzxxvO
+66 58 zzxxvO
+67 57 tzzxvvO
+68 57 zzxxvtO
+69 56 txzxxvtO
+70 56 zvvvvttO
+71 55 tzzxxvvtO
+72 55 zzxxxvvtO
+73 55 zxxxxvvtO
+74 55 xvvvvvttO
+75 54 tzxxxxvvtO
+76 54 zzxxxxvvtO
+77 54 zxxxxvvvtO
+78 54 vxxxvvvttO
+# DÉFENSE LOINTAINE cassée : moins éclairée, cassure en dents de scie
+70 38 tO
+71 37 tvxtO
+72 37 vxxvt
+73 37 xxvvt
+74 37 xxvvt
+75 37 xvvtt
+76 37 vvvtt
+77 37 vvttO
+78 37 tttOi
+# PETITES DENTS du bas (prognathie), espacées
+78 43 xv.ix.iiv
+77 43 vt..t....
+78 47 ixvi
+78 52 i

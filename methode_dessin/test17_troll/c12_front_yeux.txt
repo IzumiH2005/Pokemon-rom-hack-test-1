@@ -1,0 +1,42 @@
+# FRONT fuyant (contour en pente) + rides
+30 47 dfffffeeee
+31 46 dffgffffeeee
+32 45 dfgggfffffeee
+33 44 dfggfffffffeee
+34 43 dffggffeeeffeeee
+35 41 ddfgfffeddeeffeeee
+36 40 dfffffeddddeeeffeee
+37 38 ddffggfffffeeeddeeee
+38 37 dfgggffffeeeedddeeee
+39 35 ddfggfffeedddeeeffeeee
+40 34 dfffeeddddeeeffffeeeeee
+41 32 ddffggffffffffffffeeeeeee
+# ARCADE : dessus éclairé, face, dessous en ombre
+42 30 dfgggggfffggggffffffgggfffffeeeeeeddeeeedddddddd
+43 30 dffgfffeeffgfffeeeeeffffffeeeeeeddddddddcccccccc
+44 30 deeffeeddeeeefeedddeeeeeeeeedddddccccccccccccbbb
+45 30 deeeeedddbbdddeddcccdddddddddccccccbbbbbbbbbbbbb
+46 30 bdddddcccbbcccdccbbbcccccccccbbbbbbbbbbbbbbbaaaa
+47 36 bbbaabbbbaaaaaaaaaaaaaaaabbbbbbbbbbbbb
+# ORBITES + OEIL lointain (lueur derrière l'arête) + OEIL proche
+48 36 bccbaabbaaaaaaaaaaaaaaaaaabbbbbbcccccc
+49 36 ccccaOOabaaOOOOOOOOOOaabbbcccccdddddd
+50 36 ccccOFGOaaOyFGGFEyyOOabbcccddddddddd
+51 36 ccccOEFObaOYGOGGFyyyOabbccdddddddddd
+52 36 ccccarrabaOyFOGFEyyOaabcccdddddddddd
+53 36 cccccbbbbaarrrrrrrrbbccccddddddddddd
+54 36 cccccccbbcddeedddddcccccdddddeeedddd
+55 36 dcccccccbcdeefeeeedddcbcddeeeeeeeddd
+56 36 ddccccccbbccddddddcccbccdeeeeeeeeddd
+# POMMETTE : arête qui attrape la lumière, ombre dessous
+57 36 dddcccccccccbbbbbbccdeeffffffeeeeddd
+58 36 ddddccccccccccccccdeeffggfffeeeeeddd
+59 36 dddddccccccccccccdeeffffffeeeedddddc
+60 36 ddddddcccccccccccdddeeeeeeeddddddccc
+61 36 dddddddcccccccccccccddddddddddcccccc
+62 36 ddddddddccccccccccccccccccccccccccbb
+# correction : coins de l'oeil arrondis + reflet
+49 47 a
+49 56 a
+52 46 a
+50 51 z

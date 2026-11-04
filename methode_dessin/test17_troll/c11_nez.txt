@@ -1,0 +1,50 @@
+# NEZ — racine sous l'arcade (ombre portée c/b), arête éclairée, bulbe chaud
+57 15 bdfgwgwwuuuedcbb
+58 15 dfwggwwuuuussscbb
+59 14 bdwggwwuuuuusssrbb
+60 14 dwwgwwuuuuuusssrbb
+61 14 dwwwwuuuuuuussrrbcb
+62 14 dwwwuuuuuuusssrrbccb
+63 14 dwwuuuuuuusssrrsscccb
+64 14 duwuuuuuusssrrsuussbcb
+65 14 duuuuuuussssrrsuwusrbbb
+66 14 Osuuuuusssssrrsuwuusrbbb
+67 15 Osuuuusssssrrsuuusrrabb
+68 15 Ossuusssssrrrssssrraabb
+69 16 Osssssssrrrrrsssrraaabb
+70 16 Ossssrrrrjjjrrrrraaaabc
+71 17 Orsrrrrjiiijrrrbaaaabcc
+72 18 Orrsssrjiiiijrbaaaabbcc
+73 19 OOrsssrrjjjrOaaaabbccc
+74 21 OOrrrrrOOaaaaabbccc
+75 22 22222Oaaaabbccc
+76 27 Oaaabbcc
+# CORRECTION ANATOMIE : la racine du nez part ENTRE les yeux (x40-46) et descend en diagonale
+# fond rendu à gauche du bord du visage (x29) là où était l'ancienne arête
+47 25 2222
+48 23 222222
+49 22 2222222
+50 21 22222222
+51 20 222222222
+52 19 2222222222
+53 18 22222222222
+54 18 222222222
+55 17 2222222
+# OEIL LOINTAIN : à gauche de l'arête, au bord du visage, petit et en partie caché
+48 29 baaaaaaa
+49 29 baOOOOa
+50 29 bOFGFOa
+51 29 baOEOab
+52 29 bbrrrb
+53 29 bcccb
+# ARÊTE : flanc gauche éclairé, crête, flanc droit qui tourne vers l'orbite proche
+47 40 beffdcb
+48 39 befgfdcb
+49 37 bdefgfdcb
+50 36 bdefgfdcb
+51 34 bdeffgfdcb
+52 32 bdeffggfdcb
+53 30 bdeffgggfdcb
+54 27 bddeffggfffdcb
+55 24 bdeefffggfffdccb
+56 20 bdefgwwgffeeeddccbb

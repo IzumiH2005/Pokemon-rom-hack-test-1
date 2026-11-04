@@ -1,0 +1,16 @@
+# ligne d'action (B) : du bas du dos voûté vers le nez qui pique en avant-gauche
+px B 118 127 116 120 114 113 111 106 107 99 102 92 96 85 90 78 84 71 77 64 70 58 62 52 54 47 46 44 38 43
+# crâne (R) : petit, front bas, rejeté en arrière
+ring R 60 36 17
+# mâchoire (R) : grosse masse carrée sous le crâne
+frame R 36 58 86 92
+# arcade sourcilière (V) : barre lourde qui avance
+hline V 30 76 46
+# nez (R) : poire qui pend sous l'arcade
+ring R 36 62 11
+# oreille (V) : triangle vers l'arrière-haut
+px V 80 38 86 35 92 32 98 29 104 26 108 24 104 30 100 36 96 42 92 46 88 50 84 52
+# bosse épaule/dos proche (B)
+ring B 100 74 32
+# épaule lointaine (B), plus petite
+ring B 18 116 18

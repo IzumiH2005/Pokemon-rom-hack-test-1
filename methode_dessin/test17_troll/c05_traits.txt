@@ -1,0 +1,19 @@
+# ligne médiane du visage (B) : racine du nez -> menton, presque profil 3/4 fort
+px B 36 46 36 50 35 54 34 76 34 82 35 88 37 94
+# arcade (V) : bourrelet lourd
+hline V 30 76 44
+hline V 32 74 50
+# oeil proche (R) et oeil lointain (R) caché derrière la racine du nez
+frame R 48 50 56 54
+frame R 38 50 41 52
+# pommette (V)
+hline V 50 70 60
+# bouche (R) : ligne qui tombe aux coins (grognon)
+px R 36 80 40 79 44 78 50 78 56 78 62 79 66 80 70 82
+# défense proche (J) et défense lointaine cassée (J)
+vline J 58 66 78
+vline J 38 72 78
+# charnière de mâchoire / attache oreille (V)
+px V 80 50 80 54 78 58 76 64
+# menton bajoues (V)
+hline V 36 76 92

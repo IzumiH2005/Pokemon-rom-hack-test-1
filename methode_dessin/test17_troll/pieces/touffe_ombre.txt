@@ -1,0 +1,5 @@
+..PNN..
+.PNNNM.
+PNNNMMM
+NNNMMMM
+.MMMM..

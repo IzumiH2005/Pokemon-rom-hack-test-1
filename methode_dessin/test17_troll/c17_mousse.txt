@@ -1,0 +1,57 @@
+# fond de mousse N sur la zone de la bosse
+rows N 40 94 127 92 127 90 127 89 127 88 127 88 127 87 127 87 127 86 127 86 127 86 127 87 127 86 127 86 127 87 127 88 127 88 127 89 127 88 127 89 127 90 127 90 127 91 127 92 127 91 127 92 127 92 127 94 127 93 127 95 127 96 127 95 127 97 127 99 127 98 127 100 127 102 127 101 127 104 127 106 127 108 127 110 127 113 127 116 127 120 127
+# rangée A (haut, éclairée)
+stamp pieces/grande_lum.txt 90 43
+stamp pieces/touffe_lum.txt 99 39
+stamp pieces/touffe_lum.txt 106 40
+stamp pieces/touffe_mi.txt 113 42
+stamp pieces/touffe_mi.txt 120 45
+# rangée B
+stamp pieces/touffe_lum.txt 86 49
+stamp pieces/grande_lum.txt 93 48
+stamp pieces/touffe_lum.txt 102 46
+stamp pieces/grande_mi.txt 109 47
+stamp pieces/touffe_mi.txt 118 50
+# rangée C
+stamp pieces/touffe_lum.txt 86 55
+stamp pieces/touffe_mi.txt 94 54
+stamp pieces/grande_mi.txt 101 53
+stamp pieces/touffe_mi.txt 111 55
+stamp pieces/touffe_ombre.txt 119 56
+# rangée D
+stamp pieces/touffe_mi.txt 89 61
+stamp pieces/touffe_mi.txt 97 60
+stamp pieces/grande_ombre.txt 104 60
+stamp pieces/touffe_ombre.txt 114 61
+stamp pieces/touffe_ombre.txt 121 62
+# rangée E
+stamp pieces/touffe_mi.txt 94 67
+stamp pieces/touffe_ombre.txt 101 66
+stamp pieces/grande_ombre.txt 108 67
+stamp pieces/touffe_ombre.txt 118 68
+# rangée F
+stamp pieces/touffe_ombre.txt 99 73
+stamp pieces/touffe_ombre.txt 106 73
+stamp pieces/grande_ombre.txt 112 74
+stamp pieces/touffe_ombre.txt 121 75
+# rangée G
+stamp pieces/touffe_ombre.txt 109 79
+stamp pieces/touffe_ombre.txt 117 80
+stamp pieces/touffe_ombre.txt 123 82
+# franges qui pendent sur la peau (bord gauche/bas)
+vline N 88 60 63
+vline M 91 66 70
+vline N 94 72 74
+vline M 97 75 79
+vline N 101 79 81
+vline M 104 81 85
+vline N 108 84 86
+vline M 113 86 89
+vline N 119 87 88
+# lichen sur le haut du crâne
+stamp pieces/lichen.txt 60 19
+stamp pieces/lichen.txt 64 17
+stamp pieces/lichen.txt 68 19
+stamp pieces/lichen.txt 72 21
+stamp pieces/lichen.txt 63 22
+stamp pieces/lichen.txt 69 23
