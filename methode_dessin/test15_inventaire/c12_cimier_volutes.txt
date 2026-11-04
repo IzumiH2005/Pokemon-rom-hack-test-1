@@ -1,0 +1,18 @@
+# v2 « rebords dorés plus classe » : les bouts carrés de la bride deviennent des volutes
+# (enroulement d'or autour d'un œil sombre). Clair en haut-gauche, sombre en bas-droite.
+# bourrelet du haut : éclat près de la volute gauche, les anciens rivets disparaissent
+hline y 1 21 16
+px z 2 16
+px i 22 16
+# rangée de l'œil
+hline i 3 20 17
+px y 1 17
+px O 2 17 21 17
+px h 22 17
+# dessous des volutes (la bride descend d'une rangée aux deux bouts)
+px O 0 18 4 18 5 18 18 18 19 18 23 18
+px j 1 18
+px i 2 18 20 18
+px h 3 18 21 18 22 18
+hline O 1 3 19
+hline O 20 22 19

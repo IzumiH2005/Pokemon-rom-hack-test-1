@@ -48,3 +48,17 @@ pièce telle quelle, les `.` restent transparents.
   cadre de jauge, logement) ; le velours reste mat et calme, sans éclat.
 - **Couleurs** : 23 au total ; elles tiennent dans 2 palettes BG GBA de 16 :
   chaud `O a b c d e h i j y z p P` (13) et froid `O k l m n q r s t u w` (11).
+
+## v2 — rebords dorés retravaillés (demande utilisateur)
+- **Jauge** : le cadre d'or plat d'1 px devient une moulure à deux tons (bourrelet clair +
+  filet moyen en haut et à gauche, filet et bourrelet sombres en bas et à droite), coins
+  chanfreinés, éclat de 3 px au coin haut-gauche. Plaque et jauge passent à 10 px de haut,
+  alignées sur le logement de pièce.
+- **Plaque** : les deux clous sont remplacés par quatre **coins de laiton** de registre
+  (triangle clair en haut-gauche, sombre en bas-droite, arête en `h`).
+- **Cimier** (`c12_cimier_volutes.txt`) : les bouts carrés de la bride deviennent des
+  **volutes**, un anneau d'or autour d'un œil `O`. Les anciens rivets disparaissent.
+- **Curseur** : chaque équerre a un bout **taillé en biais** (le filet intérieur dépasse
+  d'1 px), et l'ombre tourne avec le coin (clair en haut-gauche, sombre en bas-droite).
+- Leçon : un filet d'or d'1 px se lit comme un trait de couleur ; à partir de 2 tons
+  (clair + sombre) il se lit comme du métal en relief.

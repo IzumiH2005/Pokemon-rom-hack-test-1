@@ -1,36 +1,55 @@
 # Barre du bas (93×10) : logement de pièce, plaque de compteur, jauge de poids.
+# v2 (demande « rebords dorés plus classe ») : plaque et jauge sur toute la hauteur (10 px,
+# comme le logement), moulure d'or en relief à deux tons + chanfrein aux coins.
 # --- logement de pièce (anneau de laiton en relief, creux au centre), dessiné à la main
 stamp pieces/logement.txt 0 0
-# --- plaque de parchemin (relief) x12-44
-rect O 12 1 44 8
-px . 12 1 44 1 12 8 44 8
-# plaque calmée : fond p, chanfrein clair P en haut/gauche, ombre c en bas/droite
-# (elle ne doit pas voler le contraste du rubis, A6-E)
-rect p 13 2 43 7
-hline P 13 42 2
-vline P 13 3 6
-hline c 14 43 7
-vline c 43 2 6
-# clous de laiton aux extrémités
-px y 15 4
-px i 16 4 15 5
-px h 16 5
-px y 40 4
-px i 41 4 40 5
-px h 41 5
-# --- jauge de poids x50-92 : cadre de laiton en relief, rainure en creux
-rect O 50 1 92 8
-px . 50 1 92 1 50 8 92 8
-hline y 51 91 2
-vline y 51 2 7
-hline h 52 91 7
-vline i 91 3 6
-px z 52 2 53 2
-rect O 52 3 90 6
-hline k 53 89 3
-vline k 53 3 5
-rect l 54 4 89 5
-hline n 54 89 5
-vline n 89 4 5
+# --- plaque de parchemin x12-44 (relief, calmée : elle ne vole pas le rubis, A6-E)
+rect O 12 0 44 9
+px . 12 0 44 0 12 9 44 9
+rect p 13 1 43 8
+hline P 13 42 1
+vline P 13 2 7
+hline c 14 43 8
+vline c 43 1 7
+# coins de laiton (comme des coins de registre) : triangle clair en haut-gauche,
+# sombre en bas-droite, arête en h. Ils remplacent les deux clous.
+px z 13 1
+px y 14 1 13 2
+px h 15 1 14 2 13 3
+px j 42 1
+px i 43 1 43 2
+px h 41 1 42 2 43 3
+px j 13 8
+px i 14 8 13 7
+px h 15 8 14 7 13 6
+px i 42 8 43 7
+px h 43 8 41 8 42 7 43 6
+# --- jauge de poids x50-92 : moulure d'or (bourrelet clair + filet), gorge en creux
+rect O 50 0 92 9
+px . 50 0 51 0 91 0 92 0 50 9 51 9 91 9 92 9 50 1 92 1 50 8 92 8
+px O 51 1 91 1 51 8 91 8
+# bourrelet haut : le plus clair, éclat au coin haut-gauche
+hline y 52 90 1
+px z 52 1 53 1 54 1
+px j 89 1 90 1
+# filet haut, montant gauche clair, montant droit sombre
+hline j 52 90 2
+px i 89 2 90 2
+vline y 51 2 5
+vline j 51 6 7
+vline j 52 3 6
+vline i 91 2 3
+vline h 91 4 7
+vline i 90 3 6
+# filet et bourrelet bas : sombres
+hline i 52 90 7
+hline h 52 90 8
+px j 52 7
+# gorge : bord haut et gauche dans l'ombre (k), bas éclairé
+rect O 53 3 89 6
+hline k 54 88 4
+vline k 54 4 5
+hline l 55 88 5
+px n 88 4 88 5
 # graduations au quart
-px m 62 4 71 4 81 4
+px m 63 4 71 4 80 4
