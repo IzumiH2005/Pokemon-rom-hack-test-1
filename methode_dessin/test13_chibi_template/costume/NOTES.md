@@ -26,3 +26,11 @@ la tenue changent ; corps, peau, yeux et trait du template restent ceux du test 
 - Asymétrie voulue : une pointe horizontale à gauche et une pointe en diagonale vers le haut à droite, pour éviter l'effet couronne.
 - Piège rencontré : une pointe de 1 à 2 px d'épaisseur devient entièrement du contour. Il faut au moins 3 px sur 2 rangées pour qu'il reste de la couleur.
 - J'ai aussi gardé une mèche qui tombe sur le front (x13-14) et la naissance des cheveux claire au centre.
+
+## Retour : coiffé en arrière
+- Le front est haut et dégagé. La naissance des cheveux est en M, avec la ligne sombre seulement aux coins pour ne pas faire de bandeau.
+- Il y a un volume à l'avant du sommet : les rangées 2-3 sont plus étroites que le crâne, ce qui donne une bosse arrondie.
+- Les côtés sont serrés et collent au crâne (1 px de débord à l'arrière).
+- Les lignes de mèches en D partent du front et s'écartent en montant, ce qui donne l'impression que les cheveux sont tirés vers l'arrière.
+- Un reflet h en haut à gauche donne l'effet plaqué et brillant.
+- Abandonné : des pointes à la nuque derrière les oreilles. Trop fines, elles se lisaient comme des couettes ou des antennes.

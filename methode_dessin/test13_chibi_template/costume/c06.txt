@@ -1,50 +1,22 @@
-# c06 calque cheveux (toile 32x39) : coupe courte en bataille d'après la 2e référence
-# masse collée au crâne (+1 à 2 px), pas de casque
-hline H 11 20 5
-hline H 9 22 6
-hline H 8 23 7
-hline H 7 24 8
-rect H 6 9 25 13
-# tempes courtes, front dégagé (naissance en M)
-hline H 6 9 14
-hline H 22 25 14
-hline H 6 8 15
-hline H 23 25 15
-# pointes du sommet, chacune dans sa direction
-px H 10 1
-hline H 10 11 2
-hline H 10 12 3
-hline H 11 13 4
-px H 15 0
-hline H 15 16 1
-hline H 15 17 2
-hline H 14 17 3
-hline H 14 18 4
-px H 21 1
-hline H 20 21 2
-hline H 19 21 3
-hline H 18 21 4
-# pointes hautes des côtés
-px H 5 4
-hline H 5 7 5
-hline H 5 9 6
-hline H 6 9 7
-px H 26 4
-hline H 24 26 5
-hline H 22 26 6
-# pointes horizontales au milieu des côtés
-px H 3 10
-rows H 9 4 5 4 5 4 5
-# à droite : une pointe vers le haut-droite (asymétrie)
-hline H 22 27 7
-hline H 24 28 8
-px H 29 9
-rows H 8 26 28 26 28 26 28
-# mèches au niveau des oreilles, tournées vers le bas
-rows H 14 4 6 3 6 3 5 3 4
-px H 3 18
-rows H 14 25 27 25 28 26 28 27 28
-px H 28 18
-# une mèche qui tombe sur le front
-hline H 13 14 14
-px H 14 15
+# c06 calque cheveux (toile 32x39) : coiffé en arrière, front haut dégagé
+# volume à l'avant du sommet (les cheveux remontent puis partent vers l'arrière)
+hline H 13 18 2
+hline H 11 21 3
+hline H 10 22 4
+hline H 9 23 5
+hline H 8 23 6
+hline H 7 24 7
+rect H 7 8 24 10
+# naissance des cheveux haute, en M : le centre du front reste en peau
+hline H 7 11 11
+hline H 20 24 11
+rect H 7 12 9 13
+rect H 22 12 24 13
+# côtés serrés jusqu'aux pattes
+hline H 7 8 14
+hline H 23 24 14
+hline H 7 8 15
+hline H 23 24 15
+# léger débord à l'arrière de la tête (la masse repoussée derrière)
+rows H 10 6 6 6 6 6 6
+rows H 10 25 25 25 25 25 25
