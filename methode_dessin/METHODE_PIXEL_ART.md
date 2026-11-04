@@ -1,4 +1,4 @@
-# Méthode de pixel art — objets et personnages (v5)
+# Méthode de pixel art — objets et personnages (v6)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
@@ -9,7 +9,7 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
   matières, finition et contrôle ;
 - la **partie B** donne les étapes de construction d'un **objet** ;
 - la **partie C** donne les étapes de construction d'un **personnage** (anatomie, visage,
-  cheveux) ;
+  cheveux) ; **C10** donne les règles par taille (8 à 128 px) ;
 - un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels ;
 - la section **A4b** (simplifier) s'applique dès qu'une taille est imposée.
 
@@ -546,7 +546,8 @@ yeux.
 **En pixels :**
 - tête de 6 px ou moins : 1 px sombre par œil, pas de nez ;
 - tête de 7 à 12 px : yeux de 1×2 ou 2×2 px, nez en 1 px d'ombre ;
-- au-delà : on applique les rapports ci-dessus.
+- au-delà : on applique les rapports ci-dessus ;
+- détail par taille (yeux, expressions, format GBA) : **C10**.
 
 **Œil en grand (dès 32 px de tête) [P], dans l'ordre :**
 1. trait : paupière du haut épaisse (2 à 3 px) avec un cil qui part au coin extérieur ;
@@ -723,6 +724,140 @@ Les bosses d'un membre ne sont jamais face à face à la même hauteur :
   plus plat. Dans chaque pose, un côté est pincé et l'autre étiré.
 - Les muscles s'emboîtent comme des coins, jamais posés côte à côte comme des saucisses.
 
+## C10. Personnages en pixel art, taille par taille [R]
+Plus le personnage est petit, plus on **exagère** la tête et les yeux et plus on
+**supprime** (nez, bouche, doigts, cou). On choisit la taille d'après ce qu'il faut lire :
+à 16 px, une direction et une coiffure ; à 32 px, une expression ; à 64 px, un visage.
+
+### A. Table par hauteur du personnage
+
+| Hauteur | Têtes | Tête / hauteur | Yeux | Nez, bouche | Bras, mains | Couleurs |
+|---|---|---|---|---|---|---|
+| 8 px | 1 à 1,5 | ≈ 60 % | 1 px chacun | aucun | aucun ou 1 px | 3 à 4 |
+| 16 px | 2 à 3 | 45 à 60 % | 1×1 ou 1×2 | aucun | bras 1 px, main = 1 px de peau | 5 à 8 |
+| 20 à 24 px | 1,6 à 2,5 | 50 à 62 % | 1×2 | bouche rare (1 px) | bras 1 à 2 px | 8 à 13 |
+| 32 px | 2,5 à 4 | 40 à 50 % | 2×2 avec 1 px de reflet | nez = 1 px d'ombre, bouche 1 à 2 px | main = bloc 2×2, pouce 1 px | 10 à 14 |
+| 48 px | 4 à 5 | 30 à 40 % | 3×2 à 3×3 : paupière, iris, pupille, reflet | nez par l'ombre, bouche 2 à 3 px | moufle + pouce | 12 à 16 |
+| 64 px | 5 à 6 | 25 à 35 % | 4×3 et plus, avec blanc de l'œil | nez en plan d'ombre, lèvre du bas par son ombre | doigts en 2 masses | 14 à 20 |
+| 96 px et plus (portrait) | réaliste | — | recette « œil en grand » (C4) | narine, lèvres | doigts séparés | 16 (portrait GBA) |
+
+- Style « héroïque » : tête sous 35 % ; c'est alors une capuche, une cape ou une arme qui
+  porte la silhouette.
+- Les yeux 2×2 avec reflet n'apparaissent qu'au-dessus de 16×24 ; en dessous, un reflet
+  blanc rend le regard fou.
+- Le blanc de l'œil n'existe qu'à partir de 3 px de large.
+
+### B. Format Pokémon GBA (notre ROM)
+- **Sprite de dresseur sur la carte :** cellule 16×32 ; le personnage occupe ≈ 14×20 px,
+  pieds sur la dernière rangée, vide au-dessus. Tête ≈ 60 % de la hauteur (≈ 1,6 tête),
+  yeux 1×2 sombres, **pas de bouche ni de nez**, 13 à 14 couleurs.
+- **Palette :** 16 couleurs dont l'index 0 transparent → 15 utiles. Répartition type :
+  contour 1, peau 3, cheveux 3, vêtement principal 3, vêtement secondaire 2 à 3, yeux et
+  détail 1 à 2, blanc 1.
+- **Portrait ou sprite de combat :** 5 tons de peau, 9 pour le reste ; contour = la couleur
+  la plus sombre. Palette sûre : 3 couleurs × 3 tons ; un objet sombre prend 2 tons +
+  contour, un objet clair jusqu'à 5 ; les cheveux peuvent prendre un 4e ton.
+
+### C. Placer le visage aux petites tailles
+1. **La frange fixe la ligne des yeux** : les yeux se collent sous les cheveux, sur la
+   moitié basse de la tête. Yeux bas et écartés = jeune et mignon ; plus hauts et serrés =
+   plus âgé ou plus dur.
+2. **Écart :** à 16 px, 2 px de peau entre les yeux (1 px fait loucher, 3 px élargit la
+   face). Sous les yeux, 1 à 2 rangées de peau, puis le menton.
+3. **Pas de cou** sous 32 px : la tête repose sur les épaules.
+4. **3/4 :** tout le visage glisse vers le côté regardé ; l'œil du fond fait 1 px de moins
+   ou touche le bord du visage ; dès 32 px, le nez est 1 px qui dépasse du contour.
+5. **Profil :** un seul œil, 1 px en retrait du bord du visage ; l'oreille en 1 à 2 px de
+   peau plus sombre au milieu de la tête.
+6. **Dos :** aucun trait, les cheveux couvrent la tête ; on garde la même hauteur de tête.
+
+### D. Recettes d'yeux, pixel par pixel
+- **1×1 :** le ton le plus sombre de la palette (pas forcément noir).
+- **1×2 vertical (standard GBA) :** 2 px sombres ; variante : haut sombre, bas couleur de
+  l'iris.
+- **2×2 :** rangée du haut sombre (paupière) ; en bas, 1 px d'iris + 1 px de reflet clair
+  du côté de la lumière.
+- **3×3 :** rangée du haut = paupière sombre qui déborde de 1 px vers l'extérieur (le cil) ;
+  au milieu, pupille + iris + reflet ; en bas, 1 px d'iris clair ou de blanc bleuté.
+- **4×4 et plus :** recette « œil en grand » de C4.
+- **Partout :** les deux yeux ont la même forme (sauf en 3/4), le reflet est **du même côté**
+  sur les deux, et le noir pur est réservé aux pupilles.
+- **Sourcils :** à 16 px, la frange les remplace ; dès 24 à 32 px, un trait de 2 à 3 px dans
+  le ton sombre des cheveux, assez haut (plus haut = plus doux).
+
+### E. Expressions au pixel
+On ne touche **qu'aux sourcils, aux yeux et à la bouche** ; le reste de la tête est
+recopié à l'identique, sinon l'animation tremble.
+
+| Émotion | 16 px (yeux seuls) | 32 px et plus |
+|---|---|---|
+| Joie | yeux en ligne de 2×1 ou en « ^ » | bouche ouverte, joues 1 px rosé |
+| Colère | yeux 1×1 + 1 px d'ombre au coin intérieur haut | sourcils en V, yeux plus petits |
+| Tristesse | yeux 1 px plus bas | intérieur des sourcils levé, bouche courbée vers le bas |
+| Surprise | yeux 2×2 | yeux agrandis, bouche ronde sombre |
+| Fatigue, ennui | yeux 2×1 horizontaux | paupière à mi-hauteur de l'iris |
+
+### F. Couleurs du personnage
+- **3 tons par partie**, 6 à 12 couleurs pour un petit personnage. Une teinte dominante pour
+  le personnage, une couleur d'accent.
+- **Peau :** base pêche ; ombre vers le rose ou le rouge-violet ; ombre profonde vers le
+  violet-bleu ; lumière vers le jaune. ≈ 20° de décalage de teinte par cran, **dans le même
+  sens pour toutes les rampes**.
+- **Contour :** jamais noir ; un brun-rouge ou violet très sombre. Contour extérieur plus
+  sombre que le contour intérieur. Contre la peau, le trait prend l'ombre de la peau ou
+  disparaît (selout).
+- **Séparation :** membres proches plus clairs, membres éloignés plus sombres.
+- **Lumière :** une direction fixe pour tout le projet ; le visage reste majoritairement
+  éclairé (C4).
+
+### G. Vue de dessus 3/4 (jeu type Pokémon)
+- On voit le **haut des épaules** ; le torse passe un peu sous la tête.
+- Sprite 1 tuile de large × 2 de haut ; les pieds sont toujours sur la même rangée.
+- **Directions :** face d'abord, puis dos, puis profil ; l'autre profil = miroir, sauf
+  détail asymétrique (sac, mèche, arme) qu'on redessine.
+- Même hauteur et même épaisseur de membres dans toutes les directions : on fait tourner
+  le personnage pour vérifier.
+- Hauteurs fixes par type : enfant < femme < homme ; une personne âgée un peu voûtée.
+- Deux personnages peuvent se chevaucher en hauteur, jamais en largeur.
+
+### H. Animation
+- Mannequin en aplats d'abord ; costume et équipement sur des calques séparés.
+- **Marche :** pas, passage, autre pas, passage (3 images uniques) ; le corps monte de 1 px
+  aux passages ; les pieds ne glissent pas ; 100 à 150 ms par image. Plus fluide : 6 images.
+- **Attente :** respiration de 1 px (tête et épaules) ; on tient les poses extrêmes plus
+  longtemps ; cheveux et reflets bougent par petits pas réguliers.
+- Le rebond de tête est asymétrique (il monte plus vite qu'il ne descend).
+
+### I. Mains, cheveux, identité
+- **Mains :** grossies volontairement ; on les dessine avant de régler les chevauchements.
+- **Cheveux en petit :** une masse unique, 2 à 3 mèches finissant en pointe de 1 px, un
+  reflet en bande cassée (jamais une rangée régulière). La coiffure est le premier marqueur
+  d'identité.
+- **Identité :** une forme forte (coiffure, chapeau, cape), une couleur dominante, une
+  asymétrie voulue. Silhouettes types : guerrier large, mage en trapèze (robe), archer fin,
+  soigneur en tons pastel.
+- **Test :** en noir uni, à ×1, on reconnaît le personnage et sa direction.
+
+### J. Procédure
+1. Taille et rôle → lire la table A (part de la tête, yeux, couleurs).
+2. Mannequin en aplats : tête, torse, membres proches, membres éloignés, ligne de sol.
+3. **Le visage tout de suite** : il fixe l'échelle (ligne des yeux, recette D).
+4. Coiffure et vêtements, puis test de la silhouette noire.
+5. Palette (F), contour et selout, lumière.
+6. Expressions, directions, animation.
+7. Contrôle K.
+
+### K. Contrôle et erreurs fréquentes
+1. La tête et les yeux respectent-ils la table A ? Pas de nez ni de bouche à 16 px ?
+2. Les yeux sont-ils sous la frange, bien espacés, reflets du même côté ?
+3. Courbes : au plus 2 longueurs de pente, pas d'écart de plus de 1 entre pentes voisines,
+   un angle vif finit sur 1 px.
+4. Anticrénelage : 1 à 2 px par coin au plus, jamais sur le contour extérieur d'un sprite
+   de jeu.
+5. Pas de banding, pas de pillow shading, pas de pixel orphelin sur le visage.
+6. Lisible à ×1, en noir uni, et dans toutes les directions ?
+7. Budget de couleurs tenu (15 + transparent sur GBA) ?
+
 ---
 
 ## Résumé
@@ -732,7 +867,7 @@ volumes et terminateur → simplification (A4b) → forme iconique → silhouett
 palette → lumière selon la matière → variation de couleur → détails → nettoyage → contrôle en situation.
 
 **Personnage :** intention et références → proportions → pose → volumes → visage →
-vêtements → cheveux → silhouette → contour → palette → ombres à la main → détails →
+vêtements → cheveux → table par taille (C10) → silhouette → contour → palette → ombres à la main → détails →
 nettoyage → contrôle avec la référence.
 
 Un concept à la fois, du grand au petit. Aucun pixel de détail tant que la structure n'est
