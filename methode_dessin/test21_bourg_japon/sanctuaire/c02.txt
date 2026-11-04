@@ -1,0 +1,51 @@
+# c02 aplats
+# toit cuivre vert-de-gris
+rows h 10 14 65 14 65 13 66 13 66 13 66 12 67 12 67 11 68 11 68 10 69 9 70 8 71 7 72 6 73 5 74 4 75 3 76 2 77 1 78 0 79
+rect g 14 6 65 9
+line g 12 0 19 8
+line g 13 0 20 8
+line g 19 0 12 8
+line g 20 0 13 8
+line g 59 8 66 0
+line g 60 8 67 0
+line g 59 0 66 8
+line g 60 0 67 8
+rows g 4 28 33 27 34
+rows g 4 46 51 45 52
+# karahafu : bosse en arc devant le toit
+rows i 22 36 43 34 45 33 46 32 47 31 48 30 49 29 50 29 50
+# pignon du karahafu en creux (bois sombre) + gegyo dore
+rows t 24 35 44 34 45 33 46 32 47 31 48 31 48
+rect z 39 25 40 26
+px w 38 26 41 26
+# egout : planche vermillon
+rect l 0 30 79 32
+rect l 28 30 51 34
+# corps : poteaux vermillon, murs blancs
+rect Q 12 33 67 49
+rect l 12 33 14 49
+rect l 25 33 27 49
+rect l 52 33 54 49
+rect l 65 33 67 49
+rect l 12 35 67 36
+hline l 12 67 44
+# entree : portes a treillis (sombres)
+rect t 28 37 51 49
+# shimenawa paille + shide
+rect w 16 37 63 38
+rect w 30 39 49 39
+rect w 34 40 45 40
+rect Q 21 39 22 42
+rect Q 57 39 58 42
+rect Q 31 40 32 43
+rect Q 47 40 48 43
+# grelot + corde
+rect z 38 41 41 43
+vline l 39 44 46
+vline Q 40 44 46
+# soubassement + marches
+rect s 4 50 75 57
+rect s 28 58 51 63
+# tronc d'offrandes (apres la dalle : il pose dessus)
+rect w 33 46 46 47
+rect t 33 48 46 53

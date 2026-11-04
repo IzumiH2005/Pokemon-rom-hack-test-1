@@ -1,0 +1,71 @@
+# c05 details
+vline g 5 25 28
+vline g 9 24 28
+vline g 13 18 22
+vline g 13 24 28
+vline g 17 12 16
+vline g 17 18 22
+vline g 17 24 28
+vline g 21 12 16
+vline g 21 18 22
+vline g 21 24 28
+vline g 25 12 16
+vline g 25 18 22
+vline g 25 24 28
+vline g 29 12 16
+vline g 29 18 22
+vline g 29 24 26
+vline g 33 12 16
+vline g 33 18 22
+vline g 37 12 16
+vline g 37 18 21
+vline g 41 12 16
+vline g 41 18 21
+vline g 45 12 16
+vline g 45 18 22
+vline g 49 12 16
+vline g 49 18 22
+vline g 53 12 16
+vline g 53 18 22
+vline g 53 24 28
+vline g 57 12 16
+vline g 57 18 22
+vline g 57 24 28
+vline g 61 12 16
+vline g 61 18 22
+vline g 61 24 28
+vline g 65 12 16
+vline g 65 18 22
+vline g 65 24 28
+vline g 69 20 22
+vline g 69 24 28
+vline g 73 24 28
+px j 18 13 18 14 22 13 22 14 14 19 14 20 18 19 18 20
+px t 17 38 18 37
+px t 21 38 22 37
+px t 25 38 26 37
+px t 29 38 30 37
+px t 33 38 34 37
+px t 37 38 38 37
+px t 41 38 42 37
+px t 45 38 46 37
+px t 49 38 50 37
+px t 53 38 54 37
+px t 57 38 58 37
+px t 61 38 62 37
+px q 22 40 21 42
+px Q 23 40 20 41
+px q 58 40 57 42
+px Q 59 40 56 41
+px q 32 41 31 43
+px Q 33 41 30 42
+px q 48 41 47 43
+px Q 49 41 46 42
+px w 35 49 38 49 41 49 44 49 35 50 38 50 41 50 44 50 35 51 38 51 41 51 44 51 35 52 38 52 41 52 44 52
+vline A 14 53 56
+vline A 26 53 56
+vline A 53 53 56
+vline A 65 53 56
+rep t O 29 39 51 41
+px k 32 42 32 43 32 44 32 45 32 46 32 47 32 48 36 42 36 43 36 44 36 45 36 46 36 47 36 48 43 42 43 43 43 44 43 45 43 46 43 47 43 48 47 42 47 43 47 44 47 45 47 46 47 47 47 48
+hline k 29 51 42

@@ -1,0 +1,20 @@
+# c01 A : nagare + chigi croises + katsuogi
+rows 3 10 10 69 10 69 10 69 10 69 9 70 9 70 9 70 9 70 8 71 8 71 8 71 7 72 7 72 6 73 5 74 4 75 3 76 2 77 1 78 1 78
+rect 3 10 6 69 9
+line 3 8 0 15 8
+line 3 9 0 16 8
+line 3 15 0 8 8
+line 3 16 0 9 8
+line 3 64 8 71 0
+line 3 63 8 70 0
+line 3 64 0 71 8
+line 3 63 0 70 8
+rect 3 26 3 31 5
+rect 3 37 3 42 5
+rect 3 48 3 53 5
+rect 3 0 30 79 32
+rect 3 8 33 71 49
+rect 3 4 50 75 57
+rect 3 28 58 51 63
+rect 2 28 37 51 49
+rect 2 33 46 46 53
