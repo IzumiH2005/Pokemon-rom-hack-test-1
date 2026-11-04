@@ -1,9 +1,14 @@
-# Méthode de pixel art — objets, personnages et créatures (v10.5)
+# Méthode de pixel art — objets, personnages et créatures (v10.6)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
 (silhouette, valeurs, clusters, lignes propres, rampes, lumière).
 
+> **v10.6 :** nouvelles sections **A7** (finition pro chiffrée : construire une rampe,
+> nombre de tons selon la taille, budget couleur, couleur du contour et des lignes
+> intérieures, courbes, lumière réfléchie, ombre de bord, tests du pro) et **C6c**
+> (cheveux anime : poids, flicks, ahoge, ombrage cel, angel ring, leçons du test 14).
+>
 > **v10.5 :** nouvelle section **C6b** (cheveux, astuces de pro : touffes, une seule
 > lumière, ombre sous la frange, ni coussin ni banding, rampe 3 valeurs + reflet, selout,
 > mèches libres en dernier, leçons du test 13 sur les pointes, les plaqués et les favoris).
@@ -60,14 +65,14 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 | Frange et sourcils | C6 · C10-J2 · C12-F · C13-D |
 | Liquide, verre | A5-8b · B5 · C13-D |
 | Vêtements | C5 (design) · C13-B · C14 (calque sur corps nu) · **C17** (plis, matières, recettes) |
-| Rendu pro (rampes, AA, défauts) | **A6** · A5-10 |
+| Rendu pro (rampes, AA, défauts) | **A6** · **A7** (chiffres et tests) · A5-10 |
 | Jointures du corps | C2 · C3 · C14-A |
 
 **Sources :** [Z] *Apprendre à tout dessiner avec Zephy* · [M] livre de dessin manga · [I]
 planches d'anatomie fournies · [C] planches sur les cheveux fournies · [R] recherches
 (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de lisibilité d'icônes,
 simplification des formes) · [P] planches fournies (cheveux, œil, arche, cristal, flamme,
-déclinaisons par taille, projections) · [T1]…[T13] leçons de nos propres tests (T8 : visage
+déclinaisons par taille, projections) · [T1]…[T14] leçons de nos propres tests (T8 : visage
 de face ; T9 : chibi « Pip » ; T10 : chibi2, corps d'abord) · [L] méthode Loomis et tutoriels de visage anime (règles
 reformulées) · [A] analyse de portraits anime en pixel art fournis en exemple (règles
 reformulées).
@@ -556,6 +561,115 @@ détails tant que l'étape précédente ne se lit pas à ×1.
 
 ---
 
+## A7. Finition pro : règles chiffrées [R][T14]
+A6 donne les principes ; A7 donne des **chiffres et des tests** pour décider vite. À
+relire au moment des couleurs (A5-7/8) et au contrôle final.
+
+### A. Construire une rampe (pas à pas)
+1. Choisir le **ton moyen** d'abord : c'est lui le plus saturé de la rampe.
+2. Vers l'ombre : chaque marche **baisse la luminosité**, **monte un peu la saturation**
+   et **tourne la teinte vers le froid** (bleu, violet). Vers la lumière : la luminosité
+   monte, la saturation **baisse**, la teinte tourne vers le **chaud** (jaune).
+3. Écart de teinte : **10 à 20° par marche** au plus. Une rampe dont la teinte ne bouge
+   pas (« rampe droite ») est interdite : elle donne des ombres boueuses.
+4. **Ni 0 %, ni 100 %** de luminosité ou de saturation (sauf pupille, éclat de métal).
+   Haute saturation + haute luminosité ensemble = couleur qui « crie » : à éviter.
+5. **Marches plus courtes près du blanc** : l'œil distingue moins les clairs, donc les
+   deux tons les plus clairs sont plus proches entre eux que les deux plus sombres.
+6. **Contraste égal entre voisins** : en gris, aucun saut plus grand que les autres.
+   Désaturer seul pour faire l'ombre donne du gris sale : toujours tourner la teinte.
+
+### B. Combien de tons d'ombrage selon la taille
+| Taille du sprite | Tons par matière | Remarque |
+|---|---|---|
+| 16 px | 2 (+ trait) | lumière / ombre, rien d'autre |
+| 32 px | 3 | moyen, ombre, clair ; le selout commence à payer ici |
+| 48 px | 3 à 4 | + AO ou reflet sur une seule matière |
+| 64 px et plus | 4 à 5 | rampe complète, lumière réfléchie possible |
+- **Budget couleur :** au-delà de **~16 couleurs** pour un sprite de jeu, c'est trop.
+  **Test « une couleur de moins »** : retirer la couleur la moins utile et la remplacer
+  par sa voisine. Si on ne voit pas la différence à ×1, elle reste retirée.
+- **Petites pièces** (œil, bouton, boucle) : on sépare par la **valeur** (clair/foncé).
+  **Grandes pièces** (cape, cheveux, corps) : on module par la **teinte**.
+- Deux couleurs trop proches (même valeur, teinte voisine) se lisent comme une seule :
+  fusionner, ou écarter franchement leur valeur.
+
+### C. Couleur du contour et des lignes intérieures
+- Le contour est **plus sombre que l'objet ET que le fond** : il doit toujours
+  **augmenter** le contraste, jamais le réduire.
+- **Une couleur de trait par matière** (bas de la rampe de chaque matière) ; le contraste
+  trait/remplissage reste **à peu près constant** tout autour du sprite.
+- **Lignes intérieures :** un ton plus sombre que la matière = séparation discrète ;
+  beaucoup plus sombre = séparation forte. Une ligne entre deux pièces prend la couleur
+  de la **pièce la plus proche** de l'œil, ou de la plus sombre si l'endroit est à l'ombre.
+  Sur une même surface (pli léger), on l'omet ou on prend le ton sombre de la matière.
+- **Fin de ligne :** une ligne intérieure **s'éteint** vers sa fin (dernier pixel un ton
+  plus clair) au lieu de s'arrêter net ; une ligne trop fine se **coupe** côté lumière.
+- **Pas de trait aux contacts** : main qui tient un objet, pied au sol. Un trait complet
+  fait « flotter » l'objet ou le pied.
+- Un contour peut **entrer de 1 à 2 px** dans le sprite pour suggérer une séparation
+  (bras devant le torse) sans tracer toute la ligne.
+- **Fond sombre :** préférer un trait foncé franc ; si le style impose un trait noir,
+  mettre la couleur dans les lignes intérieures.
+
+### D. Courbes et marches (rappel chiffré)
+- Les segments **les plus longs** sont en haut, en bas, à gauche et à droite d'une courbe ;
+  ils **raccourcissent régulièrement** vers les diagonales : 5-2-2-1-1, jamais 5-2-1-2-1
+  (bosse). Une diagonale droite = segments **tous égaux**.
+- **Ajouter un pixel** au bout d'une forme la rend pointue ; **en retirer un** l'arrondit.
+  C'est l'outil le plus rapide pour corriger une silhouette.
+- **Pixels « gros » :** pas de saillie d'1 px isolée sur la silhouette (sauf pointe
+  voulue) ; une forme qui dépasse fait au moins 2 px.
+- **Jaggy voulu :** une marche cassée exprès peut séparer deux mèches ou deux pièces ;
+  elle doit être seule et lisible, sinon c'est un défaut (A6-C).
+
+### E. Lumière qui fait « fini »
+- **Lumière réfléchie colorée :** l'ombre prend un peu la teinte du sol ou de l'objet
+  voisin (herbe → ombre un peu verte). Ombre grise neutre = rendu « naïf ».
+- **Ombre de bord (rim shadow) :** le ton le plus sombre sur **1 px du bord opposé à la
+  lumière** arrondit fortement le volume. Un seul côté, pas tout autour (coussin).
+- **Contre-jour (rim light) :** liseré clair d'1 px, **avec parcimonie**, pour détacher
+  un sprite d'un fond sombre. Le trait peut virer vers la teinte de la lumière pour un
+  effet de lueur.
+- **Les éclats les plus clairs en dernier** : un éclat = matière brillante (cheveux,
+  cuir verni, métal, yeux). Matière mate (laine, peau) = pas d'éclat blanc.
+- **Saturation au point d'intérêt :** la couleur la plus saturée et le contraste le plus
+  fort vont au **visage** (ou à l'élément clé). Le reste est un cran plus calme.
+- **Dithering :** seulement en textures ou grands aplats (A6-C). Sur un sprite de jeu,
+  zéro par défaut.
+
+### F. Penser en volumes, pas en dessin plat
+- Avant l'ombrage, réduire chaque pièce à un **volume simple** (boule, cylindre, boîte)
+  et ombrer ce volume. Un ombrage qui suit le contour au lieu du volume « aplatit ».
+- Un design « carton » (raide, symétrique, de face) se corrige par une **ligne d'action**,
+  une asymétrie (mèche, accessoire) et une **exagération** du trait de caractère.
+
+### G. Les tests du pro (à faire sur la planche A5-11)
+| Test | Comment | Ce qu'on doit voir |
+|---|---|---|
+| **Plisser les yeux** | regarder la planche à ×1 en plissant les yeux | quelques **grandes taches** claires et sombres, pas de grésillement |
+| **Gris** | colonne grise de la planche | chaque matière a sa valeur ; le visage a le plus fort contraste |
+| **Silhouette** | colonne noire | la pose et la coiffure se reconnaissent sans couleur |
+| **Taille réelle** | ×1 sur fond clair et sombre | aucun détail ne devient bruit ; le contour tient sur les deux fonds |
+| **Miroir** | colonne miroir | aucune pente ni proportion fausse ne saute aux yeux |
+| **Une couleur de moins** | retirer une couleur | si rien ne change, la retirer |
+| **En situation** | sprite sur le décor du jeu | il se détache du fond sans liseré forcé |
+
+**Sources :** [Derek Yu, erreurs fréquentes](https://derekyu.com/makegames/pixelart2.html)
+· [Slynyrd, palettes](https://www.slynyrd.com/blog/2018/1/10/pixelblog-1-color-palettes)
+· [pixnote, ombrage](https://pixnote.net/en/learn/shading/)
+· [pixnote, palette](https://pixnote.net/en/learn/color-palette/)
+· [Lospec, contours](https://lospec.com/articles/pixel-art-outlines)
+· [Lospec, contours et couleur](https://lospec.com/articles/pixel-art-outlines-part-2-using-color)
+· [Humbird0, créer des sprites](https://humbird0.com/makes/tutorials/create_sprites/content.htm)
+· [MIT GDG, guide de style](https://gdg.mit.edu/style-guide)
+· [clusters et AA](https://www.toolify.ai/ai-news/pixel-art-tutorial-mastering-clusters-and-antialiasing-3479126)
+· [pixel-editor, théorie des couleurs](https://www.pixel-editor.com/articles/color-theory-for-pixel-art)
+· [Pixel Grimoire #7](https://medium.com/pixel-grimoire/how-to-start-making-pixel-art-7-e504bfa4ddf2)
+· [DEV Community, guide complet](https://dev.to/autosprites/from-zero-to-mastery-a-complete-pixel-art-guide-for-modern-game-developers-205i)
+
+---
+
 # Partie B — Objets
 
 ## B0. Intention
@@ -906,6 +1020,66 @@ pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un br
 · [androidarts](https://androidarts.com/pixtut/pixelart.htm)
 · [sprite-ai, pixel art anime](https://www.sprite-ai.art/blog/anime-pixel-art)
 
+## C6c. Cheveux stylisés (anime) et finition [R][T14]
+S'ajoute à C6 et C6b. Pour une coiffure « anime », on exagère les formes, on réduit les
+tons et on soigne le contour.
+
+**Formes :**
+- **Cheveux = poids.** Ils tombent vite : une mèche part du crâne, suit une courbe
+  simple puis **pend à la verticale**. Les boucles « ondulent » autour d'une ligne
+  verticale, elles ne flottent pas en l'air.
+- **Suggérer la texture, ne pas dessiner les fils** : 3 à 6 grosses touffes lisibles
+  valent mieux que 20 mèches. La coiffure est le **premier signe d'identité** du
+  personnage (silhouette différente de celle des autres).
+- **Frange en profil dessiné à la main :** une longueur par colonne, avec une alternance
+  longue / courte et **une mèche centrale plus longue** ou décalée (asymétrie).
+- **Pointes vers l'extérieur (flicks) :** au moins **3 px d'épaisseur à la base** et
+  **2 rangées**, sinon la règle de contour les rend tout trait [T14]. La pointe finit
+  sur **1 px de contour**, pas sur un pixel de couleur isolé.
+- **Ahoge (mèche rebelle) :** 2 à 3 rangées au-dessus du crâne, courbée, d'un seul côté.
+  Un seul ahoge, jamais deux.
+- **Mèches avant longues :** elles s'arrêtent **avant les mains** et ne croisent pas le
+  bras ; sinon elles se mélangent au corps à ×1 [T14].
+
+**Ombrage cel (aplats) :**
+- **2 tons + 1 ombre profonde + 1 reflet**, à limites franches (pas d'AA, pas de
+  dégradé). L'ombre est **plus saturée** que la base, jamais simplement plus foncée.
+- **Ombre portée de la frange** sur le front et sous chaque touffe qui en recouvre une
+  autre : c'est ce qui donne les couches.
+- **Pointe d'une mèche :** ton moyen (ou clair) sur la pointe, l'ombre profonde sur la
+  **colonne voisine** côté ombre. Une colonne entière d'ombre profonde au bout d'une
+  mèche se lit comme une rayure [T14].
+- **Couronne de reflet (angel ring) :** arc clair qui **suit l'arrondi du crâne** au
+  premier tiers de la hauteur, en **dents de scie** (petits triangles qui pointent vers le
+  bas, alignés sur les touffes). Toujours au même endroit d'une image d'animation à
+  l'autre. Sur un petit sprite (< 48 px), 3 à 5 pixels suffisent.
+- Les **éclats les plus clairs** (blanc chaud) se posent en tout dernier, 1 ou 2 clusters
+  seulement, côté lumière.
+
+**Contour :**
+- Masque des cheveux posé à la main, puis **trait automatique seulement là où les cheveux
+  touchent le vide ou les vêtements**, jamais la peau : la limite avec le visage reste un
+  contraste de couleur (C6b) [T14].
+- **Selout** sur le dessus éclairé (bas de la rampe des cheveux), trait foncé en bas et
+  côté ombre. Un **jaggy voulu** (marche cassée) peut séparer deux touffes du contour.
+- L'ombrage **ne remplace jamais** un pixel de contour : on vérifie qu'aucun trou
+  n'apparaît dans le trait après avoir ombré [T14].
+
+**Leçons du test 14 (toile 32×39) [T14] :**
+- Coupe au carré « seau » (côtés droits, bas plat) : courber les côtés et faire dépasser
+  des pointes avant plus claires sur des cheveux de derrière plus sombres.
+- Lignes de mèche en pointillés = bruit : 2 ou 3 lignes continues au plus.
+- Ombre portée tout le long d'une frange en biais = rayures : la limiter au haut des
+  creux et sous les pointes.
+- Remettre le visage sous la frange en ne recopiant **que les pixels non vides** du corps
+  de base, sinon on efface la mâchoire et les cheveux de derrière.
+
+**Sources :** [Slynyrd, visages et cheveux anime](https://slynyrd.com/blog/2020/7/28/pixelblog-29-anime-faces-and-hair)
+· [Aseprite, visage anime d'après Slynyrd](https://community.aseprite.org/t/anime-face-based-off-slyndyrd/19607)
+· [Clip Studio, cheveux en cel](https://tips.clip-studio.com/en-us/articles/11408)
+· [Unity Toon Shader, angel ring](https://docs.unity3d.com/Packages/com.unity.toonshader@0.13/manual/AngelRing.html)
+· [Humbird0, créer des sprites](https://humbird0.com/makes/tutorials/create_sprites/content.htm)
+
 ## C7. Astuces de figure [R]
 - Le geste d'abord, l'anatomie par-dessus : si les muscles cassent la ligne d'action, on
   redessine les muscles, pas la pose.
@@ -926,7 +1100,7 @@ pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un br
    part-il de derrière la mâchoire ? Le pouce part-il du poignet ?
 4. Peut-on nommer les muscles qui font le contour de chaque membre (C9-I) ? Reste-t-il un
    bras « tube » ou un torse « rectangle » ?
-5. Les cheveux passent-ils le contrôle C6 (et C6b) ?
+5. Les cheveux passent-ils le contrôle C6 (et C6b, C6c) ?
 6. À côté de la référence, le dessin tient-il la comparaison ?
 
 ## C9. Anatomie de référence [I]
