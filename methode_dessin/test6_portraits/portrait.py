@@ -14,30 +14,72 @@ PAL = {
  'W': (234, 242, 248),                                                # blanc bleuté
  'r': (250, 142, 82), 'q': (212, 76, 66),                             # veste ; ombre = 4
 }
-LOOMIS = Tete(50, 37, 22, lacet=28, tangage=5, roulis=-5)   # la tête construite (C12)
+
+def sym(*pts):
+    """Miroir d'une liste de points autour de x = 50 (vue de face)."""
+    return [(100 - x, y) for x, y in pts]
+
+VUES = {
+ '34': dict(tete=Tete(50, 37, 22, lacet=28, tangage=5, roulis=-5),
+    dos=chemin((22, 36), ((22, 14), (40, 6), (54, 7)), ((70, 8), (80, 20), (79, 38)),
+                 ((79, 52), (81, 62), (83, 70)), (77, 68), (74, 72), (69, 66), (32, 66), (27, 71),
+                 (24, 66), (18, 69), ((20, 58), (21, 46), (22, 36))),
+    veste=chemin((2, 100), ((4, 90), (12, 85), (24, 83)), ((35, 81), (42, 77), (47, 75)), (63, 74),
+                   ((68, 77), (75, 81), (84, 83)), ((92, 85), (97, 92), (99, 100))),
+    col=chemin((44, 76), (55, 90), (67, 75), (62, 74), (55, 84), (49, 75)), ombre_veste=64,
+    meches=[
+        ((29, 28), (23, 42), (22, 56), (26, 70), 9),     # côté lointain, à l'extérieur de la joue
+        ((70, 28), (75, 42), (74, 56), (68, 68), 10),    # côté proche, devant l'oreille
+        ((48, 12), (38, 16), (30, 25), (27, 42), 15),    # frange : grande mèche vers la gauche
+        ((64, 14), (70, 22), (74, 30), (75, 41), 11),    # frange, bord proche
+        ((61, 13), (67, 22), (69, 31), (68, 43), 12),
+        ((60, 13), (63, 24), (63, 33), (61, 42), 11),
+        ((58, 12), (58, 23), (56, 31), (53, 41), 12),
+        ((50, 12), (40, 19), (34, 29), (32, 45), 13),
+        ((53, 12), (46, 21), (40, 30), (37, 43), 14),
+        ((56, 13), (53, 25), (49, 34), (45, 46), 8),     # mèche entre les yeux
+    ],
+    houpe=((55, 9), (55, 2), (63, 1), (65, 6)),
+    lum_x=.55, iris=(.38, .47), oeil_loin=.72, dx_yeux=(1.2, .5), joues=(3, 4.5), dx_nez=-.04, dx_bouche=.05),
+ 'face': dict(tete=Tete(50, 37, 22, lacet=0, tangage=4, roulis=0),
+    # bob symétrique ; la frange a sa raie un peu à droite pour ne pas faire « casque »
+    dos=chemin((21, 36), ((21, 14), (36, 6), (50, 6)), ((64, 6), (79, 14), (79, 36)),
+               ((79, 52), (81, 62), (83, 70)), (77, 68), (74, 72), (69, 66), (31, 66), (26, 72),
+               (23, 68), (17, 70), ((19, 62), (21, 50), (21, 36))),
+    veste=chemin((2, 100), ((4, 90), (12, 85), (24, 83)), ((34, 81), (40, 77), (42, 75)), (58, 75),
+                 ((60, 77), (66, 81), (76, 83)), ((88, 85), (96, 90), (98, 100))),
+    col=chemin((38, 76), (50, 90), (62, 76), (58, 75), (50, 84), (42, 75)), ombre_veste=66,
+    meches=[
+        ((29, 28), (23, 42), (22, 56), (26, 70), 9), ((71, 28), (77, 42), (78, 56), (74, 70), 9),   # côtés
+        ((48, 12), (38, 16), (31, 26), (28, 42), 14), ((56, 12), (64, 16), (70, 26), (72, 42), 14),
+        ((50, 12), (42, 20), (37, 30), (35, 44), 13), ((55, 12), (61, 20), (65, 30), (65, 44), 13),
+        ((52, 12), (48, 22), (44, 32), (43, 44), 12), ((54, 12), (56, 22), (58, 32), (57, 43), 12),
+        ((53, 12), (52, 24), (51, 34), (50, 47), 9),     # mèche au milieu, entre les yeux
+    ],
+    houpe=((53, 9), (53, 2), (61, 1), (63, 6)),
+    lum_x=.3, iris=(.43, .52), oeil_loin=1, dx_yeux=(0, 0), joues=(4, 4), dx_nez=0, dx_bouche=0),
+}
+V = VUES['34']
 CHEV = (50, 35, 26)          # sphère des cheveux : le crâne + l'épaisseur des cheveux
 
 def construire(S):
-    k = S / 100; T = LOOMIS
+    k = S / 100; T = V['tete']
     lab = np.full((S, S), '.', dtype='<U8'); val = np.zeros((S, S)); tt = np.zeros((S, S))
     ys, xs = np.mgrid[0:S, 0:S]; X = (xs + .5) / k; Y = (ys + .5) / k
     hx, hy, hr = CHEV
     nx, ny = (X - hx) / hr, (Y - hy) / hr
-    lumiere = -.55 * nx - .8 * ny                       # lumière en haut à gauche
+    lumiere = -V['lum_x'] * nx - .8 * ny                       # lumière en haut à gauche
     def poser(M, nom, v=0, t=None):
         lab[M] = nom; val[M] = v[M] if isinstance(v, np.ndarray) else v
         if t is not None: tt[M] = t[M]
     # 1. masse arrière : un carré court arrondi, deux pointes douces par côté
-    dos = chemin((22, 36), ((22, 14), (40, 6), (54, 7)), ((70, 8), (80, 20), (79, 38)),
-                 ((79, 52), (81, 62), (83, 70)), (77, 68), (74, 72), (69, 66), (32, 66), (27, 71),
-                 (24, 66), (18, 69), ((20, 58), (21, 46), (22, 36)))
+    dos = V['dos']
     poser(masque(dos, S), 'dos', lumiere - .35)
     # 2. buste : épaules qui tombent depuis le cou (pas un dôme)
-    veste = chemin((2, 100), ((4, 90), (12, 85), (24, 83)), ((35, 81), (42, 77), (47, 75)), (63, 74),
-                   ((68, 77), (75, 81), (84, 83)), ((92, 85), (97, 92), (99, 100)))
-    poser(masque(veste, S), 'veste', .9 - np.hypot(X - 24, (Y - 84) * 2.2) / 30 - 2 * (X > 64 + 1.5 * (Y - 74)))
+    veste = V['veste']
+    poser(masque(veste, S), 'veste', .9 - np.hypot(X - 24, (Y - 84) * 2.2) / 30 - 2 * (X > V['ombre_veste'] + 1.5 * (Y - 74)))
     poser(masque(T.cou(80), S), 'cou')
-    col = chemin((44, 76), (55, 90), (67, 75), (62, 74), (55, 84), (49, 75))
+    col = V['col']
     poser(masque(col, S), 'col')
     # 3. visage : le contour sort de la tête 3D
     poser(masque(T.oreille(1), S), 'oreille')
@@ -50,22 +92,11 @@ def construire(S):
     cal = (np.hypot(X - hx, Y - hy) <= hr) & (Y < 27 + .05 * (X - 30))
     poser(cal, 'cal', lumiere)
     # 5. mèches : côtés, puis frange de l'arrière vers l'avant (racine, ctrl, ctrl, pointe, largeur)
-    meches = [
-        ((29, 28), (23, 42), (22, 56), (26, 70), 9),     # côté lointain, à l'extérieur de la joue
-        ((70, 28), (75, 42), (74, 56), (68, 68), 10),    # côté proche, devant l'oreille
-        ((48, 12), (38, 16), (30, 25), (27, 42), 15),    # frange : grande mèche vers la gauche
-        ((64, 14), (70, 22), (74, 30), (75, 41), 11),    # frange, bord proche
-        ((61, 13), (67, 22), (69, 31), (68, 43), 12),
-        ((60, 13), (63, 24), (63, 33), (61, 42), 11),
-        ((58, 12), (58, 23), (56, 31), (53, 41), 12),
-        ((50, 12), (40, 19), (34, 29), (32, 45), 13),
-        ((53, 12), (46, 21), (40, 30), (37, 43), 14),
-        ((56, 13), (53, 25), (49, 34), (45, 46), 8),     # mèche entre les yeux
-    ]
+    meches = V['meches']
     for i, (a, b, c, d, w) in enumerate(meches):
         M, Tm, Sd = meche(a, b, c, d, w, S, forme=.9)
         poser(M, 'm%d' % i, lumiere - .3 * Sd + .3 - .25 * Tm, Tm)
-    houpe, Th, Sh = meche((55, 9), (55, 2), (63, 1), (65, 6), 2.6, S)   # mèche rebelle
+    houpe, Th, Sh = meche(*V['houpe'], 2.6, S)   # mèche rebelle
     poser(houpe, 'm9', lumiere + .4, Th)
     return lab, val, tt, X, Y, nx, ny
 
@@ -129,12 +160,13 @@ def oeil(G, cx, cy, w, h, ext, S, ferme_=False):
     x0 = round(cx - w / 2); y0 = round(cy - h / 2)
     def haut(xi): return h * (.10 + .14 * (xi - .15) ** 2)            # paupière du haut
     def bas(xi): return h * (.97 - .22 * xi ** 2 + .06 * xi)          # paupière du bas
-    ic = w * (.47 if ext > 0 else .53)                               # regard un peu vers la gauche
+    ic = w * ((.47 if ext > 0 else .53) if V['dx_yeux'][0] else .5)  # 3/4 : regard un peu à gauche
+    rx_i, ry_i = V['iris']
     for j in range(h):
         for i in range(w):
             xi = ((i + .5) / w * 2 - 1) * ext; y = j + .5
             if not (haut(xi) <= y <= bas(xi)): continue
-            dxi = (i + .5 - ic) / (w * .38); dyi = (y - h * .56) / (h * .47)
+            dxi = (i + .5 - ic) / (w * rx_i); dyi = (y - h * .56) / (h * ry_i)
             if dxi * dxi + dyi * dyi <= 1:
                 tv = (y - haut(xi)) / (h * .85)
                 c = '4' if tv < .28 else 'j' if tv < .70 else 'Y'
@@ -190,11 +222,11 @@ def ferme(G, cx, cy, w, h, ext):
 
 def visage(G, S, expr='sourire'):
     """Traits posés depuis la tête 3D : yeux sur la ligne des yeux, nez et bouche sur l'axe."""
-    k = S / 100; T = LOOMIS
+    k = S / 100; T = V['tete']
     w, h = {48: (6, 7), 64: (8, 9), 96: (12, 13)}[S]
-    wl = max(4, round(w * .72))                                  # œil lointain raccourci
+    wl = max(4, round(w * V['oeil_loin']))                       # œil lointain raccourci (3/4)
     (xl, yl), _ = T.regard(-1); (xp, yp), _ = T.regard(1)
-    xl += 1.2; xp += .5
+    xl += V['dx_yeux'][0]; xp += V['dx_yeux'][1]
     oeil(G, xl * k, yl * k, wl, h, -1, S)
     if expr == 'clin': ferme(G, xp * k, yp * k, w, h, 1)
     else: oeil(G, xp * k, yp * k, w, h, 1, S)
@@ -203,15 +235,15 @@ def visage(G, S, expr='sourire'):
         sourcil(G, xl * k, yl * k - h / 2 - 1.5, wl + 1, -1, hs)
         sourcil(G, xp * k + .5, yp * k - h / 2 - 1.5, w + 1, 1, hs)
     # joues : petite ellipse rose sous chaque œil, seulement sur la peau claire
-    for (q, rx) in ((T.p2((-.40, .66, .80)), 3), (T.p2((.48, .64, .76)), 4.5)):
+    for (q, rx) in ((T.p2((-.44, .65, .78)), V['joues'][0]), (T.p2((.46, .65, .78)), V['joues'][1])):
         for y in range(S):
             for x in range(S):
                 if ((x + .5) / k - q[0]) ** 2 / rx ** 2 + ((y + .5) / k - q[1]) ** 2 / 1.3 ** 2 <= 1 and G[y][x] == '1':
                     G[y][x] = 'k'
-    xn, yn = [round(v * k) for v in T.point('nez', -.04)]      # nez : petite ombre côté lointain
+    xn, yn = [round(v * k) for v in T.point('nez', V['dx_nez'])]      # nez : petite ombre côté lointain
     G[yn][xn] = '3'
     if S >= 96: G[yn - 1][xn] = '3'
-    xm, ym = [round(v * k) for v in T.point('bouche', .05)]
+    xm, ym = [round(v * k) for v in T.point('bouche', V['dx_bouche'])]
     B = {48: ['44'], 64: ['4O4', '.k'], 96: ['4OOO4', '.Okk', '..44']}[S]
     if expr == 'clin' and S >= 64: B = ['4OOO4', '.Okk.'] if S >= 96 else ['4OO4', '.kk']
     if expr == 'surprise' and S >= 64: B = ['.44.', '4OO4', '4kk4', '.44.'] if S >= 96 else ['4O4', '.4']
@@ -236,7 +268,9 @@ def nettoyer(G, tours=2):
         G = H
     return G
 
-def portrait(S, etape=99, expr='sourire'):
+def portrait(S, etape=99, expr='sourire', vue='34'):
+    global V
+    V = VUES[vue]
     lab, val, tt, X, Y, nx, ny = construire(S)
     if etape == 1:
         return [['O' if c != '.' else '.' for c in r] for r in lab]
