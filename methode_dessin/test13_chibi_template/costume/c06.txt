@@ -1,33 +1,50 @@
-# c06 calque cheveux sur toile 32x39 : dôme hérissé, pointes de hauteurs variées
-# sommet : pointes fines qui montent (encoches entre elles)
-px H 11 0 16 0 20 0
-hline H 10 11 1
-hline H 15 16 1
-hline H 19 21 1
-px H 7 2 24 2
-hline H 10 12 2
-hline H 14 17 2
-hline H 19 21 2
-hline H 7 8 3
-hline H 10 12 3
-hline H 14 21 3
-hline H 23 24 3
-px H 5 4 26 4
-hline H 7 24 4
-# flancs : le dôme s'élargit vers les tempes, bord en dents (pointes de côté)
-hline H 5 26 5
-hline H 4 27 6
-hline H 5 27 7
-hline H 3 26 8
-hline H 4 26 9
-hline H 5 27 10
-hline H 5 26 11
-hline H 6 25 12
-hline H 6 25 13
-# tempes et pattes courtes, front dégagé
+# c06 calque cheveux (toile 32x39) : coupe courte en bataille d'après la 2e référence
+# masse collée au crâne (+1 à 2 px), pas de casque
+hline H 11 20 5
+hline H 9 22 6
+hline H 8 23 7
+hline H 7 24 8
+rect H 6 9 25 13
+# tempes courtes, front dégagé (naissance en M)
 hline H 6 9 14
 hline H 22 25 14
 hline H 6 8 15
 hline H 23 25 15
-# deux mèches qui retombent sur le front
-px H 14 14 14 15 18 14
+# pointes du sommet, chacune dans sa direction
+px H 10 1
+hline H 10 11 2
+hline H 10 12 3
+hline H 11 13 4
+px H 15 0
+hline H 15 16 1
+hline H 15 17 2
+hline H 14 17 3
+hline H 14 18 4
+px H 21 1
+hline H 20 21 2
+hline H 19 21 3
+hline H 18 21 4
+# pointes hautes des côtés
+px H 5 4
+hline H 5 7 5
+hline H 5 9 6
+hline H 6 9 7
+px H 26 4
+hline H 24 26 5
+hline H 22 26 6
+# pointes horizontales au milieu des côtés
+px H 3 10
+rows H 9 4 5 4 5 4 5
+# à droite : une pointe vers le haut-droite (asymétrie)
+hline H 22 27 7
+hline H 24 28 8
+px H 29 9
+rows H 8 26 28 26 28 26 28
+# mèches au niveau des oreilles, tournées vers le bas
+rows H 14 4 6 3 6 3 5 3 4
+px H 3 18
+rows H 14 25 27 25 28 26 28 27 28
+px H 28 18
+# une mèche qui tombe sur le front
+hline H 13 14 14
+px H 14 15
