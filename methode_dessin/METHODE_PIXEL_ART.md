@@ -733,19 +733,21 @@ Plus le personnage est petit, plus on **exagère** la tête et les yeux et plus 
 
 | Hauteur | Têtes | Tête / hauteur | Yeux | Nez, bouche | Bras, mains | Couleurs |
 |---|---|---|---|---|---|---|
-| 8 px | 1 à 1,5 | ≈ 60 % | 1 px chacun | aucun | aucun ou 1 px | 3 à 4 |
-| 16 px | 2 à 3 | 45 à 60 % | 1×1 ou 1×2 | aucun | bras 1 px, main = 1 px de peau | 5 à 8 |
-| 20 à 24 px | 1,6 à 2,5 | 50 à 62 % | 1×2 | bouche rare (1 px) | bras 1 à 2 px | 8 à 13 |
-| 32 px | 2,5 à 4 | 40 à 50 % | 2×2 avec 1 px de reflet | nez = 1 px d'ombre, bouche 1 à 2 px | main = bloc 2×2, pouce 1 px | 10 à 14 |
-| 48 px | 4 à 5 | 30 à 40 % | 3×2 à 3×3 : paupière, iris, pupille, reflet | nez par l'ombre, bouche 2 à 3 px | moufle + pouce | 12 à 16 |
-| 64 px | 5 à 6 | 25 à 35 % | 4×3 et plus, avec blanc de l'œil | nez en plan d'ombre, lèvre du bas par son ombre | doigts en 2 masses | 14 à 20 |
-| 96 px et plus (portrait) | réaliste | — | recette « œil en grand » (C4) | narine, lèvres | doigts séparés | 16 (portrait GBA) |
+| 8 px | 1,5 | 60 à 70 % | 1 px chacun | aucun | aucun ou 1 px | 3 à 4 |
+| 16 px | 1,7 à 2 | 50 à 60 % | 1×1 ou 1×2 | aucun | bras 1 px, main = 1 px de peau | 5 à 8 |
+| 20 à 24 px | 1,7 à 2,2 | 45 à 60 % | 1×2 | bouche rare (1 px) | bras 1 à 2 px | 8 à 13 |
+| 32 px | 2 à 2,5 | 40 à 50 % | 2×3 : reflet 1 px **en haut** [T5] | nez = 1 px d'ombre, bouche 1 à 2 px | main = bloc 2×2, pouce 1 px | 10 à 14 |
+| 48 px | 2,5 à 3,3 | 30 à 40 % | 3×2 à 3×3 : paupière, iris, pupille, reflet | nez par l'ombre, bouche 2 à 3 px | moufle + pouce | 12 à 16 |
+| 64 px | 3 à 4 | 25 à 33 % | 4×3 et plus, avec blanc de l'œil | nez en plan d'ombre, lèvre du bas par son ombre | doigts en 2 masses | 14 à 20 |
+| 96 px et plus | 4 à 6 | 15 à 25 % | recette « œil en grand » (C4) | narine, lèvres | doigts séparés | 16 (portrait GBA) |
 
 - Style « héroïque » : tête sous 35 % ; c'est alors une capuche, une cape ou une arme qui
   porte la silhouette.
 - Les yeux 2×2 avec reflet n'apparaissent qu'au-dessus de 16×24 ; en dessous, un reflet
   blanc rend le regard fou.
 - Le blanc de l'œil n'existe qu'à partir de 3 px de large.
+- Une seule mesure, cheveux compris : nombre de têtes ≈ 1 / part de la tête. Les deux
+  colonnes doivent toujours concorder (corrigé au test 5).
 
 ### B. Format Pokémon GBA (notre ROM)
 - **Sprite de dresseur sur la carte :** cellule 16×32 ; le personnage occupe ≈ 14×20 px,
@@ -846,6 +848,27 @@ recopié à l'identique, sinon l'animation tremble.
 5. Palette (F), contour et selout, lumière.
 6. Expressions, directions, animation.
 7. Contrôle K.
+
+### J2. Leçons du test 5 (Lina en 16×32, 32, 64 et portraits 32/48/64) [T5]
+- **Œil à 32 px :** 2×3 (pupille sombre, reflet 1 px en haut du côté de la lumière, ton de
+  l'iris en bas). Un 2×2 avec le reflet en bas lit comme un œil blanc ou un regard endormi.
+- **Corps à 64 px :** jamais un torse rectangle et des bras en tubes. Il faut épaules,
+  taille, hanches, coudes et mollets : au moins 1 px de variation de largeur à chaque
+  articulation.
+- **Frange :** les pointes de mèches sombres au-dessus des yeux lisent comme des sourcils
+  froncés. Ton sombre seulement sur les côtés, frange relevée, une seule rangée d'ombre
+  portée sur le front.
+- **Pointes de cheveux :** 2 à 3 grandes pointes par côté, pas un peigne régulier de
+  pointes d'1 px.
+- **Œil de portrait anime :** grand (6×6 à 48, 8×8 à 64), paupière du haut = contour + 1
+  rangée de ton coloré, blanc bleuté, iris sombre en haut et clair en bas, reflet 2×2 en
+  haut + 1 px en bas du côté opposé, paupière du bas cassée en ton de peau sombre, cil au
+  coin extérieur. Sourcils fins, posés seulement là où la peau se voit entre les mèches.
+- **Visage de portrait :** joues pleines jusqu'aux yeux, menton court ; un visage trop long
+  vieillit le personnage. Joues roses en 2 à 3 px de large, sinon elles disparaissent.
+- **Lueur à 64 px :** des anneaux de couleur unie font du banding ; tramer la limite entre
+  deux tons et garder un cœur clair petit (≈ 30 % de la flamme).
+- **Contrôle :** toujours revoir la planche à ×1 et ×2 côte à côte (`controle_x1.png`).
 
 ### K. Contrôle et erreurs fréquentes
 1. La tête et les yeux respectent-ils la table A ? Pas de nez ni de bouche à 16 px ?
