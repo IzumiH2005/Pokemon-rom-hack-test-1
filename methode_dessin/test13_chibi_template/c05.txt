@@ -1,3 +1,2 @@
-# c05 visage : joues 1 px, bouche 1 px (rare à cette taille)
+# c05 visage : joues 1 px ; pas de bouche (à cette taille elle se lisait comme un nez)
 px r 6 16 17 16
-px m 11 17

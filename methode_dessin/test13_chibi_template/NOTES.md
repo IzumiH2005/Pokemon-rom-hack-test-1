@@ -28,3 +28,13 @@
   au lieu de déborder d'1 px ; seuls l'ourlet et les cheveux passent par-dessus le trait.
 - Mains de 2 px de large : les manches longues ne laissent qu'une rangée de main.
 - Jambes de 2 px : une rangée de peau, puis revers et botte.
+
+## Retouche après retour (v2)
+- **Bouche retirée** (`c05`) : le pixel brun sous les yeux se lisait comme un nez.
+- **Coupe anime** (`c06`, `c06b`) : trois pointes sur le dessus, toutes penchées vers la
+  droite (mèches balayées) ; frange en trois mèches avec une longue pointe centrale qui
+  descend entre les yeux ; mèches de côté évasées vers l'extérieur.
+- **Piège vu** : des pointes symétriques aux deux coins du crâne se lisent comme des
+  oreilles de chat. Les pencher dans le même sens.
+- **Piège vu** : une pointe d'1 px de large devient tout trait au contour ; il faut une base
+  de 3 px sur 3 rangées pour garder 1 px de couleur dedans.
