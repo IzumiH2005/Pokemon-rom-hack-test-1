@@ -1,4 +1,4 @@
-# Méthode de dessin de personnage en pixel art — règles obligatoires (v2)
+# Méthode de dessin de personnage en pixel art — règles obligatoires (v3)
 
 Ce document oblige à dessiner comme un artiste : on construit d'abord, on détaille ensuite.
 Il réunit la méthode classique du dessin de figure (Loomis, Vilppu, ligne d'action,
@@ -13,7 +13,11 @@ Chaque règle nouvelle porte sa source :
 - **[T1]** une leçon du test 1 ;
 - **[I]** les 10 planches d'illustration fournies : canons à 7 et 8 têtes, tête de face
   et en 3/4, main en 6 étapes, torses en boîtes, torse en 4 étapes, écorchés
-  simplifiés en couleur, visage pas à pas.
+  simplifiés en couleur, visage pas à pas ;
+- **[v3]** format libre = dessin d'illustrateur (R12), simplifier la forme mais jamais
+  l'anatomie (R13), carte des muscles (section I) ;
+- **[R]** une recherche d'astuces de dessin et de pixel art (Proko, Loomis, Bridgman,
+  tutoriels d'anticrénelage et de lisibilité).
 
 Les règles des livres sont adaptées au pixel art : un « trait épais » devient un contour
 plus sombre, un « crayon 2B » devient un ton de la rampe, etc.
@@ -65,6 +69,22 @@ plus sombre, un « crayon 2B » devient un ton de la rampe, etc.
     bien » à ×1.
   - La section « Anatomie et articulations » ci-dessous est la liste minimale. Elle ne
     remplace pas ce que tu sais : elle t'oblige à le vérifier.
+- **R12. Tu as toute la place d'un illustrateur [v3].** Sauf si un format est imposé
+  (16×16, 32×32, sprite de jeu…), il n'y a **aucune limite** de taille ni de nombre de
+  pixels. Dans ce cas :
+  - choisir un canevas grand, par exemple un personnage de **128 à 256 px de haut** ;
+  - dessiner aussi bien qu'au crayon : vraie anatomie, vrais muscles, vraies mains,
+    vrai visage. Le pixel est seulement l'outil, pas une excuse pour simplifier ;
+  - les règles « petite taille » (section H) ne servent **que** si un format est imposé.
+- **R13. Simplifier la forme, jamais l'anatomie [v3].** Le livre de Zephy apprend à
+  simplifier : boîtes, cylindres, sphères, peu de traits. Cette simplification sert à
+  **construire et à lire** le dessin. Elle ne supprime aucun muscle.
+  - Chaque muscle visible doit être **pris en compte** : soit il se voit (bosse, plan
+    d'ombre, creux), soit il pousse le contour ou le vêtement.
+  - Une zone « lisse et plate » (bras tube, torse rectangle, cuisse sans rythme) est une
+    erreur, même dans un style cartoon ou manga.
+  - Test : pour chaque membre, nommer à voix haute les muscles qui font son contour. Si on
+    ne sait pas les nommer, le membre n'est pas fini.
 
 ## Règles implicites (ce que les livres font sans le dire)
 
@@ -210,6 +230,9 @@ Ces règles s'appliquent dès l'étape 2. On les revérifie à l'étape 11.
 
 ### H. Pixel art : comment appliquer l'anatomie à petite taille
 
+**Seulement si un petit format est imposé (R12).** Sinon, on dessine en grand et on
+applique toute l'anatomie, section I comprise.
+
 - Même si une articulation fait 1 px, sa **position** vient des données anatomiques, et la
   direction du pliage doit être juste.
 - **À partir de 32 px de haut :** marquer le coude et le genou par un pixel de rétrécissement
@@ -218,6 +241,96 @@ Ces règles s'appliquent dès l'étape 2. On les revérifie à l'étape 11.
 - **À partir de 64 px :** appliquer le rythme décalé (D) au contour des membres.
 - Au-delà, ajouter les plans musculaires (E) dans l'ombrage, comme des facettes, à la
   manière des écorchés simplifiés.
+
+### I. Carte des muscles à vérifier (R13) [v3]
+
+Pour chaque zone : les muscles qui doivent exister dans le dessin, et **comment ils se
+voient**. Sur un personnage habillé, ils se voient par la façon dont le tissu tombe et se
+tend.
+
+| Zone | Muscles | Ce qu'ils font au dessin |
+|---|---|---|
+| Cou | sterno-cléido-mastoïdien, trapèze | deux cordes en « V » de derrière l'oreille au creux du cou ; le trapèze fait la pente cou → épaule |
+| Épaule | deltoïde (3 faisceaux : avant, milieu, arrière) | bosse ronde qui dépasse de la cage ; descend en pointe dans le bras, au tiers du biceps |
+| Poitrine | grand pectoral | éventail qui part du sternum et entre **sous** le deltoïde ; fait le bord avant de l'aisselle |
+| Dos | trapèze (losange), grand dorsal, érecteurs du rachis | le dorsal fait le « V » du dos et le bord arrière de l'aisselle ; deux colonnes de chaque côté de la colonne |
+| Flanc | grand dentelé, obliques | dents sous l'aisselle ; l'oblique fait un bourrelet au-dessus de la crête du bassin |
+| Ventre | grand droit | 3 à 4 paires de blocs ; le haut est plus large, le nombril est sous la 3ᵉ ligne |
+| Bras | biceps, triceps, brachial | biceps devant, rond ; triceps derrière en « fer à cheval », plus long ; le contour arrière est plus haut que l'avant |
+| Avant-bras | brachio-radial, fléchisseurs, extenseurs | le brachio-radial **franchit le coude** et part du bras : la bosse est en haut et en dehors ; l'avant-bras s'affine en tendons vers le poignet |
+| Bassin | fessiers, moyen fessier, crête iliaque | la crête est une marque osseuse ; le moyen fessier élargit la hanche sous la crête |
+| Cuisse | quadriceps (vaste interne en goutte, bas et dedans), couturier, adducteurs, ischio-jambiers | le couturier fait une diagonale de la hanche à l'intérieur du genou ; le vaste interne gonfle **juste au-dessus** du genou, côté intérieur |
+| Genou | rotule, tendon rotulien | une forme osseuse plate entre deux masses molles |
+| Jambe | mollet (jumeaux), soléaire, tibia | le mollet est **plus haut dedans**, plus bas dehors ; l'avant du tibia est presque droit |
+| Cheville | malléoles | malléole interne **haute**, externe **basse** |
+
+**Comportement des muscles :**
+- un muscle **contracté** est plus court, plus rond et plus haut ; un muscle **étiré** est
+  plus long et plus plat ;
+- dans chaque pose, un côté est **pincé** (plis, masses tassées) et l'autre **étiré**
+  (contour long et tendu). Le dessiner explicitement ;
+- les muscles **s'emboîtent** les uns dans les autres, comme des coins [Bridgman] : un
+  muscle entre sous le suivant. Pas de muscles posés côte à côte comme des saucisses ;
+- les muscles s'attachent aux os : près des articulations, le contour devient osseux et
+  plat (coude, genou, poignet, cheville). Le gonflement est au milieu ;
+- les muscles vont par paires gauche / droite : vérifier que chaque côté a les siens,
+  même s'ils sont vus en raccourci.
+
+### J. Astuces de dessin de figure [v3][R]
+
+- **Le geste d'abord, l'anatomie par-dessus.** L'anatomie est une couche qui exprime le
+  mouvement, elle ne le remplace pas. Si les muscles cassent la ligne d'action, on les
+  redessine, pas la pose.
+- **Alterner droit et courbe.** Sur un membre, un côté est plutôt droit quand l'autre est
+  courbe, puis ça s'inverse. Ce rythme donne structure et vie. Deux côtés tous les deux
+  courbes donnent une saucisse molle.
+- **Pas de S partout.** Trop de courbes en « S » rendent le corps mou. Construire en formes
+  simples, puis courber seulement où le muscle l'exige.
+- **Chevauchement (overlap).** Une forme devant une autre crée la profondeur : le bras
+  devant le torse, la cuisse avant devant l'autre. Le contour de la forme de devant
+  **passe par-dessus** et coupe celui de derrière, il ne s'y raccorde jamais en « T » lisse.
+- **Lignes de rythme qui se croisent [Loomis].** Une courbe du contour gauche se continue
+  dans une courbe du contour droit, plus bas. Par exemple : épaule → côté opposé de la taille
+  → côté de départ du genou.
+- **Éviter les tangentes.** Deux contours qui se touchent juste, sans se croiser, aplatissent
+  la profondeur. Soit ils se chevauchent nettement, soit ils sont nettement séparés.
+- **Éviter les symétries et les parallèles.** Les deux bras, les deux jambes, les deux
+  épaules ne font jamais la même chose au même angle.
+- **Plier les angles des membres.** Un bras tendu n'est jamais parfaitement droit : le coude
+  et le poignet font de légers changements d'axe.
+- **Un muscle a un sens.** Les lignes d'ombre et les petits traits suivent le sens des
+  fibres : en éventail pour le pectoral, en long sur la cuisse.
+
+---
+
+## Pixel art en grand format : dessiner comme au crayon [v3][R]
+
+Quand le format est libre (R12), le pixel art devient de l'illustration. On garde les
+règles du dessin, et on ajoute celles-ci :
+
+- **Esquisse libre d'abord.** Les étapes 1 à 4 se font comme au crayon, sans penser aux
+  règles du pixel : lignes fluides, plusieurs passes. Le soin du pixel commence seulement
+  à l'étape 6.
+- **Le contour peut varier.** Au-dessus de ~128 px, le contour peut faire 1 px dans la
+  lumière et 2 px dans l'ombre ou sous une masse, comme un trait de crayon qui appuie.
+  Les règles de l'étape 6 (pas de « L », segments réguliers) restent valables pour chaque
+  bord.
+- **Les clusters sont des coups de pinceau.** Chaque amas de couleur a une forme voulue qui
+  décrit un plan : la facette d'un muscle, un pli, un reflet. Pas de semis de pixels.
+- **La valeur avant la teinte.** Une forme se lit par sa valeur. Tester en niveaux de gris :
+  chaque pièce (peau, cheveux, vêtement, arme) doit avoir sa propre valeur.
+- **Test des 3 valeurs.** Avant les ombres fines, poser seulement 3 valeurs (sombre, moyen,
+  clair) et vérifier à ×1 que le volume se lit déjà.
+- **Budget de détail.** Le plus fort contraste et le plus de détails vont au point
+  d'intérêt (visage, haut du torse, mains). Les autres zones restent plus calmes, avec
+  moins de détails et moins de contraste. Partout pareil = rien ne ressort.
+- **Le banding compte même sans contact.** Des segments de même longueur, parallèles et
+  alignés, font apparaître la grille, même s'ils ne se touchent pas.
+- **Lignes intérieures cassées.** Pour montrer où deux muscles se rencontrent (deltoïde et
+  biceps, quadriceps et genou), un trait intérieur interrompu suffit, sans couleur de
+  plus.
+- **Tramage (dithering) avec modération.** Seulement pour une matière (tissu rugueux,
+  pierre) ou une transition très large. Jamais sur la peau.
 
 ---
 
@@ -746,7 +859,15 @@ décidée, mais il ne décide pas de la forme.
   2 à 3 px.
 - **Clusters :** des amas de tons clairs et voulus. Le moins de petits amas possible.
 - **Anticrénelage (AA) :** à la main et avec parcimonie, seulement sur les grands escaliers
-  des courbes importantes. Trop d'AA rend l'image floue.
+  des courbes importantes. Trop d'AA rend l'image floue. Règles précises [R] :
+  - se demander d'abord s'il est nécessaire ; souvent non. Pas d'AA sur les petits sprites ;
+  - choisir le ton AA par sa **valeur** : un pixel à moitié couvert prend une valeur à
+    mi-chemin entre le trait et le fond. Pas une simple moyenne des deux couleurs, qui
+    donne une boue : prendre une teinte voisine ;
+  - plus le segment en escalier est long, plus la rangée d'AA est longue ;
+  - l'AA reste **à l'intérieur** du contour extérieur, car le fond du jeu peut changer ;
+  - jamais d'AA automatique sur chaque angle : cela crée du bruit et aplatit la forme ;
+  - réutiliser des couleurs déjà dans la palette.
 - Supprimer tous les pixels des calques de construction (couleurs vives de R7).
 - Chaque pixel doit « mériter sa place ».
 
@@ -775,6 +896,11 @@ Répondre honnêtement :
    - Le pouce part-il du poignet, et les jointures suivent-elles un arc ?
    - Les bosses des membres sont-elles décalées ?
    - La cage et le bassin sont-ils deux masses distinctes ?
+9. **Rien de plat (R13)** :
+   - Pour chaque membre, peut-on nommer les muscles qui font son contour (section I) ?
+   - Reste-t-il un bras « tube », un torse « rectangle », une cuisse sans rythme ?
+   - Le côté pincé et le côté étiré de la pose se voient-ils ?
+   - Si le format était libre, le canevas était-il assez grand pour tout dessiner (R12) ?
 
 **Bilan [Z].** Noter **3 points réussis** puis **3 points à améliorer**. Les 3 points à
 améliorer deviennent les objectifs du prochain dessin.
