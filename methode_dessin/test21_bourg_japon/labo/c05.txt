@@ -1,0 +1,139 @@
+# c05 details
+vline B 31 14 16
+vline B 35 14 16
+vline B 39 14 16
+vline B 43 14 16
+vline B 47 14 16
+vline B 51 14 16
+vline B 55 14 16
+vline B 59 14 16
+vline B 63 14 16
+vline B 67 14 16
+vline B 71 14 16
+vline B 75 14 16
+vline B 79 14 16
+vline B 31 18 22
+vline B 35 18 22
+vline B 39 18 22
+vline B 43 18 22
+vline B 47 18 22
+vline B 51 18 22
+vline B 55 18 22
+vline B 59 18 22
+vline B 63 18 22
+vline B 67 18 22
+vline B 71 18 22
+vline B 75 18 22
+vline B 79 18 22
+vline B 83 18 22
+vline B 27 24 28
+vline B 31 24 28
+vline B 35 24 28
+vline B 39 24 28
+vline B 43 24 28
+vline B 47 24 28
+vline B 51 24 28
+vline B 55 24 28
+vline B 59 24 28
+vline B 63 24 28
+vline B 67 24 28
+vline B 71 24 28
+vline B 75 24 28
+vline B 79 24 28
+vline B 83 24 28
+vline B 23 30 36
+vline B 27 30 36
+vline B 31 30 36
+vline B 35 30 36
+vline B 39 30 36
+vline B 43 30 36
+vline B 47 30 36
+vline B 51 30 36
+vline B 55 30 36
+vline B 59 30 36
+vline B 63 30 36
+vline B 67 30 36
+vline B 71 30 36
+vline B 75 30 36
+vline B 79 30 36
+vline B 83 30 36
+vline B 87 30 36
+vline B 91 30 36
+px D 35 14 35 15 39 14 39 15 31 18 31 19 35 18 35 19 27 24 27 25
+px D 30 11
+px D 29 13
+px D 28 15
+px D 27 16
+px D 27 17
+px D 26 18
+px D 26 19
+px D 25 20
+px D 25 21
+px D 24 22
+px D 24 23
+px D 23 24
+px D 23 25
+px D 22 26
+px D 22 27
+px D 21 28
+vline A 4 41 42
+vline A 8 41 42
+vline A 12 41 42
+vline A 16 41 42
+vline A 20 41 42
+vline A 24 41 42
+vline A 28 41 42
+vline A 32 41 42
+vline A 36 41 42
+vline A 40 41 42
+vline A 44 41 42
+vline A 48 41 42
+vline A 52 41 42
+vline A 56 41 42
+vline A 60 41 42
+vline A 64 41 42
+vline A 68 41 42
+vline A 72 41 42
+vline A 76 41 42
+vline A 80 41 42
+vline A 84 41 42
+vline A 88 41 42
+vline A 92 41 42
+vline A 96 41 42
+vline A 100 41 42
+vline A 104 41 42
+hline t 64 66 47
+vline t 65 47 49
+hline t 64 66 49
+vline t 70 47 49
+hline t 69 71 48
+vline t 72 47 49
+px t 71 47
+hline t 76 78 47
+px t 76 48 78 48
+hline t 76 78 49
+px n 16 58 15 59 14 60
+px n 20 58 19 59 18 60
+px n 31 58 30 59 29 60
+px n 35 58 34 59 33 60
+px n 46 58 45 59 44 60
+px n 50 58 49 59 48 60
+px n 93 58 92 59 91 60
+px n 99 58 98 59 97 60
+px n 69 60 68 61 67 62
+px n 76 60 75 61 74 62
+px D 70 66 70 67 73 66 73 67
+vline t 13 67 73
+vline t 21 67 73
+vline t 29 67 73
+vline t 37 67 73
+vline t 45 67 73
+vline t 53 67 73
+vline t 92 67 73
+vline t 100 67 73
+vline A 14 76 76
+vline A 28 76 76
+vline A 42 76 76
+vline A 56 76 76
+vline A 88 76 76
+vline A 100 76 76

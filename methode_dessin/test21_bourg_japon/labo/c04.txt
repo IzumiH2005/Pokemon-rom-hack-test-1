@@ -1,0 +1,3 @@
+# c04 selout : contour du toit en A (pas noir), mur en t
+rep O A 0 0 111 39
+rep O t 0 44 111 76

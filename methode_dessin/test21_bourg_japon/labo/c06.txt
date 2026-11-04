@@ -1,0 +1,5 @@
+# c06 nettoyage + cours de tuiles (le toit lisait comme de la tole ondulee)
+hline B 29 82 17
+hline B 26 85 23
+hline B 21 90 29
+rep B C 46 17 65 17

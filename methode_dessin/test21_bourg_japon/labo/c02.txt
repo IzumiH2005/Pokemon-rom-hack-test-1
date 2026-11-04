@@ -1,0 +1,99 @@
+# c02 aplats
+# toit : face avant C, croupe gauche (eclairee) D, croupe droite B
+rows C 8 30 81 30 81 29 82 29 82 28 83 28 83 27 84 27 84 26 85 26 85 25 86 25 86 24 87 24 87 23 88 23 88 22 89 22 89 21 90 21 90 20 91 18 93 17 94 15 96 14 97 12 99 11 100 9 102 8 103 6 105 4 107 2 109
+hline D 30 31 8
+hline B 80 81 8
+hline D 30 30 9
+hline B 81 81 9
+hline D 29 30 10
+hline B 81 82 10
+hline D 29 29 11
+hline B 82 82 11
+hline D 28 29 12
+hline B 82 83 12
+hline D 28 28 13
+hline B 83 83 13
+hline D 27 28 14
+hline B 83 84 14
+hline D 27 27 15
+hline B 84 84 15
+hline D 26 26 16
+hline B 85 85 16
+hline D 26 26 17
+hline B 85 85 17
+hline D 25 25 18
+hline B 86 86 18
+hline D 25 25 19
+hline B 86 86 19
+hline D 24 24 20
+hline B 87 87 20
+hline D 23 23 22
+hline B 88 88 22
+hline D 22 22 24
+hline B 89 89 24
+hline D 21 21 26
+hline B 90 90 26
+hline D 18 19 29
+hline B 92 93 29
+hline D 17 18 30
+hline B 93 94 30
+hline D 15 18 31
+hline B 93 96 31
+hline D 14 17 32
+hline B 94 97 32
+hline D 12 16 33
+hline B 95 99 33
+hline D 11 16 34
+hline B 95 100 34
+hline D 9 15 35
+hline B 96 102 35
+hline D 8 15 36
+hline B 96 103 36
+hline D 6 14 37
+hline B 97 105 37
+hline D 4 14 38
+hline B 97 107 38
+hline D 2 13 39
+hline B 98 109 39
+rect A 30 7 81 8
+rect B 28 5 32 8
+rect B 79 5 83 8
+# lanterneau : petit toit + corps a persiennes
+rows C 0 48 63 47 64 46 65 45 66
+rect C 46 4 65 5
+rect Q 48 6 63 11
+rect B 1 40 110 43
+px B 0 37 0 38 0 39 1 39 111 37 111 38 111 39 110 39
+# mur
+rect Q 4 44 107 64
+rect u 4 65 107 74
+vline t 4 44 74
+vline t 5 44 74
+vline t 106 44 74
+vline t 107 44 74
+vline t 58 44 74
+vline t 59 44 74
+vline t 84 44 74
+vline t 85 44 74
+hline v 4 107 47
+hline v 4 107 48
+rect s 3 75 108 77
+rect s 60 78 83 79
+# grandes vitres (verre N) + meneaux
+rect t 10 52 55 66
+rect N 11 53 54 65
+vline t 25 53 65
+vline t 40 53 65
+hline t 11 54 57
+rect t 88 52 101 66
+rect N 89 53 100 65
+vline t 94 53 65
+vline t 95 53 65
+# porte vitree double
+rect t 65 54 78 76
+rect N 66 55 77 75
+vline t 71 55 75
+vline t 72 55 75
+# enseigne doree
+rect t 60 45 83 51
+rect y 61 46 82 50

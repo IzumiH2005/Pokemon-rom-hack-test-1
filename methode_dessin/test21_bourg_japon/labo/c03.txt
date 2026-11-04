@@ -1,0 +1,75 @@
+# c03 lumiere haut-gauche
+# faitage cylindre + ombre portee
+hline B 33 45 6
+hline B 66 78 6
+hline A 33 47 7
+hline A 64 78 7
+hline O 33 47 8
+hline O 64 78 8
+hline B 32 47 9
+hline B 64 79 9
+# onigawara
+hline C 28 32 5
+vline A 32 6 8
+hline C 79 83 5
+vline C 79 6 8
+vline A 83 6 8
+# lanterneau : toit eclaire, rive gauche D, bas sombre ; corps ombre sous son toit
+px D 48 0 47 1 46 2 45 3
+hline B 46 65 5
+hline A 46 65 6
+hline q 49 62 7
+hline t 50 61 9
+hline t 50 61 11
+vline u 49 8 11
+vline t 48 7 11
+vline t 63 7 11
+# pied du lanterneau : ombre sur le toit
+hline B 46 65 12
+hline B 48 63 13
+# toit : abouts de tuiles sombres au bas de la jupe
+hline B 3 108 38
+hline A 2 109 39
+# rive gauche eclairee
+px D 30 9 29 10 29 11 28 12 28 13 27 14 27 15 26 16 26 17 25 18 25 19 24 20 24 21 23 22 23 23 22 24 22 25 21 26 21 27 20 28 18 29 17 30 15 31 14 32 12 33 11 34 9 35 8 36 6 37
+# bandeau
+hline C 1 110 40
+hline A 1 110 43
+px C 0 37 111 37
+# ombre de l'egout sur le mur
+rect q 6 44 57 46
+rect q 86 44 105 46
+hline w 6 57 47
+hline w 86 105 47
+# poteaux eclaires a gauche
+vline u 4 44 74
+vline u 58 44 74
+vline u 84 44 74
+vline u 106 44 74
+# bardage chanfrein
+hline v 6 57 65
+hline v 60 64 65
+hline v 79 83 65
+hline v 86 105 65
+# vitres en creux : haut + gauche dans l'ombre
+hline A 11 24 53
+hline A 26 39 53
+hline A 41 54 53
+vline A 11 54 65
+vline A 26 54 65
+vline A 41 54 65
+hline A 89 93 53
+hline A 96 100 53
+vline A 89 54 65
+vline A 96 54 65
+hline A 66 70 55
+hline A 73 77 55
+vline A 66 56 75
+vline A 73 56 75
+# enseigne : bas ombre, haut eclaire
+hline Q 61 82 46
+hline w 61 82 50
+# pierre
+hline q 3 108 75
+hline A 3 108 77
+hline q 60 83 78
