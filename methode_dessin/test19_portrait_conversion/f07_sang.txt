@@ -1,0 +1,29 @@
+# coulures : 1 px de large, plus sombres en haut, une goutte claire au bout
+ligne m 1 50 51 50 54
+ligne n 1 50 55 51 60
+px o 51 61
+ligne n 1 53 52 53 55
+ligne m 1 47 56 47 62
+ligne n 1 71 64 71 67
+px o 71 68
+# coin de la bouche
+ligne n 1 56 74 56 78 57 80
+px o 57 81
+# menton qui coule vers le cou
+ligne m 1 66 78 67 84 66 88
+px o 66 89
+ligne n 1 61 84 60 88
+ligne m 1 60 89 59 94 59 98
+px o 59 99
+ligne m 1 63 90 63 96
+# éclaboussures sur le cou et les joues
+px n 52 96 54 98 50 100 55 102 57 94 70 98 72 102 48 90 46 86 74 66 76 70 64 80
+px m 51 97 49 101 56 103 71 99
+# sang sombre sur le haut du torse et le col
+ligne m 1 58 116 59 121 61 127
+ligne m 1 67 115 68 120 67 126
+ligne m 1 53 114 55 120
+# sueur : un pixel clair et son ombre
+px f 54 28 60 24 78 30 86 40 46 40 88 72 40 66
+px c 54 29 60 25 78 31 86 41 46 41 88 73 40 67
+px l 76 56 58 66

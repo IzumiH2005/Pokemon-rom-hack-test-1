@@ -1,0 +1,23 @@
+# cou plus large, posé sur les cheveux du bas
+poly i 46 92 56 96 64 98 74 96 83 90 86 104 89 112 80 128 56 128 47 112 44 100
+# ombre portée par la mâchoire
+poly g 47 90 56 94 64 96 73 94 81 88 83 93 75 100 63 102 53 100 46 96
+poly h 46 96 53 100 63 102 75 100 83 94 84 98 76 104 62 106 52 104 46 100
+# bande éclairée à droite du cou
+poly j 76 102 82 97 86 106 84 114 79 110
+poly k 80 100 83 99 85 106 82 109
+# gorge et clavicules
+ligne h 1 61 106 62 112 63 118
+ligne h 1 54 120 60 122
+ligne h 1 68 122 76 119
+# kimono : deux pans sombres, col en V
+poly r 20 128 24 118 34 112 46 108 54 118 59 128
+poly r 112 128 108 116 100 108 89 106 84 116 78 128
+poly q 20 128 24 120 32 116 30 128
+poly q 112 128 108 120 100 114 104 128
+ligne s 1 46 108 51 115 55 122 58 127
+ligne s 1 89 106 85 114 81 121 78 127
+ligne t 1 47 110 52 118
+ligne t 1 88 108 84 116
+ligne q 1 36 114 40 128
+ligne q 1 98 112 94 128

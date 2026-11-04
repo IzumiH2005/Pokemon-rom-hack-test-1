@@ -1,0 +1,17 @@
+# 2. lumière de la peau (source en haut à droite) : demi-teinte i, éclairé k, reflet l, ombre g
+poly i 60 40 74 34 82 40 82 60 80 74 74 86 66 90 60 88 58 76 59 60
+poly i 46 53 52 52 55 60 50 64 46 62
+poly g 50 88 56 91 62 93 70 90 77 83 79 90 72 98 62 101 54 98 49 94
+poly k 62 46 64 43 66 50 66 61 63 64 61 56
+poly k 63 63 70 61 78 58 80 65 78 71 71 73 64 69
+poly k 60 77 70 76 78 74 78 80 73 86 67 89 61 86
+poly i 70 96 77 91 81 96 85 108 80 118 74 110
+poly k 76 97 79 95 83 106 79 109
+ligne l 1 63 46 64 54 64 60
+ligne l 1 72 63 77 61
+ligne l 1 66 82 71 80
+# oreille
+poly g 34 60 37 59 37 70 35 71
+# ombre propre le long des cheveux, côté gauche du visage et du cou
+poly h 41 50 46 48 47 66 50 80 47 82 43 72
+poly h 48 96 54 100 58 112 56 128 50 128 48 112

@@ -1,0 +1,9 @@
+# côté ombre : contour noir
+ligne O 1 44 8 34 18 28 30 26 44 25 60 26 80 26 98 22 106 22 112
+# côté contre-jour : liseré clair qui s'éteint en descendant
+ligne e 1 72 6 82 10 90 16 95 24 98 36
+ligne d 1 98 37 99 50 99 66
+ligne c 1 99 67 99 82 98 96
+px f 84 11 88 14
+# mâchoire nette sous le menton
+ligne g 1 52 89 58 92 64 93 70 92 76 88

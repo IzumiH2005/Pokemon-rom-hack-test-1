@@ -1,0 +1,9 @@
+# yeux mi-clos : paupière haute épaisse, iris rouge qui luit (bord m, cœur p), paupière basse claire
+# œil gauche (dans l'ombre)
+47 45 aOOOOOOOOOa
+48 44 OhimpomihOOa
+49 45 ihmmmhhi
+# œil droit (plus éclairé, coin externe relevé)
+46 72 aOOOOOOOOOOOa
+47 70 aOjkmopmkjjOOO
+48 72 jkimmikkji

@@ -1,0 +1,12 @@
+# nez : arête claire déjà là ; ombre sous l'arête côté gauche, narine
+ligne h 1 61 58 61 62 62 65
+ligne i 1 62 66 64 67
+px O 66 67 67 67
+px l 64 64 65 64
+# mâchoire et menton
+ligne g 1 47 84 50 88 55 91 62 92 68 91 73 88 77 84
+ligne j 1 62 89 68 88 72 85
+ligne h 1 49 80 52 86
+# ombre sous la lèvre basse, creux du menton
+ligne i 1 59 77 71 77
+ligne j 1 58 78 59 82

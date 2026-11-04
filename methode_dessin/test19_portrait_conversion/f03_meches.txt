@@ -1,0 +1,14 @@
+# 3. frange et mèches qui tombent sur le visage (pointes effilées)
+poly b 40 44 42 30 50 18 60 14 72 18 82 30 84 44 80 40 76 38 70 40 66 38 62 42 58 38 54 40 50 38 46 40
+poly h 48 26 50 23 51 36 49 39
+poly i 61 30 63 27 64 40 62 42
+# mèche entre les yeux
+poly b 54 36 59 36 59 48 58 56 57 61 56 52 55 44
+# mèche en crochet sur l'œil droit, finit vers la joue
+poly b 66 38 70 38 70 48 73 57 77 63 79 69 75 66 71 61 67 52
+# mèches du bord droit et du bord gauche
+poly b 80 40 84 42 84 56 84 73 82 66 81 54
+poly b 41 44 45 44 45 56 46 68 48 79 45 74 43 64 42 54
+# fils fins
+ligne a 1 52 42 51 56 50 66 49 76
+ligne a 1 76 40 78 52 79 62

@@ -1,0 +1,24 @@
+# volume du crâne : plan éclairé par le contre-jour (haut droit)
+poly c 50 8 62 5 74 7 84 12 90 20 92 30 86 26 78 20 68 16 58 14 50 16 44 20
+poly d 60 7 72 8 82 13 88 20 82 18 72 13 62 11
+ligne e 1 66 8 76 10 84 15 89 22
+px f 74 9 78 11 82 13
+# épi sur le dessus
+ligne c 1 46 9 50 6 54 5
+ligne b 1 52 4 55 2 57 3
+# mèches à droite : lignes claires qui tombent en s'écartant
+ligne c 1 86 24 90 36 92 52 93 70 94 88 96 100
+ligne d 1 89 26 92 38 94 54
+ligne c 1 82 28 85 40 86 56 87 74 88 92
+ligne e 1 92 28 94 40 95 50
+# mèches à gauche (dans l'ombre : c seulement)
+ligne c 1 40 20 34 32 31 48 30 66 30 84 29 100
+ligne c 1 46 22 41 34 38 50 37 70 36 92 35 108
+ligne b 1 36 28 33 44 33 60
+# frange : quelques reflets au milieu des mèches
+ligne c 1 58 18 56 28 55 38
+ligne c 1 70 20 74 30 77 38
+ligne d 1 64 16 64 24
+# pointes en bas
+ligne c 1 26 102 24 110 23 116
+ligne c 1 96 100 99 106 101 104
