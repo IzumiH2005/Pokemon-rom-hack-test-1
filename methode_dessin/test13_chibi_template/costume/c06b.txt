@@ -1,0 +1,10 @@
+# c06b cheveux : naissance claire au centre (sombre seulement aux tempes)
+rep D H 6 9 17 9
+# lumière haut-gauche
+px h 5 1 9 1 4 3 5 3 3 5 4 5 3 7 8 3 9 3
+# creux sous les encoches et traits de mèches qui montent en s'évasant
+px D 7 2 11 2 12 2 16 2 6 4 5 6 10 4 13 3 13 4 17 3 18 4 11 7 15 6
+# masse droite dans l'ombre
+vline D 20 5 9
+vline D 19 7 8
+px D 21 3

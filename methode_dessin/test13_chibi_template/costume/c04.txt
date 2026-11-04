@@ -1,0 +1,41 @@
+# c04 calque costume : veste beige, chemise claire, cravate sombre (= couleur du trait)
+# rangée 20 : col de chemise en pointes, nœud de cravate au centre, revers de veste aux bords
+px J 8 20 15 20
+px W 9 20 10 20 13 20 14 20
+px O 11 20 12 20
+# rangée 21 : épaules, ouverture en V
+px J 7 21 16 21
+px K 8 21 15 21
+px W 9 21 10 21 13 21 14 21
+px O 11 21 12 21
+# rangée 22 : bras + torse, revers sombres qui se referment
+hline J 6 7 22
+hline J 16 17 22
+px K 9 22 14 22
+px W 10 22 13 22
+px O 11 22 12 22
+# rangées 23-26 : veste fermée, cravate qui disparaît dedans
+rect J 8 23 15 26
+px O 11 23 12 23
+px K 10 23 13 23
+vline K 12 24 26
+px j 13 24
+# manches : poignet de chemise visible au-dessus de la main
+hline w 5 6 23
+hline w 17 18 23
+# lumière à gauche, ombre à droite
+px j 7 21 6 22 8 23 8 24 8 25 8 26
+vline K 15 23 26
+px K 17 22 16 21 14 26
+# pantalon même tissu, ombre à droite ; chaussures = trait
+hline J 8 15 27
+hline J 8 8 28
+hline K 9 9 28
+hline J 8 8 29
+hline K 9 9 29
+hline J 14 14 28
+hline K 15 15 28
+hline J 14 14 29
+hline K 15 15 29
+hline O 8 9 30
+hline O 14 15 30

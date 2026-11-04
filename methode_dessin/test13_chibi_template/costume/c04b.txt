@@ -1,0 +1,2 @@
+# c04b bords à la main : ourlet de veste propre (règle 17)
+hline O 8 15 27

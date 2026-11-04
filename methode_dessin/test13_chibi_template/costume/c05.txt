@@ -1,0 +1,2 @@
+# c05 visage : joues 1 px, pas de bouche
+px r 6 16 17 16
