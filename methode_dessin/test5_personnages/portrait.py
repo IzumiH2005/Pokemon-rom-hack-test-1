@@ -84,7 +84,7 @@ def ombrer(Z, S):
     return G
 
 def oeil(w, h, droite):
-    """Recette d'œil par taille (C10-D et C4) : paupière sombre, blanc bleuté, iris sombre en haut et
+    """Recette d'œil par taille (C4-F) : paupière sombre, blanc bleuté, iris sombre en haut et
     clair en bas, pupille, reflet du côté de la lumière (gauche) sur les deux yeux."""
     g = [['.'] * w for _ in range(h)]
     blanc_ext = 1; blanc_int = 1 if w >= 6 else 0

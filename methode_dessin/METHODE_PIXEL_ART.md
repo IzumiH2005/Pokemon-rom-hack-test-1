@@ -1,4 +1,4 @@
-# Méthode de pixel art — objets et personnages (v8)
+# Méthode de pixel art — objets et personnages (v9)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
@@ -8,9 +8,9 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 - la **partie A** vaut pour tout : règles de travail, lisibilité, tailles, couleurs, lumière,
   matières, finition et contrôle ;
 - la **partie B** donne les étapes de construction d'un **objet** ;
-- la **partie C** donne les étapes de construction d'un **personnage** (anatomie, visage,
-  cheveux) ; **C10** donne les règles par taille (8 à 128 px) ; **C11** donne la méthode du
-  portrait anime (3/4, mèches, yeux, couleurs) ; **C12** construit le visage (Loomis + anime) ;
+- la **partie C** donne les étapes de construction d'un **personnage** : **C4** construit le
+  visage (Loomis + anime, yeux, expressions), **C6** les cheveux, **C10** les règles par
+  taille (8 à 128 px), **C11** le portrait anime ;
 - un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels ;
 - la section **A4b** (simplifier) s'applique dès qu'une taille est imposée.
 
@@ -18,7 +18,7 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 [I] planches d'anatomie fournies · [C] planches sur les cheveux fournies ·
 [R] recherches (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de
 lisibilité d'icônes, simplification des formes) · [P] planches fournies (cheveux, œil, arche,
-cristal, flamme, déclinaisons par taille, projections) · [T1]…[T7] leçons de nos propres tests ·
+cristal, flamme, déclinaisons par taille, projections) · [T1]…[T3] leçons de nos propres tests ·
 [L] méthode Loomis et tutoriels de visage anime (règles reformulées) · [A] analyse de portraits anime en pixel art fournis en exemple (règles reformulées).
 
 ---
@@ -455,7 +455,6 @@ Construction d'un personnage, puis pipeline A5. L'anatomie (C9) s'applique à **
 - Valable pour tous les styles : le pubis est au milieu du corps ; coudes au bas de la
   cage ; poignets au pubis ; genoux au milieu des jambes.
 - Chibi de 3 têtes : 1 tête, 1 torse, 1 jambe ; les bras ont la longueur du torse.
-- Largeurs : épaules d'homme ≈ 2 à 2,3 H, de femme ≈ 1,8 à 2 H.
 - **Contrôle :** les bras ne sont pas trop courts (erreur la plus fréquente) ; les espaces
   vides (bras / torse, entre les jambes) ont une forme plausible.
 
@@ -470,12 +469,12 @@ Construction d'un personnage, puis pipeline A5. L'anatomie (C9) s'applique à **
 - 2 variantes (R7), puis **exagérer** la meilleure : une pose fidèle mais molle est pire
   qu'une pose exagérée.
 - **Contrôle :** la pose tient debout ; chaque articulation plie dans son sens (C9-A) ; pas
-  de pieds joints au garde-à-vous sauf si l'intention le demande [T1] ; les deux côtés
+  de pieds joints au garde-à-vous sauf si l'intention le demande ; les deux côtés
   évitent la symétrie et les parallèles.
 
 ## C3. Volumes (le mannequin)
 Ordre obligatoire :
-1. tête (sphère + plan du visage) et ligne de centre ;
+1. tête (sphère + plan du visage, voir C4) et ligne de centre ;
 2. cage thoracique (œuf ou boîte) et bassin (bol ou boîte), qui tournent et s'inclinent
    séparément, chacun avec sa croix de centre ;
 3. **cercles d'articulations** : épaules (qui débordent de la cage), coudes, poignets,
@@ -492,6 +491,8 @@ Puis :
   C'est un choix de style, à garder cohérent ;
 - **angle difficile :** dessiner d'abord une boîte en perspective, puis placer les volumes
   dedans.
+- **Corps dès 64 px :** jamais un torse rectangle et des bras en tubes. Au moins 1 px de
+  variation de largeur à chaque articulation (épaules, taille, hanches, coudes, mollets).
 
 **Main (dès qu'elle dépasse 6 px) :**
 1. paume en trapèze, plus large aux jointures qu'au poignet ;
@@ -503,88 +504,162 @@ Puis :
 5. contour qui enveloppe les cercles, articulations un peu gonflées ;
 6. trait plus marqué dans l'ombre et aux superpositions.
 
-## C4. Tête et visage
+## C4. Tête et visage (Loomis + proportions anime) [L][R]
+On **construit la tête en volume**, puis on tire de ce volume le contour, la mâchoire, les
+ombres et la place des traits. Jamais un rond dessiné à la main.
+
+### A. La tête en deux pièces (Loomis)
+1. **Une boule pour le crâne.** De côté, on la coupe à plat sur les deux faces : ces
+   « plans de côté » sont des disques (≈ 70 % du rayon depuis le centre). La tempe, la
+   pommette et l'oreille sont sur ce plan.
+2. **L'axe du visage** passe au milieu du front, du nez et du menton. Il se courbe avec la
+   boule quand la tête tourne.
+3. **Les lignes en travers**, perpendiculaires à l'axe et courbées sur la boule : sourcils,
+   yeux, base du nez, bouche, menton. Sans elles, la symétrie dérive.
+4. **La mâchoire** est la seconde pièce : du dessous de l'oreille (angle placé **en
+   arrière**) jusqu'au menton, en ligne presque droite.
+
 **Forme :** femme = menton plus haut, mâchoire ronde, cou fin ; homme = mâchoire anguleuse,
-cou presque aussi large que la mâchoire ; personne âgée = visage plus long. Vérifier la
-longueur du cou : un cou nu trop long était le principal défaut du test 1.
+cou presque aussi large que la mâchoire ; personne âgée = visage plus long. Un cou nu trop
+long est un défaut fréquent.
 
-**De face :**
-1. cercle du crâne et ligne de centre jusqu'au menton ;
-2. mâchoire : deux lignes presque verticales puis en angle ; menton en petit segment plat ;
-3. lignes horizontales : yeux à mi-hauteur de la tête (un peu plus bas en manga), bas du
-   nez au bas du cercle, bouche au tiers entre nez et menton ;
-4. yeux en amandes séparés d'une largeur d'œil ; paupière du haut plus épaisse ;
-5. nez ≈ écart entre les yeux ; coins de la bouche à l'aplomb des pupilles ;
-6. oreilles de la ligne des sourcils au bas du nez ;
-7. cou depuis l'intérieur de la mâchoire, avec le V des sterno-cléido-mastoïdiens.
+### B. Proportions anime (fille ou jeune garçon), rayon du crâne = 1
+| Repère | Position |
+|---|---|
+| haut du crâne | −1 |
+| sourcils | ≈ 0 (milieu de la boule) |
+| ligne des yeux | ≈ +0,3 : un peu **sous** le milieu de la tête entière |
+| base du nez | à mi-chemin des yeux au menton |
+| bouche | au tiers entre le nez et le menton, plus près du nez |
+| menton | ≈ +1,45 à +1,5 |
+| oreille | de la ligne des sourcils à celle du nez |
+| écart des yeux | une largeur d'œil entre les deux (centres à ≈ ±0,5) |
+| cou | étroit (≈ 0,6 de rayon de large), planté sous le crâne, **derrière** le menton |
 
-**En 3/4 (Loomis) :** sphère, puis cercle aplati sur le côté (l'oreille juste derrière
-et sous son centre) ; ligne de centre **courbe** ; plan du visage en bloc sous la sphère ;
-mâchoire depuis l'arrière du cercle latéral ; le côté éloigné est raccourci (œil du fond
-plus étroit).
+- **Trois tiers :** cheveux → sourcils, sourcils → nez, nez → menton. En anime, le tiers du
+  bas peut descendre à 0,6 ou 0,7 du tiers du milieu, pas moins.
+- **Sourcil SUR la ligne des sourcils, œil en dessous :** centre de l'œil à ≈ 45 % de la
+  distance sourcils → nez. Si l'œil touche la ligne des sourcils, sourcil et cil se collent
+  en un double trait épais.
+- **Largeur :** en anime, la tête fait ≈ 4 yeux de large, avec au moins 3 à 4 px de peau
+  entre le coin extérieur de l'œil et les cheveux.
+- **Joues pleines jusqu'à la ligne du nez :** largeur au nez ≈ 85 % de la largeur aux yeux,
+  puis deux diagonales presque droites vers un menton pointu (≈ 65 % à la bouche). Une
+  mâchoire qui se resserre dès les yeux donne un long « V » trop mince. Le crâne doit être
+  assez gros par rapport à la masse de cheveux.
+- Menton court : un visage trop long vieillit le personnage. Garçon plus âgé ou homme :
+  menton plus large et plus bas, angle de mâchoire marqué. Chibi : partie menton moitié plus
+  courte.
+- Semi-réaliste : 3 tiers égaux et yeux à mi-hauteur de la tête.
 
-**Guides obligatoires :** ligne de centre, ligne des yeux, ligne du nez, ligne de la
-bouche. Sans elles, la symétrie dérive.
+### C. Vue de face
+- Lumière d'en haut et un peu de face, sinon la moitié basse des cheveux tombe dans le ton
+  le plus sombre et fait une masse plate.
+- Bouche : sourire symétrique, deux coins relevés et un trait court.
+- Le trait du menton doit rester continu : le nettoyage des pixels isolés ne touche pas au
+  trait chaud, sinon la diagonale en escalier devient des pointillés.
 
-**Placement selon le style :**
-- semi-réaliste : 3 tiers égaux (cheveux → sourcils → bas du nez → menton) ;
-- manga : yeux sous le milieu de la tête, nez entre ce milieu et le menton, oreilles en
-  « C » entre la ligne des yeux et celle du nez.
+### D. Vue de 3/4 (le cas qui rate le plus)
+- Côté **lointain** : le contour descend du crâne, fait une petite **bosse de pommette**
+  sous l'œil, puis file droit au menton. On ne voit pas l'angle de la mâchoire.
+- Côté **proche** : le contour suit le crâne jusqu'à l'oreille, puis la mâchoire rejoint le
+  menton en ligne longue.
+- L'axe se déplace vers le côté lointain ; l'œil lointain est **plus étroit** (≈ 80 %) et
+  plus près du bord ; le nez dépasse vers le côté lointain.
+- Plan de côté proche : en anime, une bande d'ombre étroite le long de la mâchoire suffit
+  (pas une plaque carrée sur la joue).
+- Le cou part sous l'oreille et la joue, pas sous le menton.
 
-**Yeux :** femme ≈ 1/6 de la hauteur de la tête, homme ≈ 1/8 ; largeur ≈ 1/4. Iris ovale,
-pupille ≈ 1/4 de l'iris, haut de l'iris plus sombre ; reflet au même endroit sur les deux
-yeux.
+### E. En code (fichier `test6_portraits/tete.py`)
+Une douzaine de points 3D (pommettes, angles de mâchoire, coins du menton, axe), rotation
+(lacet, tangage, roulis), projection. **Contour du visage = enveloppe convexe du cercle du
+crâne et des points de mâchoire** : la bosse de pommette et la ligne de mâchoire sortent
+toutes seules. Yeux, nez et bouche sont des points 3D projetés. `construction_tete.png`
+montre la tête chauve à 0°, 25° et 45°.
 
-**Expressions :**
+### F. Yeux
+**Taille :** femme ≈ 1/6 de la hauteur de la tête, homme ≈ 1/8 ; largeur ≈ 1/4. Yeux bas
+et écartés = jeune et mignon ; plus hauts et serrés = plus âgé ou plus dur.
 
-| Émotion | Sourcils | Yeux | Bouche |
-|---|---|---|---|
-| Colère | vers le nez | — | — |
-| Tristesse, peur | vers les oreilles | peur : petites pupilles | — |
-| Détermination | baissés | mi-clos | — |
-| Surprise | levés | grands ouverts | — |
-| Calme | — | — | petite |
+**Recettes par taille :**
+- **1×1 :** le ton le plus sombre de la palette (pas forcément noir).
+- **1×2 vertical (standard GBA) :** 2 px sombres, ou haut sombre et bas couleur de l'iris.
+- **2×2 :** rangée du haut sombre (paupière) ; en bas, 1 px d'iris + 1 px de reflet.
+- **2×3 (32 px) :** pupille sombre, reflet 1 px **en haut** côté lumière, iris en bas. Avec
+  le reflet en bas, l'œil lit comme blanc ou endormi.
+- **3×3 :** paupière sombre qui déborde de 1 px vers l'extérieur (le cil) ; au milieu,
+  pupille + iris + reflet ; en bas, 1 px d'iris clair ou de blanc bleuté.
+- **Grand œil anime (dès 6×6) :**
+  1. cil du haut épais (1 px au coin intérieur, 2 au milieu, 3 au coin extérieur à 96 px),
+     avec un crochet qui déborde vers l'extérieur et le bas ; doublé dessous d'un ton
+     coloré (son ombre sur l'œil) ;
+  2. iris grand et ovale, plus haut que large, qui remplit presque l'ouverture ; blanc
+     **jamais blanc pur**, bleuté, visible seulement sur les côtés ;
+  3. iris en 3 tons verticaux : sombre en haut (≈ 30 %, ombre du cil), ton chaud au milieu,
+     clair en bas ; pupille sombre ;
+  4. reflets : 2×2 en haut côté lumière, + 1 px en bas de l'autre côté, au même endroit sur
+     les deux yeux ;
+  5. paupière du bas : petit trait cassé au coin extérieur, en ton de peau sombre ;
+  6. iris d'une couleur **complémentaire** des cheveux (ambre pour des cheveux bleu-vert) :
+     c'est l'accent du visage.
+- Tailles retenues (portrait de face) : 11×12 à 96 px, 8×9 à 64 px, 6×7 à 48 px.
+- **Partout :** les deux yeux ont la même forme (sauf en 3/4), reflet du même côté, noir
+  pur réservé aux pupilles. Le blanc de l'œil n'existe qu'à partir de 3 px de large.
 
-**En pixels :**
-- tête de 6 px ou moins : 1 px sombre par œil, pas de nez ;
-- tête de 7 à 12 px : yeux de 1×2 ou 2×2 px, nez en 1 px d'ombre ;
-- au-delà : on applique les rapports ci-dessus ;
-- détail par taille (yeux, expressions, format GBA) : **C10**.
+**Sourcils :** à 16 px, la frange les remplace ; dès 24 à 32 px, un trait fin (1 px en
+portrait) dans le ton sombre des cheveux, posé **par-dessus** la frange (convention anime),
+plus épais côté nez. Plus haut = plus doux.
 
-**Œil en grand (dès 32 px de tête) [P], dans l'ordre :**
-1. trait : paupière du haut épaisse (2 à 3 px) avec un cil qui part au coin extérieur ;
-   pli de paupière séparé au-dessus ; paupière du bas fine et cassée ;
-2. iris en aplat sombre ; blanc de l'œil **jamais blanc** : bleu clair ou gris, plus
-   sombre sous la paupière ;
-3. iris sombre en haut (ombre de la paupière), clair en bas, avec un fin arc lumineux en
-   bas (la lumière traverse) ;
-4. pupille, puis reflet de 1 à 2 px presque blanc, du côté de la lumière ;
-5. paupière du haut doublée à l'intérieur d'un ton coloré (son ombre sur l'œil) ;
-6. pli et paupière du bas éclaircis en ton de peau rosé (lignes secondaires en couleur) ;
-7. une touche de couleur froide en haut de l'iris pour la profondeur.
+### G. Expressions
+On ne touche **qu'aux sourcils, aux yeux et à la bouche** ; le reste de la tête est
+recopié à l'identique, sinon l'animation tremble.
 
-**Attrait [T1] :** le visage est **majoritairement dans la lumière**. Pas de visage coupé en
+| Émotion | 16 px (yeux seuls) | 32 px et plus |
+|---|---|---|
+| Joie | yeux en ligne de 2×1 ou en « ^ » | bouche ouverte, joues roses |
+| Colère | yeux 1×1 + 1 px d'ombre au coin intérieur haut | sourcils en V vers le nez, yeux plus petits |
+| Tristesse, peur | yeux 1 px plus bas | intérieur des sourcils levé, bouche vers le bas ; peur : petites pupilles |
+| Surprise | yeux 2×2 | yeux agrandis, sourcils levés de 2 px, bouche en « o » |
+| Détermination | — | sourcils baissés, yeux mi-clos |
+| Fatigue, ennui | yeux 2×1 horizontaux | paupière à mi-hauteur de l'iris |
+
+- Bouche petite et ouverte : une rangée sombre et 1 à 2 px de langue rose.
+- Clin d'œil : arc de cils vers le bas avec crochet.
+- Joues : une bande rose de 2 à 3 px sous l'œil, sans hachures sous 128 px (elles lisent
+  comme des griffures).
+
+**Attrait :** le visage est **majoritairement dans la lumière**. Pas de visage coupé en
 deux moitiés claire et sombre (effet masque), sauf intention dramatique.
+
+**Contrôle du visage :** couvrir les cheveux, la tête chauve doit déjà être juste ; yeux un
+peu sous le milieu, nez à mi-chemin, bouche au tiers ; en 3/4, bosse de pommette côté
+lointain et menton sur l'axe ; le cou ne part pas du menton.
 
 ## C5. Vêtements et design
 - Les vêtements épousent les volumes, puis s'en écartent selon le tissu. Les plis partent
   des points de tension (épaules, coudes, taille, genoux).
-- **Langage de formes :** rond = doux, carré = solide, triangle = dynamique ou dangereux.
-  Une forme dominante.
+- Une forme dominante (langage de formes : A4b).
 - **Hiérarchie :** primaires (torse, jupe, cape, masse de cheveux), puis secondaires
   (manches, ceinture, col), puis tertiaires (boutons, bijoux). Varier les tailles, garder
   des zones calmes.
+- Les épaules tombent depuis le cou ; le col arrive peu sous le menton.
+- L'ombre d'une veste suit le corps (en biais, en courbe autour de l'épaule éclairée),
+  jamais en bloc ou en bandes verticales.
+- **Identité :** une forme forte (coiffure, chapeau, cape), une couleur dominante, une
+  asymétrie voulue. Silhouettes types : guerrier large, mage en trapèze, archer fin,
+  soigneur en tons pastel. En noir uni à ×1, on reconnaît le personnage et sa direction.
 
 ## C6. Cheveux [M][C]
 **Construction :**
 - Dessiner d'abord **la tête chauve**, puis une enveloppe de volume un peu plus grande que
   le crâne. Des cheveux tirés ou attachés épousent le crâne, à 1 ou 2 px.
 - **Ligne des cheveux en premier.** Chez un adulte : cheveux → haut des yeux = yeux → nez.
-  Un enfant a un front plus grand ; un front d'enfant sur un adulte le fait paraître
-  dégarni. Formes : arrondie, en M, plate. Une ligne qui recule part du M et finit en arc.
+  Un enfant a un front plus grand. Formes : arrondie, en M, plate.
 - **Point d'attache** (queue, chignon) : toutes les mèches tirées vont vers lui en suivant
-  le crâne. Queue haute : l'attache se voit. Queue basse : les cheveux pendent vers elle.
-  Couettes : derrière les oreilles, à la même hauteur, alignées avec les yeux.
+  le crâne. Couettes : derrière les oreilles, à la même hauteur, alignées avec les yeux.
+- **4 couches, 8 à 12 mèches :** masse arrière sombre ; mèches des côtés qui encadrent le
+  visage ; frange qui **passe sur les yeux** ; 1 ou 2 accents (épi, mèche fine). Chaque
+  mèche est un ruban qui part d'une racine (raie) et finit en pointe.
 
 **Ordre de pose en pixels [P] :**
 1. la masse entière en un aplat, comme un casque ;
@@ -592,33 +667,42 @@ deux moitiés claire et sombre (effet masque), sauf intention dramatique.
    masse et à la raie) ;
 3. découpage en grandes mèches, qui suivent toutes le même mouvement ;
 4. contour posé autour des mèches, pointes ouvertes ;
-5. chaque mèche reçoit sa propre lumière et sa propre ombre ;
+5. chaque mèche reçoit sa propre lumière et sa propre ombre ; une grande mèche est
+   partagée par un pli sombre ;
 6. variation de couleur (8c) : chaud en haut, rosé ou violet vers les pointes et dans les
    ombres ;
-7. le reflet en arc se casse en tirets dans le sens des mèches.
+7. le reflet en **anneau cassé**, coupé en tirets par les bords des mèches, sur le côté
+   éclairé.
 
 **Mèches :**
-- Des mèches et touffes, jamais des fils. Épaisseurs et longueurs variées.
-- Une pointe finit sur **1 px**.
+- Des mèches et touffes, jamais des fils. Épaisseurs et longueurs variées. Une pointe finit
+  sur **1 px**.
+- Frange : 6 à 8 grandes mèches qui se chevauchent, trait de séparation **seulement vers la
+  pointe**. Trop de petites mèches = des rayures. La frange couvre le front ; le peu de
+  peau visible dessous est à l'ombre.
+- Pas de pointes sombres juste au-dessus des yeux : elles lisent comme des sourcils
+  froncés. Ton sombre seulement sur les côtés.
+- Pointes du bas : 1 à 3 grandes pointes par côté, jamais un peigne ou des dents de scie.
 - Cheveux en pointes : les plus longues à l'arrière ; leur hauteur suit un demi-cercle
   autour du crâne.
 - Ondulé : des « S ». Bouclé : des demi-cercles plus petits vers les racines et les pointes.
   Spirales : un cône qui se vrille. Tresse : 3 bandes, des « Y », puis arrondir.
 - Cheveux longs : plus fins en haut, plus gonflés en bas ; ils suivent les épaules et la
   poitrine, ne tombent jamais tout droit.
-- Frange : épaisseurs variées. Mèches de côté : elles partent entre les yeux et les
-  oreilles. Raie : placée par rapport aux yeux.
-- Quelques mèches libres pour faire naturel.
+- Une mèche fine qui traverse la joue s'arrête au-dessus du rose des joues (sinon :
+  cicatrice).
+- Accessoires (bandeau…) seulement s'ils servent le personnage, posés **après** la frange.
 
 **Couleur :**
 - Clairs : surtout des ombres. Moyens : tons moyens et ombres franches. Foncés : masse
   sombre, reflet facultatif.
-- **Reflet en arc** qui suit le crâne, découpé en tirets dans le sens des mèches.
 - L'ombre suit le sens des cheveux. Ombre portée de 1 px sous la frange. Arrière du crâne,
   nuque et dessous de l'attache dans l'ombre.
+- En petit : une masse unique, 2 à 3 mèches en pointe de 1 px, un reflet en bande cassée.
+  La coiffure est le premier marqueur d'identité.
 
 **Contrôle :** ligne des cheveux à la bonne hauteur ; mèches vers le point d'attache ;
-pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un bras [T2].
+pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un bras.
 
 ## C7. Astuces de figure [R]
 - Le geste d'abord, l'anatomie par-dessus : si les muscles cassent la ligne d'action, on
@@ -637,9 +721,9 @@ pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un br
 2. Le visage est-il attirant et majoritairement éclairé ? Se lit-il à ×1, comme les mains ?
 3. Chaque articulation est-elle plausible ? Le deltoïde dépasse-t-il la cage ? Le cou
    part-il de derrière la mâchoire ? Le pouce part-il du poignet ?
-4. Peut-on nommer les muscles qui font le contour de chaque membre (C9-I) ? Reste-t-il un
+4. Peut-on nommer les muscles qui font le contour de chaque membre (C9-H) ? Reste-t-il un
    bras « tube » ou un torse « rectangle » ?
-5. Les cheveux passent-ils le contrôle C6 ?
+5. Le visage passe-t-il le contrôle C4, les cheveux le contrôle C6 ?
 6. À côté de la référence, le dessin tient-il la comparaison ?
 
 ## C9. Anatomie de référence [I]
@@ -700,14 +784,14 @@ Les bosses d'un membre ne sont jamais face à face à la même hauteur :
 | Bassin | étroit, plus haut | plus large ; hanches ≈ épaules |
 | Cuisses | droites | plus en diagonale vers les genoux |
 | Cou | ≈ largeur de la mâchoire | fin |
-| Avant-bras | épais | plus fins, tendons moins marqués [T2] |
+| Avant-bras | épais | plus fins, tendons moins marqués |
 
 ### G. Poids
 - La ligne de gravité tombe du creux du cou sur le pied d'appui.
 - Côté qui porte : hanche haute, jambe tendue, cuisse contractée. Côté libre : genou fléchi.
 - Un objet lourd tenu d'une main fait pencher le torse du côté opposé.
 
-### I. Carte des muscles
+### H. Carte des muscles
 
 | Zone | Muscles | Ce qu'ils font au dessin |
 |---|---|---|
@@ -733,23 +817,22 @@ Plus le personnage est petit, plus on **exagère** la tête et les yeux et plus 
 
 ### A. Table par hauteur du personnage
 
-| Hauteur | Têtes | Tête / hauteur | Yeux | Nez, bouche | Bras, mains | Couleurs |
+| Hauteur | Têtes | Tête / hauteur | Yeux (C4-F) | Nez, bouche | Bras, mains | Couleurs |
 |---|---|---|---|---|---|---|
 | 8 px | 1,5 | 60 à 70 % | 1 px chacun | aucun | aucun ou 1 px | 3 à 4 |
 | 16 px | 1,7 à 2 | 50 à 60 % | 1×1 ou 1×2 | aucun | bras 1 px, main = 1 px de peau | 5 à 8 |
 | 20 à 24 px | 1,7 à 2,2 | 45 à 60 % | 1×2 | bouche rare (1 px) | bras 1 à 2 px | 8 à 13 |
-| 32 px | 2 à 2,5 | 40 à 50 % | 2×3 : reflet 1 px **en haut** [T5] | nez = 1 px d'ombre, bouche 1 à 2 px | main = bloc 2×2, pouce 1 px | 10 à 14 |
-| 48 px | 2,5 à 3,3 | 30 à 40 % | 3×2 à 3×3 : paupière, iris, pupille, reflet | nez par l'ombre, bouche 2 à 3 px | moufle + pouce | 12 à 16 |
-| 64 px | 3 à 4 | 25 à 33 % | 4×3 et plus, avec blanc de l'œil | nez en plan d'ombre, lèvre du bas par son ombre | doigts en 2 masses | 14 à 20 |
-| 96 px et plus | 4 à 6 | 15 à 25 % | recette « œil en grand » (C4) | narine, lèvres | doigts séparés | 16 (portrait GBA) |
+| 32 px | 2 à 2,5 | 40 à 50 % | 2×3 | nez = 1 px d'ombre, bouche 1 à 2 px | main = bloc 2×2, pouce 1 px | 10 à 14 |
+| 48 px | 2,5 à 3,3 | 30 à 40 % | 3×2 à 3×3 | nez par l'ombre, bouche 2 à 3 px | moufle + pouce | 12 à 16 |
+| 64 px | 3 à 4 | 25 à 33 % | 4×3 et plus, avec blanc | nez en plan d'ombre, lèvre du bas par son ombre | doigts en 2 masses | 14 à 20 |
+| 96 px et plus | 4 à 6 | 15 à 25 % | grand œil anime | narine, lèvres | doigts séparés | 16 (portrait GBA) |
 
+- Nombre de têtes ≈ 1 / part de la tête (cheveux compris) : les deux colonnes concordent.
 - Style « héroïque » : tête sous 35 % ; c'est alors une capuche, une cape ou une arme qui
   porte la silhouette.
 - Les yeux 2×2 avec reflet n'apparaissent qu'au-dessus de 16×24 ; en dessous, un reflet
   blanc rend le regard fou.
-- Le blanc de l'œil n'existe qu'à partir de 3 px de large.
-- Une seule mesure, cheveux compris : nombre de têtes ≈ 1 / part de la tête. Les deux
-  colonnes doivent toujours concorder (corrigé au test 5).
+- Mains grossies volontairement ; on les dessine avant de régler les chevauchements.
 
 ### B. Format Pokémon GBA (notre ROM)
 - **Sprite de dresseur sur la carte :** cellule 16×32 ; le personnage occupe ≈ 14×20 px,
@@ -758,14 +841,11 @@ Plus le personnage est petit, plus on **exagère** la tête et les yeux et plus 
 - **Palette :** 16 couleurs dont l'index 0 transparent → 15 utiles. Répartition type :
   contour 1, peau 3, cheveux 3, vêtement principal 3, vêtement secondaire 2 à 3, yeux et
   détail 1 à 2, blanc 1.
-- **Portrait ou sprite de combat :** 5 tons de peau, 9 pour le reste ; contour = la couleur
-  la plus sombre. Palette sûre : 3 couleurs × 3 tons ; un objet sombre prend 2 tons +
-  contour, un objet clair jusqu'à 5 ; les cheveux peuvent prendre un 4e ton.
+- **Portrait ou sprite de combat :** budget de C11-B.
 
 ### C. Placer le visage aux petites tailles
 1. **La frange fixe la ligne des yeux** : les yeux se collent sous les cheveux, sur la
-   moitié basse de la tête. Yeux bas et écartés = jeune et mignon ; plus hauts et serrés =
-   plus âgé ou plus dur.
+   moitié basse de la tête.
 2. **Écart :** à 16 px, 2 px de peau entre les yeux (1 px fait loucher, 3 px élargit la
    face). Sous les yeux, 1 à 2 rangées de peau, puis le menton.
 3. **Pas de cou** sous 32 px : la tête repose sur les épaules.
@@ -775,46 +855,16 @@ Plus le personnage est petit, plus on **exagère** la tête et les yeux et plus 
    peau plus sombre au milieu de la tête.
 6. **Dos :** aucun trait, les cheveux couvrent la tête ; on garde la même hauteur de tête.
 
-### D. Recettes d'yeux, pixel par pixel
-- **1×1 :** le ton le plus sombre de la palette (pas forcément noir).
-- **1×2 vertical (standard GBA) :** 2 px sombres ; variante : haut sombre, bas couleur de
-  l'iris.
-- **2×2 :** rangée du haut sombre (paupière) ; en bas, 1 px d'iris + 1 px de reflet clair
-  du côté de la lumière.
-- **3×3 :** rangée du haut = paupière sombre qui déborde de 1 px vers l'extérieur (le cil) ;
-  au milieu, pupille + iris + reflet ; en bas, 1 px d'iris clair ou de blanc bleuté.
-- **4×4 et plus :** recette « œil en grand » de C4.
-- **Partout :** les deux yeux ont la même forme (sauf en 3/4), le reflet est **du même côté**
-  sur les deux, et le noir pur est réservé aux pupilles.
-- **Sourcils :** à 16 px, la frange les remplace ; dès 24 à 32 px, un trait de 2 à 3 px dans
-  le ton sombre des cheveux, assez haut (plus haut = plus doux).
-
-### E. Expressions au pixel
-On ne touche **qu'aux sourcils, aux yeux et à la bouche** ; le reste de la tête est
-recopié à l'identique, sinon l'animation tremble.
-
-| Émotion | 16 px (yeux seuls) | 32 px et plus |
-|---|---|---|
-| Joie | yeux en ligne de 2×1 ou en « ^ » | bouche ouverte, joues 1 px rosé |
-| Colère | yeux 1×1 + 1 px d'ombre au coin intérieur haut | sourcils en V, yeux plus petits |
-| Tristesse | yeux 1 px plus bas | intérieur des sourcils levé, bouche courbée vers le bas |
-| Surprise | yeux 2×2 | yeux agrandis, bouche ronde sombre |
-| Fatigue, ennui | yeux 2×1 horizontaux | paupière à mi-hauteur de l'iris |
-
-### F. Couleurs du personnage
-- **3 tons par partie**, 6 à 12 couleurs pour un petit personnage. Une teinte dominante pour
-  le personnage, une couleur d'accent.
+### D. Couleurs du personnage
+- **3 tons par partie**, 6 à 12 couleurs pour un petit personnage. Une teinte dominante, une
+  couleur d'accent.
 - **Peau :** base pêche ; ombre vers le rose ou le rouge-violet ; ombre profonde vers le
   violet-bleu ; lumière vers le jaune. ≈ 20° de décalage de teinte par cran, **dans le même
   sens pour toutes les rampes**.
-- **Contour :** jamais noir ; un brun-rouge ou violet très sombre. Contour extérieur plus
-  sombre que le contour intérieur. Contre la peau, le trait prend l'ombre de la peau ou
-  disparaît (selout).
 - **Séparation :** membres proches plus clairs, membres éloignés plus sombres.
-- **Lumière :** une direction fixe pour tout le projet ; le visage reste majoritairement
-  éclairé (C4).
+- Contour et selout : A5-6.
 
-### G. Vue de dessus 3/4 (jeu type Pokémon)
+### E. Vue de dessus 3/4 (jeu type Pokémon)
 - On voit le **haut des épaules** ; le torse passe un peu sous la tête.
 - Sprite 1 tuile de large × 2 de haut ; les pieds sont toujours sur la même rangée.
 - **Directions :** face d'abord, puis dos, puis profil ; l'autre profil = miroir, sauf
@@ -824,7 +874,7 @@ recopié à l'identique, sinon l'animation tremble.
 - Hauteurs fixes par type : enfant < femme < homme ; une personne âgée un peu voûtée.
 - Deux personnages peuvent se chevaucher en hauteur, jamais en largeur.
 
-### H. Animation
+### F. Animation
 - Mannequin en aplats d'abord ; costume et équipement sur des calques séparés.
 - **Marche :** pas, passage, autre pas, passage (3 images uniques) ; le corps monte de 1 px
   aux passages ; les pieds ne glissent pas ; 100 à 150 ms par image. Plus fluide : 6 images.
@@ -832,119 +882,50 @@ recopié à l'identique, sinon l'animation tremble.
   longtemps ; cheveux et reflets bougent par petits pas réguliers.
 - Le rebond de tête est asymétrique (il monte plus vite qu'il ne descend).
 
-### I. Mains, cheveux, identité
-- **Mains :** grossies volontairement ; on les dessine avant de régler les chevauchements.
-- **Cheveux en petit :** une masse unique, 2 à 3 mèches finissant en pointe de 1 px, un
-  reflet en bande cassée (jamais une rangée régulière). La coiffure est le premier marqueur
-  d'identité.
-- **Identité :** une forme forte (coiffure, chapeau, cape), une couleur dominante, une
-  asymétrie voulue. Silhouettes types : guerrier large, mage en trapèze (robe), archer fin,
-  soigneur en tons pastel.
-- **Test :** en noir uni, à ×1, on reconnaît le personnage et sa direction.
-
-### J. Procédure
+### G. Procédure et contrôle
 1. Taille et rôle → lire la table A (part de la tête, yeux, couleurs).
 2. Mannequin en aplats : tête, torse, membres proches, membres éloignés, ligne de sol.
-3. **Le visage tout de suite** : il fixe l'échelle (ligne des yeux, recette D).
+3. **Le visage tout de suite** : il fixe l'échelle (ligne des yeux, C4-F).
 4. Coiffure et vêtements, puis test de la silhouette noire.
-5. Palette (F), contour et selout, lumière.
+5. Palette (D), contour et selout, lumière.
 6. Expressions, directions, animation.
-7. Contrôle K.
+7. Contrôle :
+   - tête et yeux conformes à la table A ; pas de nez ni de bouche à 16 px ;
+   - yeux sous la frange, bien espacés, reflets du même côté ;
+   - courbes : au plus 2 longueurs de pente, pas d'écart de plus de 1 entre pentes
+     voisines, un angle vif finit sur 1 px ;
+   - AA : 1 à 2 px par coin au plus, jamais sur le contour extérieur d'un sprite de jeu ;
+   - pas de banding, de pillow shading, ni de pixel orphelin sur le visage ;
+   - lisible à ×1, en noir uni, dans toutes les directions ; planche ×1 et ×2 côte à côte ;
+   - budget de couleurs tenu (15 + transparent sur GBA).
 
-### J2. Leçons du test 5 (Lina en 16×32, 32, 64 et portraits 32/48/64) [T5]
-- **Œil à 32 px :** 2×3 (pupille sombre, reflet 1 px en haut du côté de la lumière, ton de
-  l'iris en bas). Un 2×2 avec le reflet en bas lit comme un œil blanc ou un regard endormi.
-- **Corps à 64 px :** jamais un torse rectangle et des bras en tubes. Il faut épaules,
-  taille, hanches, coudes et mollets : au moins 1 px de variation de largeur à chaque
-  articulation.
-- **Frange :** les pointes de mèches sombres au-dessus des yeux lisent comme des sourcils
-  froncés. Ton sombre seulement sur les côtés, frange relevée, une seule rangée d'ombre
-  portée sur le front.
-- **Pointes de cheveux :** 2 à 3 grandes pointes par côté, pas un peigne régulier de
-  pointes d'1 px.
-- **Œil de portrait anime :** grand (6×6 à 48, 8×8 à 64), paupière du haut = contour + 1
-  rangée de ton coloré, blanc bleuté, iris sombre en haut et clair en bas, reflet 2×2 en
-  haut + 1 px en bas du côté opposé, paupière du bas cassée en ton de peau sombre, cil au
-  coin extérieur. Sourcils fins, posés seulement là où la peau se voit entre les mèches.
-- **Visage de portrait :** joues pleines jusqu'aux yeux, menton court ; un visage trop long
-  vieillit le personnage. Joues roses en 2 à 3 px de large, sinon elles disparaissent.
-- **Lueur à 64 px :** des anneaux de couleur unie font du banding ; tramer la limite entre
-  deux tons et garder un cœur clair petit (≈ 30 % de la flamme).
-- **Contrôle :** toujours revoir la planche à ×1 et ×2 côte à côte (`controle_x1.png`).
+## C11. Portrait anime en pixel art [A]
+Les beaux portraits anime en pixel art n'ont **pas plus de pixels** que les nôtres (visage
+de 25 à 40 px de large). La différence vient des décisions ci-dessous. Visage : C4 ;
+yeux et expressions : C4-F et C4-G ; cheveux : C6.
 
-### K. Contrôle et erreurs fréquentes
-1. La tête et les yeux respectent-ils la table A ? Pas de nez ni de bouche à 16 px ?
-2. Les yeux sont-ils sous la frange, bien espacés, reflets du même côté ?
-3. Courbes : au plus 2 longueurs de pente, pas d'écart de plus de 1 entre pentes voisines,
-   un angle vif finit sur 1 px.
-4. Anticrénelage : 1 à 2 px par coin au plus, jamais sur le contour extérieur d'un sprite
-   de jeu.
-5. Pas de banding, pas de pillow shading, pas de pixel orphelin sur le visage.
-6. Lisible à ×1, en noir uni, et dans toutes les directions ?
-7. Budget de couleurs tenu (15 + transparent sur GBA) ?
-
----
-
-## C11. Portrait anime de qualité : ce qui fait la différence [A][T6]
-Constat du test 6 : les beaux portraits anime en pixel art n'ont **pas plus de pixels** que
-les nôtres (visage de 25 à 40 px de large, comme notre portrait 64). La différence vient
-de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
-
-### A. Les 8 décisions
-1. **Jamais de face parfaite ni de symétrie miroir.** Tête de 3/4, légèrement penchée.
-   L'axe du visage est décalé vers le côté tourné. L'œil lointain est plus étroit (≈ 80 %),
-   la joue lointaine se lit seulement par son contour, la mâchoire proche monte vers l'oreille.
-   Un visage miroir paraît figé, même bien ombré.
-2. **Construire en courbes, pas en pixels.** On trace d'abord les formes comme en
-   croquis (visage, cou, buste, masse arrière des cheveux, mèches), puis on les passe en
-   pixels à la taille voulue. Les courbes restent douces et la même construction sert
-   pour toutes les tailles. Les détails du visage, eux, se refont à chaque taille (C10).
-3. **Les cheveux sont des mèches, pas un casque.** Chaque mèche est un ruban qui part
-   d'une racine (raie, bandeau) et finit en pointe. Il y a 8 à 12 mèches en 4 couches :
-   - masse arrière sombre ;
-   - mèches des côtés qui encadrent le visage ;
-   - frange qui **passe sur les yeux** ;
-   - 1 ou 2 accents : un épi sur le crâne et une mèche fine qui traverse le visage.
-   Chaque mèche a son propre volume : plus claire du côté de la lumière, plus sombre de
-   l'autre. Une grande mèche est partagée par un pli sombre. Le reflet est un **anneau
-   cassé**, coupé par les bords des mèches, sur le côté éclairé de la sphère du crâne.
-4. **Traits colorés et sélectifs.**
-   - Contour extérieur : couleur la plus sombre de la palette (un violet-marine, pas du noir).
-     Il s'éclaircit d'un ton côté lumière.
-   - Bord d'une mèche sur ce qui est derrière : trait dans le ton le plus sombre des
-     cheveux, seulement côté ombre (droite et bas) et sur la peau.
-   - Contour du visage, du menton et du cou : trait **chaud** (rose-brun), jamais noir.
-   - Plus le format est petit, moins il y a de traits intérieurs : à 64 px, côté droit
-     seulement ; à 96 px, droite et bas.
-5. **Peau claire et plate, ombres qui racontent.** Le visage reste à 80 % dans le ton
-   clair. Les ombres sont :
-   - l'ombre portée de la frange, décalée vers le bas et la droite, épaisse de ≈ 2 % ;
-   - la joue côté ombre ;
-   - le cou sous le menton : une bande nette, pas un dégradé.
-   Pas de modelé « oreiller » autour du nez ni des yeux.
-6. **Décalage de teinte (hue shift).** Les ombres glissent vers le violet ou le rose : peau
-   rose → mauve → prune. Les lumières glissent vers le jaune ou le vert d'eau. Une même
-   couleur sombre sert à plusieurs matières (ombre de peau, ombre de veste, haut de l'iris).
-   Cela économise la palette et unifie l'image.
-7. **L'œil anime, c'est le cil, l'iris et les reflets.**
-   - Cil du haut épais : 1 px au coin intérieur, 2 px au milieu et à l'extérieur, 3 px au
-     coin extérieur à 96 px, avec un crochet qui déborde vers l'extérieur et le bas.
-   - Iris grand et ovale, plus haut que large, qui remplit presque l'ouverture. Le blanc ne
-     se voit que sur les côtés ; il est bleuté et ombré d'1 px sous le cil à partir de 96 px.
-   - Iris en 3 tons verticaux : sombre en haut (≈ 30 %, l'ombre du cil), ton chaud au
-     milieu, clair en bas. Pupille sombre.
-   - Reflets : 2×2 en haut du côté de la lumière sur les deux yeux, plus 1 px en bas de
-     l'autre côté.
-   - Paupière du bas : un petit trait au coin extérieur seulement.
-   - Iris d'une couleur **complémentaire** des cheveux (ambre pour des cheveux bleu-vert).
-     C'est l'accent du portrait.
-8. **Expression par 3 leviers : cils, sourcils, bouche.**
-   - Sourcils fins, posés **par-dessus** la frange (convention anime), plus épais côté nez.
-   - Bouche petite et ouverte : une rangée sombre et 1 à 2 px de langue rose.
-   - Clin d'œil : arc de cils vers le bas avec crochet.
-   - Surprise : bouche en « o », sourcils relevés de 2 px.
-   - Joues : une bande rose sous l'œil, sans hachures sous 128 px (à petite taille, des
-     hachures lisent comme des griffures).
+### A. Les décisions
+1. **Pas de symétrie miroir.** Tête de 3/4, légèrement penchée (C4-D). Un visage miroir
+   paraît figé, même bien ombré. De face : C4-C.
+2. **Construire en courbes, pas en pixels.** On trace d'abord les formes (visage, cou,
+   buste, masse arrière des cheveux, mèches), puis on les passe en pixels à la taille
+   voulue. La même construction sert pour toutes les tailles ; les traits du visage se
+   refont à chaque taille (C10).
+3. **Traits colorés et sélectifs.**
+   - Contour extérieur : la couleur la plus sombre (violet-marine, pas du noir), un ton plus
+     clair côté lumière.
+   - Bord d'une mèche sur ce qui est derrière : ton le plus sombre des cheveux, seulement
+     côté ombre et sur la peau.
+   - Contour du visage, du menton et du cou : trait **chaud** (rose-brun), jamais marine.
+   - Moins de traits intérieurs en petit : à 64 px, côté ombre seulement ; à 96 px, côté
+     ombre et bas.
+4. **Peau claire et plate, ombres qui racontent.** Le visage reste à 80 % dans le ton clair.
+   Ombres : celle de la frange (décalée vers le bas et le côté ombre, ≈ 2 % d'épaisseur),
+   la joue côté ombre, le cou sous le menton en bande nette. Pas de modelé « oreiller »
+   autour du nez ni des yeux.
+5. **Décalage de teinte.** Ombres vers le violet ou le rose (peau rose → mauve → prune),
+   lumières vers le jaune ou le vert d'eau. Une même couleur sombre sert à plusieurs
+   matières (ombre de peau, ombre de veste, haut de l'iris).
 
 ### B. Budget de 15 couleurs (portrait GBA, testé)
 
@@ -954,12 +935,12 @@ de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
 | Cheveux | 4 | reflet, clair, base, ombre (trait intérieur = ombre) |
 | Peau | 4 | clair, base, ombre rosée, trait chaud prune (aussi ombre de veste et haut d'iris) |
 | Joues | 1 | rose franc |
-| Iris | 2 | ton chaud, ton clair (aussi bandeau) |
+| Iris | 2 | ton chaud, ton clair |
 | Blanc | 1 | bleuté (œil, col, reflets) |
 | Vêtement | 2 | clair, base ; l'ombre reprend le trait chaud |
 
 ### C. Procédure (fichier `test6_portraits/portrait.py`)
-1. Construction en unités 0..100 : sphère du crâne, contour du visage de 3/4, cou, buste.
+1. Construction en unités 0..100 : tête 3D (`tete.py`, C4-E), cou, buste.
 2. Masse arrière des cheveux, puis mèches en rubans de l'arrière vers l'avant.
    Chaque mèche = une courbe et une largeur à la racine.
 3. Passage en pixels à la taille voulue. Chaque pixel garde son étiquette (quelle forme),
@@ -970,109 +951,9 @@ de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
 5. Reflet en anneau, ombres portées, traits intérieurs sélectifs, contour extérieur avec
    selout.
 6. Nettoyage : un pixel sans voisin direct de sa couleur prend la couleur majoritaire
-   autour (2 passes).
+   autour (2 passes), sauf le trait chaud du visage.
 7. Visage refait à chaque taille : yeux, sourcils, nez (1 px d'ombre), bouche, joues.
 8. Contrôle à ×1, puis comparaison côte à côte avec une référence.
-
-### D. Erreurs vues au test 6
-- Bandeau dessiné sous la frange : il est mangé par les mèches et fait des taches. Il se
-  pose **après** la frange, fin (≈ 3,5 % de la taille), ton clair en haut.
-- Bas de la masse arrière en dents de scie : désordre. Il faut 1 ou 2 grandes pointes par côté.
-- Veste ombrée en bandes verticales : effet de blocs. L'ombre suit des courbes autour de
-  l'épaule éclairée.
-- Trop de traits de mèche à 64 px : bruit. Les traits se réduisent avec la taille.
-- Mèche fine qui traverse la joue : elle se lit comme une cicatrice si elle croise le rose
-  des joues. Elle doit s'arrêter au-dessus.
-
-## C12. Construire le visage : Loomis + proportions anime [L][R][T7]
-
-Le visage du test 6 était raté : une forme ronde dessinée à la main, bas du visage écrasé,
-mâchoire molle, pas de menton. Le bon ordre : on **construit la tête en volume**, puis on
-tire de ce volume le contour, la mâchoire, les ombres et la place des traits.
-
-### A. La tête en deux pièces (Loomis)
-1. **Une boule pour le crâne.** De côté, on la coupe à plat sur les deux faces : ces
-   « plans de côté » sont des disques (≈ 70 % du rayon depuis le centre). La tempe, la
-   pommette et l'oreille sont sur ce plan.
-2. **L'axe du visage** : une ligne qui passe au milieu du front, du nez et du menton. Elle
-   se courbe avec la boule quand la tête tourne ; c'est elle qui montre où regarde le visage.
-3. **Les lignes en travers**, perpendiculaires à l'axe et courbées sur la boule : sourcils,
-   yeux, base du nez, bouche, menton.
-4. **La mâchoire** est la seconde pièce : du dessous de l'oreille (angle de la mâchoire,
-   placé **en arrière**) jusqu'au menton, en ligne presque droite.
-
-### B. Proportions anime (fille ou jeune garçon), rayon du crâne = 1
-| Repère | Position |
-|---|---|
-| haut du crâne | −1 |
-| sourcils | ≈ 0 (milieu de la boule) |
-| ligne des yeux | ≈ +0,3 : un peu **sous** le milieu de la tête entière |
-| base du nez | à mi-chemin des yeux au menton |
-| bouche | au tiers entre le nez et le menton |
-| menton | ≈ +1,45 à +1,5 |
-| oreille | de la ligne des yeux à celle du nez |
-| écart des yeux | centres à ≈ ±0,5 ; l'écart vaut ~ une largeur d'œil |
-| cou | étroit (≈ 0,6 de rayon de large), planté sous le crâne, **derrière** le menton |
-
-Menton étroit et pointu (forme en V). Garçon plus âgé ou homme : menton plus large et plus
-bas, angle de mâchoire plus marqué. Chibi : la partie menton est moitié plus courte.
-
-### C. La vue de 3/4 (le cas qui rate le plus)
-- Côté **lointain** : le contour descend du crâne, fait une petite **bosse de pommette**
-  juste sous l'œil, puis file droit au menton. On ne voit pas l'angle de la mâchoire.
-- Côté **proche** : le contour suit le crâne jusqu'à l'oreille, puis la mâchoire part de
-  l'oreille et rejoint le menton en ligne longue.
-- L'axe se déplace vers le côté lointain ; l'œil lointain est **plus étroit** (raccourci)
-  et plus près du bord ; le nez dépasse vers le côté lointain.
-- Le plan de côté proche est une **zone d'ombre nette** quand la lumière vient de l'autre
-  côté : de la tempe à la pommette, puis à l'angle de mâchoire.
-- Le cou est décalé vers l'arrière : de 3/4, il part sous l'oreille et la joue, pas sous le menton.
-
-### D. En code (fichier `test6_portraits/tete.py`)
-On place une douzaine de points en 3D (pommettes, angles de mâchoire, coins du menton, axe),
-on tourne la tête (lacet, tangage, roulis) et on projette. **Contour du visage = enveloppe
-convexe du cercle du crâne et des points de mâchoire** : la bosse de pommette côté lointain
-et la ligne de mâchoire côté proche sortent toutes seules. Les yeux, le nez et la bouche
-sont des points 3D projetés ; le raccourci de l'œil lointain vient de l'orientation de
-sa surface. La planche `construction_tete.png` montre la tête chauve à 0°, 25° et 45°.
-
-### E. Contrôle du visage
-- Couvrir les cheveux : la tête chauve doit déjà être juste.
-- Mesurer : yeux un peu sous le milieu, nez à mi-chemin, bouche au tiers.
-- En 3/4 : bosse de pommette côté lointain, mâchoire droite côté proche, menton sur l'axe.
-- Le cou ne part pas du menton.
-
-### F. Erreurs vues au test 7 (et corrections)
-- **Trop de petites mèches** : des rayures partout. Mieux vaut 6 à 8 grandes mèches de frange
-  qui se chevauchent, avec un trait de séparation **seulement vers la pointe**.
-- **Front dégarni** entre les mèches : la frange doit couvrir le front ; le peu de peau qui se
-  voit dessous est à l'ombre.
-- **Bandeau, sourcils épais** : du bruit sur la frange. Sourcils de 1 px, accessoires seulement
-  s'ils servent le personnage.
-- **Plan de côté en plaque carrée** sur la joue : en anime, une bande étroite le long de la
-  mâchoire suffit.
-- **Buste en dôme et cou interminable** : les épaules tombent depuis le cou ; le col arrive
-  peu sous le menton ; le cou est fin.
-- **Ombre de veste en bloc vertical** : la limite d'ombre suit le corps (en biais).
-- **Contour de la peau** en trait chaud, pas en marine : le visage paraît plus doux.
-
----
-
-### G. Vue de face : les mesures Loomis appliquées (test 8)
-
-Règles reprises de tutoriels Loomis et anime, puis vérifiées en comptant les pixels sur le portrait 96 px.
-
-1. **Trois tiers.** Racine des cheveux → sourcils, sourcils → base du nez, base du nez → menton. En anime, le tiers du bas peut être plus court, à environ 0,6 ou 0,7 du tiers du milieu, mais pas moins.
-2. **Le sourcil est SUR la ligne des sourcils, et l'œil en dessous.** Le centre de l'œil se place à environ 45 % de la distance entre la ligne des sourcils et la base du nez. Si le haut de l'œil touche la ligne des sourcils, le sourcil se colle au cil et on obtient un double trait épais. C'était l'erreur du test 7.
-3. **Un œil d'écart entre les deux yeux.** Le centre de chaque œil est donc à une largeur d'œil de l'axe. En réaliste, la tête fait cinq yeux de large. En anime, compter 4 yeux de large, en gardant au moins 3 à 4 px de peau entre le coin extérieur et les cheveux. Avec 12 px d'œil pour 38 px de visage, les yeux touchaient les mèches.
-4. **Bouche au tiers.** Elle se place au tiers de la distance entre le nez et le menton, plus près du nez. Vue de face, c'est un sourire symétrique : deux coins relevés et un trait court.
-5. **Oreilles** entre la ligne des sourcils et celle du nez.
-6. **Lumière de face.** La lumière vient d'en haut et un peu de face. Sinon, toute la moitié basse des cheveux tombe dans la teinte la plus sombre et fait une masse plate.
-
-7. **Joues pleines jusqu'à la ligne du nez.** Pour un visage anime de face qui ne soit pas trop mince, la largeur à la ligne du nez vaut environ 85 % de la largeur à la ligne des yeux. Ensuite seulement, deux diagonales presque droites descendent vers un menton pointu. À la ligne de la bouche, il reste environ 65 %. Si la mâchoire se resserre dès les yeux, le visage devient un long « V » trop mince. C'était l'erreur du test 8, relevée par l'utilisatrice. Le crâne doit aussi être assez gros par rapport au carré de cheveux : à 96 px, le rayon est de 24, pas 22.
-8. **Le trait du menton doit être continu.** Le nettoyage des pixels isolés ne doit pas toucher au trait chaud (4). Sinon, la diagonale de la mâchoire, faite de pixels en escalier, se transforme en pointillés.
-
-Tailles d'œil retenues pour la vue de face : 11×12 à 96 px, 8×9 à 64 px et 6×7 à 48 px.
 
 ## Résumé
 
@@ -1080,7 +961,7 @@ Tailles d'œil retenues pour la vue de face : 11×12 à 96 px, 8×9 à 64 px et 
 volumes et terminateur → simplification (A4b) → forme iconique → silhouette → contour →
 palette → lumière selon la matière → variation de couleur → détails → nettoyage → contrôle en situation.
 
-**Personnage :** intention et références → proportions → pose → volumes → visage construit (C12) →
+**Personnage :** intention et références → proportions → pose → volumes → visage construit (C4) →
 vêtements → cheveux → table par taille (C10) → (portrait anime : C11) → silhouette → contour → palette → ombres à la main → détails →
 nettoyage → contrôle avec la référence.
 

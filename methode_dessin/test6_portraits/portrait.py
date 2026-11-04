@@ -1,4 +1,4 @@
-# Lina, portrait anime de 3/4 (méthode C11 + C12). Version 3 : tête construite en 3D,
+# Lina, portrait anime de 3/4 (méthode C11 + C4). Version 3 : tête construite en 3D,
 # grandes mèches propres, yeux plus grands et plus clairs, buste aux épaules tombantes.
 import numpy as np
 from vec import *

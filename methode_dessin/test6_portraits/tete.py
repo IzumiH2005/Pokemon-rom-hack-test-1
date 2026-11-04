@@ -1,4 +1,4 @@
-# Tête Loomis simplifiée en 3D, proportions anime (méthode C12).
+# Tête Loomis simplifiée en 3D, proportions anime (méthode C4).
 # Repère tête : sphère du crâne de rayon 1 centrée en 0 ; x vers la droite du perso vu de face,
 # y vers le bas, z vers nous. On tourne la tête (lacet, tangage, roulis), on projette à plat
 # (pas de perspective : à cette taille elle ne se voit pas) et on en tire, toujours à partir de
