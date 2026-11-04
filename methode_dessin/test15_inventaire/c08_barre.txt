@@ -1,0 +1,36 @@
+# Barre du bas (93×10) : logement de pièce, plaque de compteur, jauge de poids.
+# --- logement de pièce (anneau de laiton en relief, creux au centre), dessiné à la main
+stamp pieces/logement.txt 0 0
+# --- plaque de parchemin (relief) x12-44
+rect O 12 1 44 8
+px . 12 1 44 1 12 8 44 8
+# plaque calmée : fond p, chanfrein clair P en haut/gauche, ombre c en bas/droite
+# (elle ne doit pas voler le contraste du rubis, A6-E)
+rect p 13 2 43 7
+hline P 13 42 2
+vline P 13 3 6
+hline c 14 43 7
+vline c 43 2 6
+# clous de laiton aux extrémités
+px y 15 4
+px i 16 4 15 5
+px h 16 5
+px y 40 4
+px i 41 4 40 5
+px h 41 5
+# --- jauge de poids x50-92 : cadre de laiton en relief, rainure en creux
+rect O 50 1 92 8
+px . 50 1 92 1 50 8 92 8
+hline y 51 91 2
+vline y 51 2 7
+hline h 52 91 7
+vline i 91 3 6
+px z 52 2 53 2
+rect O 52 3 90 6
+hline k 53 89 3
+vline k 53 3 5
+rect l 54 4 89 5
+hline n 54 89 5
+vline n 89 4 5
+# graduations au quart
+px m 62 4 71 4 81 4

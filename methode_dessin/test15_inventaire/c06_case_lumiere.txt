@@ -1,0 +1,12 @@
+# Case en creux : ombrage inversé. Parois haut et gauche à l'ombre (k),
+# parois bas et droite éclairées (n), lèvre du velours éclairée sous et à droite (q).
+hline k 1 14 1
+vline k 1 1 14
+hline n 2 14 14
+vline n 14 2 14
+px k 2 2
+hline q 2 14 16
+vline q 16 2 14
+px n 15 15
+# rune de case vide : losange creux, un ton au-dessus du fond
+px m 7 6 8 6 6 7 9 7 6 8 9 8 7 9 8 9

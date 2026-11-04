@@ -1,0 +1,41 @@
+# Assemblage (E6-B, de l'arrière vers l'avant). Le dernier tamponné passe devant.
+# 1. onglets inactifs (derrière le cadre : leur bas disparaît sous le montant)
+stamp pieces/onglet_losange_inactif.txt 35 3
+stamp pieces/onglet_croix_inactif.txt 78 3
+stamp pieces/onglet_pic_inactif.txt 95 3
+# 2. cadre + velours
+stamp pieces/cadre.txt 0 0
+# 3. cases (une seule pièce, cel lié ×20)
+stamp pieces/case.txt 18 26
+stamp pieces/case.txt 37 26
+stamp pieces/case.txt 56 26
+stamp pieces/case.txt 75 26
+stamp pieces/case.txt 94 26
+stamp pieces/case.txt 18 45
+stamp pieces/case.txt 37 45
+stamp pieces/case.txt 56 45
+stamp pieces/case.txt 75 45
+stamp pieces/case.txt 94 45
+stamp pieces/case.txt 18 64
+stamp pieces/case.txt 37 64
+stamp pieces/case.txt 56 64
+stamp pieces/case.txt 75 64
+stamp pieces/case.txt 94 64
+stamp pieces/case.txt 18 83
+stamp pieces/case.txt 37 83
+stamp pieces/case.txt 56 83
+stamp pieces/case.txt 75 83
+stamp pieces/case.txt 94 83
+# 4. barre du bas
+stamp pieces/barre.txt 18 102
+# 5. onglet actif (devant le cadre)
+stamp pieces/onglet_rond_actif.txt 18 0
+# 6. bossettes de coin
+stamp pieces/bossette.txt 2 10
+stamp pieces/bossette.txt 113 10
+stamp pieces/bossette.txt 2 113
+stamp pieces/bossette.txt 113 113
+# 7. cimier + rubis
+stamp pieces/cimier.txt 52 0
+# 8. curseur de sélection (case 1)
+stamp pieces/curseur.txt 15 23

@@ -1,0 +1,37 @@
+# Moulure en relief, lumière haut-gauche : montant haut et gauche clairs vers l'extérieur,
+# montants bas et droit : pente intérieure claire (face à la lumière), bord extérieur sombre.
+hline e 6 121 13
+hline d 6 121 14
+hline d 6 121 15
+hline c 6 121 16
+hline c 6 121 17
+hline b 6 121 18
+hline d 6 121 117
+hline c 6 121 118
+hline c 6 121 119
+hline b 6 121 120
+hline b 6 121 121
+hline a 6 121 122
+# montant gauche, coupe d'onglet (diagonale 1-1) haut et bas
+vline e 5 14 121
+vline d 6 15 120
+vline d 7 16 119
+vline c 8 17 118
+vline c 9 18 117
+vline b 10 19 116
+# montant droit
+vline a 122 14 121
+vline b 121 15 120
+vline b 120 16 119
+vline c 119 17 118
+vline c 118 18 117
+vline d 117 19 116
+# feuillure : trait entre bois et velours
+frame O 11 19 116 116
+# velours : ombre portée du cadre en haut et à gauche, paroi bas/droite éclairée (creux)
+hline k 12 115 20
+vline k 12 20 115
+hline l 13 115 21
+vline l 13 21 115
+hline n 14 115 115
+vline n 115 22 115

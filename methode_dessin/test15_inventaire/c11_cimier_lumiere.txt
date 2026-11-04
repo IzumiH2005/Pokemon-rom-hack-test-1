@@ -1,0 +1,42 @@
+# Or : rampe brun -> orange -> jaune -> crème ; ombre vers le brun-rouge (A5-8b).
+# haut-gauche clair
+hline y 7 13 1
+hline y 6 13 2
+vline y 5 3 13
+vline y 6 3 9
+px z 8 2 9 2 8 1
+# droite et bas sombres
+vline i 17 6 14
+vline h 18 3 14
+hline i 14 16 2
+px i 15 1 16 1
+# bande de la bride : bord haut ombré par la monture, dessus clair, dessous sombre
+hline h 5 18 15
+hline y 1 22 16
+hline i 1 22 17
+hline h 19 22 17
+px z 1 16 2 16
+# pointe : gauche claire, droite sombre
+hline j 7 16 19
+px y 7 19 9 20
+hline h 15 16 19
+px h 14 20
+px i 13 20
+# rivets aux bouts de la bride
+# (rivets reposés plus bas)
+# rubis serti
+stamp pieces/rubis.txt 7 3
+# nettoyage : jonction monture/bride, rivets, joint sous la bride
+px O 4 15 19 15
+px y 3 17
+px h 3 16 20 16
+px i 20 17
+hline h 6 17 18
+# contrôle planche : bouts de bride trop raides et éclat perdu sur l'or clair (leçon T15)
+# -> bouts arrondis, éclat retiré du bout, gardé sur le haut de la monture contre le trait
+px . 0 15 23 15 0 18 23 18
+px y 1 16 2 16
+# rivets en relief (clair en haut-gauche, sombre en bas-droite), pas en creux
+px z 3 16 20 16
+px h 3 17 4 17 20 17 21 17
+px i 22 17

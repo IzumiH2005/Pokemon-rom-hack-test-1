@@ -13,6 +13,8 @@ Le script ne décide rien (R3) : il pose exactement ce que disent les commandes.
   ring  C cx cy r                cercle de 1 px
   rows  C y x1 x2 [x1 x2 ...]    une paire x1 x2 par rangée, à partir de la rangée y
   rep   A B x1 y1 x2 y2          remplace A par B dans la zone (A = '*' : tout pixel plein)
+  stamp piece.txt x y            pose une pièce (calque) dont le coin haut-gauche va en x y ;
+                                 les '.' de la pièce restent transparents (E6-E)
 """
 import sys
 
@@ -42,7 +44,13 @@ def appliquer(G, cmds):
         if not ligne:
             continue
         op, c, a = ligne[0], ligne[1], [int(v) for v in ligne[2:] if v.lstrip('-').isdigit()]
-        if op == 'px':
+        if op == 'stamp':
+            P = lire(c)
+            for dy, r in enumerate(P):
+                for dx, ch in enumerate(r):
+                    if ch != '.':
+                        put(ch, a[0] + dx, a[1] + dy)
+        elif op == 'px':
             for x, y in zip(a[::2], a[1::2]):
                 put(c, x, y)
         elif op == 'hline':

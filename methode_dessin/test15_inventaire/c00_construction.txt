@@ -1,0 +1,34 @@
+# R = axe et masse de l'écrin ; B = repères (grille 5×4, barre, onglets, cimier) ; V = volumes
+vline R 63 0 127
+frame R 4 12 123 123
+frame B 12 20 115 115
+frame B 18 26 33 41
+frame B 37 26 52 41
+frame B 56 26 71 41
+frame B 75 26 90 41
+frame B 94 26 109 41
+frame B 18 45 33 60
+frame B 37 45 52 60
+frame B 56 45 71 60
+frame B 75 45 90 60
+frame B 94 45 109 60
+frame B 18 64 33 79
+frame B 37 64 52 79
+frame B 56 64 71 79
+frame B 75 64 90 79
+frame B 94 64 109 79
+frame B 18 83 33 98
+frame B 37 83 52 98
+frame B 56 83 71 98
+frame B 75 83 90 98
+frame B 94 83 109 98
+frame B 18 102 110 111
+frame B 18 1 32 13
+frame B 35 4 49 13
+frame B 78 4 92 13
+frame B 95 4 109 13
+frame V 52 0 75 21
+ring V 8 16 6
+ring V 119 16 6
+ring V 8 119 6
+ring V 119 119 6

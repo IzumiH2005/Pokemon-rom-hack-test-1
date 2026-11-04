@@ -1,0 +1,4 @@
+# Cadre : silhouette (bois c) et panneau (velours m). Coins arrondis 2-1-0.
+rect c 4 12 123 123
+px . 4 12 5 12 4 13 122 12 123 12 123 13 4 122 4 123 5 123 123 122 123 123 122 123
+rect m 12 20 115 115

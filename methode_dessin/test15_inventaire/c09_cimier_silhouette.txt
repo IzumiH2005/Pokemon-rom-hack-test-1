@@ -1,0 +1,5 @@
+# Cimier 24×22 : monture (x4-19), bride qui pince le montant haut (y15-18), pointe.
+rows j 0 8 15 6 17 5 18
+rect j 4 3 19 14
+rect j 0 15 23 18
+rows j 19 6 17 8 15 10 13
