@@ -1,4 +1,4 @@
-# Méthode de pixel art — objets et personnages (v6)
+# Méthode de pixel art — objets et personnages (v7)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
@@ -9,7 +9,8 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
   matières, finition et contrôle ;
 - la **partie B** donne les étapes de construction d'un **objet** ;
 - la **partie C** donne les étapes de construction d'un **personnage** (anatomie, visage,
-  cheveux) ; **C10** donne les règles par taille (8 à 128 px) ;
+  cheveux) ; **C10** donne les règles par taille (8 à 128 px) ; **C11** donne la méthode du
+  portrait anime (3/4, mèches, yeux, couleurs) ;
 - un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels ;
 - la section **A4b** (simplifier) s'applique dès qu'une taille est imposée.
 
@@ -17,7 +18,8 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 [I] planches d'anatomie fournies · [C] planches sur les cheveux fournies ·
 [R] recherches (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de
 lisibilité d'icônes, simplification des formes) · [P] planches fournies (cheveux, œil, arche,
-cristal, flamme, déclinaisons par taille, projections) · [T1]…[T4] leçons de nos propres tests.
+cristal, flamme, déclinaisons par taille, projections) · [T1]…[T6] leçons de nos propres tests ·
+[A] analyse de portraits anime en pixel art fournis en exemple (règles reformulées).
 
 ---
 
@@ -883,6 +885,107 @@ recopié à l'identique, sinon l'animation tremble.
 
 ---
 
+## C11. Portrait anime de qualité : ce qui fait la différence [A][T6]
+Constat du test 6 : les beaux portraits anime en pixel art n'ont **pas plus de pixels** que
+les nôtres (visage de 25 à 40 px de large, comme notre portrait 64). La différence vient
+de 8 décisions. Chacune, prise seule, améliore nettement le dessin.
+
+### A. Les 8 décisions
+1. **Jamais de face parfaite ni de symétrie miroir.** Tête de 3/4, légèrement penchée.
+   L'axe du visage est décalé vers le côté tourné. L'œil lointain est plus étroit (≈ 80 %),
+   la joue lointaine se lit seulement par son contour, la mâchoire proche monte vers l'oreille.
+   Un visage miroir paraît figé, même bien ombré.
+2. **Construire en courbes, pas en pixels.** On trace d'abord les formes comme en
+   croquis (visage, cou, buste, masse arrière des cheveux, mèches), puis on les passe en
+   pixels à la taille voulue. Les courbes restent douces et la même construction sert
+   pour toutes les tailles. Les détails du visage, eux, se refont à chaque taille (C10).
+3. **Les cheveux sont des mèches, pas un casque.** Chaque mèche est un ruban qui part
+   d'une racine (raie, bandeau) et finit en pointe. Il y a 8 à 12 mèches en 4 couches :
+   - masse arrière sombre ;
+   - mèches des côtés qui encadrent le visage ;
+   - frange qui **passe sur les yeux** ;
+   - 1 ou 2 accents : un épi sur le crâne et une mèche fine qui traverse le visage.
+   Chaque mèche a son propre volume : plus claire du côté de la lumière, plus sombre de
+   l'autre. Une grande mèche est partagée par un pli sombre. Le reflet est un **anneau
+   cassé**, coupé par les bords des mèches, sur le côté éclairé de la sphère du crâne.
+4. **Traits colorés et sélectifs.**
+   - Contour extérieur : couleur la plus sombre de la palette (un violet-marine, pas du noir).
+     Il s'éclaircit d'un ton côté lumière.
+   - Bord d'une mèche sur ce qui est derrière : trait dans le ton le plus sombre des
+     cheveux, seulement côté ombre (droite et bas) et sur la peau.
+   - Contour du visage, du menton et du cou : trait **chaud** (rose-brun), jamais noir.
+   - Plus le format est petit, moins il y a de traits intérieurs : à 64 px, côté droit
+     seulement ; à 96 px, droite et bas.
+5. **Peau claire et plate, ombres qui racontent.** Le visage reste à 80 % dans le ton
+   clair. Les ombres sont :
+   - l'ombre portée de la frange, décalée vers le bas et la droite, épaisse de ≈ 2 % ;
+   - la joue côté ombre ;
+   - le cou sous le menton : une bande nette, pas un dégradé.
+   Pas de modelé « oreiller » autour du nez ni des yeux.
+6. **Décalage de teinte (hue shift).** Les ombres glissent vers le violet ou le rose : peau
+   rose → mauve → prune. Les lumières glissent vers le jaune ou le vert d'eau. Une même
+   couleur sombre sert à plusieurs matières (ombre de peau, ombre de veste, haut de l'iris).
+   Cela économise la palette et unifie l'image.
+7. **L'œil anime, c'est le cil, l'iris et les reflets.**
+   - Cil du haut épais : 1 px au coin intérieur, 2 px au milieu et à l'extérieur, 3 px au
+     coin extérieur à 96 px, avec un crochet qui déborde vers l'extérieur et le bas.
+   - Iris grand et ovale, plus haut que large, qui remplit presque l'ouverture. Le blanc ne
+     se voit que sur les côtés ; il est bleuté et ombré d'1 px sous le cil à partir de 96 px.
+   - Iris en 3 tons verticaux : sombre en haut (≈ 30 %, l'ombre du cil), ton chaud au
+     milieu, clair en bas. Pupille sombre.
+   - Reflets : 2×2 en haut du côté de la lumière sur les deux yeux, plus 1 px en bas de
+     l'autre côté.
+   - Paupière du bas : un petit trait au coin extérieur seulement.
+   - Iris d'une couleur **complémentaire** des cheveux (ambre pour des cheveux bleu-vert).
+     C'est l'accent du portrait.
+8. **Expression par 3 leviers : cils, sourcils, bouche.**
+   - Sourcils fins, posés **par-dessus** la frange (convention anime), plus épais côté nez.
+   - Bouche petite et ouverte : une rangée sombre et 1 à 2 px de langue rose.
+   - Clin d'œil : arc de cils vers le bas avec crochet.
+   - Surprise : bouche en « o », sourcils relevés de 2 px.
+   - Joues : une bande rose sous l'œil, sans hachures sous 128 px (à petite taille, des
+     hachures lisent comme des griffures).
+
+### B. Budget de 15 couleurs (portrait GBA, testé)
+
+| Groupe | Tons | Notes |
+|---|---|---|
+| Contour | 1 | violet-marine, sert aussi de pupille et de cil |
+| Cheveux | 4 | reflet, clair, base, ombre (trait intérieur = ombre) |
+| Peau | 4 | clair, base, ombre rosée, trait chaud prune (aussi ombre de veste et haut d'iris) |
+| Joues | 1 | rose franc |
+| Iris | 2 | ton chaud, ton clair (aussi bandeau) |
+| Blanc | 1 | bleuté (œil, col, reflets) |
+| Vêtement | 2 | clair, base ; l'ombre reprend le trait chaud |
+
+### C. Procédure (fichier `test6_portraits/portrait.py`)
+1. Construction en unités 0..100 : sphère du crâne, contour du visage de 3/4, cou, buste.
+2. Masse arrière des cheveux, puis mèches en rubans de l'arrière vers l'avant.
+   Chaque mèche = une courbe et une largeur à la racine.
+3. Passage en pixels à la taille voulue. Chaque pixel garde son étiquette (quelle forme),
+   sa position sur la mèche (racine → pointe, gauche → droite) et sa position sur la
+   sphère du crâne.
+4. Ombrage par la forme : sphère pour la masse, cylindre pour chaque mèche, puis seuils
+   vers 3 tons.
+5. Reflet en anneau, ombres portées, traits intérieurs sélectifs, contour extérieur avec
+   selout.
+6. Nettoyage : un pixel sans voisin direct de sa couleur prend la couleur majoritaire
+   autour (2 passes).
+7. Visage refait à chaque taille : yeux, sourcils, nez (1 px d'ombre), bouche, joues.
+8. Contrôle à ×1, puis comparaison côte à côte avec une référence.
+
+### D. Erreurs vues au test 6
+- Bandeau dessiné sous la frange : il est mangé par les mèches et fait des taches. Il se
+  pose **après** la frange, fin (≈ 3,5 % de la taille), ton clair en haut.
+- Bas de la masse arrière en dents de scie : désordre. Il faut 1 ou 2 grandes pointes par côté.
+- Veste ombrée en bandes verticales : effet de blocs. L'ombre suit des courbes autour de
+  l'épaule éclairée.
+- Trop de traits de mèche à 64 px : bruit. Les traits se réduisent avec la taille.
+- Mèche fine qui traverse la joue : elle se lit comme une cicatrice si elle croise le rose
+  des joues. Elle doit s'arrêter au-dessus.
+
+---
+
 ## Résumé
 
 **Objet :** intention, usage et projection → cadre (diagonale pour les objets longs) →
@@ -890,7 +993,7 @@ volumes et terminateur → simplification (A4b) → forme iconique → silhouett
 palette → lumière selon la matière → variation de couleur → détails → nettoyage → contrôle en situation.
 
 **Personnage :** intention et références → proportions → pose → volumes → visage →
-vêtements → cheveux → table par taille (C10) → silhouette → contour → palette → ombres à la main → détails →
+vêtements → cheveux → table par taille (C10) → (portrait anime : C11) → silhouette → contour → palette → ombres à la main → détails →
 nettoyage → contrôle avec la référence.
 
 Un concept à la fois, du grand au petit. Aucun pixel de détail tant que la structure n'est
