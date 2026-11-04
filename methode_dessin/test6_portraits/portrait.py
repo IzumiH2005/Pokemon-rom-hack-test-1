@@ -19,6 +19,10 @@ def sym(*pts):
     """Miroir d'une liste de points autour de x = 50 (vue de face)."""
     return [(100 - x, y) for x, y in pts]
 
+def serre(poly, f):
+    """Rapproche une silhouette de l'axe x = 50 (cheveux moins gonflés)."""
+    return [(50 + (x - 50) * f, y) for x, y in poly]
+
 VUES = {
  '34': dict(tete=Tete(50, 37, 22, lacet=28, tangage=5, roulis=-5),
     dos=chemin((22, 36), ((22, 14), (40, 6), (54, 7)), ((70, 8), (80, 20), (79, 38)),
@@ -43,11 +47,11 @@ VUES = {
     dos_sombre=.35, lum_x=.55, iris=(.38, .47), oeil_loin=.72, dx_yeux=(1.2, .5), joues=(3, 4.5), dx_nez=-.04, dx_bouche=.05),
  'face': dict(tete=Tete(50, 37, 24, lacet=0, tangage=4, roulis=0,
                       # joue pleine jusqu'à la ligne du nez, puis diagonale vers un menton pointu
-                      mach=((.94, .45, .30), (.86, .86, .00), (.52, 1.22, .36), (.13, 1.46, .50))),
+                      mach=((.94, .45, .30), (.86, .86, .00), (.52, 1.22, .36), (.13, 1.46, .50)), cou_r=.40),
     # bob symétrique ; la frange a sa raie un peu à droite pour ne pas faire « casque »
-    dos=chemin((21, 36), ((21, 14), (36, 6), (50, 6)), ((64, 6), (79, 14), (79, 36)),
+    dos=serre(chemin((21, 36), ((21, 14), (36, 6), (50, 6)), ((64, 6), (79, 14), (79, 36)),
                ((79, 52), (81, 62), (83, 70)), (77, 68), (74, 72), (69, 66), (31, 66), (26, 72),
-               (23, 68), (17, 70), ((19, 62), (21, 50), (21, 36))),
+               (23, 68), (17, 70), ((19, 62), (21, 50), (21, 36))), .9),
     veste=chemin((2, 100), ((4, 90), (12, 85), (24, 83)), ((34, 81), (40, 77), (42, 75)), (58, 75),
                  ((60, 77), (66, 81), (76, 83)), ((88, 85), (96, 90), (98, 100))),
     col=chemin((38, 76), (50, 90), (62, 76), (58, 75), (50, 84), (42, 75)), ombre_veste=66,
@@ -59,7 +63,7 @@ VUES = {
         ((53, 12), (52, 24), (51, 34), (50, 47), 9),     # mèche au milieu, entre les yeux
     ],
     houpe=((53, 9), (53, 2), (61, 1), (63, 6)),
-    dos_sombre=.05, lum_x=.3, lum_0=.3, iris=(.43, .52), loomis_face={48: (6, 7), 64: (8, 9), 96: (11, 12)}, oeil_loin=1, dx_yeux=(0, 0), joues=(4, 4), dx_nez=0, dx_bouche=0),
+    dos_sombre=.05, lum_x=.3, lum_0=.3, iris=(.43, .52), h_yeux=.38, loomis_face={48: (6, 7), 64: (8, 9), 96: (11, 12)}, oeil_loin=1, dx_yeux=(0, 0), joues=(4, 4), dx_nez=0, dx_bouche=0),
 }
 V = VUES['34']
 CHEV = (50, 35, 26)          # sphère des cheveux : le crâne + l'épaisseur des cheveux
@@ -235,7 +239,7 @@ def visage(G, S, expr='sourire'):
         w, h = V['loomis_face'][S]
         xs, ys_ = T.point('sourcils'); _, yn_ = T.point('nez')
         xl, xp = xs - w / k, xs + w / k
-        yl = yp = ys_ + .45 * (yn_ - ys_)
+        yl = yp = ys_ + V.get('h_yeux', .45) * (yn_ - ys_)
         wl = w
     oeil(G, xl * k, yl * k, wl, h, -1, S)
     if expr == 'clin': ferme(G, xp * k, yp * k, w, h, 1)

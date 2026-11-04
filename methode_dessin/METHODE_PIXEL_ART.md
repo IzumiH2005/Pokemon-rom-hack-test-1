@@ -1072,6 +1072,13 @@ Règles reprises de tutoriels Loomis et anime, puis vérifiées en comptant les 
 7. **Joues pleines jusqu'à la ligne du nez.** Pour un visage anime de face qui ne soit pas trop mince, la largeur à la ligne du nez vaut environ 85 % de la largeur à la ligne des yeux. Ensuite seulement, deux diagonales presque droites descendent vers un menton pointu. À la ligne de la bouche, il reste environ 65 %. Si la mâchoire se resserre dès les yeux, le visage devient un long « V » trop mince. C'était l'erreur du test 8, relevée par l'utilisatrice. Le crâne doit aussi être assez gros par rapport au carré de cheveux : à 96 px, le rayon est de 24, pas 22.
 8. **Le trait du menton doit être continu.** Le nettoyage des pixels isolés ne doit pas toucher au trait chaud (4). Sinon, la diagonale de la mâchoire, faite de pixels en escalier, se transforme en pointillés.
 
+9. **Ce que montrent les planches de construction (têtes nues puis coiffées).**
+   - **La tête tient dans un rectangle :** sa largeur fait environ les trois quarts de sa hauteur. On la coupe en quatre avec l'axe et la ligne des yeux.
+   - **La ligne des yeux est près de la moitié de la tête,** du sommet au menton. Les yeux sont dans une bande horizontale, du sourcil au bas de l'œil, qui fait le tour de la tête. En 3/4, c'est cette bande qui tourne.
+   - **Le cou part de sous les oreilles et non du menton.** Il fait environ la moitié de la largeur du visage. À 96 px, le rayon du cou est de 0,40 et non 0,26. Un cou trop fin rend tout le visage maigre.
+   - **Les cheveux collent au crâne.** Ils ne dépassent que de 10 à 15 % de chaque côté. Lina dépassait de 37 %, d'où une tête qui flottait dans un casque de cheveux. Les mèches encadrent la joue sans la couvrir.
+   - **Le contour de la joue a une petite bosse à la pommette, sous l'œil,** puis une longue diagonale presque droite jusqu'au menton. Le menton est étroit mais pas en pointe d'aiguille.
+
 Tailles d'œil retenues pour la vue de face : 11×12 à 96 px, 8×9 à 64 px et 6×7 à 48 px.
 
 ## Résumé
