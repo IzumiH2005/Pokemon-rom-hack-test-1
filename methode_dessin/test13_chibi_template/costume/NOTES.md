@@ -12,3 +12,10 @@ la tenue changent ; corps, peau, yeux et trait du template restent ceux du test 
   naissance des cheveux contre la peau faisait un bandeau sombre, éclaircie au centre ; une
   masse trop haute de 2 rangées cachait le front (compter les paires de `rows`).
 - 15 couleurs.
+
+## Retour : « une partie des cheveux est plate »
+- Cause : en 24×35 il n'y avait que 2 rangées au-dessus du crâne, donc les pointes étaient écrasées en une bande plate.
+- Correction : toile élargie à 32×39 (+4 px à gauche, à droite et en haut, `etape05b_toile32.txt`). Le corps et le visage ne bougent pas, ils sont seulement décalés de (+4, +4).
+- Cheveux redessinés en dôme hérissé : des pointes de hauteurs inégales en haut, des dents sur les côtés, et une masse qui déborde du crâne de 2 px pour donner du volume.
+- Pièges vus : six traits de mèche (`px D`/`px h`) posés sur le contour. Je les ai retirés après une vérification automatique (aucun O du contour ne doit disparaître).
+- Les O du template sous les cheveux (le haut du crâne) sont recouverts exprès, comme dans la version 24×35.
