@@ -1058,6 +1058,19 @@ sa surface. La planche `construction_tete.png` montre la tête chauve à 0°, 25
 
 ---
 
+### G. Vue de face : les mesures Loomis appliquées (test 8)
+
+Règles reprises de tutoriels Loomis et anime, puis vérifiées en comptant les pixels sur le portrait 96 px.
+
+1. **Trois tiers.** Racine des cheveux → sourcils, sourcils → base du nez, base du nez → menton. En anime, le tiers du bas peut être plus court, à environ 0,6 ou 0,7 du tiers du milieu, mais pas moins.
+2. **Le sourcil est SUR la ligne des sourcils, et l'œil en dessous.** Le centre de l'œil se place à environ 45 % de la distance entre la ligne des sourcils et la base du nez. Si le haut de l'œil touche la ligne des sourcils, le sourcil se colle au cil et on obtient un double trait épais. C'était l'erreur du test 7.
+3. **Un œil d'écart entre les deux yeux.** Le centre de chaque œil est donc à une largeur d'œil de l'axe. En réaliste, la tête fait cinq yeux de large. En anime, compter 4 yeux de large, en gardant au moins 3 à 4 px de peau entre le coin extérieur et les cheveux. Avec 12 px d'œil pour 38 px de visage, les yeux touchaient les mèches.
+4. **Bouche au tiers.** Elle se place au tiers de la distance entre le nez et le menton, plus près du nez. Vue de face, c'est un sourire symétrique : deux coins relevés et un trait court.
+5. **Oreilles** entre la ligne des sourcils et celle du nez.
+6. **Lumière de face.** La lumière vient d'en haut et un peu de face. Sinon, toute la moitié basse des cheveux tombe dans la teinte la plus sombre et fait une masse plate.
+
+Tailles d'œil retenues pour la vue de face : 11×12 à 96 px, 8×9 à 64 px et 6×7 à 48 px.
+
 ## Résumé
 
 **Objet :** intention, usage et projection → cadre (diagonale pour les objets longs) →

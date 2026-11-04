@@ -40,7 +40,7 @@ VUES = {
         ((56, 13), (53, 25), (49, 34), (45, 46), 8),     # mèche entre les yeux
     ],
     houpe=((55, 9), (55, 2), (63, 1), (65, 6)),
-    lum_x=.55, iris=(.38, .47), oeil_loin=.72, dx_yeux=(1.2, .5), joues=(3, 4.5), dx_nez=-.04, dx_bouche=.05),
+    dos_sombre=.35, lum_x=.55, iris=(.38, .47), oeil_loin=.72, dx_yeux=(1.2, .5), joues=(3, 4.5), dx_nez=-.04, dx_bouche=.05),
  'face': dict(tete=Tete(50, 37, 22, lacet=0, tangage=4, roulis=0),
     # bob symétrique ; la frange a sa raie un peu à droite pour ne pas faire « casque »
     dos=chemin((21, 36), ((21, 14), (36, 6), (50, 6)), ((64, 6), (79, 14), (79, 36)),
@@ -57,7 +57,7 @@ VUES = {
         ((53, 12), (52, 24), (51, 34), (50, 47), 9),     # mèche au milieu, entre les yeux
     ],
     houpe=((53, 9), (53, 2), (61, 1), (63, 6)),
-    lum_x=.3, iris=(.43, .52), oeil_loin=1, dx_yeux=(0, 0), joues=(4, 4), dx_nez=0, dx_bouche=0),
+    dos_sombre=.05, lum_x=.3, lum_0=.3, iris=(.43, .52), loomis_face={48: (6, 7), 64: (8, 9), 96: (11, 12)}, oeil_loin=1, dx_yeux=(0, 0), joues=(4, 4), dx_nez=0, dx_bouche=0),
 }
 V = VUES['34']
 CHEV = (50, 35, 26)          # sphère des cheveux : le crâne + l'épaisseur des cheveux
@@ -68,13 +68,13 @@ def construire(S):
     ys, xs = np.mgrid[0:S, 0:S]; X = (xs + .5) / k; Y = (ys + .5) / k
     hx, hy, hr = CHEV
     nx, ny = (X - hx) / hr, (Y - hy) / hr
-    lumiere = -V['lum_x'] * nx - .8 * ny                       # lumière en haut à gauche
+    lumiere = -V['lum_x'] * nx - .8 * ny + V.get('lum_0', 0)                       # lumière en haut à gauche
     def poser(M, nom, v=0, t=None):
         lab[M] = nom; val[M] = v[M] if isinstance(v, np.ndarray) else v
         if t is not None: tt[M] = t[M]
     # 1. masse arrière : un carré court arrondi, deux pointes douces par côté
     dos = V['dos']
-    poser(masque(dos, S), 'dos', lumiere - .35)
+    poser(masque(dos, S), 'dos', lumiere - V['dos_sombre'])
     # 2. buste : épaules qui tombent depuis le cou (pas un dôme)
     veste = V['veste']
     poser(masque(veste, S), 'veste', .9 - np.hypot(X - 24, (Y - 84) * 2.2) / 30 - 2 * (X > V['ombre_veste'] + 1.5 * (Y - 74)))
@@ -227,13 +227,22 @@ def visage(G, S, expr='sourire'):
     wl = max(4, round(w * V['oeil_loin']))                       # œil lointain raccourci (3/4)
     (xl, yl), _ = T.regard(-1); (xp, yp), _ = T.regard(1)
     xl += V['dx_yeux'][0]; xp += V['dx_yeux'][1]
+    if 'loomis_face' in V:
+        # Loomis de face : un œil d'écart entre les yeux, les yeux dans le tiers du milieu
+        # (≈ 45 % entre la ligne des sourcils et le nez), le sourcil SUR la ligne des sourcils.
+        w, h = V['loomis_face'][S]
+        xs, ys_ = T.point('sourcils'); _, yn_ = T.point('nez')
+        xl, xp = xs - w / k, xs + w / k
+        yl = yp = ys_ + .45 * (yn_ - ys_)
+        wl = w
     oeil(G, xl * k, yl * k, wl, h, -1, S)
     if expr == 'clin': ferme(G, xp * k, yp * k, w, h, 1)
     else: oeil(G, xp * k, yp * k, w, h, 1, S)
     if S >= 64:
         hs = 2 if expr == 'surprise' else 0
-        sourcil(G, xl * k, yl * k - h / 2 - 1.5, wl + 1, -1, hs)
-        sourcil(G, xp * k + .5, yp * k - h / 2 - 1.5, w + 1, 1, hs)
+        yb = (T.point('sourcils')[1] * k + 1) if 'loomis_face' in V else None
+        sourcil(G, xl * k, yb or yl * k - h / 2 - 1.5, wl + 1, -1, hs)
+        sourcil(G, xp * k + .5, yb or yp * k - h / 2 - 1.5, w + 1, 1, hs)
     # joues : petite ellipse rose sous chaque œil, seulement sur la peau claire
     for (q, rx) in ((T.p2((-.44, .65, .78)), V['joues'][0]), (T.p2((.46, .65, .78)), V['joues'][1])):
         for y in range(S):
@@ -245,6 +254,7 @@ def visage(G, S, expr='sourire'):
     if S >= 96: G[yn - 1][xn] = '3'
     xm, ym = [round(v * k) for v in T.point('bouche', V['dx_bouche'])]
     B = {48: ['44'], 64: ['4O4', '.k'], 96: ['4OOO4', '.Okk', '..44']}[S]
+    if 'loomis_face' in V and expr == 'sourire' and S >= 96: B = ['4...4', '.OOO.']   # sourire symétrique
     if expr == 'clin' and S >= 64: B = ['4OOO4', '.Okk.'] if S >= 96 else ['4OO4', '.kk']
     if expr == 'surprise' and S >= 64: B = ['.44.', '4OO4', '4kk4', '.44.'] if S >= 96 else ['4O4', '.4']
     for j, row in enumerate(B):
