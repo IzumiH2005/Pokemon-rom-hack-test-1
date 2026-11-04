@@ -1,57 +1,124 @@
-# fond de mousse N sur la zone de la bosse
+# fond de mousse M/N (le creux entre les touffes reste sombre)
 rows N 40 94 127 92 127 90 127 89 127 88 127 88 127 87 127 87 127 86 127 86 127 86 127 87 127 86 127 86 127 87 127 88 127 88 127 89 127 88 127 89 127 90 127 90 127 91 127 92 127 91 127 92 127 92 127 94 127 93 127 95 127 96 127 95 127 97 127 99 127 98 127 100 127 102 127 101 127 104 127 106 127 108 127 110 127 113 127 116 127 120 127
-# rangée A (haut, éclairée)
-stamp pieces/grande_lum.txt 90 43
-stamp pieces/touffe_lum.txt 99 39
-stamp pieces/touffe_lum.txt 106 40
-stamp pieces/touffe_mi.txt 113 42
-stamp pieces/touffe_mi.txt 120 45
-# rangée B
-stamp pieces/touffe_lum.txt 86 49
-stamp pieces/grande_lum.txt 93 48
-stamp pieces/touffe_lum.txt 102 46
-stamp pieces/grande_mi.txt 109 47
-stamp pieces/touffe_mi.txt 118 50
-# rangée C
-stamp pieces/touffe_lum.txt 86 55
-stamp pieces/touffe_mi.txt 94 54
-stamp pieces/grande_mi.txt 101 53
-stamp pieces/touffe_mi.txt 111 55
-stamp pieces/touffe_ombre.txt 119 56
-# rangée D
-stamp pieces/touffe_mi.txt 89 61
-stamp pieces/touffe_mi.txt 97 60
-stamp pieces/grande_ombre.txt 104 60
-stamp pieces/touffe_ombre.txt 114 61
-stamp pieces/touffe_ombre.txt 121 62
-# rangée E
-stamp pieces/touffe_mi.txt 94 67
-stamp pieces/touffe_ombre.txt 101 66
-stamp pieces/grande_ombre.txt 108 67
-stamp pieces/touffe_ombre.txt 118 68
-# rangée F
-stamp pieces/touffe_ombre.txt 99 73
-stamp pieces/touffe_ombre.txt 106 73
-stamp pieces/grande_ombre.txt 112 74
-stamp pieces/touffe_ombre.txt 121 75
-# rangée G
-stamp pieces/touffe_ombre.txt 109 79
-stamp pieces/touffe_ombre.txt 117 80
-stamp pieces/touffe_ombre.txt 123 82
-# franges qui pendent sur la peau (bord gauche/bas)
-vline N 88 60 63
-vline M 91 66 70
-vline N 94 72 74
-vline M 97 75 79
-vline N 101 79 81
-vline M 104 81 85
-vline N 108 84 86
-vline M 113 86 89
-vline N 119 87 88
+# remplissage : touffes intercalées (chevauchement, tailles variées)
+stamp pieces/C_lum.txt 92 44
+stamp pieces/B_lum.txt 106 43
+stamp pieces/A_mi.txt 114 44
+stamp pieces/B_mi.txt 120 48
+stamp pieces/A_lum.txt 95 48
+stamp pieces/C_mi.txt 108 52
+stamp pieces/B_lum.txt 90 57
+stamp pieces/A_mi.txt 100 55
+stamp pieces/B_mi.txt 116 55
+stamp pieces/C_mi.txt 104 60
+stamp pieces/A_ombre.txt 122 61
+stamp pieces/B_mi.txt 87 63
+stamp pieces/A_mi.txt 97 66
+stamp pieces/C_ombre.txt 108 66
+stamp pieces/B_ombre.txt 117 70
+stamp pieces/A_mi.txt 87 68
+stamp pieces/B_ombre.txt 95 72
+stamp pieces/C_ombre.txt 112 75
+stamp pieces/A_ombre.txt 101 78
+stamp pieces/B_ombre.txt 123 78
+stamp pieces/A_ombre.txt 92 77
+stamp pieces/C_ombre.txt 99 82
+stamp pieces/B_ombre.txt 108 83
+stamp pieces/A_ombre.txt 116 85
+# touffes posées une à une, du haut (fond) vers le bas (devant) ; lumière haut-gauche
+stamp pieces/B_lum.txt 97 37
+stamp pieces/A_lum.txt 104 39
+stamp pieces/C_mi.txt 109 40
+stamp pieces/A_mi.txt 118 42
+stamp pieces/B_mi.txt 122 44
+stamp pieces/D_lum.txt 88 41
+stamp pieces/A_lum.txt 100 44
+stamp pieces/B_mi.txt 113 46
+stamp pieces/C_lum.txt 99 49
+stamp pieces/A_mi.txt 108 50
+stamp pieces/D_mi.txt 116 49
+stamp pieces/B_lum.txt 86 50
+stamp pieces/A_lum.txt 93 53
+stamp pieces/C_mi.txt 104 55
+stamp pieces/A_ombre.txt 123 54
+stamp pieces/D_lum.txt 86 56
+stamp pieces/B_mi.txt 97 59
+stamp pieces/A_mi.txt 111 58
+stamp pieces/C_ombre.txt 117 59
+stamp pieces/A_mi.txt 92 63
+stamp pieces/D_mi.txt 101 63
+stamp pieces/B_ombre.txt 113 65
+stamp pieces/A_ombre.txt 121 67
+stamp pieces/C_mi.txt 92 69
+stamp pieces/A_ombre.txt 104 70
+stamp pieces/D_ombre.txt 110 70
+stamp pieces/B_ombre.txt 99 74
+stamp pieces/A_ombre.txt 120 74
+stamp pieces/C_ombre.txt 106 77
+stamp pieces/B_ombre.txt 117 79
+stamp pieces/A_ombre.txt 112 82
+stamp pieces/C_ombre.txt 120 84
+# pointes qui cassent le bord haut
+px N 95 38 103 36 110 39 115 41 124 43
+px P 96 37 103 35
+# franges qui pendent sur la peau
+vline M 88 62 65
+vline N 90 66 69
+vline M 93 72 75
+vline M 97 77 80
+vline N 98 78 79
+vline M 102 80 83
+vline M 105 82 86
+vline N 109 85 87
+vline M 113 87 90
+vline M 118 88 89
+vline M 124 89 91
 # lichen sur le haut du crâne
 stamp pieces/lichen.txt 60 19
-stamp pieces/lichen.txt 64 17
-stamp pieces/lichen.txt 68 19
-stamp pieces/lichen.txt 72 21
-stamp pieces/lichen.txt 63 22
-stamp pieces/lichen.txt 69 23
+stamp pieces/lichen.txt 65 17
+stamp pieces/lichen.txt 70 19
+stamp pieces/lichen.txt 73 22
+stamp pieces/A_lum.txt 62 22
+# drapé sur l'épaule proche : bord bas déchiqueté, tout en ombre (bas-droite)
+rows N 87 89 127 89 127 90 127 90 127 91 127 91 127 92 127 92 127 93 127 93 127 94 127 95 127 95 127 96 127 97 127 98 127 99 127 101 127 103 127 105 127 108 127 111 127 115 127 120 127
+stamp pieces/B_mi.txt 90 87
+stamp pieces/C_ombre.txt 100 88
+stamp pieces/A_ombre.txt 112 89
+stamp pieces/D_ombre.txt 117 92
+stamp pieces/B_ombre.txt 93 93
+stamp pieces/A_ombre.txt 104 94
+stamp pieces/C_ombre.txt 96 99
+stamp pieces/B_ombre.txt 110 98
+stamp pieces/A_ombre.txt 121 100
+stamp pieces/C_ombre.txt 104 103
+stamp pieces/A_ombre.txt 115 105
+# manteau qui descend jusqu'en bas : bord gauche irrégulier, tout en ombre
+rows N 99 98 127 99 127 99 127 100 127 100 127 101 127 101 127 100 127 101 127 102 127 102 127 103 127 102 127 103 127 104 127 104 127 103 127 104 127 105 127 105 127 104 127 105 127 106 127 106 127 105 127 106 127 106 127 107 127
+stamp pieces/B_ombre.txt 99 107
+stamp pieces/A_ombre.txt 108 109
+stamp pieces/C_ombre.txt 115 108
+stamp pieces/A_ombre.txt 123 110
+stamp pieces/B_ombre.txt 101 113
+stamp pieces/C_ombre.txt 110 115
+stamp pieces/A_ombre.txt 119 116
+stamp pieces/A_ombre.txt 103 119
+stamp pieces/B_ombre.txt 113 121
+stamp pieces/C_ombre.txt 121 122
+stamp pieces/A_ombre.txt 106 124
+stamp pieces/A_mi.txt 100 98
+stamp pieces/C_mi.txt 106 100
+stamp pieces/B_ombre.txt 116 101
+stamp pieces/A_mi.txt 102 104
+stamp pieces/B_ombre.txt 111 104
+stamp pieces/A_ombre.txt 120 105
+stamp pieces/C_mi.txt 100 110
+stamp pieces/B_ombre.txt 117 112
+stamp pieces/A_ombre.txt 124 115
+stamp pieces/B_mi.txt 104 116
+stamp pieces/A_ombre.txt 112 118
+stamp pieces/C_ombre.txt 106 121
+stamp pieces/A_ombre.txt 117 124
+stamp pieces/B_ombre.txt 122 119
+stamp pieces/A_mi.txt 101 122
+stamp pieces/C_ombre.txt 112 125
+px M 99 104 100 111 102 117 103 122 105 125

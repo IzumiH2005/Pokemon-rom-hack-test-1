@@ -1,0 +1,7 @@
+# nettoyage : orphelins repérés, corrigés un par un
+35 44 f
+41 48 f
+47 39 b
+64 34 b
+68 38 b
+93 34 d

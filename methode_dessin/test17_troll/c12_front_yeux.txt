@@ -10,13 +10,13 @@
 38 37 dfgggffffeeeedddeeee
 39 35 ddfggfffeedddeeeffeeee
 40 34 dfffeeddddeeeffffeeeeee
-41 32 ddffggffffffffffffeeeeeee
+41 32 ddffggffeeddeeffgffeeeeee
 # ARCADE : dessus éclairé, face, dessous en ombre
-42 30 dfgggggfffggggffffffgggfffffeeeeeeddeeeedddddddd
-43 30 dffgfffeeffgfffeeeeeffffffeeeeeeddddddddcccccccc
-44 30 deeffeeddeeeefeedddeeeeeeeeedddddccccccccccccbbb
-45 30 deeeeedddbbdddeddcccdddddddddccccccbbbbbbbbbbbbb
-46 30 bdddddcccbbcccdccbbbcccccccccbbbbbbbbbbbbbbbaaaa
+42 30 dffgfffeeddeeddeeeffgggffffeeeeeddddeeeedddddddd
+43 30 deffgffeeddddcdddeefggffffeeeeedddccddddcccccccc
+44 30 deefeddcbbcdeedcdeeeffeeeeeddddddccccccccccccbbb
+45 30 deeddcbbabcddedccdddddddccccbbbbbbbbbbbbbbbbbbbb
+46 30 bcdccbbaabbcdeecbccdcccbbbbbbbaaaaabbbbbbbbbaaaa
 47 36 bbbaabbbbaaaaaaaaaaaaaaaabbbbbbbbbbbbb
 # ORBITES + OEIL lointain (lueur derrière l'arête) + OEIL proche
 48 36 bccbaabbaaaaaaaaaaaaaaaaaabbbbbbcccccc
