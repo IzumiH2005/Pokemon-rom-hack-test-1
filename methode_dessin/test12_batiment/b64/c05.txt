@@ -1,0 +1,123 @@
+# c05 détails hiérarchisés : 1) porte + enseigne (point d'intérêt) 2) fenêtres, colombages 3) tuiles, pierres, mousse, fumée
+# --- fumée : 3 bouffées qui montent vers la droite (pas de contour : effet)
+rows n 0 15 17
+rows n 1 13 15
+px D 16 1 17 1
+px n 12 2 13 2
+# --- cheminée : deux joints de pierre décalés
+px s 12 11 13 11 14 14 15 14
+# --- tuiles du toit : rangs cassés (groupes), lèvre claire D au-dessus de certains
+hline B 34 40 14
+hline B 6 12 18
+hline B 14 17 18
+hline B 35 38 18
+hline B 40 43 18
+hline B 5 9 22
+hline B 11 16 22
+hline B 35 40 22
+hline B 4 7 26
+hline B 9 14 26
+hline B 36 42 26
+px D 35 13 36 13 7 17 8 17 36 21 37 21 10 25 11 25
+# mousse au bord bas du toit et au pied de la cheminée
+px L 6 28 7 28 8 28 L 9 16
+px l 7 27 10 16
+px L 42 28 43 28
+px l 43 27
+# --- lucarne : fenêtre, évent
+frame u 22 21 28 26
+rect g 23 22 27 25
+vline u 25 22 25
+px w 23 22 24 22 23 23
+px G 26 22
+px t 25 17 25 18
+# --- étage : poteaux (clair à gauche, sombre à droite), ombre de l'avant-toit sur le bois
+vline v 5 32 41
+vline u 6 32 41
+vline v 19 32 41
+vline u 20 32 41
+vline v 34 32 41
+vline u 35 32 41
+vline v 44 32 41
+vline u 45 32 41
+px t 5 30 6 30 5 31 6 31 19 30 20 30 19 31 20 31 34 30 35 30 34 31 35 31 44 30 45 30 44 31 45 31
+# panneau central : lisse et deux écharpes en diagonale 1:1
+hline u 21 33 37
+px u 21 32 22 33 23 34 24 35 25 36
+px u 33 32 32 33 31 34 30 35 29 36
+# fenêtre gauche (9 px, meneau au centre)
+frame u 8 33 16 39
+rect g 9 34 15 38
+vline u 12 34 38
+hline u 9 15 36
+px w 9 34 10 34 9 35
+px G 15 37 14 38
+hline v 7 17 40
+hline p 8 16 41
+# fenêtre droite (7 px)
+frame u 36 33 42 39
+rect g 37 34 41 38
+vline u 39 34 38
+hline u 37 41 36
+px w 37 34 38 34 37 35
+px G 41 37
+hline v 35 43 40
+hline p 36 42 41
+# --- rez-de-chaussée : linteau et fenêtre basse, jardinière fleurie
+hline n 7 17 46
+frame t 8 47 16 52
+rect g 9 48 15 51
+vline t 12 48 51
+px w 9 48 10 48 9 49
+px G 15 50 14 51
+rect u 7 53 17 54
+hline v 7 17 53
+hline s 8 17 55
+px F 9 51 10 51 13 51 16 51
+px L 8 52 11 52 12 52 14 52 15 52 17 52
+px f 9 52 10 52 13 52 16 52
+# --- appareil de pierre : assises cassées, joints verticaux décalés, arêtes hautes claires
+hline s 5 6 48
+hline s 18 22 48
+hline s 42 45 48
+hline s 5 6 52
+hline s 18 22 52
+hline s 34 45 52
+px s 20 45 20 46 20 47 43 45 43 46 43 47 19 49 19 50 19 51 44 49 44 50 44 51 21 53 21 54 39 53 39 54
+px n 21 45 44 45 20 49 22 53 40 53
+# --- porte : claveaux autour de l'arc (joints en rayons), planches, ferrure, poignée
+px n 25 43 26 42 30 42 31 43
+px m 27 42 28 42 29 42
+px s 24 44 32 44
+px u 28 47 28 48 28 49 28 50 28 51 28 52 28 53 28 54 28 55 28 56
+px t 26 49 27 49 26 53 27 53 29 49 30 49 29 53 30 53
+px Q 30 51
+# --- enseigne à la feuille : potence, chaînes, planche
+hline t 34 41 45
+px t 36 46 40 46
+rect v 35 47 41 51
+frame t 35 47 41 51
+hline u 36 40 50
+px L 37 48 38 48 38 49 39 49
+px l 37 49
+# --- tour : assises en arc (plus hautes aux bords), fenêtre en plein cintre
+px m 47 30 48 31 49 31 50 31
+px s 51 31 52 31 53 31 54 31 55 31
+px A 56 31 57 31 58 30
+px m 47 40 48 41 49 41 50 41
+px s 51 41 52 41 53 41 54 41 55 41
+px A 56 41 57 41 58 40
+px m 47 50 48 51 49 51 50 51
+px s 51 51 52 51 53 51 54 51 55 51
+px A 56 51 57 51 58 50
+px s 49 35 55 46 52 55
+rows O 33 52 53 51 54
+rect O 51 35 54 38
+rect g 52 35 53 38
+px G 52 35
+hline n 50 55 39
+# --- sol : herbe qui cache le pied (groupes de 2-3 brins)
+px L 5 56 6 56 8 56 9 56 18 56 19 56 21 56 36 56 37 56 39 56 43 56 44 56 46 56
+px l 5 55 8 55 18 55 37 55 43 55
+px L 49 57 50 57 58 57 59 57
+px l 50 56 58 56

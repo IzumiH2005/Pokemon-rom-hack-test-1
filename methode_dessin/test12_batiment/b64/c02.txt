@@ -1,0 +1,23 @@
+# c02 aplats — une couleur moyenne par matière, du fond vers l'avant
+# toit de la maison (ardoise C), marches de 4 rangées
+rows C 10 6 46 6 46 6 46 6 46 5 47 5 47 5 47 5 47 4 48 4 48 4 48 4 48 3 49 3 49 3 49 3 49 2 50 2 50 2 50 2 50
+# cheminée (pierre m) et son chapeau
+rect m 10 7 15 15
+rect m 9 5 16 6
+# lucarne : toit en pignon (C) puis mur (q)
+rows C 13 25 25 24 26 23 27 22 28 21 29 20 30 19 31 19 31
+rows q 16 25 25 24 26 23 27 22 28
+rect q 21 20 29 26
+# mur : enduit (q), sablière (u), soubassement de pierre (m)
+rect q 4 30 45 41
+rect u 4 42 45 43
+rect m 4 44 45 56
+# tour : cylindre de pierre (n)
+rect n 46 22 60 55
+rows n 56 47 59 49 57
+# cône (ardoise C), demi-largeur = (y-1)//2, puis l'ellipse de l'égout
+rows C 1 53 53 53 53 52 54 52 54 51 55 51 55 50 56 50 56 49 57 49 57 48 58 48 58 47 59 47 59 46 60 46 60 45 61 45 61 44 62 44 62 44 62 45 61 48 58
+# porte en arc (bois u) et marches (pierre n)
+rows u 44 26 30 25 31
+rect u 24 46 32 56
+rect n 23 57 33 58

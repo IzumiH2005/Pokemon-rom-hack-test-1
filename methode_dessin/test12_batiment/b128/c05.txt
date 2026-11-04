@@ -1,0 +1,934 @@
+# c05 détails 128 : 1) porte, enseigne, lanterne (intérêt) 2) fenêtres, colombages, tonneau 3) tuiles, pierres, lierre, mousse, fumée
+# --- tuiles : rangs tous les 5 px, coupures décalées ; joints de 3 px tous les 6 px ; lèvre claire 1 tuile sur 2
+rep C B 12 25 20 25
+rep C B 24 25 37 25
+rep C B 41 25 54 25
+rep C B 58 25 71 25
+rep C B 75 25 88 25
+rep C B 92 25 93 25
+rep C B 15 26 15 28
+rep C D 16 26 17 26
+rep C B 21 26 21 28
+rep C B 27 26 27 28
+rep C D 28 26 29 26
+rep C B 33 26 33 28
+rep C B 39 26 39 28
+rep C D 40 26 41 26
+rep C B 45 26 45 28
+rep C B 51 26 51 28
+rep C D 52 26 53 26
+rep C B 57 26 57 28
+rep C B 63 26 63 28
+rep C D 64 26 65 26
+rep C B 69 26 69 28
+rep C B 75 26 75 28
+rep C D 76 26 77 26
+rep C B 81 26 81 28
+rep C B 87 26 87 28
+rep C D 88 26 89 26
+rep C B 11 30 26 30
+rep C B 30 30 43 30
+rep C B 47 30 60 30
+rep C B 64 30 77 30
+rep C B 81 30 91 30
+rep C B 17 31 17 33
+rep C D 18 31 19 31
+rep C B 23 31 23 33
+rep C B 29 31 29 33
+rep C D 30 31 31 31
+rep C B 35 31 35 33
+rep C B 41 31 41 33
+rep C D 42 31 43 31
+rep C B 47 31 47 33
+rep C B 53 31 53 33
+rep C D 54 31 55 31
+rep C B 59 31 59 33
+rep C B 65 31 65 33
+rep C D 66 31 67 31
+rep C B 71 31 71 33
+rep C B 77 31 77 33
+rep C D 78 31 79 31
+rep C B 83 31 83 33
+rep C B 89 31 89 33
+rep C D 90 31 91 31
+rep C B 10 35 18 35
+rep C B 22 35 35 35
+rep C B 39 35 52 35
+rep C B 56 35 69 35
+rep C B 73 35 86 35
+rep C B 90 35 89 35
+rep C B 13 36 13 38
+rep C D 14 36 15 36
+rep C B 19 36 19 38
+rep C B 25 36 25 38
+rep C D 26 36 27 36
+rep C B 31 36 31 38
+rep C B 37 36 37 38
+rep C D 38 36 39 36
+rep C B 43 36 43 38
+rep C B 49 36 49 38
+rep C D 50 36 51 36
+rep C B 55 36 55 38
+rep C B 61 36 61 38
+rep C D 62 36 63 36
+rep C B 67 36 67 38
+rep C B 73 36 73 38
+rep C D 74 36 75 36
+rep C B 79 36 79 38
+rep C B 85 36 85 38
+rep C D 86 36 87 36
+rep C B 8 40 23 40
+rep C B 27 40 40 40
+rep C B 44 40 57 40
+rep C B 61 40 74 40
+rep C B 78 40 86 40
+rep C B 14 41 14 43
+rep C D 15 41 16 41
+rep C B 20 41 20 43
+rep C B 26 41 26 43
+rep C D 27 41 28 41
+rep C B 32 41 32 43
+rep C B 38 41 38 43
+rep C D 39 41 40 41
+rep C B 44 41 44 43
+rep C B 50 41 50 43
+rep C D 51 41 52 41
+rep C B 56 41 56 43
+rep C B 62 41 62 43
+rep C D 63 41 64 41
+rep C B 68 41 68 43
+rep C B 74 41 74 43
+rep C D 75 41 76 41
+rep C B 80 41 80 43
+rep C B 7 45 15 45
+rep C B 19 45 32 45
+rep C B 36 45 49 45
+rep C B 53 45 66 45
+rep C B 70 45 84 45
+rep C B 10 46 10 48
+rep C D 11 46 12 46
+rep C B 16 46 16 48
+rep C B 22 46 22 48
+rep C D 23 46 24 46
+rep C B 28 46 28 48
+rep C B 34 46 34 48
+rep C D 35 46 36 46
+rep C B 40 46 40 48
+rep C B 46 46 46 48
+rep C D 47 46 48 46
+rep C B 52 46 52 48
+rep C B 58 46 58 48
+rep C D 59 46 60 46
+rep C B 64 46 64 48
+rep C B 70 46 70 48
+rep C D 71 46 72 46
+rep C B 76 46 76 48
+rep C B 82 46 82 48
+rep C D 83 46 84 46
+rep C B 6 50 21 50
+rep C B 25 50 38 50
+rep C B 42 50 55 50
+rep C B 59 50 72 50
+rep C B 76 50 81 50
+rep C B 12 51 12 53
+rep C D 13 51 14 51
+rep C B 18 51 18 53
+rep C B 24 51 24 53
+rep C D 25 51 26 51
+rep C B 30 51 30 53
+rep C B 36 51 36 53
+rep C D 37 51 38 51
+rep C B 42 51 42 53
+rep C B 48 51 48 53
+rep C D 49 51 50 51
+rep C B 54 51 54 53
+rep C B 60 51 60 53
+rep C D 61 51 62 51
+rep C B 66 51 66 53
+rep C B 72 51 72 53
+rep C D 73 51 74 51
+rep C B 78 51 78 53
+rep C B 5 55 13 55
+rep C B 17 55 30 55
+rep C B 34 55 47 55
+rep C B 51 55 64 55
+rep C B 68 55 79 55
+rep C B 8 56 8 58
+rep C D 9 56 10 56
+rep C B 14 56 14 58
+rep C B 20 56 20 58
+rep C D 21 56 22 56
+rep C B 26 56 26 58
+rep C B 32 56 32 58
+rep C D 33 56 34 56
+rep C B 38 56 38 58
+rep C B 44 56 44 58
+rep C D 45 56 46 56
+rep C B 50 56 50 58
+rep C B 56 56 56 58
+rep C D 57 56 58 56
+rep C B 62 56 62 58
+rep C B 68 56 68 58
+rep C D 69 56 70 56
+rep C B 74 56 74 58
+# --- tuiles du cône : arcs (bords relevés d'1 px), un ton plus sombre par coin
+rep D C 104 9 104 9
+rep C B 104 9 104 9
+rep B A 104 9 104 9
+rep D C 105 10 105 10
+rep C B 105 10 105 10
+rep B A 105 10 105 10
+rep D C 106 10 106 10
+rep C B 106 10 106 10
+rep B A 106 10 106 10
+rep D C 107 10 107 10
+rep C B 107 10 107 10
+rep B A 107 10 107 10
+rep D C 108 10 108 10
+rep C B 108 10 108 10
+rep B A 108 10 108 10
+rep D C 109 10 109 10
+rep C B 109 10 109 10
+rep B A 109 10 109 10
+rep D C 110 9 110 9
+rep C B 110 9 110 9
+rep B A 110 9 110 9
+rep D C 101 15 101 15
+rep C B 101 15 101 15
+rep B A 101 15 101 15
+rep D C 102 15 102 15
+rep C B 102 15 102 15
+rep B A 102 15 102 15
+rep D C 103 16 103 16
+rep C B 103 16 103 16
+rep B A 103 16 103 16
+rep D C 104 16 104 16
+rep C B 104 16 104 16
+rep B A 104 16 104 16
+rep D C 105 16 105 16
+rep C B 105 16 105 16
+rep B A 105 16 105 16
+rep D C 106 16 106 16
+rep C B 106 16 106 16
+rep B A 106 16 106 16
+rep D C 107 16 107 16
+rep C B 107 16 107 16
+rep B A 107 16 107 16
+rep D C 108 16 108 16
+rep C B 108 16 108 16
+rep B A 108 16 108 16
+rep D C 109 16 109 16
+rep C B 109 16 109 16
+rep B A 109 16 109 16
+rep D C 110 16 110 16
+rep C B 110 16 110 16
+rep B A 110 16 110 16
+rep D C 111 16 111 16
+rep C B 111 16 111 16
+rep B A 111 16 111 16
+rep D C 112 15 112 15
+rep C B 112 15 112 15
+rep B A 112 15 112 15
+rep D C 113 15 113 15
+rep C B 113 15 113 15
+rep B A 113 15 113 15
+rep D C 98 21 98 21
+rep C B 98 21 98 21
+rep B A 98 21 98 21
+rep D C 99 21 99 21
+rep C B 99 21 99 21
+rep B A 99 21 99 21
+rep D C 100 22 100 22
+rep C B 100 22 100 22
+rep B A 100 22 100 22
+rep D C 101 22 101 22
+rep C B 101 22 101 22
+rep B A 101 22 101 22
+rep D C 102 22 102 22
+rep C B 102 22 102 22
+rep B A 102 22 102 22
+rep D C 103 22 103 22
+rep C B 103 22 103 22
+rep B A 103 22 103 22
+rep D C 104 22 104 22
+rep C B 104 22 104 22
+rep B A 104 22 104 22
+rep D C 105 22 105 22
+rep C B 105 22 105 22
+rep B A 105 22 105 22
+rep D C 106 22 106 22
+rep C B 106 22 106 22
+rep B A 106 22 106 22
+rep D C 107 22 107 22
+rep C B 107 22 107 22
+rep B A 107 22 107 22
+rep D C 108 22 108 22
+rep C B 108 22 108 22
+rep B A 108 22 108 22
+rep D C 109 22 109 22
+rep C B 109 22 109 22
+rep B A 109 22 109 22
+rep D C 110 22 110 22
+rep C B 110 22 110 22
+rep B A 110 22 110 22
+rep D C 111 22 111 22
+rep C B 111 22 111 22
+rep B A 111 22 111 22
+rep D C 112 22 112 22
+rep C B 112 22 112 22
+rep B A 112 22 112 22
+rep D C 113 22 113 22
+rep C B 113 22 113 22
+rep B A 113 22 113 22
+rep D C 114 22 114 22
+rep C B 114 22 114 22
+rep B A 114 22 114 22
+rep D C 115 21 115 21
+rep C B 115 21 115 21
+rep B A 115 21 115 21
+rep D C 116 21 116 21
+rep C B 116 21 116 21
+rep B A 116 21 116 21
+rep D C 95 27 95 27
+rep C B 95 27 95 27
+rep B A 95 27 95 27
+rep D C 96 27 96 27
+rep C B 96 27 96 27
+rep B A 96 27 96 27
+rep D C 97 27 97 27
+rep C B 97 27 97 27
+rep B A 97 27 97 27
+rep D C 98 28 98 28
+rep C B 98 28 98 28
+rep B A 98 28 98 28
+rep D C 99 28 99 28
+rep C B 99 28 99 28
+rep B A 99 28 99 28
+rep D C 100 28 100 28
+rep C B 100 28 100 28
+rep B A 100 28 100 28
+rep D C 101 28 101 28
+rep C B 101 28 101 28
+rep B A 101 28 101 28
+rep D C 102 28 102 28
+rep C B 102 28 102 28
+rep B A 102 28 102 28
+rep D C 103 28 103 28
+rep C B 103 28 103 28
+rep B A 103 28 103 28
+rep D C 104 28 104 28
+rep C B 104 28 104 28
+rep B A 104 28 104 28
+rep D C 105 28 105 28
+rep C B 105 28 105 28
+rep B A 105 28 105 28
+rep D C 106 28 106 28
+rep C B 106 28 106 28
+rep B A 106 28 106 28
+rep D C 107 28 107 28
+rep C B 107 28 107 28
+rep B A 107 28 107 28
+rep D C 108 28 108 28
+rep C B 108 28 108 28
+rep B A 108 28 108 28
+rep D C 109 28 109 28
+rep C B 109 28 109 28
+rep B A 109 28 109 28
+rep D C 110 28 110 28
+rep C B 110 28 110 28
+rep B A 110 28 110 28
+rep D C 111 28 111 28
+rep C B 111 28 111 28
+rep B A 111 28 111 28
+rep D C 112 28 112 28
+rep C B 112 28 112 28
+rep B A 112 28 112 28
+rep D C 113 28 113 28
+rep C B 113 28 113 28
+rep B A 113 28 113 28
+rep D C 114 28 114 28
+rep C B 114 28 114 28
+rep B A 114 28 114 28
+rep D C 115 28 115 28
+rep C B 115 28 115 28
+rep B A 115 28 115 28
+rep D C 116 28 116 28
+rep C B 116 28 116 28
+rep B A 116 28 116 28
+rep D C 117 27 117 27
+rep C B 117 27 117 27
+rep B A 117 27 117 27
+rep D C 118 27 118 27
+rep C B 118 27 118 27
+rep B A 118 27 118 27
+rep D C 119 27 119 27
+rep C B 119 27 119 27
+rep B A 119 27 119 27
+rep D C 92 33 92 33
+rep C B 92 33 92 33
+rep B A 92 33 92 33
+rep D C 93 33 93 33
+rep C B 93 33 93 33
+rep B A 93 33 93 33
+rep D C 94 33 94 33
+rep C B 94 33 94 33
+rep B A 94 33 94 33
+rep D C 95 33 95 33
+rep C B 95 33 95 33
+rep B A 95 33 95 33
+rep D C 96 34 96 34
+rep C B 96 34 96 34
+rep B A 96 34 96 34
+rep D C 97 34 97 34
+rep C B 97 34 97 34
+rep B A 97 34 97 34
+rep D C 98 34 98 34
+rep C B 98 34 98 34
+rep B A 98 34 98 34
+rep D C 99 34 99 34
+rep C B 99 34 99 34
+rep B A 99 34 99 34
+rep D C 100 34 100 34
+rep C B 100 34 100 34
+rep B A 100 34 100 34
+rep D C 101 34 101 34
+rep C B 101 34 101 34
+rep B A 101 34 101 34
+rep D C 102 34 102 34
+rep C B 102 34 102 34
+rep B A 102 34 102 34
+rep D C 103 34 103 34
+rep C B 103 34 103 34
+rep B A 103 34 103 34
+rep D C 104 34 104 34
+rep C B 104 34 104 34
+rep B A 104 34 104 34
+rep D C 105 34 105 34
+rep C B 105 34 105 34
+rep B A 105 34 105 34
+rep D C 106 34 106 34
+rep C B 106 34 106 34
+rep B A 106 34 106 34
+rep D C 107 34 107 34
+rep C B 107 34 107 34
+rep B A 107 34 107 34
+rep D C 108 34 108 34
+rep C B 108 34 108 34
+rep B A 108 34 108 34
+rep D C 109 34 109 34
+rep C B 109 34 109 34
+rep B A 109 34 109 34
+rep D C 110 34 110 34
+rep C B 110 34 110 34
+rep B A 110 34 110 34
+rep D C 111 34 111 34
+rep C B 111 34 111 34
+rep B A 111 34 111 34
+rep D C 112 34 112 34
+rep C B 112 34 112 34
+rep B A 112 34 112 34
+rep D C 113 34 113 34
+rep C B 113 34 113 34
+rep B A 113 34 113 34
+rep D C 114 34 114 34
+rep C B 114 34 114 34
+rep B A 114 34 114 34
+rep D C 115 34 115 34
+rep C B 115 34 115 34
+rep B A 115 34 115 34
+rep D C 116 34 116 34
+rep C B 116 34 116 34
+rep B A 116 34 116 34
+rep D C 117 34 117 34
+rep C B 117 34 117 34
+rep B A 117 34 117 34
+rep D C 118 34 118 34
+rep C B 118 34 118 34
+rep B A 118 34 118 34
+rep D C 119 33 119 33
+rep C B 119 33 119 33
+rep B A 119 33 119 33
+rep D C 120 33 120 33
+rep C B 120 33 120 33
+rep B A 120 33 120 33
+rep D C 121 33 121 33
+rep C B 121 33 121 33
+rep B A 121 33 121 33
+rep D C 122 33 122 33
+rep C B 122 33 122 33
+rep B A 122 33 122 33
+# épi de faîtage du cône
+px s 107 0 107 1
+# --- fumée : trois bouffées vers la droite, ombre D en bas à droite
+disc n 26 3 2
+disc n 32 2 2
+disc n 37 1 1
+px D 27 5 28 4 33 4 34 3 38 2
+# --- cheminée : assises et joints décalés, arêtes claires
+hline s 20 32 17
+hline s 20 32 22
+hline s 20 32 27
+px s 25 14 25 15 25 16 29 18 29 19 29 20 29 21 23 23 23 24 23 25 23 26 27 28 27 29 27 30 27 31
+px n 26 14 27 14 30 18 31 18 24 23 25 23 28 28 29 28 20 18 21 18
+# mousse : pied de cheminée, bas du toit, pied de lucarne
+px L 19 32 20 32 21 32 L 18 33 l 20 31
+px L 10 56 11 56 12 56 13 56 14 55 l 11 55 12 55
+px L 64 56 65 56 66 56 l 65 55
+px L 84 56 85 56 l 85 55
+# --- lucarne : fenêtre 4 carreaux, rideaux, évent rond
+frame u 45 44 57 54
+rect g 46 45 56 53
+vline u 51 45 53
+hline u 46 56 49
+px w 46 45 47 45 46 46 47 46
+px G 56 51 55 52
+px f 46 50 46 51 46 52 46 53 56 50 56 51 56 52 56 53
+px F 47 50 47 51 55 50 55 51
+hline v 44 58 55
+disc t 51 36 1
+px s 51 36
+# --- étage : poteaux 3 px (v | u | t), dans l'ombre d'avant-toit en t
+vline v 10 64 83
+vline u 11 64 83
+vline t 12 64 83
+rect t 10 60 12 63
+vline v 37 64 83
+vline u 38 64 83
+vline t 39 64 83
+rect t 37 60 39 63
+vline v 66 64 83
+vline u 67 64 83
+vline t 68 64 83
+rect t 66 60 68 63
+vline v 87 64 83
+vline u 88 64 83
+vline t 89 64 83
+rect t 87 60 89 63
+# panneau central : lisse 2 px, deux écharpes 2 px en 1:1
+hline u 40 65 74
+hline t 40 65 75
+px u 40 64 41 65 42 66 43 67 44 68 45 69 46 70 47 71 48 72 49 73
+px t 41 64 42 65 43 66 44 67 45 68 46 69 47 70 48 71 49 72
+px u 65 64 64 65 63 66 62 67 61 68 60 69 59 70 58 71 57 72 56 73
+px t 64 64 63 65 62 66 61 67 60 68 59 69 58 70 57 71 56 72
+frame u 16 66 34 79
+rect g 17 67 33 78
+vline u 25 67 78
+hline u 17 33 72
+px w 18 68 19 68 18 69 19 69
+px G 32 74 31 75 30 76
+vline f 17 73 78
+vline F 18 73 77
+vline f 33 73 78
+vline F 32 73 77
+hline v 15 35 80
+hline u 15 35 81
+hline p 16 34 82
+frame u 71 66 85 79
+rect g 72 67 84 78
+vline u 78 67 78
+hline u 72 84 72
+px w 73 68 74 68 73 69 74 69
+px G 83 74 82 75 81 76
+vline f 72 73 78
+vline F 73 73 77
+vline f 84 73 78
+vline F 83 73 77
+hline v 70 86 80
+hline u 70 86 81
+hline p 71 85 82
+# sablière : fil du bois par groupes de 2-3
+px t 20 86 21 86 46 86 47 86 48 86 76 85 77 85 30 85 31 85
+# --- soubassement : assises, joints décalés, arête haute claire
+hline s 9 91 96
+hline s 9 91 104
+vline s 20 91 95
+hline n 21 24 91
+vline s 33 91 95
+hline n 34 37 91
+vline s 70 91 95
+hline n 71 74 91
+vline s 82 91 95
+hline n 83 86 91
+vline s 14 97 103
+hline n 15 18 97
+vline s 27 97 103
+hline n 28 31 97
+vline s 39 97 103
+hline n 40 43 97
+vline s 76 97 103
+hline n 77 80 97
+vline s 88 97 103
+hline n 89 92 97
+vline s 20 105 112
+hline n 21 24 105
+vline s 33 105 112
+hline n 34 37 105
+vline s 70 105 112
+hline n 71 74 105
+vline s 82 105 112
+hline n 83 86 105
+px L 12 112 13 112 l 13 111 L 88 103 l 89 103
+# fenêtre basse, linteau, jardinière fleurie
+hline n 14 36 90
+hline m 14 36 91
+frame t 16 92 34 104
+rect g 17 93 33 103
+vline t 25 93 103
+hline t 17 33 97
+px w 18 93 19 93 18 94 19 94
+px G 31 99 30 100 29 101
+rect u 15 106 35 109
+hline v 15 35 106
+hline t 15 35 109
+px t 25 107 25 108
+hline s 16 35 110
+px F 17 102 18 102 17 103
+px f 18 103
+px L 16 104 19 104 17 105 18 105
+px l 16 103
+px F 23 102 24 102 23 103
+px f 24 103
+px L 22 104 25 104 23 105 24 105
+px l 22 103
+px F 29 102 30 102 29 103
+px f 30 103
+px L 28 104 31 104 29 105 30 105
+px l 28 103
+px L 33 104 34 104 33 105 l 34 103
+# --- porte : claveaux (anneau r9 n, r10 m), joints en rayons, clé de voûte
+px m 53 86
+px m 54 86
+px m 55 86
+px m 56 86
+px m 57 86
+px m 58 86
+px m 59 86
+px m 51 87
+px m 52 87
+px m 53 87
+px m 59 87
+px m 60 87
+px m 61 87
+px m 50 88
+px m 62 88
+px m 49 89
+px m 63 89
+px m 48 90
+px m 64 90
+px m 47 91
+px m 65 91
+px m 47 92
+px m 65 92
+px m 46 93
+px m 47 93
+px m 65 93
+px m 66 93
+px m 46 94
+px m 66 94
+px m 46 95
+px m 66 95
+px m 46 96
+px m 66 96
+px n 53 87
+px n 54 87
+px n 55 87
+px n 56 87
+px n 57 87
+px n 58 87
+px n 59 87
+px n 51 88
+px n 52 88
+px n 53 88
+px n 59 88
+px n 60 88
+px n 61 88
+px n 50 89
+px n 51 89
+px n 61 89
+px n 62 89
+px n 49 90
+px n 50 90
+px n 62 90
+px n 63 90
+px n 48 91
+px n 49 91
+px n 63 91
+px n 64 91
+px n 48 92
+px n 64 92
+px n 47 93
+px n 48 93
+px n 64 93
+px n 65 93
+px n 47 94
+px n 65 94
+px n 47 95
+px n 65 95
+px n 47 96
+px n 65 96
+px s 48 92
+px s 47 91
+px s 52 88
+px s 51 87
+px s 61 88
+px s 61 87
+px s 64 92
+px s 65 91
+px s 54 86 54 87 58 86 58 87
+vline n 46 97 113
+vline m 47 97 113
+vline m 65 97 113
+vline s 66 97 113
+vline t 54 98 113
+vline t 57 98 113
+vline t 60 98 113
+hline s 51 63 101
+hline s 51 63 109
+px n 52 101 62 101 52 109 62 109
+px s 59 105 61 105 60 106
+px n 60 104
+px s 49 115 50 115 64 116
+px l 46 114 47 114 66 114
+# --- lanterne à gauche de la porte
+hline t 41 45 89
+vline t 41 90 91
+hline t 39 43 92
+frame t 39 93 43 97
+rect y 40 94 42 96
+px w 40 94
+hline t 40 42 98
+# --- tonneau
+hline t 37 43 100
+hline v 36 44 101
+rect u 36 102 44 112
+vline v 37 102 112
+vline t 43 102 112
+vline t 44 102 112
+hline s 36 44 104
+hline s 36 44 110
+px n 37 104 37 110
+px u 40 101
+# --- enseigne à la feuille
+hline t 67 84 89
+px t 68 90 69 91 70 91
+vline t 73 90 91
+vline t 82 90 91
+rect v 71 92 84 101
+frame t 71 92 84 101
+hline u 72 83 100
+px u 73 94 74 94 82 98 83 98
+rows L 94 79 79 78 80 77 80 76 79 76 78
+px l 79 95 78 96 77 97 79 94
+px t 75 99 74 99
+# --- tour : assises en arc, fenêtre en plein cintre, meurtrière
+rep n m 93 56 93 56
+rep n m 94 56 94 56
+rep n m 95 57 95 57
+rep n m 96 57 96 57
+rep n m 97 57 97 57
+rep n m 98 58 98 58
+rep n m 99 58 99 58
+rep n m 100 58 100 58
+rep n m 101 58 101 58
+rep m s 102 58 102 58
+rep m s 103 58 103 58
+rep m s 104 58 104 58
+rep m s 105 58 105 58
+rep m s 106 58 106 58
+rep m s 107 58 107 58
+rep s A 108 58 108 58
+rep s A 109 58 109 58
+rep s A 110 58 110 58
+rep s A 111 58 111 58
+rep s A 112 58 112 58
+rep s A 113 58 113 58
+rep s A 114 58 114 58
+rep s A 115 58 115 58
+rep s A 116 57 116 57
+rep s A 117 57 117 57
+rep s A 118 57 118 57
+rep m s 119 56 119 56
+rep m s 120 56 120 56
+rep n m 98 59 98 68
+rep s A 110 59 110 68
+rep n m 93 68 93 68
+rep n m 94 68 94 68
+rep n m 95 69 95 69
+rep n m 96 69 96 69
+rep n m 97 69 97 69
+rep n m 98 70 98 70
+rep n m 99 70 99 70
+rep n m 100 70 100 70
+rep n m 101 70 101 70
+rep m s 102 70 102 70
+rep m s 103 70 103 70
+rep m s 104 70 104 70
+rep m s 105 70 105 70
+rep m s 106 70 106 70
+rep m s 107 70 107 70
+rep s A 108 70 108 70
+rep s A 109 70 109 70
+rep s A 110 70 110 70
+rep s A 111 70 111 70
+rep s A 112 70 112 70
+rep s A 113 70 113 70
+rep s A 114 70 114 70
+rep s A 115 70 115 70
+rep s A 116 69 116 69
+rep s A 117 69 117 69
+rep s A 118 69 118 69
+rep m s 119 68 119 68
+rep m s 120 68 120 68
+rep m s 104 71 104 80
+rep s A 116 71 116 80
+rep n m 93 80 93 80
+rep n m 94 80 94 80
+rep n m 95 81 95 81
+rep n m 96 81 96 81
+rep n m 97 81 97 81
+rep n m 98 82 98 82
+rep n m 99 82 99 82
+rep n m 100 82 100 82
+rep n m 101 82 101 82
+rep m s 102 82 102 82
+rep m s 103 82 103 82
+rep m s 104 82 104 82
+rep m s 105 82 105 82
+rep m s 106 82 106 82
+rep m s 107 82 107 82
+rep s A 108 82 108 82
+rep s A 109 82 109 82
+rep s A 110 82 110 82
+rep s A 111 82 111 82
+rep s A 112 82 112 82
+rep s A 113 82 113 82
+rep s A 114 82 114 82
+rep s A 115 82 115 82
+rep s A 116 81 116 81
+rep s A 117 81 117 81
+rep s A 118 81 118 81
+rep m s 119 80 119 80
+rep m s 120 80 120 80
+rep n m 98 83 98 92
+rep s A 110 83 110 92
+rep n m 93 92 93 92
+rep n m 94 92 94 92
+rep n m 95 93 95 93
+rep n m 96 93 96 93
+rep n m 97 93 97 93
+rep n m 98 94 98 94
+rep n m 99 94 99 94
+rep n m 100 94 100 94
+rep n m 101 94 101 94
+rep m s 102 94 102 94
+rep m s 103 94 103 94
+rep m s 104 94 104 94
+rep m s 105 94 105 94
+rep m s 106 94 106 94
+rep m s 107 94 107 94
+rep s A 108 94 108 94
+rep s A 109 94 109 94
+rep s A 110 94 110 94
+rep s A 111 94 111 94
+rep s A 112 94 112 94
+rep s A 113 94 113 94
+rep s A 114 94 114 94
+rep s A 115 94 115 94
+rep s A 116 93 116 93
+rep s A 117 93 117 93
+rep s A 118 93 118 93
+rep m s 119 92 119 92
+rep m s 120 92 120 92
+rep m s 104 95 104 104
+rep s A 116 95 116 104
+rep n m 93 104 93 104
+rep n m 94 104 94 104
+rep n m 95 105 95 105
+rep n m 96 105 96 105
+rep n m 97 105 97 105
+rep n m 98 106 98 106
+rep n m 99 106 99 106
+rep n m 100 106 100 106
+rep n m 101 106 101 106
+rep m s 102 106 102 106
+rep m s 103 106 103 106
+rep m s 104 106 104 106
+rep m s 105 106 105 106
+rep m s 106 106 106 106
+rep m s 107 106 107 106
+rep s A 108 106 108 106
+rep s A 109 106 109 106
+rep s A 110 106 110 106
+rep s A 111 106 111 106
+rep s A 112 106 112 106
+rep s A 113 106 113 106
+rep s A 114 106 114 106
+rep s A 115 106 115 106
+rep s A 116 105 116 105
+rep s A 117 105 117 105
+rep s A 118 105 118 105
+rep m s 119 104 119 104
+rep m s 120 104 120 104
+rep n m 98 107 98 116
+rep s A 110 107 110 116
+rows O 61 105 108 104 109 103 110
+rect O 102 64 111 78
+rows g 62 105 108 104 109
+rect g 103 64 110 77
+vline t 106 62 77
+vline t 107 62 77
+px w 103 64 104 64 103 65 104 65
+px G 110 74 109 75
+hline n 101 112 79
+hline s 102 111 80
+rect O 105 89 108 98
+rect g 106 90 107 97
+px w 106 90
+# --- lierre : tiges k et feuilles 2x2 (l clair haut-gauche, k sombre bas-droite)
+px k 95 88 95 89 94 90 94 91 95 92 96 93 96 94 96 95 95 96 95 97 95 98 96 99 96 100 95 101 95 102 94 103 94 104 95 105 95 106 95 107 95 108 95 109 95 110 89 99 89 100 88 101 88 102 88 103 89 104 89 105 89 106 90 107 90 108 90 109
+px l 94 86
+px L 95 86 94 87
+px k 95 87
+px l 96 89
+px L 97 89 96 90
+px k 97 90
+px l 92 92
+px L 93 92 92 93
+px k 93 93
+px l 97 94
+px L 98 94 97 95
+px k 98 95
+px l 93 97
+px L 94 97 93 98
+px k 94 98
+px l 97 99
+px L 98 99 97 100
+px k 98 100
+px l 92 102
+px L 93 102 92 103
+px k 93 103
+px l 96 104
+px L 97 104 96 105
+px k 97 105
+px l 93 107
+px L 94 107 93 108
+px k 94 108
+px l 97 108
+px L 98 108 97 109
+px k 98 109
+px l 90 99
+px L 91 99 90 100
+px k 91 100
+px l 86 103
+px L 87 103 86 104
+px k 87 104
+px l 90 106
+px L 91 106 90 107
+px k 91 107
+px l 87 109
+px L 88 109 87 110
+px k 88 110
+# --- sol : touffes d'herbe qui mangent le pied (groupes de 2-3)
+px L 9 113 10 113 11 113 30 113 31 113 44 113 45 113 70 113 71 113 72 113 89 113 90 113 98 114 99 114 100 114 113 114 114 114
+px l 10 112 31 112 45 112 71 112 99 113 114 113

@@ -1,0 +1,177 @@
+# c03 lumière haut-gauche : un ton par face, surplombs, creux inversés
+# toit : faîtage clair, rive gauche claire, deux derniers rangs sombres
+hline D 12 92 21
+px D 12 21 12 22 12 23 11 24 11 25 11 26 11 27 10 28 10 29 10 30 10 31 9 32 9 33 9 34 9 35 8 36 8 37 8 38 8 39 7 40 7 41 7 42 7 43 6 44 6 45 6 46 6 47 5 48 5 49 5 50 5 51 4 52 4 53 4 54 4 55 3 56 3 57
+hline B 3 101 57
+hline B 3 101 58
+hline A 3 101 59
+# cheminée : dessus n avec conduit, avant du chapeau m, dessous s, corps m
+rect n 17 6 34 9
+rect O 21 7 30 8
+hline m 17 34 10
+hline s 17 34 11
+hline s 19 32 12
+hline s 19 32 13
+# ombre portée de la cheminée sur le toit (droite puis dessous)
+rect B 33 14 36 31
+rect B 21 32 36 33
+# lucarne : versant gauche D, versant droit B, ombre d'égout, ombre portée à droite
+rows D 26 51 51 50 51 49 51 48 51 47 51 46 51 45 51 44 51 43 51 42 51 41 51 40 51 39 51 38 51
+rows B 27 52 52 52 53 52 54 52 55 52 56 52 57 52 58 52 59 52 60 52 61 52 62 52 63 52 64
+rows q 32 51 51 50 52 49 53 48 54 47 55 46 56 45 57 44 58
+hline p 43 59 40
+hline p 43 59 41
+rect B 60 40 63 55
+rows B 33 59 60 60 61 61 62 62 63 63 64 64 65 65 66
+rect B 43 56 63 56
+# mur : ombre de l'avant-toit (4 rangs), sablière, ombre d'encorbellement sur la pierre
+rect p 8 60 91 63
+rect v 8 84 91 85
+rect u 8 86 91 87
+rect s 8 88 91 90
+# porte : creux inversé (paroi gauche ombre, droite éclairée)
+disc t 56 96 8
+rect t 48 96 64 113
+disc u 57 98 6
+rect u 51 98 63 113
+vline v 64 97 113
+vline v 63 99 113
+# tour : cylindre (n | m | s | reflet m)
+rect m 102 44 107 115
+rect s 108 44 118 114
+rect m 119 44 120 112
+rep * . 116 114 127 117
+rep * . 0 116 45 117
+rep * . 67 116 127 117
+rows n 112 93 101 95 101 98 101
+rows m 113 102 107 102 107
+rows s 113 108 118 108 115
+# ombre du cône sur le haut de la tour, plus basse au centre
+rect s 92 46 107 49
+rect A 108 46 121 49
+hline s 96 107 50
+hline A 108 117 50
+# cône : coins de lumière depuis le sommet
+hline D 107 107 2
+hline D 107 107 3
+hline D 106 107 4
+hline A 108 108 4
+hline D 106 107 5
+hline A 108 108 5
+hline D 105 107 6
+hline B 108 108 6
+hline A 109 109 6
+hline D 105 107 7
+hline B 108 108 7
+hline A 109 109 7
+hline D 104 106 8
+hline B 108 108 8
+hline A 109 110 8
+hline D 104 106 9
+hline B 108 108 9
+hline A 109 110 9
+hline D 103 106 10
+hline B 108 109 10
+hline A 110 111 10
+hline D 103 106 11
+hline B 108 109 11
+hline A 110 111 11
+hline D 102 105 12
+hline B 108 110 12
+hline A 111 112 12
+hline D 102 105 13
+hline B 108 110 13
+hline A 111 112 13
+hline D 101 105 14
+hline B 108 110 14
+hline A 111 113 14
+hline D 101 105 15
+hline B 108 110 15
+hline A 111 113 15
+hline D 100 104 16
+hline B 108 111 16
+hline A 112 114 16
+hline D 100 104 17
+hline B 108 111 17
+hline A 112 114 17
+hline D 99 104 18
+hline B 108 111 18
+hline A 112 115 18
+hline D 99 104 19
+hline B 108 111 19
+hline A 112 115 19
+hline D 98 103 20
+hline B 108 112 20
+hline A 113 116 20
+hline D 98 103 21
+hline B 108 112 21
+hline A 113 116 21
+hline D 97 103 22
+hline B 109 113 22
+hline A 114 117 22
+hline D 97 103 23
+hline B 109 113 23
+hline A 114 117 23
+hline D 96 103 24
+hline B 109 113 24
+hline A 114 118 24
+hline D 96 103 25
+hline B 109 113 25
+hline A 114 118 25
+hline D 95 102 26
+hline B 109 114 26
+hline A 115 119 26
+hline D 95 102 27
+hline B 109 114 27
+hline A 115 119 27
+hline D 94 102 28
+hline B 109 114 28
+hline A 115 120 28
+hline D 94 102 29
+hline B 109 114 29
+hline A 115 120 29
+hline D 93 101 30
+hline B 109 115 30
+hline A 116 121 30
+hline D 93 101 31
+hline B 109 115 31
+hline A 116 121 31
+hline D 92 101 32
+hline B 109 116 32
+hline A 117 122 32
+hline D 92 101 33
+hline B 109 116 33
+hline A 117 122 33
+hline D 91 100 34
+hline B 109 116 34
+hline A 117 123 34
+hline D 91 100 35
+hline B 109 116 35
+hline A 117 123 35
+hline D 90 100 36
+hline B 109 117 36
+hline A 118 124 36
+hline D 90 100 37
+hline B 109 117 37
+hline A 118 124 37
+hline D 89 99 38
+hline B 109 117 38
+hline A 118 125 38
+hline D 89 99 39
+hline B 109 117 39
+hline A 118 125 39
+hline D 88 99 40
+hline B 109 118 40
+hline A 119 126 40
+hline D 88 99 41
+hline B 109 118 41
+hline A 119 126 41
+# égout du cône : tranche claire à gauche, sombre à droite
+hline B 88 106 42
+hline A 107 126 42
+hline B 88 106 43
+hline A 107 126 43
+hline s 93 106 44
+hline A 107 120 44
+hline s 93 106 45
+hline A 107 120 45

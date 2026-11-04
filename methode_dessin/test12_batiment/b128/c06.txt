@@ -1,0 +1,9 @@
+# c06 nettoyage 128
+# défaut étape 03 : les 3 rangs bas du toit passaient DEVANT la tour (x93-101, y57-59) -> tour remise devant, assise en arc reprise
+rect n 93 57 101 59
+px m 95 57 96 57 97 57
+hline m 98 101 58
+# orphelins : lèvres de tuile coupées par un volume, arêtes de pierre cachées, fissure de marche isolée
+px C 92 25 18 31 64 41
+px m 74 91 15 97 64 116
+px L 19 105

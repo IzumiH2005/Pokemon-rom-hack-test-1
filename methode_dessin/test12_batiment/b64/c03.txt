@@ -1,0 +1,57 @@
+# c03 lumière (haut-gauche) : un ton par face, surplombs, creux inversés, AO
+# --- toit : faîtage clair, dernier rang et rive basse sombres
+hline D 6 46 10
+hline B 2 50 28
+hline A 2 50 29
+# rive gauche (tranche du toit, côté lumière) : 1 px clair
+px D 6 11 6 12 6 13 5 14 5 15 5 16 5 17 4 18 4 19 4 20 4 21 3 22 3 23 3 24 3 25 2 26 2 27
+# --- cheminée : dessus (rebord n + conduit O), face avant m, ombre du chapeau
+rect m 9 3 16 7
+hline n 10 15 3
+rows n 4 9 10 9 10
+rows n 4 15 16 15 16
+rect O 11 4 14 5
+hline m 9 16 6
+hline s 9 16 7
+hline s 10 15 8
+# ombre portée de la cheminée sur le toit (vers le bas-droite)
+rect B 16 9 17 15
+hline B 11 17 16
+# --- lucarne : versant gauche clair, versant droit sombre, ombre sous l'égout
+rows D 13 25 25 24 25 23 25 22 24 21 23 20 22 19 21 19 20
+rows B 14 26 26 26 27 26 28 27 29 28 30 29 31 30 31
+hline p 21 29 20
+# ombre de la lucarne sur le toit (droite et dessous)
+rows B 17 30 31 31 32 32 32 32 33 32 33 32 33 32 33 32 33 32 33 32 33
+hline B 21 33 27
+# --- mur : ombre de l'avant-toit, sablière, encorbellement
+hline p 4 45 30
+hline p 4 45 31
+hline v 4 45 42
+hline u 4 45 43
+hline s 4 45 44
+# --- porte : creux inversé (paroi gauche dans l'ombre, paroi droite éclairée)
+rows t 44 26 30 25 31
+vline t 24 46 56
+vline t 25 46 56
+vline v 32 46 56
+hline t 26 31 46
+# marches : dessus clair, face avant moyenne
+hline n 23 33 57
+hline m 23 33 58
+# --- tour : cylindre, lumière à gauche, terminateur adouci d'un ton
+rect m 51 22 53 57
+rect s 54 22 60 57
+# ombre de l'égout du cône sur la tour (courbe, plus basse au centre)
+hline s 46 53 24
+hline A 54 60 24
+hline s 48 53 25
+hline A 54 58 25
+rep n s 46 23 47 23
+rep s A 59 23 60 23
+# --- cône : coins de lumière qui partent du sommet
+rows D 1 53 53 53 53 52 52 52 52 52 52 51 51 50 51 50 51 49 51 49 51 48 50 48 50 47 50 47 50 46 50 46 49 45 49 45 49 44 49 44 49 44 48
+rows B 3 54 54 54 54 54 55 54 55 54 56 55 56 55 57 55 57 55 58 55 58 55 59 55 59 56 60 56 60 56 61 56 61 56 62 56 62 56 62
+# égout du cône : tranche claire à gauche, sombre à droite
+rows B 22 45 52 48 52
+rows A 22 53 61 53 58

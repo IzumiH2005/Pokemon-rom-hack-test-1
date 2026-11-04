@@ -1,0 +1,34 @@
+# c04 (après contour.py -> etape04a) : pied de tour redessiné, selout, arêtes intérieures
+# pied de tour : arc propre (paliers 1-2-3 puis plat)
+rect . 92 111 127 115
+px O 92 111 121 111
+hline n 93 101 111
+hline m 102 107 111
+hline s 108 118 111
+hline m 119 120 111
+px O 92 112 93 112 120 112 121 112
+hline n 94 101 112
+hline m 102 107 112
+hline s 108 118 112
+hline m 119 119 112
+px O 94 113 95 113 96 113 117 113 118 113 119 113
+hline n 97 101 113
+hline m 102 107 113
+hline s 108 116 113
+hline O 97 116 114
+# selout côté lumière
+rep O A 12 20 92 20
+rep O A 2 21 12 58
+rep O A 88 2 107 28
+rep O s 17 6 34 6
+rep O s 17 7 18 13
+rep O p 8 60 8 83
+rep O u 8 84 8 87
+rep O s 8 88 8 112
+# arêtes intérieures : bord gauche du cône devant le toit, de la tour devant la maison
+px A 94 29 93 30 93 31 92 32 92 33 91 34 91 35 90 36 90 37 89 38 89 39 88 40 88 41 88 42 88 43 92 44 92 45
+vline s 92 46 110
+# lucarne : arête du versant gauche et côté gauche du caisson
+px A 50 26 49 27 48 28 47 29 46 30 45 31 44 32 43 33 42 34 41 35 40 36 39 37 38 38 37 39 36 40
+vline A 42 40 55
+rows A 26 52 52 53 53

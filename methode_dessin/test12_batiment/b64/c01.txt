@@ -1,0 +1,28 @@
+# c01 construction — 1 rouge = axes, 2 bleu = repères, 3 vert = volumes
+# repères : sol y57, égout du toit y29, faîtage y10, sablière y43
+hline 2 0 63 57
+hline 2 0 63 29
+hline 2 0 63 10
+hline 2 0 44 43
+# axes : tour x53, porte x28
+vline 1 53 0 60
+vline 1 28 30 58
+# volume maison : boîte (face avant)
+frame 3 4 30 45 56
+# toit : trapèze faîtage 6..46, égout 2..50 (marches de 4 rangées)
+hline 3 6 46 10
+px 3 6 11 6 12 6 13 5 14 5 15 5 16 5 17 4 18 4 19 4 20 4 21 3 22 3 23 3 24 3 25 2 26 2 27 2 28 2 29
+px 3 46 11 46 12 46 13 47 14 47 15 47 16 47 17 48 18 48 19
+# cheminée : boîte 10..15 sur le toit
+frame 3 10 4 15 14
+# lucarne : pignon à 45°
+px 3 25 13 24 14 26 14 23 15 27 15 22 16 28 16 21 17 29 17 20 18 30 18 19 19 31 19
+frame 3 21 19 29 26
+# tour : cylindre 46..60, cône sommet (53,1), base y21
+vline 3 46 22 56
+vline 3 60 22 56
+rows 3 56 47 59
+rows 3 57 49 57
+px 3 53 1 52 3 54 3 51 5 55 5 50 7 56 7 49 9 57 9 48 11 58 11 47 13 59 13 46 15 60 15 45 17 61 17 44 19 62 19
+rows 3 21 44 62
+rows 3 23 47 59

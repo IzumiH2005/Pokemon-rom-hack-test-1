@@ -1,0 +1,12 @@
+# c06 nettoyage : orphelins et bruit relevés sur etape05
+# sous les appuis de fenêtre : un q isolé entre poteau et ombre -> ombre continue
+px p 7 41 43 41
+# éclats de pierre isolés sur la tour = bruit -> supprimés
+px n 49 35
+px m 52 55
+# arêtes claires des pierres : 1 px -> 2 px le long du haut du bloc
+px n 22 45 45 45 21 49 23 53 41 53
+# herbe : on regroupe les touffes pour ne pas laisser de bouts de trait isolés
+px O 8 56 9 56 21 56 39 56
+px m 8 55
+px . 46 56
