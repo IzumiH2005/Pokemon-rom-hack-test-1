@@ -1,0 +1,42 @@
+# c02 aplats par matiere (geometrie de c01b)
+# mur : enduit en haut, bardage bois en bas, poteaux
+rect Q 4 44 75 64
+rect u 4 65 75 74
+vline t 4 44 74
+vline t 5 44 74
+vline t 74 44 74
+vline t 75 44 74
+vline t 27 44 74
+vline t 44 44 74
+hline v 4 75 47
+hline v 4 75 48
+# soubassement pierre + marche
+rect s 3 75 76 77
+rect s 46 78 65 79
+# toit
+rows C 8  16 63 16 63 16 63 16 63 15 64 15 64 15 64 15 64 15 64 15 64 14 65 14 65 14 65 14 65 14 65 14 65 14 65 14 65
+rows C 26  8 71 8 71 7 72 7 72 6 73 6 73 5 74 5 74 4 75 4 75 3 76 3 76 2 77 2 77
+rect B 1 40 78 43
+px B 0 37 0 38 0 39 1 39 79 37 79 38 79 39 78 39
+rect A 12 5 67 9
+rect B 10 2 15 9
+rect B 64 2 69 9
+# auvent : volume devant l'egout, plus bas (karahafu courbe)
+rows C 41  51 60  48 63  46 65
+rect C 44 44 67 48
+rect B 43 49 68 51
+vline t 46 52 76
+vline t 47 52 76
+vline t 64 52 76
+vline t 65 52 76
+# porte (shoji coulissant) + noren
+rect u 50 55 61 76
+rect Q 51 56 60 75
+rect n 48 52 63 60
+# fenetres : treillis koshi (gauche), shoji (milieu)
+rect t 10 53 25 64
+rect Q 11 54 24 63
+rect t 29 54 40 63
+rect Q 30 55 39 62
+# lanterne
+rect y 70 55 73 62

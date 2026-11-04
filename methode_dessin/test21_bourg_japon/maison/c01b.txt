@@ -1,0 +1,26 @@
+# c01b variante irimoya : pignon haut etroit + jupe de toit evasee, coins releves
+# pignon haut (y8-25) : cotes presque verticaux
+rows 3 8  16 63 16 63 16 63 16 63 15 64 15 64 15 64 15 64 15 64 15 64 14 65 14 65 14 65 14 65 14 65 14 65 14 65 14 65
+# jupe basse (y26-39) : evasee vers l'egout
+rows 3 26  8 71 8 71 7 72 7 72 6 73 6 73 5 74 5 74 4 75 4 75 3 76 3 76 2 77 2 77
+# planche de rive + coins releves (2 px qui montent)
+rect 3 1 40 78 43
+px 3 0 37 0 38 0 39 1 39 79 37 79 38 79 39 78 39
+# faitage + onigawara
+rect 3 12 5 67 9
+rect 3 10 2 15 9
+rect 3 64 2 69 9
+# mur, soubassement, marche
+rect 3 4 44 75 74
+rect 3 3 75 76 77
+rect 3 46 78 65 79
+# auvent karahafu
+rows 3 36  52 59  49 62  47 64  46 65
+rect 3 44 40 67 50
+hline 1 0 79 79
+hline 1 0 79 44
+vline 1 56 0 79
+rect 2 50 55 61 76
+rect 2 10 53 25 64
+rect 2 29 54 40 63
+rect 2 70 55 73 62

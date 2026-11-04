@@ -1,0 +1,7 @@
+# c04 selout : contour = ton sombre de la matiere ; cote lumiere (haut/gauche) plus clair
+# toit : bord gauche du toit haut et de la jupe en B (cote lumiere), dessus des onigawara en B
+rep O A 0 0 40 39
+rep O A 40 0 79 39
+# mur gauche : trait bois sombre
+rep O t 0 44 79 76
+# soubassement et marche : bas sombre garde O

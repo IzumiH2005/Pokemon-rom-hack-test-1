@@ -1,0 +1,119 @@
+# c05 details
+# tuiles marugawara : rangs verticaux (creux B), cours horizontaux par coupures
+vline B 19 12 15
+vline B 19 17 22
+vline B 23 12 15
+vline B 23 17 22
+vline B 27 12 15
+vline B 27 17 22
+vline B 31 12 15
+vline B 31 17 22
+vline B 35 12 15
+vline B 35 17 22
+vline B 39 12 15
+vline B 39 17 22
+vline B 43 12 15
+vline B 43 17 22
+vline B 47 12 15
+vline B 47 17 22
+vline B 51 12 15
+vline B 51 17 22
+vline B 55 12 15
+vline B 55 17 22
+vline B 59 12 15
+vline B 59 17 22
+vline B 11 29 32
+vline B 11 34 38
+vline B 15 29 32
+vline B 15 34 38
+vline B 19 29 32
+vline B 19 34 38
+vline B 23 29 32
+vline B 23 34 38
+vline B 27 29 32
+vline B 27 34 38
+vline B 31 29 32
+vline B 31 34 38
+vline B 35 29 32
+vline B 35 34 38
+vline B 39 29 32
+vline B 39 34 38
+vline B 43 29 32
+vline B 43 34 38
+vline B 47 29 32
+vline B 47 34 38
+vline B 51 29 32
+vline B 51 34 38
+vline B 55 29 32
+vline B 55 34 38
+vline B 59 29 32
+vline B 59 34 38
+vline B 63 29 32
+vline B 63 34 38
+vline B 67 29 32
+vline B 67 34 38
+# reflets de tuile cote lumiere (groupes de 2-3, en haut a gauche seulement)
+px D 18 12 18 13 22 12 26 12 18 17 22 17 10 29 14 29 10 30 18 29 14 34
+# abouts ronds sur la planche de rive : creux sombres tous les 4 px
+px A 4 41 4 42
+px A 8 41 8 42
+px A 12 41 12 42
+px A 16 41 16 42
+px A 20 41 20 42
+px A 24 41 24 42
+px A 28 41 28 42
+px A 32 41 32 42
+px A 36 41 36 42
+px A 40 41 40 42
+px A 44 41 44 42
+px A 48 41 48 42
+px A 52 41 52 42
+px A 56 41 56 42
+px A 60 41 60 42
+px A 64 41 64 42
+px A 68 41 68 42
+px A 72 41 72 42
+px A 76 41 76 42
+# faitage : ligne de mortier (noshi)
+hline q 16 63 7
+hline A 16 63 8
+# fenetre gauche : treillis koshi serre
+vline t 13 55 63
+vline t 15 55 63
+vline t 17 55 63
+vline t 19 55 63
+vline t 21 55 63
+vline t 23 55 63
+# fenetre milieu : shoji
+vline t 33 56 62
+vline t 36 56 62
+hline t 31 39 59
+# porte : deux panneaux de shoji
+vline u 56 63 75
+vline u 54 63 75
+vline u 58 63 75
+hline u 53 59 67
+hline u 53 59 71
+# noren : 3 pans fendus + blason blanc 2x2
+vline N 52 55 60
+vline N 59 55 60
+px Q 55 56 56 56 55 57 56 57
+# bardage : joints verticaux casses
+vline t 9 67 73
+vline t 13 67 73
+vline t 17 67 73
+vline t 21 67 73
+vline t 32 67 73
+vline t 36 67 73
+vline t 40 67 73
+vline t 69 67 73
+# soubassement : joints de pierre
+px A 11 76
+px A 23 76
+px A 36 76
+px A 50 76
+px A 62 76
+px A 70 76
+# lanterne : nervures
+hline w 71 72 58
+hline w 71 72 60

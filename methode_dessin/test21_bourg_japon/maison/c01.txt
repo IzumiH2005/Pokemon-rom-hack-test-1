@@ -1,0 +1,27 @@
+# c01 construction maison 80x80 : volumes (3 vert), reperes (1 rouge), ouvertures (2 bleu)
+# pente avant du toit : profil decide a la main (evase vers l'egout = coins releves)
+rows 3 12  10 69 10 69 10 69 10 69  9 70 9 70 9 70 9 70  8 71 8 71 8 71 8 71  7 72 7 72 7 72  6 73 6 73 6 73  5 74 5 74 5 74  4 75 4 75 4 75  3 76 3 76  2 77 2 77
+# planche de rive (face avant de l'egout) + coins releves
+rect 3 1 40 78 43
+px 3 1 38 1 39 78 38 78 39
+# faitage + onigawara (plus hauts aux bouts)
+rect 3 9 6 70 11
+rect 3 6 2 12 11
+rect 3 67 2 73 11
+# mur, soubassement, marche
+rect 3 4 44 75 74
+rect 3 3 75 76 77
+rect 3 46 78 65 79
+# auvent karahafu au-dessus de la porte (courbe en haut)
+rows 3 36  52 59  49 62  47 64  46 65
+rect 3 44 40 67 50
+# reperes
+hline 1 0 79 79
+hline 1 0 79 44
+hline 1 0 79 8
+vline 1 56 0 79
+# ouvertures
+rect 2 50 55 61 76
+rect 2 10 53 25 64
+rect 2 29 54 40 63
+rect 2 70 55 73 62

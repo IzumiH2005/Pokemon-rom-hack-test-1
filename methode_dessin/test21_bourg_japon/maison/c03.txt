@@ -1,0 +1,68 @@
+# c03 lumiere haut-gauche
+# faitage = cylindre : dessus eclaire, bas sombre ; ombre portee sur le toit haut
+hline B 12 67 5
+hline O 12 67 9
+hline B 14 65 10
+# onigawara : dessus clair, gauche claire, droite sombre
+hline C 10 15 2
+vline C 10 3 9
+vline A 15 3 9
+hline C 64 69 2
+vline C 64 3 9
+vline A 69 3 9
+# toit haut : rive gauche claire, bord avant (abouts de tuiles) sombre
+vline D 16 8 11
+vline D 15 12 17
+vline D 14 18 23
+hline B 14 65 24
+hline A 14 65 25
+# jupe : ombre du toit haut sous son bord, rive gauche claire
+hline B 8 71 26
+hline B 9 70 27
+px D 8 28 7 29 7 30 6 31 6 32 5 33 5 34 4 35 4 36 3 37 3 38 2 39
+# planche de rive : face avant sombre, dessous tres sombre ; coins
+hline C 1 78 40
+hline A 1 78 43
+px C 0 37 79 37
+# auvent : rive gauche claire, face avant sombre
+px D 51 41 48 42 46 43 44 44 44 45 44 46 44 47 44 48
+hline C 43 68 49
+hline A 43 68 51
+# ombre de l'egout sur le mur (3 rangs) et de l'auvent
+rect q 6 44 26 46
+rect q 28 44 43 46
+rect q 66 44 73 46
+hline w 6 42 47
+hline w 69 73 47
+rep Q q 48 52 63 53
+# poteaux : arete gauche eclairee
+vline u 4 44 74
+vline u 27 44 74
+vline u 44 44 74
+vline u 74 44 74
+vline u 46 52 76
+vline u 64 52 76
+# bardage : chanfrein clair en haut
+hline v 6 26 65
+hline v 28 43 65
+hline v 66 73 65
+# fenetres et porte en creux : ombre sur le haut et la gauche (cote lumiere)
+hline q 11 24 54
+vline q 11 55 63
+hline q 30 39 55
+vline q 30 56 62
+hline t 51 60 61
+vline t 51 61 75
+hline q 52 60 62
+vline q 52 63 75
+# noren : ombre de l'auvent en haut, bas plus clair
+hline N 48 63 52
+# pierre : dessus eclaire
+hline q 3 76 75
+hline q 46 65 78
+hline A 3 76 77
+# lanterne (emissive : coeur clair, bords plus sombres)
+hline t 70 73 55
+hline t 70 73 62
+vline w 70 56 61
+vline w 73 56 61

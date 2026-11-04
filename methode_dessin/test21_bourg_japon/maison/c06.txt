@@ -1,0 +1,11 @@
+# c06 nettoyage
+# R5: reflets isoles -> paires verticales (groupes de 2)
+px D 22 13 26 13 18 18 22 18 14 30 18 30 14 35
+# reflets parasites sur le bandeau
+rep D C 44 40 60 44
+# R5: poteaux et porte qui mordent dans la marche de pierre
+rect s 44 76 49 76
+rect s 62 76 67 76
+# R5: le bas de la porte traversait la pierre -> traverse basse + seuil
+hline t 51 61 75
+hline A 50 62 76
