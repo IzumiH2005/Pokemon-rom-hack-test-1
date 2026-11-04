@@ -18,3 +18,7 @@ px H 8 14 9 14 8 15 9 15
 px D 10 14 10 15
 px H 23 14 22 14 23 15 22 15
 px D 21 14 21 15
+# favoris prolongés sur les cases marquées en rouge dans le retour : 1 px en retrait du bord du visage, jusqu'à la rangée 17
+px H 8 16 23 16
+px D 9 16 22 16
+px D 8 17 23 17
