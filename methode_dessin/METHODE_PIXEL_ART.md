@@ -1,9 +1,13 @@
-# Méthode de pixel art — objets, personnages et créatures (v10.4)
+# Méthode de pixel art — objets, personnages et créatures (v10.5)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
 (silhouette, valeurs, clusters, lignes propres, rampes, lumière).
 
+> **v10.5 :** nouvelle section **C6b** (cheveux, astuces de pro : touffes, une seule
+> lumière, ombre sous la frange, ni coussin ni banding, rampe 3 valeurs + reflet, selout,
+> mèches libres en dernier, leçons du test 13 sur les pointes, les plaqués et les favoris).
+>
 > **v10.4 :** nouvelle section **C17** (vêtements du simple au complexe : appuis et
 > tensions, poids du tissu, les sept plis de Bridgman en pixels, jupe en cônes, couches,
 > cape, armure, motifs qui suivent la forme, matières) et **A6** (astuces de pro : hue
@@ -63,7 +67,7 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 planches d'anatomie fournies · [C] planches sur les cheveux fournies · [R] recherches
 (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de lisibilité d'icônes,
 simplification des formes) · [P] planches fournies (cheveux, œil, arche, cristal, flamme,
-déclinaisons par taille, projections) · [T1]…[T10] leçons de nos propres tests (T8 : visage
+déclinaisons par taille, projections) · [T1]…[T13] leçons de nos propres tests (T8 : visage
 de face ; T9 : chibi « Pip » ; T10 : chibi2, corps d'abord) · [L] méthode Loomis et tutoriels de visage anime (règles
 reformulées) · [A] analyse de portraits anime en pixel art fournis en exemple (règles
 reformulées).
@@ -832,6 +836,76 @@ deux moitiés claire et sombre (effet masque), sauf intention dramatique.
 **Contrôle :** ligne des cheveux à la bonne hauteur ; mèches vers le point d'attache ;
 pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un bras [T2].
 
+## C6b. Cheveux : astuces de pro [R][T13]
+**Penser en touffes :**
+- On dessine des **touffes ou rubans**, chacun avec son clair, son moyen et son sombre,
+  puis 2 ou 3 lignes de mèche à l'intérieur. Jamais une texture de fils.
+- Une touffe qui coule fait **2 px de large** et s'affine vers une pointe de **1 px**.
+- Regrouper le détail en **îlots** (front, raie, pointes) et laisser de grandes zones
+  calmes. Aucun pixel orphelin : chaque pixel touche un pixel de la même couleur.
+- Courbes régulières : les marches suivent une suite qui monte ou descend (1-1-2-3,
+  3-2-1-1), jamais 1-3-1.
+
+**Lumière :**
+- **Une seule source**, en haut et de face, sur un côté. Grande ombre sur le côté opposé et
+  sous la masse ; c'est elle qui donne le volume.
+- **Ombre portée sous la frange** sur le front : elle décolle les cheveux du visage. Ombre
+  colorée (peau plus sombre et plus chaude), jamais noire.
+- Les reflets servent à **séparer les touffes**, pas à décorer : un reflet par touffe
+  éclairée, pas un par mèche.
+- **Interdit :** l'ombrage « coussin » (sombre tout autour, clair au centre), y compris un
+  liseré clair qui fait le tour de la tête ; le **banding** (bandes de valeur qui suivent
+  le contour en escalier). Remèdes : resserrer l'écart de valeurs, poser le bord
+  clair/sombre au terminateur, ou casser la bande en touffes.
+
+**Rampe :**
+- **3 valeurs d'une teinte + 1 reflet.** Des cheveux d'un seul ton sans reflet lisent
+  comme un casque en plastique.
+- **Glissement de teinte :** ombres plus froides (vers le violet ou le bleu), clairs plus
+  chauds (vers le jaune ou l'orange). Rester discret. Exemple : roux → bordeaux à l'ombre,
+  orange au clair ; blond → ocre à l'ombre, jaune pâle au clair.
+- Cheveux foncés : le reflet est un bleu ou violet désaturé, pas un gris.
+
+**Contour :**
+- **Selout :** sur le haut éclairé, le trait prend une teinte sombre de la rampe des
+  cheveux ; en bas et du côté de l'ombre, on garde le trait foncé pour protéger la
+  silhouette.
+- La **ligne des cheveux sur le front** se marque par le contraste cheveux/peau, pas par
+  une ligne noire. Une longue bande sombre au front se lit comme des sourcils ou un
+  bandeau [T13].
+- **Pas d'anticrénelage** sur un petit sprite (moins de ~48 px de haut) ; ailleurs, un
+  seul pixel intermédiaire sur les courbes et diagonales douces, jamais tout autour.
+
+**Mèches libres :** posées **en dernier**, comme accents, de préférence d'un seul côté
+(asymétrie). En petit format, deux ou trois suffisent.
+
+**Leçons du test 13 (costume, toile 32×39) [T13] :**
+- Une pointe doit faire **au moins 3 px sur 2 rangées**, sinon la règle de contour la
+  transforme entièrement en trait (elle se lit comme une antenne ou une couette).
+- Une mèche de 2 ou 3 px posée sur la peau devient tout trait avec la règle de contour :
+  la recolorer à la main (cœur moyen, clair à gauche, sombre à droite côté ombre).
+- **Plaqués en arrière :** la coiffure vient des lignes de mèche tirées vers l'arrière et
+  du reflet, pas du volume. La masse reste collée au crâne (1 px au-dessus du trait).
+- **Favoris :** au niveau des tempes, pas des oreilles ; ils descendent vers la joue en
+  restant **1 px en retrait du bord du visage**, sans toucher l'oreille.
+- Placer la ligne des cheveux assez bas : trop haute, le front paraît dégarni (voir C6).
+- Une capture annotée (cases en couleur) se lit par script : sur une image _vue, une case
+  = l'échelle du rendu (12 px), ce qui donne les coordonnées exactes.
+
+**Sources :** [Lospec, tutoriels cheveux](https://lospec.com/pixel-art-tutorials/tags/hair)
+· [KawaiiHannah, ombre et lumière](https://kawaiihannah.com/pixelart/tutorials/shading-lighting/)
+· [KawaiiHannah, cheveux sans contour](https://kawaiihannah.com/pixelart/tutorials/lineless-pixel-doll-hair/)
+· [DodoIcons, fourrure](https://www.deviantart.com/dodoicons/art/Pixel-fur-shading-tutorial-513887367)
+· [itch.io, fourrure](https://itch.io/t/2173926/pixel-tutorial-fur)
+· [Derek Yu, bases](https://www.derekyu.com/makegames/pixelart.html)
+· [the-pixel.art, anticrénelage](https://the-pixel.art/articles/anti-aliasing/)
+· [the-pixel.art, glissement de teinte](https://the-pixel.art/articles/hue-shifting-pixel-art-shading/)
+· [the-pixel.art, design de personnage](https://the-pixel.art/articles/pixel-art-character-design/)
+· [pixnote, selout](https://pixnote.net/en/learn/outlines/)
+· [Logbook, banding et coussin](https://the-logbook-project.blogspot.com/2013/04/pixel-art-lessons-jiinchus-darkness.html)
+· [androidarts](https://androidarts.com/pixtut/pixelart.htm)
+· [sprite-ai, pixel art anime](https://www.sprite-ai.art/blog/anime-pixel-art)
+
 ## C7. Astuces de figure [R]
 - Le geste d'abord, l'anatomie par-dessus : si les muscles cassent la ligne d'action, on
   redessine les muscles, pas la pose.
@@ -852,7 +926,7 @@ pointes à 1 px ; reflet en arc ; pointes visibles, pas cachées derrière un br
    part-il de derrière la mâchoire ? Le pouce part-il du poignet ?
 4. Peut-on nommer les muscles qui font le contour de chaque membre (C9-I) ? Reste-t-il un
    bras « tube » ou un torse « rectangle » ?
-5. Les cheveux passent-ils le contrôle C6 ?
+5. Les cheveux passent-ils le contrôle C6 (et C6b) ?
 6. À côté de la référence, le dessin tient-il la comparaison ?
 
 ## C9. Anatomie de référence [I]
