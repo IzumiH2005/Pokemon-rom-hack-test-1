@@ -62,3 +62,15 @@ pièce telle quelle, les `.` restent transparents.
   d'1 px), et l'ombre tourne avec le coin (clair en haut-gauche, sombre en bas-droite).
 - Leçon : un filet d'or d'1 px se lit comme un trait de couleur ; à partir de 2 tons
   (clair + sombre) il se lit comme du métal en relief.
+
+## v3 — coins de coffre (remplacent les bossettes)
+- Les 4 bossettes rondes sont remplacées par des **équerres de laiton** de 16×16
+  (`coins.py` → `pieces/coin_{hg,hd,bg,bd}.txt`) : une plaque en L qui enveloppe l'angle,
+  deux bras courts finis en lobe arrondi avec une rainure, et un **dôme de rivet** dans l'angle.
+- Le coin haut-gauche est dessiné à la main en étiquettes de biseau (haut, gauche, plat,
+  droite, bas). Les trois autres en sont des miroirs, avec échange des biseaux pour que la
+  lumière reste en haut à gauche partout.
+- Leçons :
+  - le dôme collé au bord de la plaque crée un double trait : le décaler d'1 px ;
+  - un dôme du même ton que la plaque disparaît : corps en clair (y) et reflet z de 3 px ;
+  - les bras du haut sont limités par l'onglet actif (x18).

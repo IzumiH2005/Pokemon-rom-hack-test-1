@@ -1,7 +1,7 @@
 """Planche des calques (E6) : chaque pièce seule à ×3, dans l'ordre d'empilement, puis l'assemblage."""
 from PIL import Image
 noms = ['etape00_construction', 'cadre', 'case', 'barre', 'onglet_rond_actif', 'onglet_losange_inactif',
-        'onglet_croix_inactif', 'onglet_pic_inactif', 'bossette', 'logement', 'rubis', 'cimier', 'curseur']
+        'onglet_croix_inactif', 'onglet_pic_inactif', 'coin_hg', 'coin_hd', 'coin_bg', 'coin_bd', 'logement', 'rubis', 'cimier', 'curseur']
 k, m = 3, 6
 ims = [Image.open(f'pieces/{n}.png').convert('RGBA') for n in noms]
 W = sum(i.width * k + m for i in ims[:2]) + m

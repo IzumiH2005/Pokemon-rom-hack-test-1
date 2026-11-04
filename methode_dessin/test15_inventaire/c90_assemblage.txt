@@ -30,11 +30,11 @@ stamp pieces/case.txt 94 83
 stamp pieces/barre.txt 18 102
 # 5. onglet actif (devant le cadre)
 stamp pieces/onglet_rond_actif.txt 18 0
-# 6. bossettes de coin
-stamp pieces/bossette.txt 2 10
-stamp pieces/bossette.txt 113 10
-stamp pieces/bossette.txt 2 113
-stamp pieces/bossette.txt 113 113
+# 6. coins de coffre (v2, remplacent les bossettes) : équerre de laiton + dôme riveté
+stamp pieces/coin_hg.txt 2 10
+stamp pieces/coin_hd.txt 110 10
+stamp pieces/coin_bg.txt 2 110
+stamp pieces/coin_bd.txt 110 110
 # 7. cimier + rubis
 stamp pieces/cimier.txt 52 0
 # 8. curseur de sélection (case 1)
