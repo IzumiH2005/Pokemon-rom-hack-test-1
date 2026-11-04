@@ -9,3 +9,7 @@ px D 21 12 21 11 21 10 20 9 20 8
 vline D 23 10 13
 # reflet brillant (cheveux plaqués) en haut à gauche
 px h 13 7 14 7 15 7 12 7 12 8 9 10 8 11 8 12 9 11
+# mèche sur le front : couleur au cœur et reflet à gauche, ombre seulement sur le bord droit (lumière haut-gauche)
+px H 16 13 17 14 18 15
+px h 17 13 18 14
+px D 18 13 19 14 19 15 19 16

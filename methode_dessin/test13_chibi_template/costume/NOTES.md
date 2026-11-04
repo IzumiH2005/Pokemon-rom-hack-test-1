@@ -36,3 +36,5 @@ la tenue changent ; corps, peau, yeux et trait du template restent ceux du test 
 - Abandonné : des pointes à la nuque derrière les oreilles. Trop fines, elles se lisaient comme des couettes ou des antennes.
 - Retour suivant : « base des cheveux trop haute ». La naissance des cheveux est descendue de 2 rangées : la peau du front commence à la rangée 13 au centre au lieu de 11. Les lignes de mèches ont été prolongées d'autant.
 - Retour suivant : « des cheveux plaqués ne doivent pas être volumineux ». La masse ne dépasse plus le trait du crâne que de 1 px, sans bosse au sommet ni débord sur les côtés. La silhouette du personnage suit donc presque exactement le crâne du template. Leçon : pour une coiffure plaquée, c'est le dessin des mèches et le reflet qui montrent le style, pas le volume.
+- Ajout : une mèche échappée qui retombe sur le front, côté droit, des rangées 13 à 16. Elle s'arrête au-dessus de l'œil.
+- Piège : sur la peau, la règle de contour rend sombre (D) une mèche de 2 à 3 px de large, qui se lit alors comme un trait. Je l'ai recolorée à la main dans c06b : H au cœur, h sur le bord gauche, D seulement sur le bord droit.

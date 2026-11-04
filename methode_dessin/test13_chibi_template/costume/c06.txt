@@ -9,3 +9,8 @@ hline H 7 11 13
 hline H 20 24 13
 hline H 7 9 14
 hline H 22 24 14
+# une mèche échappée qui retombe sur le front (côté droit), elle s'arrête au-dessus de l'œil
+hline H 16 18 13
+hline H 17 19 14
+hline H 18 19 15
+px H 19 16
