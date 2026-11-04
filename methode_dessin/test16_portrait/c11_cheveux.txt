@@ -1,0 +1,26 @@
+# 11. masse des cheveux (sous la peau)
+rows H 4 56 70 51 75 47 79 45 82 43 84 42 85 41 86 40 87 39 88 38 89 37 90 36 90 35 91 35 92 34 92 33 93 32 94 32 94 31 95 31 95
+rows H 24 30 96 30 96 30 96 29 97 29 97 29 97 29 97
+rect H 28 31 98 36
+rect H 27 37 99 44
+rect H 28 45 98 53
+# derrière les oreilles
+rect H 26 54 31 70
+rect H 97 54 101 70
+# mèche gauche qui descend sur l'épaule
+rect H 31 71 38 79
+rect H 33 80 40 95
+rect H 35 96 41 127
+# côté droit puis tresse
+rect H 89 71 97 87
+rect H 87 88 99 103
+rect H 87 104 100 115
+rect H 88 116 102 127
+# sous les oreilles : les cheveux comblent le creux
+rect H 26 64 37 70
+rows H 71 28 37 30 37
+rect H 91 64 101 70
+rows H 71 91 99 91 98
+# les mèches collent aux joues jusqu'à y87
+rows H 75 39 39 39 39 39 39 39 40 39 40 39 40 39 41 39 41 39 42 39 42 39 43 39 43 39 44
+rows H 78 88 88 88 88 88 88 87 88 87 88 86 88 86 88 85 88 85 88 84 88

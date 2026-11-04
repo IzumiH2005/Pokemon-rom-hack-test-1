@@ -1,0 +1,29 @@
+# 5a. verre gauche
+hline B 44 54 47
+px B 42 48 43 48 55 48 56 48 41 49 57 49 40 50 58 50
+vline B 39 51 66
+vline B 59 51 66
+px B 40 67 40 68 58 67 58 68 41 69 57 69 42 70 43 70 55 70 56 70
+hline B 44 54 71
+# 5b. verre droit
+hline B 74 84 47
+px B 72 48 73 48 85 48 86 48 71 49 87 49 70 50 88 50
+vline B 69 51 66
+vline B 89 51 66
+px B 70 67 70 68 88 67 88 68 71 69 87 69 72 70 73 70 85 70 86 70
+hline B 74 84 71
+# 5c. pont
+hline B 60 68 59
+# 5d. yeux mi-clos : paupière haute, bas de l'œil, iris
+hline R 43 54 57
+px R 41 58 42 58 55 58 56 58 38 56 39 56 40 57
+hline R 44 54 63
+ring R 49 60 2
+hline R 74 85 57
+px R 72 58 73 58 86 58 87 58 88 57 89 56 90 56
+hline R 74 84 63
+ring R 79 60 2
+# 5e. nez, bouche, lèvre inférieure
+px R 63 73 63 74
+hline R 60 66 85
+hline R 59 66 91

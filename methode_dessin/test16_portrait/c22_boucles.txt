@@ -1,0 +1,32 @@
+# mèche claire qui traverse le pan gauche et passe sur la mâchoire (y89-94)
+hline H 41 44 88
+hline O 36 45 89
+hline H 36 44 90
+hline O 45 47 90
+hline H 36 46 91
+hline O 47 49 91
+hline O 35 38 92
+hline H 39 48 92
+hline O 49 50 92
+hline O 39 42 93
+hline H 43 49 93
+px O 50 93
+hline O 43 49 94
+# côté droit : miroir
+hline H 85 88 88
+hline O 84 93 89
+hline H 85 93 90
+hline O 82 84 90
+hline H 83 93 91
+hline O 80 82 91
+hline O 91 94 92
+hline H 81 90 92
+hline O 79 80 92
+hline O 87 90 93
+hline H 80 86 93
+px O 79 93
+hline O 80 86 94
+# trou rouge résiduel côté droit
+hline H 81 84 88
+hline H 81 83 89
+px H 81 90

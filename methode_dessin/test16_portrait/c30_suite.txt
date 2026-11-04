@@ -1,0 +1,8 @@
+# pont des lunettes
+hline E 60 69 59
+hline E 61 68 58
+# branches vers les oreilles
+hline E 30 38 56
+hline E 91 99 56
+# grain de beauté sous le verre droit
+px O 83 73

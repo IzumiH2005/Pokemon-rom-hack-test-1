@@ -1,0 +1,9 @@
+# 1. Loomis : cercle du crâne (sous les cheveux tirés)
+ring R 64 42 31
+# axe vertical du visage
+vline B 64 8 104
+# repères horizontaux : ligne des cheveux, sourcils, nez, menton
+hline B 50 78 25
+hline B 36 92 48
+hline B 52 76 74
+hline B 56 72 102

@@ -1,0 +1,70 @@
+# 30. œil gauche et verre (le droit = miroir.py)
+# teinte rose du verre
+rows L 48 44 54 42 56 41 57
+rect L 40 51 58 66
+rows L 67 41 57 41 57 42 56 44 54
+# pli de la paupière
+hline l 43 54 53
+# blanc de l'œil, sous la paupière
+rows S 58 42 55 43 55 43 54 44 53 45 52
+# iris pâle cerclé, pupille, reflet
+rect I 46 58 51 62
+vline K 45 58 62
+vline K 52 58 62
+hline K 46 51 63
+hline O 48 49 60
+hline O 48 49 61
+px W 47 59
+# cils du haut : trait épais qui dépasse à gauche
+hline O 38 54 56
+hline O 40 56 57
+px O 36 55 37 55 55 58 56 58
+# paupière basse et deux petits cils
+hline g 43 52 64
+px g 42 63 53 63
+px O 42 65 45 66
+# monture
+hline E 44 54 47
+px E 42 48 43 48 55 48 56 48 41 49 57 49 40 50 58 50
+vline E 39 51 66
+vline E 59 51 66
+px E 40 67 40 68 58 67 58 68 41 69 57 69 42 70 43 70 55 70 56 70
+hline E 44 54 71
+# sourcil fin au-dessus de la monture
+hline g 43 54 45
+px g 41 46 42 46
+# œil droit : miroir
+rows L 48 75 85 73 87 72 88
+rect L 71 51 89 66
+rows L 67 72 88 72 88 73 87 75 85
+hline l 75 86 53
+rows S 58 74 87 74 86 75 86 76 85 77 84
+rect I 78 58 83 62
+vline K 84 58 62
+vline K 77 58 62
+hline K 78 83 63
+hline O 80 81 60
+hline O 80 81 61
+px W 82 59
+hline O 75 91 56
+hline O 73 89 57
+px O 93 55 92 55 74 58 73 58
+hline g 77 86 64
+px g 87 63 76 63
+px O 87 65 84 66
+hline E 75 85 47
+px E 87 48 86 48 74 48 73 48 88 49 72 49 89 50 71 50
+vline E 90 51 66
+vline E 70 51 66
+px E 89 67 89 68 71 67 71 68 88 69 72 69 87 70 86 70 74 70 73 70
+hline E 75 85 71
+hline g 75 86 45
+px g 88 46 87 46
+# pont des lunettes
+hline E 60 69 59
+hline E 61 68 58
+# branches vers les oreilles
+hline E 30 38 56
+hline E 91 99 56
+# grain de beauté sous le verre droit
+px O 83 73
