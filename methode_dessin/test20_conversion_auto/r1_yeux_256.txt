@@ -1,0 +1,18 @@
+# coordonnées 256x256 — yeux mi-clos : la paupière haute couvre le haut de l'iris
+# œil gauche (dans l'ombre)
+poly f 88 97 93 97 93 100 89 100
+poly f 101 97 107 97 108 99 101 100
+poly c 94 96 100 96 101 98 100 101 94 101 93 98
+poly o 95 97 99 97 100 99 99 100 95 100 94 99
+px p 96 97 97 97
+px a 97 98 98 98 97 99
+ligne a 2 86 96 91 94 97 94 104 94 110 95
+ligne b 1 90 102 98 103 106 101
+# œil droit (plus éclairé)
+poly g 144 94 147 94 147 96 145 96
+poly f 156 94 161 94 160 95 156 95
+poly o 148 94 154 94 155 95 154 97 148 97 147 95
+px p 149 94 150 94
+px a 151 95 152 95
+ligne a 2 142 93 146 92 151 92 158 91 166 91
+ligne b 1 145 98 153 99 160 97

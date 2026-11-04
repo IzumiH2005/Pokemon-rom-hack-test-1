@@ -1,6 +1,6 @@
-"""Conversion automatique illustration -> base 128x128 à retoucher.
+"""Conversion automatique illustration -> base TxT (128 par défaut) à retoucher.
 
-Usage : python3 conv.py carre.png dossier_sortie [nb_couleurs]
+Usage : python3 conv.py carre.png dossier_sortie [nb_couleurs] [taille]
 Étapes : voile retiré, médiane + accentuation, réduction k-centroïde,
 traits sombres extraits à part et reposés, palette k-means pondérée
 (+ 2 rouges fixes), pixels isolés nettoyés. Sort auto.txt et palette.json.
@@ -9,6 +9,7 @@ import sys, numpy as np
 from PIL import Image, ImageFilter
 SRC,O=sys.argv[1],sys.argv[2]
 N=int(sys.argv[3]) if len(sys.argv)>3 else 14
+T=int(sys.argv[4]) if len(sys.argv)>4 else 128
 im=Image.open(SRC).convert('RGB')
 I=np.asarray(im).astype(float)/255
 # 1. enlever le voile (dark channel prior)
@@ -19,14 +20,14 @@ J=np.clip((I-A)/t+A,0,1)
 # 2. niveaux + contraste local
 lo,hi=np.percentile(J,1),np.percentile(J,99.5)
 J=np.clip((J-lo)/(hi-lo),0,1)**0.95
-pre=Image.fromarray((J*255).astype(np.uint8)).filter(ImageFilter.MedianFilter(7)).filter(ImageFilter.UnsharpMask(4,50,3))
+pre=Image.fromarray((J*255).astype(np.uint8)).filter(ImageFilter.MedianFilter(7 if T<=128 else 5)).filter(ImageFilter.UnsharpMask(4,50,3))
 pre.save(f'{O}/pre.png')
 P=np.asarray(pre).astype(float)
 # 3. réduction k-centroïde : couleur dominante de chaque case, traits sombres préservés
-H=P.shape[0];out=np.zeros((128,128,3))
-e=np.linspace(0,H,129).astype(int)
-for y in range(128):
-  for x in range(128):
+H=P.shape[0];out=np.zeros((T,T,3))
+e=np.linspace(0,H,T+1).astype(int)
+for y in range(T):
+  for x in range(T):
     b=P[e[y]:e[y+1],e[x]:e[x+1]].reshape(-1,3)
     c=b[np.linspace(0,len(b)-1,3).astype(int)].copy()
     for _ in range(6):
@@ -42,9 +43,9 @@ Image.fromarray(out.astype(np.uint8)).save(f'{O}/kc.png')
 g=np.asarray(im.convert('L')).astype(float)
 gb=np.asarray(im.convert('L').filter(ImageFilter.GaussianBlur(5))).astype(float)
 ln=((gb-g)>22)&(g<75)
-LM=np.zeros((128,128),bool)
-for y in range(128):
-  for x in range(128):
+LM=np.zeros((T,T),bool)
+for y in range(T):
+  for x in range(T):
     LM[y,x]=ln[e[y]:e[y+1],e[x]:e[x+1]].mean()>0.10
 np.save(f'{O}/LM.npy',LM)
 # 4. palette de N couleurs (k-means), fond à part
@@ -60,12 +61,12 @@ for _ in range(50):
     if m.any(): c[k]=(U[m]*W[m,None]).sum(0)/W[m].sum()
 lab=np.full(len(px),N-1);lab[~bg]=((fg[:,None]-c[None])**2).sum(2).argmin(1)
 pal=np.vstack([c,[[196,58,60],[255,96,72],[250,250,253]]]).astype(np.uint8)
-L=lab.reshape(128,128)
+L=lab.reshape(T,T)
 # 5. nettoyage : pixel isolé dont les 4 voisins sont d'accord
 for _ in range(2):
   M=L.copy()
-  for y in range(1,127):
-    for x in range(1,127):
+  for y in range(1,T-1):
+    for x in range(1,T-1):
       n=[L[y-1,x],L[y+1,x],L[y,x-1],L[y,x+1]]
       if L[y,x] not in n and n.count(n[0])>=3: M[y,x]=n[0]
   L=M

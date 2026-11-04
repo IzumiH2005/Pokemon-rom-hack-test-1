@@ -19,3 +19,16 @@ Ce test reprend l'illustration du test 19 (elle n'est pas dans le dépôt). Le t
 - `r3_meches.txt` : quelques mèches brunes dans la masse sombre du bas, et l'oreille.
 
 `sh construire.sh carre.png` refait tout.
+
+## Version 256×256 (`construire_256.sh`)
+Même chaîne, avec deux réglages :
+- chaque case fait ~4 px de l'original au lieu de ~8 ;
+- le filtre médian passe de 7 à 5, pour garder les détails fins.
+
+Ce qu'on gagne : les lignes des mèches, l'oreille, la mâchoire et le col sortent tout seuls.
+
+Retouche des yeux (`r1_yeux_256.txt`) :
+- yeux mi-clos, la paupière couvre le haut de l'iris ;
+- le blanc de l'œil est dans l'ombre (f/g), sinon on obtient un regard écarquillé.
+
+Taille : sur GBA, l'écran fait 240×160. Un portrait de 256×256 ne tient pas en entier à l'écran et devrait être recadré ou affiché en partie.
