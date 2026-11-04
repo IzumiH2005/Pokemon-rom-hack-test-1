@@ -34,3 +34,4 @@ la tenue changent ; corps, peau, yeux et trait du template restent ceux du test 
 - Les lignes de mèches en D partent du front et s'écartent en montant, ce qui donne l'impression que les cheveux sont tirés vers l'arrière.
 - Un reflet h en haut à gauche donne l'effet plaqué et brillant.
 - Abandonné : des pointes à la nuque derrière les oreilles. Trop fines, elles se lisaient comme des couettes ou des antennes.
+- Retour suivant : « base des cheveux trop haute ». La naissance des cheveux est descendue de 2 rangées : la peau du front commence à la rangée 13 au centre au lieu de 11. Les lignes de mèches ont été prolongées d'autant.

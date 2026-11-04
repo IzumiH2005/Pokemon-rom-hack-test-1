@@ -6,17 +6,17 @@ hline H 10 22 4
 hline H 9 23 5
 hline H 8 23 6
 hline H 7 24 7
-rect H 7 8 24 10
-# naissance des cheveux haute, en M : le centre du front reste en peau
-hline H 7 11 11
-hline H 20 24 11
-rect H 7 12 9 13
-rect H 22 12 24 13
+rect H 7 8 24 12
+# naissance des cheveux en M, plus basse : le centre du front commence à la rangée 13
+hline H 7 11 13
+hline H 20 24 13
+hline H 7 9 14
+hline H 22 24 14
 # côtés serrés jusqu'aux pattes
 hline H 7 8 14
 hline H 23 24 14
 hline H 7 8 15
 hline H 23 24 15
 # léger débord à l'arrière de la tête (la masse repoussée derrière)
-rows H 10 6 6 6 6 6 6
-rows H 10 25 25 25 25 25 25
+rows H 10 6 6 6 6 6 6 6 6
+rows H 10 25 25 25 25 25 25 25 25
