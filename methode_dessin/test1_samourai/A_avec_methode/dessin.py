@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Jeune femme samourai - pixel art 64x96, suivant METHODE_DESSIN_PERSONNAGE.md.
+"""Jeune femme samourai - pixel art 64x96, suivant METHODE_PIXEL_ART.md.
 Chaque etape est decrite en DONNEES puis tracee (R3) ; chaque etape sauve etape_XX_nom.png (x6)."""
 import math, os
 from PIL import Image, ImageDraw, ImageFont
