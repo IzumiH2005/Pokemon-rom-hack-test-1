@@ -31,3 +31,24 @@ Fichiers : `cheveux.py` (calque posé à la main, coordonnées commentées), `re
   de dos : on ne restaure que les pixels non vides de la base.
 - Deux trous dans le trait (rangées 10 à 12) causés par l'ombrage posé sur le contour :
   l'ombre ne doit jamais remplacer un O.
+
+## Variante « anime » (`anime.py` → `etape05_anime`, `comparaison.png`)
+Même corps, même palette ; la coupe est poussée vers le style anime :
+- **Silhouette plus grosse** (le dôme monte jusqu'à la rangée 3) avec une **pointe épaisse
+  vers l'extérieur** de chaque côté, à hauteur des joues (gauche plus haute que droite).
+- **Ahoge** : une grande mèche courbée qui sort du haut du crâne (3 px de large).
+- **Frange** en 3 pointes inégales + une **longue mèche centrale** qui descend entre les yeux.
+- **Mèches avant longues** jusqu'aux épaules, 4 px qui s'affinent.
+- **Cel-shading** : aplats nets, pas de dégradé. Chaque pointe de frange a son côté droit
+  sombre et son côté gauche éclairé.
+- **Anneau de reflet** (angel ring) en dents de scie qui suit le crâne.
+- Masque des cheveux défini à la main, trait posé automatiquement là où les cheveux
+  touchent le vide ou les vêtements, jamais la peau.
+
+Pièges vus :
+- 1er jet : pointes extérieures et longues mèches trop fines, entièrement en trait (règle
+  des 3 px sur 2 rangées). Épaissies.
+- Colorer en D toute la colonne d'une pointe de frange en fait une rayure sombre sur le
+  visage : la pointe reste claire, seule la colonne voisine passe en D.
+- Des mèches qui descendent devant les mains se mêlent au trait des bras : arrêtées à la
+  rangée 26.
