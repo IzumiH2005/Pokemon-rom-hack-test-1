@@ -1,4 +1,4 @@
-# Méthode de pixel art — objets et personnages (v4)
+# Méthode de pixel art — objets et personnages (v5)
 
 On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin classique
 (construction par volumes, ligne d'action, anatomie) et les règles du pixel art
@@ -10,12 +10,14 @@ On construit d'abord, on détaille ensuite. Cette méthode réunit le dessin cla
 - la **partie B** donne les étapes de construction d'un **objet** ;
 - la **partie C** donne les étapes de construction d'un **personnage** (anatomie, visage,
   cheveux) ;
-- un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels.
+- un dessin suit B ou C pour la construction, puis le pipeline A5 pour les pixels ;
+- la section **A4b** (simplifier) s'applique dès qu'une taille est imposée.
 
 **Sources :** [Z] *Apprendre à tout dessiner avec Zephy* · [M] livre de dessin manga ·
 [I] planches d'anatomie fournies · [C] planches sur les cheveux fournies ·
 [R] recherches (Loomis, Bridgman, Proko, tutoriels d'anticrénelage, de matières et de
-lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
+lisibilité d'icônes, simplification des formes) · [P] planches fournies (cheveux, œil, arche,
+cristal, flamme, déclinaisons par taille, projections) · [T1]…[T4] leçons de nos propres tests.
 
 ---
 
@@ -104,6 +106,52 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
 - **Chevauchement net.** Une forme devant une autre coupe son contour. Pas de raccord en
   « T » lisse, et pas de tangentes (deux contours qui se touchent juste).
 
+## A4b. Simplifier les formes [R][P]
+
+Simplifier, c'est **enlever et exagérer** : on retire ce qui ne se lit pas, et on grossit ce
+qui fait reconnaître le sujet.
+
+- **Enveloppe d'abord.** Une grande forme simple autour de tout le sujet (cercle, boîte,
+  triangle, goutte). Elle donne les proportions et la silhouette avant le moindre détail.
+- **Grand, moyen, petit.** Une forme domine (environ 70 % de l'image), une forme moyenne
+  l'accompagne, et une petite zone porte le détail. Deux formes de même taille se battent.
+  Exemples : le chapeau, le pied et l'anneau d'un champignon ; un grand cristal, un moyen
+  et un petit, chacun avec un angle différent.
+- **Langage de formes.** Rond = doux, gentil. Carré = solide, lourd. Triangle = rapide,
+  dangereux. La forme dominante donne le caractère.
+- **Sous-formes dans le même sens.** Une masse se découpe en sous-formes (langues d'une
+  flamme, mèches, feuilles, plumes) qui suivent **un même mouvement**. Leur taille varie,
+  pas leur direction générale.
+- **Le plus petit détail nécessaire fixe la taille.** Se demander quel est le plus petit
+  élément indispensable (les yeux, une serrure, une graine) et combien de pixels il lui
+  faut. Choisir la taille à partir de là. Dans le doute, plus petit. Grossir la taille ne
+  dispense pas de simplifier : on ne fait que repousser le problème.
+- **Ce que chaque taille peut porter :**
+
+| Taille | Ce qui tient |
+|---|---|
+| 8 px | la silhouette et 2 ou 3 masses de couleur, rien d'autre |
+| 16 px | la catégorie (oiseau ou chat) et **un** détail d'identité |
+| 32 px | une expression, l'équipement, 1 ou 2 détails |
+| 48 à 64 px | la texture, plusieurs éléments, des détails hiérarchisés |
+
+- **Redessiner à chaque taille, jamais réduire.** Une réduction garde des détails qui n'ont
+  plus la place de se lire. On repart de la silhouette à la nouvelle taille.
+- **Marqueurs d'identité.** Choisir 2 ou 3 marqueurs (une couleur, une forme forte, un
+  accessoire) et les garder **à toutes les tailles**, quitte à les agrandir quand le reste
+  rétrécit. Le reste disparaît avant eux.
+- **Formes difficiles en marches nettes.** Une bosse molle ou une longue pente qui donne des
+  escaliers irréguliers se redessine avec des cassures à 90° et 45°. Un arc fin et presque
+  horizontal disparaît à petite taille : on l'épaissit ou on le supprime.
+- **Chaque pixel fait double travail.** À petite taille, un pixel est une tache de peinture :
+  il peut être à la fois contour, ombre et forme. Les formes deviennent des symboles (un œil
+  = 1 px, une graine = 2 px).
+- **Formes qui riment.** Les variantes d'un même objet ou d'un même set reprennent les mêmes
+  formes (même courbe de chapeau, même angle de garde) : différentes, mais de la même
+  famille.
+- **Vide utile.** Les espaces vides (entre les cristaux, sous l'arche, entre les langues de
+  feu) ont eux-mêmes une forme claire. Un vide informe est une erreur de silhouette.
+
 ## A5. Pipeline pixel (pour objets et personnages)
 
 ### 5. Silhouette
@@ -130,6 +178,17 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
   un cran plus sombres que leur fond, et souvent **cassés** (interrompus).
 - Pas de contour au contact du sol ni entre une main et l'objet tenu.
 - Contour cassé et irrégulier pour la fourrure, les cheveux, l'herbe.
+- **Ordre selon la forme [P] :** objet dur ou taillé (cristal, arme, meuble) : trait propre
+  d'abord, puis couleur. Forme molle ou organique (cheveux, flamme, feuillage) : masse de
+  couleur d'abord, sous-formes, puis contour posé **à la fin** autour de la forme trouvée.
+- **Épaisseur de trait [P] :** le trait le plus épais va en haut et à l'extérieur (paupière
+  du haut, dessus d'un chapeau). Les traits du bas et de l'intérieur sont plus fins ou
+  cassés.
+- **Lignes secondaires en couleur [P] :** pli de paupière, bas de l'œil, joints fins : un ton
+  coloré plus clair que le contour, jamais la couleur du contour.
+- **Couleur du contour :** le ton le plus sombre du set, chaud ou froid, mais pas le noir
+  pur. Le même pour tous les objets d'un set (le brun-bordeaux d'une carotte, d'un pain et
+  d'un bol).
 
 ### 7. Palette et couleurs à plat
 - **Palette d'abord :** poser les couleurs en carrés côte à côte et les ajuster avant de
@@ -145,6 +204,9 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
   l'accent), ou triade. Chaudes = vitalité, froides = calme ou mystère.
 - **Réutiliser** les tons d'une rampe dans une autre (l'ombre de l'or peut être le brun du
   bois) : la palette reste courte et cohérente.
+- **Palette en chaîne [P] :** les rampes se relient en une seule suite de teintes voisines
+  (bleu → cyan → vert pâle → crème → rose → rouge → violet → sombre). Chaque couleur sert
+  à plusieurs endroits (le cyan du blanc de l'œil, le crème du reflet de l'iris).
 - Remplir chaque zone avec le ton moyen, des grandes zones vers les petites.
 - **Contrôle en gris :** chaque matière a sa valeur (A2).
 
@@ -179,6 +241,23 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
   la grille. Décaler les limites et varier les longueurs.
 - **Ombre portée au sol :** plus sombre au centre, plus claire vers l'extérieur. Pour une
   icône d'inventaire, elle est facultative.
+- **Un ton par face [P] :** sur un volume à faces planes (bloc, cristal, arche), chaque face
+  a **un seul ton** selon son orientation : dessus = le plus clair, face tournée vers la
+  lumière = clair, face avant = moyen, dessous et intérieur = sombre.
+- **Creux inversés [P] :** dans un creux (alvéole de gaufre, trou, intérieur d'une arche),
+  l'ombre est sur la paroi **du côté de la lumière** et la paroi opposée est éclairée.
+  C'est l'inverse d'une bosse.
+- **Ombre d'un surplomb :** ce qui avance projette une ombre sur ce qui est dessous. La
+  paupière assombrit le haut de l'iris et du blanc de l'œil ; la frange, le haut du front ;
+  le chapeau, le haut du pied.
+- **Deuxième lumière (contre-jour) [P], facultative :** une lumière plus faible, d'une
+  teinte contrastée (souvent froide : violet, bleu), arrive de l'arrière. Elle pose une
+  bande de 1 px sur les bords **opposés** à la lumière principale, jamais sur tout le
+  contour. Elle détache le sujet du fond.
+- **Objet qui émet de la lumière [P] (feu, magie, lampe) :** on ombre à l'envers. Le cœur
+  est le plus clair (presque blanc), entouré de couches de plus en plus sombres ; les
+  bords et les pointes sont les plus sombres. Le cœur est décalé vers la source (la base
+  d'une flamme). Pas de contour sombre autour.
 
 ### 8b. Matières [R][T3]
 
@@ -195,7 +274,19 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
 | Tissu | doux | aucun | plis depuis les points de tension ; limites douces |
 | Peau | doux | très faible | ombre rouge-violet ou brun-rose ; jamais de tramage |
 | Pierre | moyen | aucun | facettes, fissures cassées, tramage possible comme texture |
+| Pierre taillée (blocs, arche) | moyen | aucun | un ton par face ; joints **perpendiculaires** au bord (rayons sur un arc) ; mousse sur le dessus et dans les fentes |
+| Cristal | très fort | 1 à 2 px blancs sur les arêtes et les pointes | prismes à pointe ; un ton par facette ; contour coloré (rouge sombre pour un cristal rouge) ; contre-jour froid possible |
+| Feu, magie | — | le cœur entier | ombrage inversé (8) ; langues dans le même sens ; étincelles détachées |
+| Nourriture cuite (pain, gaufre) | moyen | petits points sur les bosses | rampe chaude crème → orange → brun ; dessus brillant, côtés plus sombres ; motifs (graines, alvéoles) qui suivent la surface |
 | Organique (champignon, plante) | moyen | doux, large | volumes ronds ; petites taches ou nervures qui suivent le maillage ; lumière réfléchie colorée dessous |
+
+### 8c. Variation de couleur (après les valeurs) [P]
+Une fois les valeurs justes, on varie les **teintes sans changer les valeurs** (contrôle en
+gris : l'image ne doit pas bouger) :
+- ombres vers le violet ou le bleu, lumières vers le jaune (rappel de l'étape 7) ;
+- le long d'une forme longue, la teinte glisse : cheveux chauds en haut, rosés aux pointes ;
+  flamme orange au centre, magenta aux bords, cœur blanc-cyan ;
+- 1 ou 2 facettes d'une autre teinte sur un cristal ou une gemme.
 
 ### 9. Détails (en dernier)
 - **Règle du tiers :** la texture et les détails couvrent environ 1/3 de la surface. Les
@@ -205,6 +296,15 @@ lisibilité d'icônes) · [T1]…[T3] leçons de nos propres tests.
 - **Raconter :** un ou deux détails qui disent quelque chose (une entaille, une étiquette,
   une usure).
 - Finir par quelques accents du ton le plus sombre, seulement dans les creux.
+- **Les motifs suivent la forme [P] :** joints en rayons sur un arc, stries courbes sur un
+  cylindre (carotte), grille raccourcie par la perspective (gaufre), graines orientées
+  selon la surface (pain).
+- **La nature décide où vont les détails [P] :** mousse et poussière sur les dessus et dans
+  les fentes ; herbe qui cache la base et ancre l'objet au sol ; usure sur les arêtes.
+- **Particules [P] (étincelles, vapeur, éclats) :** 1 ou 2 px, par groupes de 2 ou 3,
+  détachées de l'objet, de plus en plus petites en s'éloignant. Elles restent rares.
+- **Éclats aux arêtes :** sur une surface taillée, l'éclat va là où deux faces se
+  rencontrent et sur les pointes.
 
 ### 10. Nettoyage
 - **Orphelins :** un pixel seul d'une couleur. Le garder seulement s'il est voulu (éclat,
@@ -231,7 +331,9 @@ Questions communes :
 3. Le volume se lit-il, et la lumière vient-elle d'une seule source ?
 4. Le point d'intérêt a-t-il le plus fort contraste ?
 5. Reste-t-il des orphelins, du banding, de l'ombrage coussin, des « L » dans le contour ?
-6. L'objectif de l'étape 0 est-il atteint ?
+6. Y a-t-il une forme dominante, une moyenne et une petite (A4b) ? Les marqueurs d'identité
+   se voient-ils à ×1 ?
+7. L'objectif de l'étape 0 est-il atteint ?
 
 Puis les questions propres à l'objet (B5) ou au personnage (C8).
 
@@ -247,10 +349,24 @@ objectifs du dessin suivant.
 - **ce que c'est et à quoi ça sert** dans le jeu : icône d'inventaire, objet posé au sol,
   élément d'interface ;
 - la **taille** (celle de la tuile ou de la case) et le nombre de couleurs (table A3) ;
-- la **vue**, la même pour tout le set : de face ou de profil pour une icône, ou inclinée
-  vers l'avant pour un jeu vu de dessus ;
+- la **projection**, la même pour tout le set (tableau B0b) ;
 - la lumière : en haut à gauche, comme les autres objets du jeu ;
 - la matière principale et **l'accent** (la seule couleur saturée).
+
+## B0b. Projection [P]
+
+| Projection | On voit | Usage |
+|---|---|---|
+| De face (jeu de plateforme) | la face avant seule | icônes, jeux de côté |
+| Vue de dessus « 3/4 » | le dessus **et** la face avant, pas les côtés | RPG vus de dessus, comme les jeux Pokémon : bâtiments, objets posés |
+| De dessus pur | le dessus seul | cartes, toits |
+| Isométrique | le dessus et deux côtés | lignes en pente 2:1 (2 px de côté pour 1 de haut) |
+| Dimétrique 45° | le dessus en losange et deux côtés | carte tournée de 45° |
+| Oblique | la face avant et un côté fuyant | décor, effet de profondeur simple |
+
+- Une seule projection par jeu. Un objet en 3/4 à côté d'un objet de face casse le monde.
+- Pour ce hack (moteur GBA vu de dessus) : objets du monde en **vue 3/4 de dessus**,
+  icônes d'inventaire de face ou légèrement inclinées, toutes de la même façon.
 
 ## B1. Cadre et placement
 - Garder 1 px de marge. L'objet remplit la case : une case vide autour rend l'icône faible.
@@ -267,6 +383,13 @@ objectifs du dessin suivant.
 - Une boîte vue un peu d'en haut montre son dessus (plus clair) et sa face avant.
 - Un objet plat (lame, bouclier) a quand même une épaisseur : un biseau ou un bord de 1 px
   qui accroche la lumière.
+- **Extrusion [P] :** pour donner de l'épaisseur à une forme (arche, anneau, roue) : tracer
+  la face, la **dupliquer et la décaler** dans la direction de la profondeur, tracer la
+  forme intérieure, couper ce qui est caché, puis ajouter les bouts de face intérieure
+  visibles. On colore ensuite face par face (8).
+- **Couches empilées [P] (burger, gâteau, pile) :** toutes les couches ont la même
+  inclinaison d'ellipse. Leurs valeurs alternent (clair, sombre, clair) pour qu'elles se
+  séparent même en gris.
 
 ## B3. Forme iconique
 - **Exagérer ce qui fait reconnaître l'objet :** la garde d'une épée, le bouchon d'une
@@ -278,6 +401,15 @@ objectifs du dessin suivant.
 ## B4. Matière et lumière
 - Choisir la rampe de chaque matière (A5 étape 7) et sa règle (tableau 8b).
 - Placer le **point d'intérêt** : c'est là que vont l'éclat et le plus fort contraste.
+
+## B4b. Décliner un objet en plusieurs tailles [R][P]
+Exemple : une carotte en 8, 16 et 32 px.
+- **8 px :** silhouette, 2 tons, feuillage en un seul amas.
+- **16 px :** un éclat, 1 ou 2 stries, contour sombre.
+- **32 px :** stries courbes qui suivent le cylindre, 4 tons, éclat allongé, feuillage en
+  2 ou 3 lobes.
+- Même angle, même couleur de contour, mêmes marqueurs à toutes les tailles. Le nombre
+  d'idées augmente avec la taille (A3), mais l'identité ne change pas.
 
 ## B5. Contrôle propre aux objets
 - L'objet se reconnaît-il en 1 seconde dans une case d'inventaire ?
@@ -416,6 +548,18 @@ yeux.
 - tête de 7 à 12 px : yeux de 1×2 ou 2×2 px, nez en 1 px d'ombre ;
 - au-delà : on applique les rapports ci-dessus.
 
+**Œil en grand (dès 32 px de tête) [P], dans l'ordre :**
+1. trait : paupière du haut épaisse (2 à 3 px) avec un cil qui part au coin extérieur ;
+   pli de paupière séparé au-dessus ; paupière du bas fine et cassée ;
+2. iris en aplat sombre ; blanc de l'œil **jamais blanc** : bleu clair ou gris, plus
+   sombre sous la paupière ;
+3. iris sombre en haut (ombre de la paupière), clair en bas, avec un fin arc lumineux en
+   bas (la lumière traverse) ;
+4. pupille, puis reflet de 1 à 2 px presque blanc, du côté de la lumière ;
+5. paupière du haut doublée à l'intérieur d'un ton coloré (son ombre sur l'œil) ;
+6. pli et paupière du bas éclaircis en ton de peau rosé (lignes secondaires en couleur) ;
+7. une touche de couleur froide en haut de l'iris pour la profondeur.
+
 **Attrait [T1] :** le visage est **majoritairement dans la lumière**. Pas de visage coupé en
 deux moitiés claire et sombre (effet masque), sauf intention dramatique.
 
@@ -438,6 +582,17 @@ deux moitiés claire et sombre (effet masque), sauf intention dramatique.
 - **Point d'attache** (queue, chignon) : toutes les mèches tirées vont vers lui en suivant
   le crâne. Queue haute : l'attache se voit. Queue basse : les cheveux pendent vers elle.
   Couettes : derrière les oreilles, à la même hauteur, alignées avec les yeux.
+
+**Ordre de pose en pixels [P] :**
+1. la masse entière en un aplat, comme un casque ;
+2. la lumière sur la masse entière (un anneau de reflet qui suit le crâne, l'ombre sous la
+   masse et à la raie) ;
+3. découpage en grandes mèches, qui suivent toutes le même mouvement ;
+4. contour posé autour des mèches, pointes ouvertes ;
+5. chaque mèche reçoit sa propre lumière et sa propre ombre ;
+6. variation de couleur (8c) : chaud en haut, rosé ou violet vers les pointes et dans les
+   ombres ;
+7. le reflet en arc se casse en tirets dans le sens des mèches.
 
 **Mèches :**
 - Des mèches et touffes, jamais des fils. Épaisseurs et longueurs variées.
@@ -572,9 +727,9 @@ Les bosses d'un membre ne sont jamais face à face à la même hauteur :
 
 ## Résumé
 
-**Objet :** intention et usage → cadre (diagonale pour les objets longs) → volumes et
-terminateur → forme iconique → silhouette → contour → palette → lumière selon la matière →
-détails → nettoyage → contrôle en situation.
+**Objet :** intention, usage et projection → cadre (diagonale pour les objets longs) →
+volumes et terminateur → simplification (A4b) → forme iconique → silhouette → contour →
+palette → lumière selon la matière → variation de couleur → détails → nettoyage → contrôle en situation.
 
 **Personnage :** intention et références → proportions → pose → volumes → visage →
 vêtements → cheveux → silhouette → contour → palette → ombres à la main → détails →
