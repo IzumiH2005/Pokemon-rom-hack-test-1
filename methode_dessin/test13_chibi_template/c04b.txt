@@ -1,0 +1,6 @@
+# c04b bords intérieurs à la main
+# revers des manches : 1 px plus clair au-dessus de la main (au lieu d'un trait plein)
+hline t 5 6 23
+hline d 17 18 23
+# ourlet de la tunique : trait propre (règle 17)
+hline O 8 15 27

@@ -1,0 +1,21 @@
+# c03 ombres du corps, lumière haut-gauche ; ombre de tête étroite à droite (2 px)
+vline S 18 8 11
+vline S 19 8 11
+px S 17 6 17 7 18 6 18 7
+vline S 19 12 15
+vline S 20 12 14
+px S 18 16 17 16 16 17 15 17 15 18
+hline S 9 14 18
+# lumière sur la joue gauche
+px l 5 12 4 13 5 13 4 14
+# cou et torse : ombre portée sous le menton, flanc droit
+hline S 8 15 20
+px S 15 21
+vline S 15 23 26
+px S 16 21
+# bras : face ombre à droite
+px S 7 22 6 23 6 24 17 22 18 23 18 24
+# jambes : ombre côté droit de chaque jambe, entrejambe
+vline S 9 28 30
+vline S 15 27 30
+px S 10 27 13 27

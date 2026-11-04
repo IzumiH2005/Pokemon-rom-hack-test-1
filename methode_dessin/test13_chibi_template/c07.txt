@@ -1,0 +1,3 @@
+# c07 nettoyage : pixels sans lien avec leur masse
+px D 21 15
+px d 16 22

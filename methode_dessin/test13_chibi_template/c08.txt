@@ -1,0 +1,8 @@
+# c08 budget couleurs (C10 : 8 à 14) : on fusionne des teintes proches, 19 -> 14
+# semelle k -> trait ; cuir B -> brun-rouge des cheveux D ; revers b -> ocre y
+rep k O 0 0 23 34
+rep B D 0 0 23 34
+rep b y 0 0 23 34
+# bouche m -> D ; iris i -> sarcelle claire t (yeux assortis à la tunique)
+rep m D 0 0 23 34
+rep i t 0 0 23 34

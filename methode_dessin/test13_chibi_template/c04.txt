@@ -1,0 +1,26 @@
+# c04 calque vêtements : aplats + ombres du tissu
+# écharpe jaune : son bord haut est le trait du menton (rangée 19)
+hline Y 8 15 20
+hline Y 8 15 21
+hline y 12 15 21
+# tunique sarcelle, épaules et manches longues (rangées 21-23), mains rangée 24
+px T 7 21 16 21
+hline T 6 7 22
+hline T 16 17 22
+hline T 5 6 23
+hline T 17 18 23
+hline T 9 14 22
+rect T 8 23 15 26
+# l'ourlet couvre l'entrejambe (rangée 27) : il passera en trait
+hline T 8 15 27
+# lumière à gauche, ombre à droite et sous l'écharpe
+px t 7 21 6 22 9 23 9 24 9 25
+hline d 10 14 22
+vline d 15 23 26
+px d 14 26 17 22 16 21
+# bottes : revers clair puis cuir
+hline b 8 9 29
+hline b 14 15 29
+hline B 8 9 30
+hline B 14 15 30
+px k 9 30 15 30

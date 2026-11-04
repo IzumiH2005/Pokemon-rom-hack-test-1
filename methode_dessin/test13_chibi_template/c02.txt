@@ -1,0 +1,20 @@
+# c02 aplat de peau dans le template (le trait ne bouge pas)
+rows s 4 8 15 6 17 5 18 5 18 4 19 4 19 4 19 4 19 3 20 3 20 3 20 4 19 5 18 7 16 8 15
+rows s 20 8 15 7 16
+hline s 6 7 22
+hline s 9 14 22
+hline s 16 17 22
+hline s 5 6 23
+hline s 8 15 23
+hline s 17 18 23
+hline s 5 6 24
+hline s 8 15 24
+hline s 17 18 24
+rows s 25 8 15 8 15
+hline s 8 10 27
+hline s 13 15 27
+rows s 28 8 9 8 9 8 9
+rows s 28 14 15 14 15 14 15
+# yeux : on remet le trait des yeux (O) puis on les recolore
+px E 8 14 8 15 15 14 15 15
+px i 8 16 15 16

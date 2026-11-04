@@ -1,0 +1,17 @@
+# c06b cheveux : frange claire au centre (sombre seulement sur les côtés), ombre portée d'1 rangée
+rep D H 5 12 18 13
+px S 6 12 11 12 15 12 16 12
+rep s S 5 13 18 13
+rep l S 5 13 18 13
+# lumière : arc cassé de tirets en haut à gauche
+px h 10 3 11 3 7 4 8 4 5 6 6 6 4 8 4 9
+px h 3 13 3 14
+# sombre : côté droit de la masse, séparations de mèches au-dessus des trous de frange
+vline D 20 8 11
+vline D 19 8 10
+px D 18 5 19 6 17 4
+px D 6 11 11 10 11 11 15 11 16 11
+vline D 21 13 14
+# accessoire : barrette jaune dans les cheveux, côté droit
+px Y 15 7 16 7
+px y 15 8 16 8
