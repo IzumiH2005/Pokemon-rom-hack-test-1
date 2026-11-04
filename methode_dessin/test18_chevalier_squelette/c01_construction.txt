@@ -1,0 +1,49 @@
+# Construction pose A — 7 têtes, H = 17, sol y123. Colonne de têtes à x2.
+vline J 2 3 4
+vline B 2 5 19
+vline J 2 20 21
+vline B 2 22 36
+vline J 2 37 38
+vline B 2 39 53
+vline J 2 54 55
+vline B 2 56 70
+vline J 2 71 72
+vline B 2 73 87
+vline J 2 88 89
+vline B 2 90 104
+vline J 2 105 106
+vline B 2 107 122
+hline B 0 127 123
+# ligne d'action (courbe en C douce, du crâne au pied d'appui)
+line R 60 4 64 26
+line R 64 26 66 56
+line R 66 56 74 90
+line R 74 90 77 118
+# volumes : crâne, cage, bassin
+ring V 63 12 8
+rows V 21 59 67 60 66 60 66
+ring V 64 37 11
+line V 52 58 76 55
+line V 52 58 55 68
+line V 76 55 73 67
+line V 55 68 73 67
+# épaules (ligne inclinée) et bassin
+line R 44 27 83 30
+# bras gauche (épée) : épaule -> coude -> poignet
+line R 44 27 38 48
+line R 38 48 34 67
+# bras droit levé (flamme) : épaule -> coude -> poignet
+line R 83 30 94 48
+line R 94 48 101 30
+# jambes : libre (gauche) et d'appui (droite)
+line R 54 64 47 92
+line R 47 92 42 117
+line R 73 62 76 91
+line R 76 91 77 117
+# pieds
+line R 42 117 32 122
+line R 77 117 88 122
+# épée
+line J 38 62 14 118
+# articulations (bleu)
+px B 44 27 83 30 38 48 94 48 34 67 101 30 54 64 73 62 47 92 76 91 42 117 77 117

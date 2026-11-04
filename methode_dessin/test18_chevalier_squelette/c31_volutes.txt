@@ -1,0 +1,13 @@
+# volutes sous les lambeaux de cape (émissif, s'effilochent vers le bas)
+91 83 v
+92 84 u
+93 83 u
+87 72 u
+88 73 v
+# fuite de lueur depuis les orbites (sous le bandeau du heaume)
+11 59 u
+11 68 u
+# étincelles du panache
+13 27 v
+15 26 u
+11 24 u

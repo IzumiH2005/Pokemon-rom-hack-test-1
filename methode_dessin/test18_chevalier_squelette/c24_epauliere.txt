@@ -1,0 +1,19 @@
+# épaulière : dôme, puis lames courbées vers l'extérieur ; ombre 1 px sous chaque chevauchement ; rivet (x40,y23)
+19 40 OjllmliiO
+20 38 OjlmmmljjiihO
+21 37 OjlmmlljjjiihhO
+22 36 OjlmmljjjjjiiihhO
+23 35 OjlmlmjjjjjjiiihhgO
+24 35 OjlljhjjjjiiiihhggO
+25 34 OppppppppooooooonnnO
+26 33 OggggggggggggggggggO
+27 33 OjllmljjjjjiiiigggO
+28 32 OijjjjjjiiiiiihhgggO
+29 32 OopppppooooooonnnnO
+30 31 OgggggggggggggggggO
+31 30 OjllmljjjjjiiiigggO
+32 30 OijjjjjjiiiiiigggO
+33 30 OopppppoooooonnnO
+18 41 OOOOOOO
+34 31 OOOOOOOOOOOOOOO
+33 30 O

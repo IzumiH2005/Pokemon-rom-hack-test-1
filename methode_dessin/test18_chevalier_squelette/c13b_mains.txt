@@ -1,0 +1,27 @@
+# main levée ouverte, x95-107 : index | majeur (plus haut) | annulaire | auriculaire, phalanges marquées b
+18 95 ....OO.......
+19 95 ...OedOOO....
+20 95 .OOOedOdcO...
+21 95 OedOedOdcOOO.
+22 95 OedOdbOcbOcbO
+23 95 OdbOedOdcOcbO
+24 95 OedOedOcbOcaO
+25 95 OedOdcOdcObaO
+26 95 OedkedkdckcbO
+27 95 OedkdckdckbaO
+28 95 .OdkdckcbkbO.
+29 95 ..OOdddccOO..
+# pouce vers le haut-gauche
+23 92 OO...
+24 92 OedO.
+25 92 .OedO
+26 92 ..OO.
+# poing sur la poignée (gauche écran) : 4 doigts empilés, 2 px chacun
+67 30 .OOOOOOO..
+68 30 OeedkdccO.
+69 30 OdcbObcbO.
+70 30 OeedkdcbO.
+71 30 OdcbObbaO.
+72 30 OeddkcbbO.
+73 30 ObcaOabaO.
+74 30 .OOO.OOO..

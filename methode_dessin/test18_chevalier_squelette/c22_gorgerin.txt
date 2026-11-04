@@ -1,0 +1,8 @@
+# gorgerin x54-74, 2 lames ; ombre portée 1 px sous la lame haute ; rivets = 1 clair + 1 sombre
+22 54 ....OOOOOOOOOOOOO....
+23 54 ..OOjlmljjjjiihhhOO..
+24 54 .OjlmhjjjjjjiiihlggO.
+25 54 .OgghhhhhhhhhhgggggO.
+26 54 OjlmljjjjjjjiiiihhggO
+27 54 OijjjjjjjjjiiiihhgggO
+28 54 .OOOOOOOOOOOOOOOOOOO.

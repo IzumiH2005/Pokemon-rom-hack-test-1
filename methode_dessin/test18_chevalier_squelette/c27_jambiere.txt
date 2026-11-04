@@ -1,0 +1,40 @@
+# genouillère x70-85 : coque bombée + ailette latérale
+86 70 ....OOOOOO......
+87 70 ...OjllmliO.....
+88 70 ..OjlmmljihO....
+89 70 .OjlmmljjihgOO..
+90 70 .OjlmljjiihgOhO.
+91 70 OjlmljjjiihggOgO
+92 70 .OjlljjiihhgOhgO
+93 70 .OiijjiihhggOggO
+94 70 ..OiihhhhggOOgO.
+95 70 ...OOOOOOOO.OO..
+# jambière : tube 9 px, liseré bronze en haut, rivet, rétrécit à la cheville
+96 72 OpppooonnnO
+97 72 Ogggggggggg
+98 72 OjlmljiihgO
+99 72 OjlmljiihgO
+100 72 OjlmljiihgO
+101 72 OjlmhjiihgO
+102 72 OjlmljiihgO
+103 72 OjlmljiihgO
+104 72 OjlmljiihgO
+105 72 OjlmljiihgO
+106 72 OjlmljiihgO
+107 72 OjlmljiihgO
+108 72 OjlmljiihgO
+109 72 OjlmljiihgO
+110 73 OjlmjihgO
+111 73 OjlljihgO
+112 73 OiiihhggO
+# soleret : lames articulées vers la pointe (droite), ombre sous chaque lame, semelle cuir
+113 73 OOOOOOOOOOO
+114 73 OjlmljiihgOO
+115 73 OiiiihhhgggOOO
+116 73 OjlmljjiihhgggO
+117 73 OgggggggggggggOO
+118 73 OjllmljjiihhhggO
+119 73 OgggggggggggggggOO
+120 73 OjllmljjjiiihhhggO
+121 73 OyyyzzzzyyyyyyyyyO
+122 73 OOOOOOOOOOOOOOOOOO

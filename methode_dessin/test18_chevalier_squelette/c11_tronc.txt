@@ -1,0 +1,27 @@
+# cou : 4 vertèbres cervicales (blocs 4 px + disque sombre entre)
+rect O 61 22 66 27
+rect d 62 22 65 22
+rect c 62 23 65 23
+rect d 62 24 65 24
+rect c 62 25 65 25
+rect d 62 26 65 26
+px e 62 22 62 24 62 26
+# clavicules vers épaules (44,27) et (83,30), joint 1 px plus épais
+line O 61 25 53 24
+line O 53 24 46 25
+line O 61 28 53 27
+line O 53 27 46 28
+line e 60 26 53 25
+line e 53 25 47 26
+line d 60 27 53 26
+line d 53 26 47 27
+line O 67 26 81 28
+line O 67 28 81 31
+line d 67 27 81 29
+line c 67 28 80 30
+disc O 45 27 3
+disc d 45 27 2
+px e 44 26 45 26 44 27
+disc O 83 30 3
+disc c 83 30 2
+px d 82 29 83 29

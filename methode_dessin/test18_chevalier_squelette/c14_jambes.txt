@@ -1,0 +1,65 @@
+# JAMBE LIBRE (gauche écran) tibia (47,92)->(42,117) : tibia 3 px | creux | péroné 2 px
+line O 44 92 39 117
+line e 45 92 40 117
+line d 46 92 41 117
+line d 47 92 42 117
+line k 48 93 43 116
+line c 49 92 44 117
+line b 50 92 45 117
+line O 51 92 46 117
+# fémur (54,64)->(47,92) : 5 px
+line O 51 64 44 92
+line e 52 64 45 92
+line e 53 64 46 92
+line d 54 64 47 92
+line d 55 64 48 92
+line c 56 64 49 92
+line O 57 64 50 92
+# JAMBE D'APPUI (droite écran) tibia (76,91)->(77,117)
+line O 73 91 74 117
+line e 74 91 75 117
+line d 75 91 76 117
+line d 76 91 77 117
+line k 77 92 78 116
+line c 78 91 79 117
+line b 79 91 80 117
+line O 80 91 81 117
+# fémur (73,62)->(76,91)
+line O 70 62 73 91
+line d 71 62 74 91
+line d 72 62 75 91
+line d 73 62 76 91
+line c 74 62 77 91
+line b 75 62 78 91
+line O 76 62 79 91
+# têtes fémorales dans les cotyles
+disc O 54 64 4
+disc d 54 64 3
+px e 52 62 53 62 52 63 53 61
+px c 56 66 57 65
+disc O 73 62 4
+disc c 73 62 3
+px d 71 60 72 60 71 61
+px b 75 64 76 63
+# genoux : condyles larges + rotule claire
+disc O 47 92 5
+disc d 47 92 4
+px c 50 94 51 93 49 95 48 96
+px b 50 95
+disc O 46 90 2
+disc e 46 90 1
+px f 45 89
+disc O 76 91 5
+disc c 76 91 4
+px b 79 93 80 92 78 94
+px a 79 94
+disc O 75 89 2
+disc d 75 89 1
+px e 74 88
+# chevilles
+disc O 42 117 3
+disc d 42 117 2
+px e 41 116
+disc O 78 117 3
+disc c 78 117 2
+px d 77 116

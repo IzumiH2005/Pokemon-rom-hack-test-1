@@ -1,0 +1,76 @@
+# Silhouette A : épée basse, flamme dans la main levée, cape qui flotte à droite
+# cape (derrière)
+rows O 28 50 84 48 88 47 90 46 92 46 94 46 95 46 96 47 97 47 98 48 99 48 100 49 101 49 102 50 103 50 104 51 104 51 105 52 106 52 106 53 107 53 107 54 108 54 108 55 109 55 109 56 110 56 110 57 111 57 111 58 112 58 112 59 112 59 113 60 113 60 113 61 114 61 114 62 114 62 114 63 115 63 115 64 115 64 115 65 115 65 115 66 115 66 114 67 114 67 114 68 113 69 113 70 112 72 112 74 111
+# ourlet déchiré de la cape
+rows O 77 76 82 89 96 104 110
+rows O 78 76 81 90 95 105 109
+rows O 79 77 80 91 94 106 108
+# casque + crâne
+disc O 63 12 9
+rows O 19 58 68 58 68 59 67 60 66 61 65 61 65
+# panache spectral (vers la gauche, en arrière)
+rows O 1 62 66 56 67 52 64 48 60 45 56 43 52 42 48 41 45
+# épaulière gauche (grosse)
+disc O 44 28 8
+# cage + plastron
+disc O 64 37 12
+rows O 48 56 72 57 71 58 70 59 69 60 68 61 67 61 67 61 67
+# bassin + jupe
+rows O 55 50 78 49 78 49 78 49 78 48 77 48 77 48 77 50 76 51 75 52 74 53 73 54 72 55 71 56 70
+line O 42 27 36 48
+line O 43 27 37 48
+line O 44 27 38 48
+line O 45 27 39 48
+line O 46 27 40 48
+line O 36 48 32 67
+line O 37 48 33 67
+line O 38 48 34 67
+line O 39 48 35 67
+line O 40 48 36 67
+line O 81 30 92 48
+line O 82 30 93 48
+line O 83 30 94 48
+line O 84 30 95 48
+line O 85 30 96 48
+line O 92 48 99 30
+line O 93 48 100 30
+line O 94 48 101 30
+line O 95 48 102 30
+line O 96 48 103 30
+line O 52 64 45 92
+line O 53 64 46 92
+line O 54 64 47 92
+line O 55 64 48 92
+line O 56 64 49 92
+line O 45 92 40 117
+line O 46 92 41 117
+line O 47 92 42 117
+line O 48 92 43 117
+line O 49 92 44 117
+line O 71 62 74 91
+line O 72 62 75 91
+line O 73 62 76 91
+line O 74 62 77 91
+line O 75 62 78 91
+line O 74 91 75 117
+line O 75 91 76 117
+line O 76 91 77 117
+line O 77 91 78 117
+line O 78 91 79 117
+# genouillère, jambière (jambe droite plus épaisse)
+disc O 76 91 4
+rows O 94 72 81 72 81 72 81 73 81 73 81 73 81 73 81 73 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81 74 81
+# gantelet + main de l'épée
+disc O 34 69 4
+# main levée + flamme
+disc O 101 27 3
+rows O 6 100 101 99 102 98 103 97 104 97 105 96 105 96 106 96 106 95 106 95 106 95 106 96 106 96 105 96 105 97 104 98 103
+# pieds
+rows O 115 39 46 37 46 35 46 33 46 31 46 30 46 30 45 30 45
+rows O 115 74 81 74 83 74 85 74 87 74 89 74 90 74 90 75 90
+# épée : lame
+line O 37 62 13 118
+line O 38 62 14 118
+line O 39 62 15 118
+line O 28 66 40 75
+line O 28 67 40 76

@@ -1,0 +1,21 @@
+# heaume ouvert x52-74 : dôme + crête (col 11), bandeau riveté, nasal, couvre-joues
+0 52 .........OlmiO.........
+1 52 .......OjllmliiO.......
+2 52 .....OjlmmllmiihhO.....
+3 52 ....OjlmmljmliihhhO....
+4 52 ...OjlmljjjmliiihhgO...
+5 52 ..OjllljjjjmliiihhhgO..
+6 52 ..OjlljjjjjmliiiihhgO..
+7 52 ..OijljjjjjliiiihhhgO..
+8 52 ..OijjjjjjiliiihhhggO..
+9 52 .OhjmhjjjjjljjjjjlghgO.
+10 52 .OgiiiiiiihhhhhhhhgggO.
+11 52 .OjliO...OjlhO...OihgO.
+12 52 .OjlhO...OjlhO...OihgO.
+13 52 .OjihO...OjlhO...OhhgO.
+14 52 .OjihO...OilgO...OhggO.
+15 52 .OiihO...OOOOO...OhggO.
+16 52 .OihhO...........OhggO.
+17 52 .OihgO...........OgggO.
+18 52 .OhhgO...........OgggO.
+19 52 ..OOO.............OOO..

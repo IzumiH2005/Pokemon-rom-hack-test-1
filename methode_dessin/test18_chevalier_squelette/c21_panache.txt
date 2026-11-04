@@ -1,0 +1,15 @@
+# panache spectral émissif x30-61 : cœur x/w, bord v, halo u, PAS de contour O ; 2 mèches
+0 30 ....................uuvvvwwwwvvu
+1 30 ..............uuvvvwwwxxxxwwvvu
+2 30 ..........uuvvwwwxxxxxwwwvvuu
+3 30 .......uuvvwwwxxxwwwvvvuu
+4 30 .....uvvwwwxxwwvvvuu....u
+5 30 ...uvvwwwwwvvvuu.....uvvu
+6 30 ..uvwwwvvvuu......uvvwwvu
+7 30 .uvwwvvuu......uvvwwwvvu
+8 30 .uvwvu.......uvvwwvvuu
+9 30 uvvu.......uvvwvvuu
+10 30 uvu......uvvvvuu
+11 30 uu......uvvuu
+12 30 .......uvu
+13 30 ......uu

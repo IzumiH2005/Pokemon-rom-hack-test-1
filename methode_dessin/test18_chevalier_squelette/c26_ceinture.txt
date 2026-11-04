@@ -1,0 +1,46 @@
+# ceinture cuir x49-79 + boucle bronze (x61-67) + clous
+53 49 OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+54 49 OzzzzzzzzzzzOmpppoOzzzzzyyyyyyO
+55 49 OyyyyyyyyyyyOpOmOnOyyyyyyyyyyyO
+56 49 OnnnnnnnnnnnOonnnoOnnnnnnnnnnnO
+57 49 OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+54 52 p
+54 56 p
+54 72 o
+54 76 o
+# tassette gauche : 2 lames + liseré, ombre sous chevauchement
+58 47 OjllmljjiiihO
+59 47 OiiiiiihhhggO
+60 47 OpppoooonnnyO
+61 46 OgggggggggggO
+62 46 OjlmljjjiihgO
+63 46 OiiiihhhhgggO
+64 46 OppoooonnnnyO
+65 47 OOOOOOOOOOO
+# tabard déchiré x59-69, plis verticaux, sigil épée spectral
+58 59 OttsssssrrO
+59 59 OtssssssrrO
+60 59 OtsssvssrrO
+61 59 OtssvwvsrrO
+62 59 OtsssvssrqO
+63 59 OtsssvssrqO
+64 59 OtsssvssrqO
+65 59 OtsssvssrqO
+66 59 OtsssussrqO
+67 59 OtssssssrqO
+68 59 OsssssrrrqO
+69 59 OssrsssrrqO
+70 59 OssrsstrrqO
+71 59 OssrsstrrqO
+72 59 OsrrsstrqqO
+73 59 OssrsstrrqO
+74 59 OssrsstsrqO
+75 59 OsrrssttrqO
+76 59 OssrsstsrqO
+77 59 OsrrsstrrqO
+78 59 OssrsstrqqO
+79 59 OssrsstrqO.
+80 59 OsrO.OtrqO.
+81 59 OsO...OrqO.
+82 59 .O.....OqO.
+83 59 ........O..

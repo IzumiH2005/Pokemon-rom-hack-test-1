@@ -1,0 +1,26 @@
+# poignée cuir entre le poing et la garde
+rect O 31 74 36 78
+rect z 32 74 35 77
+px y 34 76 35 75 35 77
+# garde bronze 4 px d'épaisseur, perpendiculaire à la lame : (24,75)->(38,81)
+line O 24 73 38 79
+line O 24 78 38 84
+line p 24 74 38 80
+line p 24 75 38 81
+line o 24 76 38 82
+line n 24 77 38 83
+# quillons : bouts recourbés + perle
+rect O 21 72 24 77
+rect o 22 73 23 76
+px p 22 73
+rect O 38 79 41 84
+rect n 39 80 40 83
+px o 39 80
+# reflet net sur la garde (côté lumière)
+px m 26 75 27 75 29 76
+# pommeau (sort du haut du poing)
+disc O 38 61 3
+disc o 38 61 2
+px p 37 60 38 60 37 61
+px m 37 59
+px n 39 62 40 61

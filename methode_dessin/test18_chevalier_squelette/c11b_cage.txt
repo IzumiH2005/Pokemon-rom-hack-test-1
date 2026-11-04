@@ -1,0 +1,21 @@
+# cage repeinte à la main, x53-75 : gauche(9) sternum(5) droite(9)
+27 53 ....OOOOOOOOOOOOOOO....
+28 53 ..OOkkkkkOedcOkkkkkOO..
+29 53 .OkeeeeedOedcOdddddckO.
+30 53 .OdddddcbOedcOccccccbO.
+31 53 OcckkkkkkOedcOkkkkkkccO
+32 53 OkkeeeeedOedcOddddddkkO
+33 53 OddddddcbOedcOccccccbcO
+34 53 OcckkkkkkOedcOkkkkkkccO
+35 53 OkkeeeeedOedcOddddddkkO
+36 53 OcddddccbOedcOcccccbbbO
+37 53 OcckkkkkkOedcOkkkkkkccO
+38 53 OkkeeeedcOedcOdddddckkO
+39 53 OccdddcbkOedcOkccccbbbO
+40 53 OcckkkkkkOedcOkkkkkkccO
+41 53 Ocdeeedck.OdO.kddddcbbO
+42 53 Occdddck...O...kcccbbbO
+43 53 .Ockkkk.........kkkkbO.
+44 53 .Ocdeedc........dddcbO.
+45 53 ..Occcb.........cccbO..
+46 53 ...OOOO.........OOOO...

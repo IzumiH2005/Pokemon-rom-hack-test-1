@@ -1,0 +1,21 @@
+# crâne de face, 17 px (x55-71), lumière haut-gauche, orbites vides avec lueur spectrale
+3 55 ......OOOOO......
+4 55 ....OOeffeeOO....
+5 55 ...OeffffeeedO...
+6 55 ..OefffeeeeeddO..
+7 55 .OeffeeeeeeedddO.
+8 55 .OeffeeeeeeedddO.
+9 55 OeeeeeeeeeeeddddO
+10 55 OeeeeeedeeeeddccO
+11 55 OedOOOOeddOOOOdcO
+12 55 OdOwvvOedcOvvwOcO
+13 55 OdOvxwOdcbOwxvOcO
+14 55 OddOOOdbkbdOOOcbO
+15 55 OeddddbkkkbddccbO
+16 55 .OdddcbOkObcccbO.
+17 55 ..OfbfbfbfbebdO..
+18 55 ..OOOOOOOOOOOOO..
+19 55 ..OfbfbfbebebcO..
+20 55 ...OeddddccbbO...
+21 55 ....OddddcbbO....
+22 55 .....OOOOOOO.....

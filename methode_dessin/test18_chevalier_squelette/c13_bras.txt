@@ -1,0 +1,56 @@
+# BRAS ÉPÉE (gauche écran) — avant-bras (38,48)->(34,67) : radius | creux | cubitus
+line O 35 48 31 67
+line e 36 48 32 67
+line d 37 48 33 67
+line k 38 49 34 66
+line d 39 48 35 67
+line c 40 48 36 67
+line O 41 48 37 67
+# humérus (45,27)->(38,48) : 4 px + contour
+line O 43 27 36 48
+line e 44 27 37 48
+line d 45 27 38 48
+line d 46 27 39 48
+line c 47 27 40 48
+line O 48 27 41 48
+# BRAS LEVÉ (droite écran) — avant-bras (94,48)->(101,30)
+line O 91 48 98 30
+line e 92 48 99 30
+line d 93 48 100 30
+line k 94 47 101 31
+line c 95 48 102 30
+line b 96 48 103 30
+line O 97 48 104 30
+# humérus (83,30)->(94,48)
+line O 81 30 92 48
+line d 82 30 93 48
+line d 83 30 94 48
+line c 84 30 95 48
+line b 85 30 96 48
+line O 86 30 97 48
+# têtes et coudes (bosse 1 px plus large que l'os)
+disc O 45 27 4
+disc d 45 27 3
+px e 43 25 44 25 43 26 44 24 45 24
+px c 47 29 48 28 46 30
+disc O 38 48 4
+disc d 38 48 3
+px e 36 46 36 47 37 46
+px c 40 50 41 49 39 51
+px b 38 49
+disc O 83 30 4
+disc c 83 30 3
+px d 81 28 82 28 81 29 82 27
+px b 85 32 86 31
+disc O 94 48 4
+disc c 94 48 3
+px d 92 46 92 47 93 46
+px b 96 50 97 49
+px a 94 49
+# poignets
+disc O 34 67 3
+disc d 34 67 2
+px e 33 66
+disc O 101 30 3
+disc c 101 30 2
+px d 100 29

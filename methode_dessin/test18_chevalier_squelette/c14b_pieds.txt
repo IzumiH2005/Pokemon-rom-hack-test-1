@@ -1,0 +1,16 @@
+# pied gauche (os nus, pointe vers la gauche) x30-46 : talon à droite, orteils 2 px séparés
+116 30 ..........OOOOO..
+117 30 .......OOOeeddcO.
+118 30 ...OOOOeedddcccbO
+119 30 .OOedkedkdddccbbO
+120 30 OeedOedkeddcccbaO
+121 30 ObbbObcbObbbaaaO.
+122 30 .OOO.OOO.OOOOOO..
+# pied droit (sera sous le soleret) x74-90, pointe vers la droite
+116 74 ..OOOOO..........
+117 74 .OeddccOOO.......
+118 74 OedddccbbbOOOO...
+119 74 OddcccbkbcdkbcOO.
+120 74 ObcccbbkbcckbcbaO
+121 74 .ObbbaaaObaaObaaO
+122 74 ..OOOOOOOOOOOOOO.

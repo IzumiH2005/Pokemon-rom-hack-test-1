@@ -1,0 +1,29 @@
+# flamme spectrale x94-108 : ombrage inversé (cœur x au centre-bas), bords u, pas de contour O, 2 langues
+1 94 .......u.......
+2 94 ......uv....u..
+3 94 ......vvu...vu.
+4 94 .....uvwv..uv..
+5 94 .....vwwvu.vv..
+6 94 ....uvwwwvuvu..
+7 94 ...uvwwxwwvvu..
+8 94 ...vwwxxwwwvu..
+9 94 ..uvwxxxxwwvu..
+10 94 ..vwwxxxxxwvvu.
+11 94 ..vwxxxxxxwwvu.
+12 94 .uvwxxxxxxxwvu.
+13 94 .uvwwxxxxxwwvu.
+14 94 ..vwwwxxxwwwv..
+15 94 ..uvvwwwwwvvu..
+16 94 ...uuvvvvvuu...
+17 94 .....uuuuu.....
+# reflet de la flamme sur le haut des doigts
+19 99 w
+20 97 v
+20 102 v
+21 96 v
+22 105 v
+# étincelles détachées (séparées par du vide)
+4 90 u
+9 110 v
+13 111 u
+0 104 u

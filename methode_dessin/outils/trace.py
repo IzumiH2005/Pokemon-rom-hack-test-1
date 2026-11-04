@@ -9,6 +9,7 @@ Le script ne décide rien (R3) : il pose exactement ce que disent les commandes.
   vline C x y1 y2                ligne verticale
   rect  C x1 y1 x2 y2            rectangle plein
   frame C x1 y1 x2 y2            cadre de 1 px
+  line  C x1 y1 x2 y2            segment entre deux points décidés (fil de fer)
   disc  C cx cy r                disque plein
   ring  C cx cy r                cercle de 1 px
   rows  C y x1 x2 [x1 x2 ...]    une paire x1 x2 par rangée, à partir de la rangée y
@@ -68,6 +69,11 @@ def appliquer(G, cmds):
                 put(c, x, a[1]); put(c, x, a[3])
             for y in range(a[1], a[3] + 1):
                 put(c, a[0], y); put(c, a[2], y)
+        elif op == 'line':
+            x1, y1, x2, y2 = a
+            n = max(abs(x2 - x1), abs(y2 - y1)) or 1
+            for i in range(n + 1):
+                put(c, round(x1 + (x2 - x1) * i / n), round(y1 + (y2 - y1) * i / n))
         elif op in ('disc', 'ring'):
             cx, cy, r = a
             for y in range(cy - r, cy + r + 1):
