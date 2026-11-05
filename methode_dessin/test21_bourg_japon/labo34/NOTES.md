@@ -24,3 +24,7 @@ face en bois v avec 3 lattes inégales, gegyo doré à l'apex (accent saturé, a
 | c11 | ailes fines aux coins hauts (bruit de silhouette) → chanfrein comme la maison |
 | c12 | pignon « livre ouvert » sans planches de rive → planches Q/q + dessous t |
 | c14 | cannelures 4 px partout (tôle) → tuiles pleine longueur 1 marche, lèvres sur 3 rangs, arrêtées sur le pignon |
+
+## v3 — même toit 3/4 que la maison (`../maison34/gen16.py 112`)
+Pignon de e14 reposé tel quel (`pignon.txt`, bornes relevées à la main).
+c16d défaut : le pignon flottait sur le pan avant → son faîtage rejoint le faîtage principal (x70-73, y13-16).

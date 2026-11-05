@@ -1,0 +1,24 @@
+# c16c défauts de e16b : faîtage trop fin, silhouette plate, égout sans relevé, crêtes trop longues
+# faîtage surélevé : il mord d'1 px sur le pan arrière (ombre A au-dessus)
+hline A 13 66 8
+hline D 14 65 9
+hline Q 16 44 9
+hline D 14 65 10
+hline B 14 65 11
+hline A 13 66 12
+# ombre du faîtage sur le pan avant, plus courte que lui
+hline B 17 62 13
+# onigawara aux deux bouts (pièces dessinées à la main)
+stamp oni_g.txt 9 5
+stamp oni_d.txt 64 5
+# crêtes : s'estompent aux bouts (A6)
+px D 6 1 7 2 12 7 13 8
+px D 13 13 13 14 12 15 2 40 3 38 3 39
+px C 73 1 72 2 67 7 66 8 66 13 66 14 67 15 77 40 76 38 76 39
+# égout : coins relevés
+px A 0 39 0 40
+px Q 1 40
+px D 1 41 2 41
+px A 79 39 79 40
+px D 78 40
+px B 78 41 77 41

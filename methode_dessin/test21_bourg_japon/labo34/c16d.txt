@@ -1,0 +1,7 @@
+# c16d défaut : le pignon flotte -> son faîtage rejoint le faîtage principal ; reste de côte dans l'ombre du pignon
+vline A 70 13 16
+vline D 71 13 16
+vline B 72 13 16
+vline A 73 13 16
+px Q 71 13
+px B 86 25 86 26

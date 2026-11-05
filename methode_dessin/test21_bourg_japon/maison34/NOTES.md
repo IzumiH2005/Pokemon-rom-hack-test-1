@@ -28,3 +28,14 @@ point d'intérêt = l'entrée (noren + mon blanc, plus fort contraste). Formes :
 Palette (A6-A) : A plus froid `#303058`, D plus chaud `#a0a8b8`.
 Bilan planche — bien : silhouette claire en noir, faces séparées en gris, entrée = point d'intérêt.
 À améliorer : croupes un peu vides, mur bas sombre uniforme, pas de mousse (palette pleine).
+
+## v4 — toit en vraie 3/4, d'après l'étude des toits du jeu d'origine
+Observé sur les maisons d'Oldale / Petalburg (étude seulement, rien copié) :
+pan arrière visible au-dessus du faîtage (≈1/4), matière sur toute la surface en 3 tons
+(reflet / base / creux), rangs calés sur la grille 8 px, égout = bande sombre épaisse, contour foncé non noir.
+
+| Étape | Décision | Défaut (R5) → correction |
+|---|---|---|
+| c16a | faîtage descendu en y9-12 ; pan arrière (y1-8) + croupes + pan avant en trapèzes ; arêtiers arrière/avant en listes à la main (`gen16.py`, qui ne fait que dérouler ces listes) | pan arrière en Q = blanc, illisible (palette pleine, 15 couleurs) → D, séparé de la croupe par une crête claire |
+| c16b | côtes 3 tons (creux B, reflet D sur C), rangs y21/28/35 avec bouts ronds, faîtage Q/D/B/A | — |
+| c16c | | faîtage trop fin + silhouette plate → faîtage surélevé, onigawara dessinés (`oni_g/oni_d.txt`) ; crêtes trop longues → estompées aux bouts ; coins d'égout relevés |

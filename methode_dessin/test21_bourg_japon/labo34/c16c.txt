@@ -1,0 +1,20 @@
+# c16c faîtage surélevé, onigawara, crêtes estompées, coins relevés, pignon reposé
+hline A 13 98 8
+hline D 14 97 9
+hline Q 16 56 9
+hline D 14 97 10
+hline B 14 97 11
+hline A 13 98 12
+hline B 17 94 13
+stamp oni_g.txt 9 5
+stamp oni_d.txt 96 5
+px D 6 1 7 2 12 7 13 8
+px D 13 13 13 14 12 15 2 40 3 38 3 39
+px C 105 1 104 2 99 7 98 8 98 13 98 14 99 15 109 40 108 38 108 39
+px A 0 39 0 40
+px Q 1 40
+px D 1 41 2 41
+px A 111 39 111 40
+px D 110 40
+px B 110 41 109 41
+stamp pignon.txt 58 17
