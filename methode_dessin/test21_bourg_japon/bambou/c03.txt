@@ -1,0 +1,28 @@
+# c03 lumiere haut-gauche. R5 (situation c02) : tige I = couleur de l'herbe -> tige J a gauche
+vline J 3 8 28
+vline J 7 2 28
+vline J 11 10 28
+# noeuds H + anneau clair K juste dessous (gauche)
+hline H 3 4 13
+hline H 3 4 19
+hline H 3 4 25
+hline H 7 8 8
+hline H 7 8 15
+hline H 7 8 22
+hline H 11 12 16
+hline H 11 12 23
+px K 3 14 3 20 3 26 7 9 7 16 7 23 11 17 11 24 7 3 3 9 11 11
+# lames (R5 : I = herbe -> J)
+px J 1 1 2 1 3 2 4 2 5 3 6 3
+px J 13 0 14 0 11 1 12 1 10 2 9 3
+px J 4 5 5 5 6 5 2 6 3 6 1 7 0 8
+px J 0 6 1 6 2 7 3 7
+px J 5 9 6 9 7 10 8 10 9 11
+px J 14 8 15 8 13 9
+px J 13 12 14 12 15 13
+px J 9 11 10 11 8 12
+px J 9 16 10 16
+px J 1 18 2 18 0 19
+# pied : ombre au sol
+hline G 2 13 31
+px I 3 27 12 27

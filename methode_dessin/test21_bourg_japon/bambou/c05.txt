@@ -1,0 +1,3 @@
+# c05 details : brin clair dans la touffe, pointe de pousse
+px J 6 28 9 27
+px K 8 1

@@ -1,0 +1,7 @@
+# B : deux tiges + masse de feuillage en dome
+rect 1 5 8 6 31
+rect 1 9 6 10 31
+disc 2 8 6 7
+disc 2 3 9 3
+disc 2 13 9 3
+rect 3 2 28 13 31

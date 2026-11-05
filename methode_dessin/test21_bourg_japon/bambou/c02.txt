@@ -1,0 +1,21 @@
+# c02 aplats : tiges I, lames H (regroupees en 3 bouquets, R5 de c01), pied H
+rect I 3 8 4 30
+rect I 7 2 8 30
+rect I 11 10 12 30
+# bouquet tige 2 (haut) : lame gauche montante, lame droite montante, lame gauche tombante
+rows H 1 1 2 2 4 4 6
+rows H 0 13 14 11 13 10 12 9 10
+rows H 5 4 6 2 5 1 3 0 1
+# bouquet tige 1
+rows H 6 0 1 0 3 2 3
+rows H 9 5 6 5 8 7 9
+# bouquet tige 3
+rows H 8 14 15 13 15 13 14
+rows H 12 13 14 13 15 14 15
+rows H 11 9 10 8 10 8 9
+# lames basses laterales
+rows H 16 9 10 9 10
+rows H 18 1 2 0 2 0 1
+# pied : touffe
+px H 1 28 5 28 10 28 14 28 3 27 12 27
+rows H 29 2 13 1 14 2 13

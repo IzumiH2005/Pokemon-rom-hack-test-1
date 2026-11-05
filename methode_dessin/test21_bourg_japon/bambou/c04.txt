@@ -1,0 +1,6 @@
+# c04 contour decide a la main (contour.py mangerait les tiges de 2 px) :
+# ombre G a droite des tiges + sous les lames qui pendent
+vline G 5 11 28
+vline G 9 4 28
+vline G 13 15 28
+px G 0 9 1 9 2 8 3 8 0 21 1 21 2 20 14 15 15 15 10 18 11 18 15 14
