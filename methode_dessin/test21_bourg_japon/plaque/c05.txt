@@ -1,0 +1,4 @@
+rep O t 5 11 10 15
+vline s 7 5 8
+hline s 7 8 6
+vline s 9 5 9

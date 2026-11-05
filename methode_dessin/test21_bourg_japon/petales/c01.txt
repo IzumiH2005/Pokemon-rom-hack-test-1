@@ -1,0 +1,4 @@
+# 3 variantes, petales de 2 px (b clair + c ombre) ou 1 px a, jamais en ligne
+px b 3 4 11 2 8 10 14 12 2 13
+px c 4 4 11 3 13 12
+px a 7 10

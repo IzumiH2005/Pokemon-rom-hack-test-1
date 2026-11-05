@@ -1,0 +1,5 @@
+# lumiere : dessus p, ombre r bas-droite, mousse L au sommet
+rows p 4 6 8 5 8 4 7 4 6
+rows r 9 12 13 11 13 11 12 10 11
+px L 7 4 8 4 6 5
+# R5 : y = eau (bleu) -> ombre portee r

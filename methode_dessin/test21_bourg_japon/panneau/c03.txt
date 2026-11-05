@@ -1,0 +1,9 @@
+# lumiere haut-gauche
+hline D 6 9 1
+hline C 4 7 2
+hline A 2 13 3
+hline w 3 11 4
+vline u 12 4 10
+hline u 3 12 10
+vline v 4 11 15
+vline v 10 11 15

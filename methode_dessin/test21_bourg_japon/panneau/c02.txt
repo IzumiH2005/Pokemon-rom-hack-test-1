@@ -1,0 +1,5 @@
+# kanban 16x16 : petit toit, planche, deux pieds
+rows B 1 5 10 3 12 2 13
+rect v 3 4 12 10
+rect u 4 11 5 15
+rect u 10 11 11 15

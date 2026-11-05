@@ -1,0 +1,4 @@
+# c05 details : cailloux (a eclaire + d ombre bas-droite) et grains c, jamais a cheval sur une couture de quart (x%8, y%8 = 1..6)
+px a 19 18 25 21 26 21 21 27 20 10 18 36 10 20 36 25 36 36
+px d 20 19 26 22 22 28 21 11 19 37 11 21 37 26 37 37
+px c 25 22 29 26 17 24 28 17 25 29 27 13 28 34 12 28 35 18 11 11 36 11 11 36

@@ -1,0 +1,2 @@
+# c02 aplats : terre b
+rep 1 b 0 0 47 47

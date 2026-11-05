@@ -1,0 +1,4 @@
+# poteau a plaque nominative : chapeau, plaque blanche, poteau
+hline t 5 10 2
+rect u 6 3 9 15
+rect Q 5 4 10 10

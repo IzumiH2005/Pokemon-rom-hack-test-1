@@ -1,0 +1,10 @@
+# onde ratissee elliptique autour du rocher (sillon q, sur le gravier), ombre portee r sous le rocher
+rep O s 0 0 15 15
+hline q 4 11 2
+px q 2 3 3 3 12 3 13 3 1 4 14 4
+vline q 0 5 11
+vline q 15 5 11
+px q 1 12 14 12 1 13 2 13 13 13 14 13
+hline q 3 12 14
+hline r 4 11 13
+px p 5 6

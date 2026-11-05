@@ -1,0 +1,16 @@
+................
+................
+....qqqqqqqq....
+..qq........qq..
+.q....ssss....q.
+q...ssLppqs....q
+q..sppppqqqs...q
+q..spppqqqqqs..q
+q.sqqqqqqqqqs..q
+q.sqqqqqqqqqrs.q
+q.sqqqqqqqqrrs.q
+q..sqqqqqqqrs..q
+.q..ssssssss..q.
+.qq.rrrrrrrr.qq.
+...qqqqqqqqqq...
+................
