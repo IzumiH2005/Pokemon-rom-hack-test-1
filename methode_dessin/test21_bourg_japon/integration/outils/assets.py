@@ -60,24 +60,24 @@ def stamp(c, rows, slot, ox, oy):
 
 # ---------------------------------------------------------------- assets
 def house(door=None):
-    c = load('maison/etape06_final.txt', 6)
-    if door: stamp(c, grid(f'maison/{door}.txt'), 6, 48, 48)
+    c = load('maison34/maison.txt', 6)
+    if door: stamp(c, grid(f'maison34/{door}.txt'), 6, 48, 48)
     return c
 def red_house(door=None):
-    c = load('maison/maison_rouge.txt', 11)
+    c = load('maison34/maison_rouge.txt', 11)
     if door:
-        stamp(c, [r.replace('N', 'R').replace('n', 'r') for r in grid(f'maison/{door}.txt')], 11, 48, 48)
+        stamp(c, [r.replace('N', 'R').replace('n', 'r') for r in grid(f'maison34/{door}.txt')], 11, 48, 48)
     return c.mirror()
 def lab(door=None):
-    c = load('labo/etape06_final.txt', 6)
-    if door: stamp(c, grid(f'labo/{door}.txt'), 6, 64, 48)
+    c = load('labo34/labo.txt', 6)
+    if door: stamp(c, grid(f'labo34/{door}.txt'), 6, 64, 48)
     return c
 DOOR_FRAMES = ('porte1_fermee', 'porte2_mi', 'porte3_ouverte')
-def shrine(): return load('sanctuaire/etape06_final.txt', 10)
-def torii(w): return load(f'torii/torii{w}.txt', 10)
+def shrine(): return load('sanctuaire34/sanctuaire.txt', 10)
+def torii(w): return load(f'torii34/torii{w}.txt', 10)
 def sakura(flip=False):
     c = load('sakura/sakura.txt', 7); return c.mirror() if flip else c
-def lantern(): return load('lanterne/lanterne.txt', 6)
+def lantern(): return load('lanterne34/lanterne.txt', 6)
 def bamboo(): return load('bambou/bambou.txt', 7)
 def signboard(): return load('panneau/panneau.txt', 6)
 def nameplate(): return load('plaque/plaque.txt', 6)
