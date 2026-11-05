@@ -1,0 +1,8 @@
+# B yukimi : grand toit plat, pieds courts
+rect 3 7 8 8 10
+rows 3 11 3 12 1 14 0 15 0 15
+rect 3 4 15 11 21
+rows 3 22 3 12 2 13
+rect 3 3 24 4 31
+rect 3 11 24 12 31
+rect 2 6 17 9 20

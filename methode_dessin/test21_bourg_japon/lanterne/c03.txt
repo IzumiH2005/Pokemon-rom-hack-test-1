@@ -1,0 +1,21 @@
+# c03 lumiere : dessus q, gauche q, droite A ; toit = pente eclairee ; feu emissif
+px q 7 0
+rows q 3 6 8 4 9 2 9
+hline A 1 14 8
+hline A 4 11 9
+vline q 4 10 15
+vline A 11 10 15
+hline q 3 12 16
+hline A 3 12 18
+vline q 6 19 26
+vline A 9 19 26
+hline A 6 9 19
+hline q 4 11 27
+hline q 2 13 29
+hline A 2 13 31
+vline A 13 29 30
+# feu : coeur Q, bord w ; reflet du feu sur la tablette
+px Q 7 12 8 12 7 13
+hline w 6 9 14
+vline w 9 11 14
+px w 7 16 8 16

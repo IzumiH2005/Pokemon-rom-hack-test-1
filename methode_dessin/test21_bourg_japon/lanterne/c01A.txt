@@ -1,0 +1,9 @@
+# A kasuga : haute, toit a coins releves, pilier
+rect 3 7 0 8 2
+rows 3 3 5 10 3 12 2 13 1 14 1 14 0 15
+rect 3 4 9 11 15
+rect 3 3 16 12 18
+rect 3 6 19 9 26
+rect 3 4 27 11 28
+rect 3 2 29 13 31
+rect 2 6 11 9 14

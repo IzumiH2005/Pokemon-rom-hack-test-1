@@ -1,0 +1,6 @@
+# c05 details : cadre de fenetre, joint de pierre, eclat lumineux sur l'arete du socle
+# (R5 : la "mousse" B ressortait en bleu = trou ; palette maison sans vert -> remplacee par un eclat q)
+hline A 5 10 10
+vline s 3 30 30
+px q 3 29 4 29 5 29
+px A 9 30

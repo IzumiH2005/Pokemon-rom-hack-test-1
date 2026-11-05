@@ -1,0 +1,8 @@
+# c02 aplats : couronne c, tronc u (sans branches visibles : evitait le "visage"), racines evasees
+disc c 16 8 8
+disc c 8 11 7
+disc c 24 11 7
+disc c 11 17 5
+disc c 22 17 5
+rect u 14 21 17 27
+rows u 28 13 18 12 19 11 20 10 21

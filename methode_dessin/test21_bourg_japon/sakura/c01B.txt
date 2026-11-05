@@ -1,0 +1,10 @@
+# B : grappes etalees (5 lobes), trouees, tronc en Y visible
+disc 3 8 11 7
+disc 3 16 8 8
+disc 3 24 11 7
+disc 3 11 17 5
+disc 3 22 17 5
+rect 3 14 21 17 29
+line 3 14 22 9 16
+line 3 17 22 22 16
+rect 3 12 28 19 31

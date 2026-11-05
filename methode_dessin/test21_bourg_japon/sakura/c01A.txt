@@ -1,0 +1,4 @@
+# A : dome rond
+disc 3 16 11 11
+rect 3 13 20 18 29
+rect 3 11 28 20 31

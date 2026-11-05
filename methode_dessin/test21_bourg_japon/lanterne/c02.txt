@@ -1,0 +1,9 @@
+# c02 aplats pierre s, fenetre de feu y
+rect s 7 0 8 2
+rows s 3 6 9 4 11 2 13 1 14 0 15 0 15
+rect s 4 9 11 15
+rect s 3 16 12 18
+rect s 6 19 9 26
+rect s 4 27 11 28
+rect s 2 29 13 31
+rect y 6 11 9 14

@@ -1,0 +1,4 @@
+# c04 selout
+rep O e 0 0 31 9
+rep O f 0 10 31 23
+rep O t 0 24 31 31
