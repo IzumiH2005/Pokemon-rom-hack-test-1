@@ -1,0 +1,172 @@
+# c12 lumière : faîtage en relief, arêtiers (crête claire + ombre côté pan avant), ombre portée du faîtage
+px D 15 7
+px B 16 7
+px D 63 7
+px A 64 7
+px D 15 8
+px B 16 8
+px D 63 8
+px A 64 8
+px D 14 9
+px B 15 9
+px D 64 9
+px A 65 9
+px D 14 10
+px B 15 10
+px D 64 10
+px A 65 10
+px D 13 11
+px B 14 11
+px D 65 11
+px A 66 11
+px D 13 12
+px B 14 12
+px D 65 12
+px A 66 12
+px D 13 13
+px B 14 13
+px D 65 13
+px A 66 13
+px D 12 14
+px B 13 14
+px D 66 14
+px A 67 14
+px D 12 15
+px B 13 15
+px D 66 15
+px A 67 15
+px D 11 16
+px B 12 16
+px D 67 16
+px A 68 16
+px D 11 17
+px B 12 17
+px D 67 17
+px A 68 17
+px D 11 18
+px B 12 18
+px D 67 18
+px A 68 18
+px D 10 19
+px B 11 19
+px D 68 19
+px A 69 19
+px D 10 20
+px B 11 20
+px D 68 20
+px A 69 20
+px D 9 21
+px B 10 21
+px D 69 21
+px A 70 21
+px D 9 22
+px B 10 22
+px D 69 22
+px A 70 22
+px D 9 23
+px B 10 23
+px D 69 23
+px A 70 23
+px D 8 24
+px B 9 24
+px D 70 24
+px A 71 24
+px D 8 25
+px B 9 25
+px D 70 25
+px A 71 25
+px D 7 26
+px B 8 26
+px D 71 26
+px A 72 26
+px D 7 27
+px B 8 27
+px D 71 27
+px A 72 27
+px D 7 28
+px B 8 28
+px D 71 28
+px A 72 28
+px D 6 29
+px B 7 29
+px D 72 29
+px A 73 29
+px D 6 30
+px B 7 30
+px D 72 30
+px A 73 30
+px D 5 31
+px B 6 31
+px D 73 31
+px A 74 31
+px D 5 32
+px B 6 32
+px D 73 32
+px A 74 32
+px D 5 33
+px B 6 33
+px D 73 33
+px A 74 33
+px D 4 34
+px B 5 34
+px D 74 34
+px A 75 34
+px D 4 35
+px B 5 35
+px D 74 35
+px A 75 35
+px D 3 36
+px B 4 36
+px D 75 36
+px A 76 36
+px D 3 37
+px B 4 37
+px D 75 37
+px A 76 37
+px D 3 38
+px B 4 38
+px D 75 38
+px A 76 38
+px D 2 39
+px B 3 39
+px D 76 39
+px A 77 39
+px D 2 40
+px B 3 40
+px D 76 40
+px A 77 40
+px D 1 41
+px B 2 41
+px D 77 41
+px A 78 41
+px D 1 42
+px B 2 42
+px D 77 42
+px A 78 42
+# faîtage : dessus clair, corps, dessous sombre
+# défaut R5 : faîtage C sur pan C = illisible -> corps B, dessus D/Q, dessous A
+hline D 15 64 1
+hline D 15 64 2
+hline Q 20 44 2
+hline B 15 64 3
+hline B 15 64 4
+hline A 15 64 5
+# ombre portée du faîtage, plus courte que lui (s'efface aux bouts)
+hline B 17 62 6
+px B 16 7 63 7
+# onigawara : lumière à gauche et en haut, ombre à droite, creux central
+hline D 9 15 0
+vline D 10 1 6
+vline A 15 1 6
+rect A 12 2 13 4
+px D 12 2
+hline D 63 69 0
+vline D 64 1 6
+vline A 69 1 6
+rect A 66 2 67 4
+px D 66 2
+# égout : rang des bouts de tuiles éclairé sur la croupe gauche, sombre à droite
+hline D 0 14 43
+hline B 66 79 43
+# dessous de l'égout : coins relevés montrent le dessous en bois
+px u 1 41 2 42 3 43 4 43 78 41 77 42 76 43 75 43

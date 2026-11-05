@@ -1,0 +1,9 @@
+# c15 nettoyage (A5-10) + défauts de la planche
+# trous dans la silhouette aux coins du noren -> enduit
+px Q 49 57 62 57
+# noren : les deux carrés blancs lisaient comme des yeux -> un mon rond (anneau 4×4) sur le pan gauche
+rect N 50 52 62 55
+vline A 56 52 55
+px Q 51 52 52 52 50 53 53 53 50 54 53 54 51 55 52 55
+# tuile remplacée : le point Q était un orphelin -> retiré, garder 2 px D
+px D 36 22

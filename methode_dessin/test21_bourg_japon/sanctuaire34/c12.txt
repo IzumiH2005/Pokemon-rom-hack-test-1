@@ -1,0 +1,22 @@
+# c12 baie centrale : le damier z/w (bruit, banding) + les creux sombres lisaient comme un visage.
+# -> fond t (creux = accent le plus sombre), shimenawa torsadée épaisse au centre / fine aux bouts,
+#    2 shide en zigzag, tronc à offrandes en bas.
+rect t 31 41 48 49
+# corde : brins en diagonale (clair z en haut, ombre t en bas), pas de 4
+rows w 41 34 45
+px z 34 41 38 41 42 41 35 41 39 41 43 41
+px t 37 41 41 41 45 41
+rows w 42 31 48
+px z 31 42 33 42 37 42 41 42 45 42
+px t 36 42 40 42 44 42 48 42
+rows w 43 33 46
+px t 35 43 36 43 39 43 40 43 43 43 44 43
+# shide : zigzag de papier, clair Q à gauche, q à droite
+px Q 36 44 37 45 36 46 37 47
+px q 37 44 38 45 37 46 38 47
+px Q 43 44 44 45 43 46 44 47
+px q 44 44 45 45 44 46 45 47
+# tronc à offrandes (saisen-bako)
+hline z 37 42 47
+rect w 37 48 42 49
+px t 39 48 39 49 41 48 41 49

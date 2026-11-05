@@ -1,0 +1,53 @@
+# c14 détails (A5-9) : tuiles rondes en bas du pan avant seulement (1/3), longueurs variées,
+# 2 groupes de bouts courts sous le faîtage, bouts de tuiles à l'égout, tirets horizontaux sur les croupes
+# rib = crête claire D à gauche + ombre B à droite ; le haut de chaque rib = D seul (le trait s'efface)
+vline B 20 32 41
+vline D 19 31 41
+vline B 25 29 41
+vline D 24 28 41
+vline B 30 34 41
+vline D 29 33 41
+vline B 35 31 41
+vline D 34 30 41
+vline B 40 28 41
+vline D 39 27 41
+vline B 45 33 41
+vline D 44 32 41
+vline B 50 30 41
+vline D 49 29 41
+vline B 55 35 41
+vline D 54 34 41
+vline B 60 31 41
+vline D 59 30 41
+# bas élargi du pan : 2 ribs courts de chaque côté
+vline B 10 38 41
+vline D 9 37 41
+vline B 15 36 41
+vline D 14 35 41
+vline B 65 37 41
+vline D 64 36 41
+vline B 70 39 41
+vline D 69 38 41
+# sous le faîtage : 2 groupes (3 + 2), courts et inégaux
+vline B 23 8 10
+vline D 22 8 9
+vline B 28 8 11
+vline D 27 8 10
+vline B 33 8 9
+vline B 51 8 10
+vline D 50 8 9
+vline B 56 8 9
+# bouts de tuiles à l'égout (y42-43) : un bout rond par rib
+px D 9 42 14 42 19 42 24 42 29 42 34 42 39 42 44 42 49 42 54 42 59 42 64 42 69 42
+px B 10 42 15 42 20 42 25 42 30 42 35 42 40 42 45 42 50 42 55 42 60 42 65 42 70 42
+px A 10 43 15 43 20 43 25 43 30 43 35 43 40 43 45 43 50 43 55 43 60 43 65 43 70 43
+# croupes : les tuiles descendent vers le côté -> tirets horizontaux, 2-3 par croupe
+hline C 4 7 20
+hline C 3 5 27
+hline C 6 9 30
+hline A 72 75 18
+hline A 74 76 25
+hline A 70 73 29
+# raconter : une tuile remplacée, plus neuve (claire), sur le pan avant
+rect D 36 21 37 23
+px B 38 21 38 22 38 23

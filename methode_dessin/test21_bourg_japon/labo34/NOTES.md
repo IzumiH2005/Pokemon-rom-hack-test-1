@@ -12,3 +12,15 @@ Toit y0-47 (60 %), façade y48-76, marche y77-79. `gen.py` écrit chaque étape 
 | 06 | nettoyage rive gauche | — |
 
 Porte : colonne x64-79, y48-79 → `portes.py labo34 labo.txt 64 48 66 57 77 74`.
+
+## v2 — refonte à la main (plus de gen.py à formules, R3)
+Même langage que la maison (rime A4b) : même escalier d'arêtier, même faîtage, mêmes onigawara, même égout relevé.
+Pignon d'entrée au-dessus de la porte (x59-84) : versant gauche D / droit B, noues = creux A (pas 2,1),
+rives verticales, ombre portée du pignon sur le pan avant (B, 2 px à droite), planches de rive Q/q,
+face en bois v avec 3 lattes inégales, gegyo doré à l'apex (accent saturé, au-dessus de l'entrée).
+
+| Étape | Défaut (R5) → correction |
+|---|---|
+| c11 | ailes fines aux coins hauts (bruit de silhouette) → chanfrein comme la maison |
+| c12 | pignon « livre ouvert » sans planches de rive → planches Q/q + dessous t |
+| c14 | cannelures 4 px partout (tôle) → tuiles pleine longueur 1 marche, lèvres sur 3 rangs, arrêtées sur le pignon |

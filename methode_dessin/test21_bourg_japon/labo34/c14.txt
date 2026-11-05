@@ -1,0 +1,43 @@
+# c14 détails : tuiles rondes du faîtage à l'égout (B, 1 marche), arrêtées sur arêtiers et sur le pignon ;
+# lèvres claires sur 3 rangs seulement ; tirets sur croupes et versants du pignon
+vline B 10 24 41
+vline B 15 11 41
+vline B 20 8 41
+vline B 25 8 41
+vline B 30 8 41
+vline B 35 8 41
+vline B 40 8 41
+vline B 45 8 41
+vline B 50 8 41
+vline B 55 8 41
+vline B 90 8 41
+vline B 95 8 41
+vline B 100 19 41
+vline B 105 31 41
+px D 14 12 15 12 19 12 20 12 24 12 25 12 29 12 30 12 34 12 35 12 39 12 40 12 44 12 45 12 49 12 50 12 54 12 55 12 89 12 90 12 94 12 95 12
+px A 15 13 20 13 25 13 30 13 35 13 40 13 45 13 50 13 55 13 90 13 95 13
+px D 9 30 10 30 14 30 15 30 19 30 20 30 24 30 25 30 29 30 30 30 34 30 35 30 39 30 40 30 44 30 45 30 49 30 50 30 54 30 55 30 89 30 90 30 94 30 95 30 99 30 100 30
+px A 10 31 15 31 20 31 25 31 30 31 35 31 40 31 45 31 50 31 55 31 90 31 95 31 100 31
+px D 9 36 10 36 14 36 15 36 19 36 20 36 24 36 25 36 29 36 30 36 34 36 35 36 39 36 40 36 44 36 45 36 49 36 50 36 54 36 55 36 89 36 90 36 94 36 95 36 99 36 100 36 104 36 105 36
+px A 10 37 15 37 20 37 25 37 30 37 35 37 40 37 45 37 50 37 55 37 90 37 95 37 100 37 105 37
+px D 9 42 14 42 19 42 24 42 29 42 34 42 39 42 44 42 49 42 54 42 89 42 94 42 99 42 104 42
+px A 10 43 15 43 20 43 25 43 30 43 35 43 40 43 45 43 50 43 55 43 90 43 95 43 100 43 105 43
+# rangée au-dessus du pignon : 2 ribs courts qui butent sur le faîtage du pignon
+vline B 62 8 16
+vline B 67 8 16
+vline B 77 8 16
+vline B 82 8 16
+px D 61 12 62 12 66 12 67 12 76 12 77 12 81 12 82 12
+# croupes et versants du pignon : tirets horizontaux (tuiles qui descendent sur le côté)
+hline C 4 7 20
+hline C 3 5 27
+hline C 6 9 31
+hline A 104 107 18
+hline A 106 108 25
+hline A 102 105 30
+hline C 62 66 27
+hline C 61 64 32
+hline C 64 68 22
+hline A 76 80 22
+hline A 77 81 28
+hline A 79 82 33

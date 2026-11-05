@@ -1,0 +1,105 @@
+# c11 surface du toit de cuivre (dōbuki) : pan avant uni h, bord gauche éclairé i, bord droit g
+# (l'ancien rendu avait un joint tous les 4 px du haut en bas = tôle ondulée / banding)
+hline h 8 71 9
+px i 7 9
+px g 72 9
+hline h 8 71 10
+px i 7 10
+px g 72 10
+hline h 8 71 11
+px i 7 11
+px g 72 11
+hline h 8 71 12
+px i 7 12
+px g 72 12
+hline h 7 72 13
+px i 6 13
+px g 73 13
+hline h 7 72 14
+px i 6 14
+px g 73 14
+hline h 7 72 15
+px i 6 15
+px g 73 15
+hline h 7 72 16
+px i 6 16
+px g 73 16
+hline h 7 72 17
+px i 6 17
+px g 73 17
+hline h 7 72 18
+px i 6 18
+px g 73 18
+hline h 6 73 19
+px i 5 19
+px g 74 19
+hline h 6 73 20
+px i 5 20
+px g 74 20
+hline h 6 73 21
+px i 5 21
+px g 74 21
+hline h 6 73 22
+px i 5 22
+px g 74 22
+hline h 6 73 23
+px i 5 23
+px g 74 23
+hline h 6 73 24
+px i 5 24
+px g 74 24
+hline h 6 73 25
+px i 5 25
+px g 74 25
+hline h 5 74 26
+px i 4 26
+px g 75 26
+hline h 5 74 27
+px i 4 27
+px g 75 27
+hline h 5 74 28
+px i 4 28
+px g 75 28
+hline h 5 74 29
+px i 4 29
+px g 75 29
+hline h 5 74 30
+px i 4 30
+px g 75 30
+hline h 5 74 31
+px i 4 31
+px g 75 31
+hline h 4 75 32
+px i 3 32
+px g 76 32
+hline h 4 75 33
+px i 3 33
+px g 76 33
+# reflet sous le faîtage (pan qui voit le ciel) : 2 rangs i, s'efface aux bouts
+hline i 8 71 9
+hline i 12 60 10
+# joints verticaux des plaques : 1 marche (g sur h), du reflet à l'égout
+vline g 9 11 33
+vline g 14 11 33
+vline g 19 11 33
+vline g 24 11 33
+vline g 29 11 33
+vline g 34 11 33
+vline g 39 11 33
+vline g 44 11 33
+vline g 49 11 33
+vline g 54 11 33
+vline g 59 11 33
+vline g 64 11 33
+vline g 69 11 33
+# lèvres des rangs de plaques : seulement 2 rangs bas + 1 haut, clair i à gauche du joint
+px i 8 12 13 12 18 12 23 12 28 12 33 12 38 12 43 12 48 12 53 12 58 12 63 12 68 12
+px i 8 27 13 27 18 27 23 27 28 27 33 27 38 27 43 27 48 27 53 27 58 27 63 27 68 27
+px i 8 31 13 31 18 31 23 31 28 31 33 31 38 31 43 31 48 31 53 31 58 31 63 31 68 31
+# patine (raconter) : l'eau qui coule des katsuogi lave le cuivre -> traînées claires, 2 seulement, longueurs inégales
+vline i 23 11 17
+vline j 23 11 12
+vline i 46 11 14
+vline j 46 11 11
+# usure : bord d'égout plus clair à gauche (lumière), cassé à droite
+hline j 2 30 34

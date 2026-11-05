@@ -1,0 +1,225 @@
+# c12 lumière : même logique que la maison (faîtage, arêtiers, onigawara) + pignon
+px D 15 7
+px B 16 7
+px D 95 7
+px A 96 7
+px D 15 8
+px B 16 8
+px D 95 8
+px A 96 8
+px D 14 9
+px B 15 9
+px D 96 9
+px A 97 9
+px D 14 10
+px B 15 10
+px D 96 10
+px A 97 10
+px D 13 11
+px B 14 11
+px D 97 11
+px A 98 11
+px D 13 12
+px B 14 12
+px D 97 12
+px A 98 12
+px D 13 13
+px B 14 13
+px D 97 13
+px A 98 13
+px D 12 14
+px B 13 14
+px D 98 14
+px A 99 14
+px D 12 15
+px B 13 15
+px D 98 15
+px A 99 15
+px D 11 16
+px B 12 16
+px D 99 16
+px A 100 16
+px D 11 17
+px B 12 17
+px D 99 17
+px A 100 17
+px D 11 18
+px B 12 18
+px D 99 18
+px A 100 18
+px D 10 19
+px B 11 19
+px D 100 19
+px A 101 19
+px D 10 20
+px B 11 20
+px D 100 20
+px A 101 20
+px D 9 21
+px B 10 21
+px D 101 21
+px A 102 21
+px D 9 22
+px B 10 22
+px D 101 22
+px A 102 22
+px D 9 23
+px B 10 23
+px D 101 23
+px A 102 23
+px D 8 24
+px B 9 24
+px D 102 24
+px A 103 24
+px D 8 25
+px B 9 25
+px D 102 25
+px A 103 25
+px D 7 26
+px B 8 26
+px D 103 26
+px A 104 26
+px D 7 27
+px B 8 27
+px D 103 27
+px A 104 27
+px D 7 28
+px B 8 28
+px D 103 28
+px A 104 28
+px D 6 29
+px B 7 29
+px D 104 29
+px A 105 29
+px D 6 30
+px B 7 30
+px D 104 30
+px A 105 30
+px D 5 31
+px B 6 31
+px D 105 31
+px A 106 31
+px D 5 32
+px B 6 32
+px D 105 32
+px A 106 32
+px D 5 33
+px B 6 33
+px D 105 33
+px A 106 33
+px D 4 34
+px B 5 34
+px D 106 34
+px A 107 34
+px D 4 35
+px B 5 35
+px D 106 35
+px A 107 35
+px D 3 36
+px B 4 36
+px D 107 36
+px A 108 36
+px D 3 37
+px B 4 37
+px D 107 37
+px A 108 37
+px D 3 38
+px B 4 38
+px D 107 38
+px A 108 38
+px D 2 39
+px B 3 39
+px D 108 39
+px A 109 39
+px D 2 40
+px B 3 40
+px D 108 40
+px A 109 40
+px D 1 41
+px B 2 41
+px D 109 41
+px A 110 41
+px D 1 42
+px B 2 42
+px D 109 42
+px A 110 42
+hline D 15 96 1
+hline D 15 96 2
+hline Q 20 58 2
+hline B 15 96 3
+hline B 15 96 4
+hline A 15 96 5
+hline B 17 94 6
+px B 16 7 95 7
+hline D 9 15 0
+vline D 10 1 6
+vline A 15 1 6
+rect A 12 2 13 4
+px D 12 2
+hline D 95 101 0
+vline D 96 1 6
+vline A 101 1 6
+rect A 98 2 99 4
+px D 98 2
+hline D 0 14 43
+hline B 97 111 43
+px u 1 41 2 42 3 43 4 43 110 41 109 42 108 43 107 43
+# pignon : faîtage (crête D, ombre A à droite), noues = creux A
+vline D 71 17 32
+vline C 72 17 32
+vline A 73 18 32
+px A 69 18 67 19 66 20 64 21 63 22 61 23 60 24
+px A 74 18 76 19 77 20 79 21 80 22 82 23 83 24
+# rives verticales du pignon : gauche B (trait côté lumière), droite A ; ombre portée du pignon sur le pan avant à droite
+vline B 59 25 40
+vline A 84 25 40
+vline B 85 25 42
+vline B 86 27 42
+# planches de rive (hafu) : gauche Q (lumière), droite q ; dessous t
+px Q 70 32
+px q 73 32
+px t 71 33
+px t 72 33
+px Q 69 33
+px q 74 33
+px t 70 34
+px t 73 34
+px Q 67 34
+px q 76 34
+px t 68 35
+px t 75 35
+px Q 66 35
+px q 77 35
+px t 67 36
+px t 76 36
+px Q 64 36
+px q 79 36
+px t 65 37
+px t 78 37
+px Q 63 37
+px q 80 37
+px t 64 38
+px t 79 38
+px Q 61 38
+px q 82 38
+px t 62 39
+px t 81 39
+px Q 60 39
+px q 83 39
+px t 61 40
+px t 82 40
+px Q 59 40
+px q 84 40
+px t 60 41
+px t 83 41
+px Q 71 31 q 72 31
+px Q 68 34 65 36 62 38
+px q 75 34 78 36 81 38
+px t 58 41 85 41 59 41 84 41
+# face du pignon : lattes u (3, inégales), poutre basse t, gegyo doré à l'apex (accent)
+vline u 66 38 42
+vline u 71 34 42
+vline u 77 37 42
+vline t 72 34 42
+hline t 60 83 42
+px y 71 33 72 33 70 34 73 34 y 71 35 72 35
