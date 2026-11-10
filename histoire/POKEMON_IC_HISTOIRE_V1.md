@@ -1,4 +1,4 @@
-# Pokémon I.C (Identity Convergence) : analyse et histoire retravaillée, version 1
+# Pokémon I.C (Identity Convergence) : analyse et histoire retravaillée, version 1.1
 
 Ce document est une base de discussion. Rien n'y est figé. Les parties marquées « proposition » viennent de moi, les parties marquées « canon » viennent du lore officiel ou des wikis de référence.
 
@@ -50,7 +50,19 @@ Les trois piliers de la reconstruction (preuves, liens, choix) sont une structur
 
 Red A est le plus fort des deux, mais il a coupé toutes ses ancres lui-même. Trois ans sans voir sa mère, sans parler à Blue, sans titre. Red B, lui, ne vit que pour les gens qu'il a perdus : il est attaché à eux par chaque pensée. Le monde compare et choisit B.
 
-Cela règle les points 2 et 3 d'un coup. **Le combat d'ouverture n'a plus besoin d'être truqué, car son résultat ne décide de rien.** Si le joueur perd, la scène suit son cours. S'il gagne, Red B dit quelque chose comme « Tu es toujours le meilleur dresseur. C'est tout ce que tu es. », et le monde l'efface quand même. Le joueur comprend tout seul que la force n'est pas le sujet du jeu.
+Cela règle le point 2 : le combat ne décide pas de qui existe, il le montre.
+
+### Le combat d'ouverture : Red B gagne toujours (décidé)
+
+Red B gagne ce combat à chaque fois, et le jeu l'assume. Trois règles le rendent juste au lieu de frustrant.
+
+**Il te lit parce qu'il est toi.** L'IA reçoit ton choix avant de jouer. Ses répliques le disent avant que ton attaque parte : « Surf. Je sais. » ou « Tu vas rappeler Dracaufeu. Moi aussi, je l'aurais fait. » Le joueur comprend en deux tours qu'il affronte quelqu'un qui pense comme lui, et pas un jeu qui triche en silence.
+
+**La défaite vient du monde, pas des points de vie.** Chaque fois que B t'anticipe, le monde le reconnaît un peu plus comme le vrai Red. Tes Poké Balls cessent alors de répondre l'une après l'autre : « La Ball de Tortank ne réagit plus. » Le combat se termine quand il ne te reste que Pikachu, qui n'a pas de Ball. Cette fin est garantie quel que soit le hasard (coups critiques, attaques ratées), et elle montre déjà la règle des Balls de la section 4.
+
+**C'est court et sans punition.** Le combat dure cinq ou six tours, il ne coûte ni argent ni objets, et il n'y a pas de retour au Centre Pokémon.
+
+Ce combat sert aussi de leçon pour la fin du jeu. Le joueur affrontera la même IA au dernier combat. Elle n'aura pas changé, mais lui si (section 6).
 
 ### Comment les deux mondes se touchent (canon de Platine réutilisé)
 
@@ -64,15 +76,25 @@ Tu gardes tes trois dragons et ta zone d'intersection, mais tu n'inventes presqu
 
 Tu as écrit : B a perdu des gens, A n'a perdu personne mais s'est isolé. Je propose de serrer encore. **Les deux ont fait la même erreur, mais un seul a reçu la facture.**
 
-Le canon nous donne l'événement : entre Rouge/Bleu et Or/Argent, le volcan de Cramois'Île entre en éruption et détruit la ville. Dans le monde A, tout le monde a été évacué, et on retrouve Blue qui médite sur les ruines. Dans le monde B, quelqu'un n'en est pas revenu, pendant que Red B s'entraînait seul sur sa montagne et n'était pas là.
+**Red B a perdu sa mère et Blue, le même jour (décidé). Voici pourquoi.**
 
-La différence entre eux n'est donc pas le caractère. C'est la chance. Red B est ce que Red A deviendra s'il continue. Quand B dit à A « tu ne mérites pas cette vie, tu l'as jetée », il a en partie raison, et c'est ce qui fait mal.
+Le canon donne l'événement : entre Rouge/Bleu et Or/Argent, le volcan de Cramois'Île entre en éruption et détruit la ville. Le canon donne aussi la géographie : de Bourg Palette, on rejoint Cramois'Île en descendant tout droit par la mer.
 
-**À trancher ensemble :** qui Red B a-t-il perdu ? Je recommande Blue, parce que le rival est le lien qui a fabriqué Red, et parce que Blue champion d'arène de Jadielle peut devenir le dernier « ancien adversaire ». Sa mère est l'autre candidate évidente. On peut aussi rester flou et ne jamais dire « mort », seulement « n'est pas revenu », pour garder le ton Pokémon.
+Dans le monde B, Red est parti au Mont Argenté sans rien dire à personne. Les mois passent sans nouvelles. Sa mère finit par demander de l'aide à Blue, le seul qui le connaisse assez pour le retrouver. Une rumeur parle d'un garçon muet avec un Pikachu aperçu du côté de Cramois'Île. Ils prennent la mer ensemble. Ils sont sur l'île le jour de l'éruption. Blue reste pour faire évacuer les habitants, la mère de Red refuse de partir sans lui. **Ils ont disparu en le cherchant.**
+
+Dans le monde A, tout est pareil sauf un geste. Le soir de son départ, Red A a laissé un mot sur la table de la cuisine : « Je vais au Mont Argenté. » Sa mère savait où il était. Elle s'est inquiétée, mais elle n'est jamais partie à sa recherche. Blue était bien à Cramois'Île ce jour-là, pour d'autres raisons, et tout le monde a été évacué.
+
+Le détail qui sépare les deux mondes tient donc en cinq mots. Red A n'est pas meilleur que Red B. Un soir, il a fait le minimum, presque par hasard. Red B est ce que Red A serait devenu sans ce mot. Quand B dit à A « tu ne mérites pas cette vie, tu l'as jetée », il a en partie raison, et c'est ce qui fait mal.
+
+Ce mot devient un objet du jeu. Il est toujours dans la maison, dans un tiroir, écrit d'une main que sa mère ne reconnaît plus. C'est la première **preuve** que le joueur retrouve.
+
+Le ton reste celui de Pokémon : on ne dit jamais « morts ». On dit qu'ils ne sont pas revenus.
 
 ### L'horloge qui manquait
 
 La convergence ne s'arrête pas à l'oubli de Red A. Le monde aligne peu à peu son histoire sur celle du Red qu'il a gardé. **L'histoire de B est une histoire où les gens qu'il aime ont disparu.** En prenant la place de A, B est donc en train de les perdre une seconde fois, sans le savoir.
+
+Dans le monde A, c'est donc la mère de Red et Blue qui commencent à s'effacer, et Cramois'Île qui change la première.
 
 C'est le moteur du jeu. Les zones distordues sont des endroits où la version B du monde remplace la version A : une tombe qui ne devrait pas exister à Lavanville, Cramois'Île dans un autre état, une arène sans son champion. Tes petites zones en pixel art servent exactement à ça. Plus le jeu avance, plus elles s'étendent.
 
@@ -132,9 +154,9 @@ D'autres personnages peuvent entrer dans ces catégories plus tard (Cynthia en v
 
 **Acte 3, « Convergence ».** Les zones distordues gagnent des villes entières. La vérité sur le monde B et sur l'histoire importée éclate. Blue est le dernier lien et le plus difficile. Le combat final contre Red B a lieu au cœur de la distorsion.
 
-### Le boss final : ton idée d'IA, déplacée au bon endroit
+### Le boss final : la même IA, un autre joueur
 
-Garde l'IA qui lit les choix du joueur, mais mets-la à la fin et donne-lui une raison. Red B prédit Red A parce qu'il est lui. **Il ne peut prédire que l'ancien Red.**
+L'IA du combat final est exactement celle de l'ouverture. Red B prédit Red A parce qu'il est lui, mais **il ne peut prédire que l'ancien Red.**
 
 Concrètement, il lit ton choix quand tu utilises un Pokémon et une attaque qui sont restés identiques à ceux du prologue. Tout ce qui a changé pendant le jeu lui est illisible : une attaque apprise pendant la quête de confiance, une forme convergente, un Pokémon nouveau. Pour le battre, le joueur doit avoir accepté de ne plus être exactement le même. C'est ton bateau de Thésée devenu règle de combat, et le joueur le découvre en jouant.
 
@@ -150,9 +172,27 @@ Le skill demande toujours comment le joueur cassera la règle. Ici, la stratégi
 
 **Fin cachée, « Convergence d'identité ».** C'est ma proposition pour la fin qui laisse perplexe. La règle dit qu'il ne peut y avoir qu'un seul Red. Elle ne dit pas que l'autre doit disparaître : il suffit qu'il ne soit plus Red.
 
-Pendant le jeu, personne ne connaît le nom du joueur. Je propose qu'à un moment quelqu'un lui demande comment il s'appelle, et que **le joueur tape un nouveau nom**. Dans la fin cachée, il garde ce nom. Il laisse « Red », le titre et la légende à B, et il part avec l'identité qu'il a construite pendant le jeu. Les deux existent, parce qu'ils ne sont plus la même personne.
+Dans cette fin, le joueur garde le nom qu'il s'est donné pendant le jeu (voir ci-dessous). Il laisse « Red », le titre et la légende à B, et il part avec l'identité qu'il a construite. Les deux existent, parce qu'ils ne sont plus la même personne.
 
-Cette fin a un prix. Sa mère a un fils à sa table qui n'est pas tout à fait le sien, et lui renonce à son passé. Le joueur se demandera longtemps s'il a gagné. La condition d'accès serait d'avoir créé assez de liens nouveaux (Gold, Brice, les gens aidés) en plus des anciens retrouvés.
+Cette fin a un prix. Sa mère a un fils à sa table qui n'est pas tout à fait le sien, et lui renonce à son passé. Le joueur se demandera longtemps s'il a gagné. La condition d'accès serait d'avoir créé assez de liens nouveaux (Gold, Brice, les gens aidés) en plus des anciens retrouvés, et d'avoir tenu un nom.
+
+### « Qui es-tu ? » : le nom choisi en cours de partie (décidé)
+
+Le joueur ne choisit pas de nom au début. Plusieurs personnages lui posent la question pendant le jeu, et il répond à chaque fois. Il a trois réponses possibles.
+
+- Il se tait (« ... »). La personne lui donne alors un surnom à elle.
+- Il dit « Red ». Personne ne le croit, car Red est chez lui à Bourg Palette.
+- Il tape un nom, ou il redonne celui qu'il a déjà donné.
+
+Chaque personnage l'appelle ensuite par le nom qu'il a reçu. Le joueur peut donc donner le même nom à tout le monde, ou un nom différent à chacun. C'est ton troisième pilier, les choix cohérents, transformé en mécanique : **un nom tenu de bout en bout est une ancre forte, des noms éparpillés donnent une identité en morceaux.** Les fins lisent ce comportement sans jamais l'afficher, comme le fait Silent Hill 2.
+
+À vérifier avec toi : j'ai compris que la question revient plusieurs fois et que le joueur peut changer de réponse. Si tu voulais un seul moment de choix, dis-le-moi.
+
+### Red parle à la fin (décidé)
+
+Pendant les actes 1 et 2, Red ne dit que « ... » et le joueur répond par des choix. Sa parole arrive tard et reste rare, pour que chaque phrase pèse. Je propose moins de dix répliques dans tout le jeu.
+
+Son premier mot serait pour Luka au moment où celui-ci s'efface : « Merci. » Il prononce ensuite quelques phrases dans l'acte 3, face à Blue puis face à Red B. La dernière ligne du jeu est dite par lui, et elle dépend de la fin obtenue. Red B, lui, parle depuis le début : c'est une autre façon de montrer que A a changé et rejoint ce que B savait déjà faire.
 
 ## 8. Le cube D et la mécanique de convergence
 
@@ -164,7 +204,17 @@ Il manque le **coût**. Je propose celui-ci : utiliser une forme convergente, c'
 
 Je conseille de commencer avec une seule charge par expédition. On augmentera si le prototype montre que la décision est intéressante.
 
-**Question :** que veut dire le D de « cube D » ? Distorsion, Dimension, autre chose ?
+### Ce que veut dire le D (proposition)
+
+**Le D veut dire « dé ».** Un cube à six faces est un dé, et les joueurs de jeux de rôle l'écrivent D6.
+
+Les scientifiques de la Sylphe l'ont étiqueté « Cube D » pour Distorsion. Luka, lui, l'appelle « le Dé », pour trois raisons qui servent l'histoire.
+
+- Il a **six faces, comme les six places d'une équipe.** Chaque face s'allume quand un des six Pokémon de Red lui refait confiance. Le cube devient l'écran de progression du jeu, sans menu supplémentaire.
+- Ce qui sépare les deux mondes est **un coup de dé** : un mot laissé ou non sur une table.
+- Einstein refusait l'idée d'un univers quantique en disant que « Dieu ne joue pas aux dés ». Ton multivers répond que si, et le joueur tient le dé dans son sac.
+
+Les fragments ramassés chargent la face du Pokémon concerné, et la forme convergente de ce Pokémon se déclenche depuis sa face.
 
 ## 9. Ce que disent les livres et les jeux marquants, appliqué à ton histoire
 
@@ -211,15 +261,22 @@ Le skill a une règle que je trouve juste : on n'industrialise pas une hypothès
 
 Si ces trois prototypes tiennent, l'histoire tient. Les sprites des dresseurs invités (face, dos, overworld) viennent après, et je te les montrerai en images avant tout choix.
 
-## 11. Ce qu'on doit décider ensemble
+## 11. Décisions
 
-1. Qui Red B a-t-il perdu : Blue, sa mère, ou les deux ? Dit-on le mot ou reste-t-on flou ?
-2. Es-tu d'accord pour que le combat d'ouverture ne soit plus truqué, et que l'IA lectrice soit réservée au combat final ?
-3. Veux-tu de la mécanique du nouveau nom tapé par le joueur, et de la fin cachée qui en découle ?
-4. Red reste-t-il muet (avec des choix de réponse), ou parle-t-il pour la première fois dans ce jeu ?
-5. Quelle base technique exacte utilise-t-on ? Elle fixe le nombre de générations de Pokémon réellement disponibles.
-6. Que signifie le D du cube ?
-7. Combien de dresseurs invités au maximum ? Je propose Gold, Luka, Brice, et un seul autre.
+### Déjà tranché
+
+1. Red B a perdu sa mère et Blue, à Cramois'Île, parce qu'ils le cherchaient.
+2. Red B gagne toujours le combat d'ouverture.
+3. Le joueur choisit son nom en cours de partie, quand on lui demande qui il est.
+4. Red parle parfois à la fin, parce qu'il a changé.
+5. Le D du cube veut dire « dé ».
+
+### Encore ouvert
+
+1. Le joueur peut-il changer de nom à chaque fois qu'on lui pose la question, ou choisit-il une seule fois ?
+2. Quelle base technique exacte utilise-t-on ? Elle fixe le nombre de générations de Pokémon disponibles.
+3. Combien de dresseurs invités au maximum ? Je propose Gold, Luka, Brice, et un seul autre.
+4. Les Pokémon retrouvés reviennent-ils à leur niveau d'origine ou affaiblis ? Le prototype de la section 10 le dira.
 
 ## Sources
 
