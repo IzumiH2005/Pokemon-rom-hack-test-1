@@ -25,6 +25,9 @@ DONJONS = ('VictoryRoadKanto', 'ViridianForest', 'MtMoon', 'RockTunnel', 'Cerule
 EXCLUES = ('MtSilver', 'Route28',          # déjà importées par le test 13
            'FuchsiaCity_SafariZone')      # tileset absent de Heart & Soul
 
+# Cases redessinées après import : carte -> {(x, y): valeur de bloc}.
+RETOUCHES = {'Route4': {(19, 5): 0x079 | 1 << 10}}   # fausse entrée de grotte hors d'atteinte, remplacée par la paroi
+
 # Comportements de métatuile : mêmes numéros dans les deux moteurs, sauf ceux-ci.
 COMPORTEMENTS = {0xEB: 0xC8, 0xEC: 0xC9, 0xEF: 0x64}
 A_ZERO = ({0x1D, 0x1E, 0x1F, 0x23, 0x2C, 0x2D, 0xA1, 0xA2, 0xED, 0xEE, 0xFE, 0xFF}
@@ -138,6 +141,9 @@ for lid, (carte, h) in layouts.items():
     os.makedirs(f'{JEU}/{d}', exist_ok=True)
     shutil.copy(f'{HNS}/{h["blockdata_filepath"]}', f'{JEU}/{d}/map.bin')
     shutil.copy(f'{HNS}/{h["border_filepath"]}', f'{JEU}/{d}/border.bin')
+    for (x, y), v in RETOUCHES.get(carte, {}).items():
+        with open(f'{JEU}/{d}/map.bin', 'r+b') as f:
+            f.seek(2 * (x + y * h['width'])); f.write(struct.pack('<H', v))
     entree = {'id': nouvel_id, 'name': nom + '_Layout', 'width': h['width'], 'height': h['height'],
               'border_width': 2, 'border_height': 2,
               'primary_tileset': symbole(h['primary_tileset']), 'secondary_tileset': symbole(h['secondary_tileset']),
