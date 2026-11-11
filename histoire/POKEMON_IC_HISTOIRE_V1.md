@@ -8,7 +8,7 @@ Ce document est une base de discussion. Rien n'y est figé. Les parties marquée
 
 **La chronologie tient-elle ?** Oui, et elle t'arrange. Un scénariste de Game Freak (Toshinobu Matsumiya) a publié en 2014 un message, supprimé depuis, qui range les jeux ainsi : Rubis/Saphir/Émeraude se passent en même temps que Rouge/Bleu, puis Or/Argent et Diamant/Perle/Platine se passent en même temps, environ trois ans plus tard. La durée exacte de l'écart n'a jamais été confirmée officiellement, et quelques dialogues (Jasmine à Sinnoh) contredisent un alignement parfait. La conséquence utile est celle-ci : **à l'époque où ton jeu se déroule, Hélio est en train de mener son plan à Sinnoh.** On s'en sert plus bas.
 
-**Les âges à l'époque du jeu** (déduits de cette chronologie) : Red a 14 ans, Blue aussi, Gold (Ethan) a environ 11 à 12 ans, Brice (Brendan) a environ 15 ans car son aventure de Hoenn date de trois ans, Luka (Riley) est un adulte.
+**Les âges à l'époque du jeu** (déduits de cette chronologie) : Red a 14 ans, Blue aussi, Gold (Ethan) a environ 11 à 12 ans, Brice (Brendan) a environ 15 ans car son aventure de Hoenn date de trois ans, Luka (Lucas, le héros de Platine) est un adulte.
 
 ## 2. Mon avis franc sur ton brouillon
 
@@ -56,9 +56,9 @@ Cela règle le point 2 : le combat ne décide pas de qui existe, il le montre.
 
 Red B gagne ce combat à chaque fois, et le jeu l'assume. Trois règles le rendent juste au lieu de frustrant.
 
-**Il te lit parce qu'il est toi.** L'IA reçoit ton choix avant de jouer. Ses répliques le disent avant que ton attaque parte : « Surf. Je sais. » ou « Tu vas rappeler Dracaufeu. Moi aussi, je l'aurais fait. » Le joueur comprend en deux tours qu'il affronte quelqu'un qui pense comme lui, et pas un jeu qui triche en silence.
+**Il te lit parce qu'il est toi.** L'IA reçoit ton choix avant de jouer. Elle joue alors le meilleur coup contre ce choix : elle change de Pokémon si tu vas changer, elle répond à l'attaque que tu as choisie. Ses Pokémon frappent aussi 10 % plus fort. Ses répliques le disent avant que ton attaque parte : « Surf. Je sais. » ou « Tu vas rappeler Dracaufeu. Moi aussi, je l'aurais fait. » Le joueur comprend en deux tours qu'il affronte quelqu'un qui pense comme lui, et pas un jeu qui triche en silence.
 
-**La défaite vient du monde, pas des points de vie.** Chaque fois que B t'anticipe, le monde le reconnaît un peu plus comme le vrai Red. Tes Poké Balls cessent alors de répondre l'une après l'autre : « La Ball de Tortank ne réagit plus. » Le combat se termine quand il ne te reste que Pikachu, qui n'a pas de Ball. Cette fin est garantie quel que soit le hasard (coups critiques, attaques ratées), et elle montre déjà la règle des Balls de la section 4.
+**La défaite vient d'abord du jeu, puis du monde.** B gagne normalement, par la stratégie. Le monde ne sert que de filet de sécurité : si le joueur met B sur son dernier Pokémon, celui-ci garde au moins 1 PV, et à chaque fin de tour une Poké Ball du joueur cesse de répondre : « La Ball de Tortank ne réagit plus. » Le combat se termine quand il ne reste que Pikachu, qui n'a pas de Ball. Cette fin est garantie quel que soit le hasard (coups critiques, attaques ratées), et elle montre déjà la règle des Balls de la section 4.
 
 **C'est court et sans punition.** Le combat dure cinq ou six tours, il ne coûte ni argent ni objets, et il n'y a pas de retour au Centre Pokémon.
 
@@ -146,7 +146,70 @@ D'autres personnages peuvent entrer dans ces catégories plus tard (Cynthia en v
 
 ## 6. Structure du jeu (proposition)
 
-**Prologue, Mont Argenté.** Le joueur a son équipe complète de haut niveau. Red B sort d'une déchirure au sommet. Le duel a lieu, puis le monde choisit.
+**Prologue (décidé).** Il dure entre cinq et dix minutes et tient en deux scènes. Le joueur croit jouer une seule personne, alors qu'il en joue deux.
+
+#### Scène 1, Colonnes Lances, monde B
+
+Le joueur contrôle un garçon nommé RED, avec le sprite de Red et l'équipe de Red. Rien ne dit qu'il s'agit de Red B. La musique se tait au pied de l'escalier. En haut, Luka attend devant l'autel, de dos.
+
+> LUKA : Tu es venu quand même.
+> LUKA : La Team Galaxie est partie il y a trois heures. Ils ont laissé les Chaînes Rouges sur l'autel.
+> LUKA : Cynthia m'a dit ce que tu voulais en faire. Je lui ai répondu que tu n'étais pas comme ça.
+> *(Luka se retourne.)*
+> LUKA : Red. Ta mère est morte. Blue aussi. Les Chaînes ne ramènent personne.
+> RED : Je sais.
+> LUKA : Alors pourquoi tu montes ?
+> RED : …
+> LUKA : Je ne te laisserai pas toucher l'autel.
+
+Le combat n'est pas joué en entier. Le joueur dispute trois tours, puis le combat s'arrête et Luka a perdu. Pendant ces trois tours, Luka ne fait que des demi-dégâts et aucun Pokémon de RED ne peut tomber : la scène montre un Red qui écrase tout. Le jeu note en silence chaque attaque que le joueur choisit, et ce sont ces attaques que Red B annoncera dans la scène 2. Le jeu soigne l'équipe après le combat.
+
+> LUKA, quand il perd : Tu ne te bats pas pour gagner. Tu te bats comme quelqu'un à qui il ne reste rien.
+
+Luka recule. RED marche jusqu'à l'autel.
+
+> *Les Chaînes Rouges se mettent à briller.*
+> *(Dialga apparaît à gauche de l'autel, Palkia à droite. Deux cris, l'écran tremble.)*
+> LUKA : Red, arrête ! Tu vas déchirer le monde !
+> RED : Montrez-moi où ils sont.
+> *(Le sol se fend. Une ombre immense passe sous l'esplanade : Giratina, forme Originelle.)*
+> LUKA : RED !
+
+Écran noir. On entend une dernière fois le cri de Giratina.
+
+#### Scène 2, Mont Argenté, monde A
+
+> *Mont Argenté. Au même instant.*
+
+Le joueur contrôle maintenant Red au sommet, de dos face au vide, avec la même équipe. Il neige. Une déchirure s'ouvre devant lui et un garçon en sort. Il a le même sprite, la même casquette, le même Pikachu.
+
+> ??? : …
+> ??? : Il neige. Il neigeait aussi le jour où je suis redescendu.
+> ??? : Toi, tu n'es jamais redescendu.
+> ??? : Trois ans. Elle t'a écrit quatorze lettres. Elles sont au fond de ton sac et tu ne les as pas ouvertes.
+> ??? : Moi, je les ai lues trop tard.
+> ??? : Je ne viens rien te prendre. Tu n'en voulais pas.
+
+Le joueur reconnaît la voix de la scène 1 au moment où le combat commence. L'adversaire s'affiche sous le nom RED.
+
+Le duel suit les règles de la section 3 (Red B gagne toujours). Avant chaque attaque, B annonce celle du joueur s'il l'a déjà vue contre Luka : « Surf. Je sais. » Il se tait (« … ») devant une attaque que le joueur n'a pas utilisée là-bas. C'est le premier indice de la règle du boss final : B ne lit que ce que tu as déjà été. À la fin de chaque tour, une Ball se tait :
+
+> *La Ball de Tortank ne réagit plus.*
+
+Quand il ne reste que Pikachu, le combat s'arrête.
+
+> RED B : Tu vois. Elles l'ont su avant toi.
+> *(Fondu au blanc.)*
+
+L'acte 1 commence au pied du mont : Red se réveille avec Pikachu et rien d'autre.
+
+#### Les équipes
+
+**Red A et Red B** (équipe de HeartGold et SoulSilver) : Pikachu 88, Florizarre 84, Dracaufeu 84, Tortank 84, Ronflex 82, Lokhlass 80.
+
+**Luka** (il reprend Lucas, le héros de Platine) : Étouraptor 75, Torterra 78, Lucario 76, Togekiss 76, Givrali 75 et Porygon-Z 76, l'équipe du Lucas de Platine en version adulte. Givrali a été retenu plutôt que Phyllali, parce que Torterra couvre déjà le type Plante.
+
+**Problème à régler : l'aura.** La section 5 fait de Luka celui qui lit l'aura. C'était le don de Riley (Lucario). Lucas n'a pas ce don dans le canon, même s'il garde un Lucario. Il faut soit justifier le don par son Lucario, soit donner un autre moyen à Luka de reconnaître Red.
 
 **Acte 1, « Personne ».** Red A se réveille au pied de la montagne avec Pikachu. Il rencontre Gold, puis Luka qui lui explique la règle en trois phrases. La scène pivot de l'acte est à Bourg Palette : sa mère lui ouvre, ne le reconnaît pas, et on voit Red B assis à sa table. Elle a pourtant mis une assiette de trop sans savoir pourquoi. Le joueur récupère un ou deux Pokémon.
 
