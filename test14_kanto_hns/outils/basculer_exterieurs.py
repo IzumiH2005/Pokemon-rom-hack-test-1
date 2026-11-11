@@ -25,7 +25,7 @@ VILLES = ['PalletTown', 'ViridianCity', 'PewterCity', 'CeruleanCity', 'LavenderT
 CARTES = VILLES + [f'Route{i}' for i in range(1, 21)] + ['Route21_North', 'Route22', 'Route24', 'Route25']
 # Route 23 et Plateau Indigo attendent la zone de la Ligue (Routes 26 et 27, Route Victoire).
 
-from tables import PORTES, PORTE_DEPLACEE
+from tables import PORTES, PORTE_DEPLACEE, RETOUCHES
 
 EAU = set(range(0x10, 0x18))
 rapport = []
@@ -104,6 +104,13 @@ def origine(nom):
     if not os.path.exists(p + '.rougefeu'): shutil.copy(p, p + '.rougefeu')
     return lire(p + '.rougefeu')
 
+
+# Entrées creusées dans le décor importé (l'import recopie le décor d'origine à chaque passage).
+for dossier, blocs in RETOUCHES.items():
+    p = f'{JEU}/data/layouts/{dossier}/map.bin'; d = bytearray(open(p, 'rb').read())
+    w = next(l['width'] for l in LAY.values() if l['blockdata_filepath'].endswith(f'/{dossier}/map.bin'))
+    for x, y, bloc in blocs: struct.pack_into('<H', d, 2 * (x + y * w), bloc)
+    open(p, 'wb').write(d)
 
 ID = {NOM_HNS.get(n, n): lire(chemin(n))['id'] for n in CARTES}
 ID_HNS = {lire(f'{HNS}/data/maps/{h}/map.json')['id']: i for h, i in ID.items()}

@@ -27,12 +27,9 @@ FuchsiaCity: porte (33, 31) vers MAP_FUCHSIA_CITY_WARDENS_HOUSE sans bâtiment d
 FuchsiaCity: porte (28, 16) vers MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE sans bâtiment dans HnS
 FuchsiaCity: panneau FuchsiaCity_EventScript_LaprasSign retiré (aucun panneau libre dans le décor)
 FuchsiaCity: panneau FuchsiaCity_EventScript_SafariGameSign retiré (aucun panneau libre dans le décor)
-CinnabarIsland: porte (8, 3) vers MAP_POKEMON_MANSION_1F sans bâtiment dans HnS
-CinnabarIsland: porte (20, 4) vers MAP_CINNABAR_ISLAND_GYM sans bâtiment dans HnS
-CinnabarIsland: porte (8, 9) vers MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE sans bâtiment dans HnS
-CinnabarIsland: porte (19, 11) vers MAP_CINNABAR_ISLAND_MART sans bâtiment dans HnS
 CinnabarIsland: panneau CinnabarIsland_EventScript_GymSign retiré (aucun panneau libre dans le décor)
 CinnabarIsland: panneau CinnabarIsland_EventScript_PokemonLabSign retiré (aucun panneau libre dans le décor)
+CinnabarIsland: déclencheur CinnabarIsland_EventScript_GymDoorLocked retiré, à réécrire
 SaffronCity: porte (27, 21) vers MAP_SAFFRON_CITY_HOUSE sans bâtiment dans HnS
 SaffronCity: porte (47, 21) vers MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB sans bâtiment dans HnS
 SaffronCity: panneau SaffronCity_EventScript_SilphProductSign retiré (aucun panneau libre dans le décor)

@@ -13,7 +13,7 @@ from collections import deque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tables import (PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS, NOUVELLES, SCRIPTS_RETIRES, HABITANTS, DECLENCHEURS,
                     PORTES_AJOUTEES, TRANSFERTS, REMPLACEMENTS, SCRIPTS_AJOUTES,
-                    DECLENCHEURS_AJOUTES)
+                    DECLENCHEURS_AJOUTES, PANNEAUX, PORTES_FORCEES)
 PAIRES_FIXES = dict(PAIRES_FIXES, **{n: n for n in NOUVELLES})
 
 HNS, JEU = sys.argv[1], sys.argv[2]
@@ -171,6 +171,28 @@ def role(o):
     return 'passant'
 
 
+def fixer(o, place, decor):
+    """Pose un PNJ sur une case choisie à la main : (x, y) ou (x, y, type de mouvement)."""
+    o['x'], o['y'] = place[:2]
+    if len(place) > 2: o['movement_type'] = place[2]
+    e = decor.brut(o['x'], o['y']) >> 12
+    if 1 <= e <= 14: o['elevation'] = e
+
+
+def declencheurs(originaux, places, decor, nom):
+    """Déclencheurs de Rouge Feu reposés sur les cases de la table. Un script garde une case, ou une liste de cases :
+    la i-ème case reçoit le i-ème déclencheur d'origine de ce script, le dernier est recopié s'il en manque."""
+    gardes, par = [], {}
+    for c in originaux: par.setdefault(c.get('script'), []).append(c)
+    for s, cs in par.items():
+        if s not in places:
+            rapport.append(f'{nom}: déclencheur {s} retiré, à réécrire'); continue
+        cases = places[s] if isinstance(places[s], list) else [places[s]]
+        for i, (x, y) in enumerate(cases):
+            gardes.append(dict(copy.deepcopy(cs[min(i, len(cs) - 1)]), x=x, y=y, elevation=decor.brut(x, y) >> 12))
+    return gardes
+
+
 # 2. Intérieurs.
 nouveau = {}
 for fd in interieurs:
@@ -229,7 +251,7 @@ for fd in interieurs:
         cle = o.pop('_cle'); dw, dh = o.pop('_dim'); cx, cy = round(o['x'] * decor.w / dw), round(o['y'] * decor.h / dh); r = role(o)
         cand = [c for c in libres if role(c) == r and (c['x'], c['y']) not in pris]
         if cle is not None:
-            o['x'], o['y'] = fixes[cle]; pris.add((o['x'], o['y'])); continue
+            fixer(o, fixes[cle], decor); pris.add((o['x'], o['y'])); continue
         if not cand and r in ('dresseur', 'passant'):
             cand = [c for c in libres if role(c) in ('dresseur', 'passant') and (c['x'], c['y']) not in pris]
         if not cand and r in OBSTACLES and not o.get('local_id'):
@@ -257,11 +279,7 @@ for fd in interieurs:
             b['x'], b['y'] = c['x'], c['y']; garde.append(b)
     if len(garde) < len(f['bg_events']): rapport.append(f'{fd}: {len(f["bg_events"]) - len(garde)} élément(s) de décor retiré(s)')
     f['bg_events'] = garde
-    places = DECLENCHEURS.get(fd[:-5], {}); gardes = []
-    for c in f['coord_events']:
-        if c.get('script') in places: c['x'], c['y'] = places[c['script']]; c['elevation'] = 0; gardes.append(c)
-        else: rapport.append(f'{fd}: déclencheur {c.get("script")} retiré, à réécrire')
-    f['coord_events'] = gardes + [{'type': 'trigger', 'x': x, 'y': y, 'elevation': 0, 'var': v, 'var_value': '0', 'script': s}
+    f['coord_events'] = declencheurs(f['coord_events'], DECLENCHEURS.get(fd[:-5], {}), decor, fd) + [{'type': 'trigger', 'x': x, 'y': y, 'elevation': 0, 'var': v, 'var_value': '0', 'script': s}
                                   for x, y, v, s in DECLENCHEURS_AJOUTES.get(fd[:-5], [])]
     for c in f['coord_events']: c['elevation'] = decor.brut(c['x'], c['y']) >> 12
     conn = []
@@ -327,6 +345,31 @@ for source, cle, cible, x, y in TRANSFERTS:
                  elevation=Decor(c['layout']).brut(x, y) >> 12)
         c['coord_events'].append(e)
     ecrire(chemin(source + '_Frlg'), s); ecrire(chemin(cible + '_Frlg'), c)
+
+# 4 ter. Extérieurs : PNJ et déclencheurs des scènes reposés à la main, d'après la copie Rouge Feu.
+for nom in sorted(set(PLACES) | set(DECLENCHEURS) | set(PANNEAUX)):
+    fd = nom + '_Frlg'
+    if fd in interieurs: continue
+    av = origine(fd); c = lire(chemin(fd)); decor = Decor(c['layout'])
+    for o in c['object_events']:
+        cle = next((k for k in (o.get('local_id'), o['script']) if k in PLACES.get(nom, {})), None)
+        if cle: fixer(o, PLACES[nom][cle], decor)
+    if nom in DECLENCHEURS:
+        hors = [e for e in c['coord_events'] if e.get('script') not in {a.get('script') for a in av['coord_events']}]
+        c['coord_events'] = declencheurs(av['coord_events'], DECLENCHEURS[nom], decor, fd) + hors
+    if nom in PANNEAUX:
+        t = PANNEAUX[nom]
+        c['bg_events'] = [b for b in c['bg_events'] if b.get('script') not in t and (b['x'], b['y']) not in t.values()]
+        for b in copy.deepcopy(av['bg_events']):
+            if b.get('script') in t and b['script'] not in {x.get('script') for x in c['bg_events']}:
+                b['x'], b['y'] = t[b['script']]; b['elevation'] = 0; c['bg_events'].append(b)
+    ecrire(chemin(fd), c)
+
+# 4 quater. Portes dont l'arrivée est imposée.
+for nom, t in PORTES_FORCEES.items():
+    c = lire(chemin(nom + '_Frlg'))
+    for i, (carte, num) in t.items(): c['warp_events'][i]['dest_map'] = carte; c['warp_events'][i]['dest_warp_id'] = num
+    ecrire(chemin(nom + '_Frlg'), c)
 
 # 5. Scripts : sur un décor Heart & Soul, les commandes qui redessinent l'ancien décor sont neutralisées.
 for fd in interieurs:
