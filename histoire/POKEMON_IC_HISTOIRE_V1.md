@@ -136,7 +136,7 @@ Je propose trois catégories, pour que chaque présence ait une raison différen
 
 **Les voyageurs du monde A.** Ils existent normalement ici et viennent par bateau. Brice a 15 ans, il a fini son aventure de Hoenn depuis trois ans. Des Pokémon de Hoenn apparaissent à Kanto sans explication, et Pierre Rochard ou le Professeur Seko l'envoie enquêter. Il sert de regard extérieur compétent, et de rival qui n'a aucun souvenir de Red à récupérer.
 
-**Les naufragés du monde B.** Luka était aux Colonnes Lances pour arrêter Red B et il est tombé avec lui. Son rôle est idéal pour une raison précise : il lit l'aura, et l'aura ne se réécrit pas. Il est le seul à sentir que le garçon sans nom a la même aura que « Red ». Il devient le guide, et il peut aider à regagner la confiance des Pokémon puisque c'est son domaine (dans Platine, il offre un œuf de Riolu).
+**Les naufragés du monde B.** Luka était aux Colonnes Lances pour arrêter Red B et il est tombé avec lui. Son rôle est idéal pour une raison précise : c'est lui qui porte le Cube D. Le cube a six faces, une par Pokémon de Red, et il réagit à Red et à personne d'autre. Le monde a oublié le garçon sans nom, mais le cube s'allume près de lui : c'est ainsi que Luka le reconnaît. Il devient le guide et confie le cube au joueur.
 
 Luka apporte aussi le moment le plus dur de l'histoire. Il y a un Luka du monde A, bien ancré sur l'Île de Fer. Le Luka B est donc en train de s'effacer lui aussi, il le sait, et il aide quand même. Sa disparition au milieu du jeu montre au joueur ce qui l'attend s'il échoue, sans une ligne d'explication.
 
@@ -208,8 +208,6 @@ L'acte 1 commence au pied du mont : Red se réveille avec Pikachu et rien d'autr
 **Red A et Red B** (équipe de HeartGold et SoulSilver) : Pikachu 88, Florizarre 84, Dracaufeu 84, Tortank 84, Ronflex 82, Lokhlass 80.
 
 **Luka** (il reprend Lucas, le héros de Platine) : Étouraptor 75, Torterra 78, Lucario 76, Togekiss 76, Givrali 75 et Porygon-Z 76, l'équipe du Lucas de Platine en version adulte. Givrali a été retenu plutôt que Phyllali, parce que Torterra couvre déjà le type Plante.
-
-**Problème à régler : l'aura.** La section 5 fait de Luka celui qui lit l'aura. C'était le don de Riley (Lucario). Lucas n'a pas ce don dans le canon, même s'il garde un Lucario. Il faut soit justifier le don par son Lucario, soit donner un autre moyen à Luka de reconnaître Red.
 
 **Acte 1, « Personne ».** Red A se réveille au pied de la montagne avec Pikachu. Il rencontre Gold, puis Luka qui lui explique la règle en trois phrases. La scène pivot de l'acte est à Bourg Palette : sa mère lui ouvre, ne le reconnaît pas, et on voit Red B assis à sa table. Elle a pourtant mis une assiette de trop sans savoir pourquoi. Le joueur récupère un ou deux Pokémon.
 
