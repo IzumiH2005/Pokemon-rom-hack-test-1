@@ -1,6 +1,0 @@
-rep h w 6 36 11 40
-rep R h 6 36 11 40
-rep h w 30 45 35 49
-rep R h 30 45 35 49
-rep h w 54 54 59 58
-rep R h 54 54 59 58
