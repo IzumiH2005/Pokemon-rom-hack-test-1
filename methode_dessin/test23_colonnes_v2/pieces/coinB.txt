@@ -1,0 +1,31 @@
+hline . 0 9 0
+px O 10 0
+hline . 0 8 1
+px O 9 1
+px W 10 1
+hline . 0 7 2
+px O 8 2
+px W 9 2
+hline . 0 6 3
+px O 7 3
+px W 8 3
+hline . 0 5 4
+px O 6 4
+px W 7 4
+hline . 0 4 5
+px O 5 5
+px W 6 5
+hline . 0 3 6
+px O 4 6
+px W 5 6
+hline . 0 2 7
+px O 3 7
+px W 4 7
+hline . 0 1 8
+px O 2 8
+px W 3 8
+hline . 0 0 9
+px O 1 9
+px W 2 9
+vline O 0 10 61
+rect g 37 4 38 61

@@ -1,0 +1,64 @@
+# bloc dressé, commun aux deux blocs : dessus vu de haut, face à facettes, deux moulures
+frame O 0 0 36 61
+rect L 1 1 35 16
+hline B 1 35 1
+vline W 1 2 16
+hline W 1 35 17
+stamp pieces/face_bloc.txt 0 18
+stamp pieces/face_bloc.txt 0 19
+stamp pieces/face_bloc.txt 0 20
+stamp pieces/face_bloc.txt 0 21
+stamp pieces/face_bloc.txt 0 22
+stamp pieces/face_bloc.txt 0 23
+stamp pieces/face_bloc.txt 0 24
+stamp pieces/face_bloc.txt 0 25
+stamp pieces/face_bloc.txt 0 26
+stamp pieces/face_bloc.txt 0 27
+stamp pieces/face_bloc.txt 0 28
+stamp pieces/face_bloc.txt 0 29
+stamp pieces/face_bloc.txt 0 30
+stamp pieces/face_bloc.txt 0 31
+stamp pieces/face_bloc.txt 0 32
+stamp pieces/face_bloc.txt 0 33
+stamp pieces/face_bloc.txt 0 34
+stamp pieces/face_bloc.txt 0 35
+stamp pieces/face_bloc.txt 0 36
+stamp pieces/face_bloc.txt 0 37
+stamp pieces/face_bloc.txt 0 38
+stamp pieces/face_bloc.txt 0 39
+stamp pieces/face_bloc.txt 0 40
+stamp pieces/face_bloc.txt 0 41
+stamp pieces/face_bloc.txt 0 42
+stamp pieces/face_bloc.txt 0 43
+stamp pieces/face_bloc.txt 0 44
+stamp pieces/face_bloc.txt 0 45
+stamp pieces/face_bloc.txt 0 46
+stamp pieces/face_bloc.txt 0 47
+stamp pieces/face_bloc.txt 0 48
+stamp pieces/face_bloc.txt 0 49
+stamp pieces/face_bloc.txt 0 50
+stamp pieces/face_bloc.txt 0 51
+stamp pieces/face_bloc.txt 0 52
+stamp pieces/face_bloc.txt 0 53
+stamp pieces/face_bloc.txt 0 54
+stamp pieces/face_bloc.txt 0 55
+stamp pieces/face_bloc.txt 0 56
+stamp pieces/face_bloc.txt 0 57
+stamp pieces/face_bloc.txt 0 58
+stamp pieces/face_bloc.txt 0 59
+stamp pieces/face_bloc.txt 0 60
+hline O 0 36 61
+stamp pieces/bande_bloc.txt 0 22
+stamp pieces/bande_bloc.txt 0 48
+hline d 1 35 60
+# fissures du dessus
+line n 9 4 13 8
+line n 13 8 12 13
+px L 14 8 13 13
+# motif gravé : losange
+px n 14 30 13 31 15 31 14 32
+px L 14 33 16 32
+# fissure de la face
+line d 9 36 11 40
+line d 11 40 10 45
+px W 12 40 11 45

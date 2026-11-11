@@ -23,7 +23,7 @@ Les scripts de rendu lisent `/home/user/refs/pokeplatinum` en dur et écrivent d
 2. `python3 couches.py` découpe la zone utile (34x57 métatuiles) et sépare deux couches : `carte_bas.png` pour le sol, `carte_haut.png` pour les colonnes qui passent devant le joueur.
 3. `python3 construire.py <dossier_rendu> <pokeplatinum> <jeu>` convertit les deux couches en tuiles GBA (couleurs 15 bits, palettes de 15 couleurs, tuiles dédoublonnées avec miroirs) et écrit la carte. Les collisions viennent du bit 15 de la grille Platine. Le palier et l'escalier nord, cachés derrière l'esplanade dans la vue GBA, restent fermés.
 4. `python3 installer.py <jeu>` déclare le jeu de tuiles, le layout et la carte dans le jeu. On peut le relancer sans doublon.
-5. Pour les colonnes dessinées à la main, on rend le terrain sans objets (`rendu2.py 1.0 1 --sans`), on lance `couches.py`, puis `python3 composer.py <dossier_rendu> <pokeplatinum> ../../methode_dessin/test22_colonnes_lance/colonnes`. Le script efface aussi les huit colonnes et les gravats que porte le terrain de Platine, puis pose les dessins de `test22` à leur place. Chaque dessin passe devant le joueur au-dessus de la rangée de tuiles de son pied.
+5. Pour les colonnes dessinées à la main, on rend le terrain sans objets (`rendu2.py 1.0 1 --sans`), on lance `couches.py`, puis `python3 composer.py <dossier_rendu> <pokeplatinum> ../../methode_dessin/test23_colonnes_v2/colonnes`. Le script efface aussi les huit colonnes et les gravats que porte le terrain de Platine, puis pose les dessins de `test23` à leur place. Chaque dessin passe devant le joueur au-dessus de la rangée de tuiles de son pied.
 6. `make firered` reconstruit la ROM, puis `python3 apercu.py` recompose la carte depuis les fichiers GBA pour vérifier le résultat.
 
 `nitro.py` et `bmd.py` lisent les formats Nintendo DS (NSBTX, NSBMD : textures, matériaux, commandes de dessin).
@@ -36,7 +36,7 @@ Pour tester, on place le joueur sur l'escalier sud en (16, 49) ou (16, 50). L'au
 
 ## Limites
 
-- Les colonnes viennent de `methode_dessin/test22_colonnes_lance` : six colonnes (trois pointues, trois brisées), deux tailles hautes pour le terrain, deux groupes de ruines et un tas de gravats, tous dessinés au pixel.
+- Les colonnes viennent de `methode_dessin/test23_colonnes_v2` (style Platine) : quatre pointues et quatre brisées, deux groupes de ruines et un tas de gravats, tous dessinés au pixel.
 - La vue oblique écrase les reliefs : les colonnes debout couvrent jusqu'à quatre métatuiles vers le haut.
 - Les lumières et le brouillard de Platine manquent.
 - La scène elle-même (PNJ, Dialga, Palkia, combat) reste à écrire.

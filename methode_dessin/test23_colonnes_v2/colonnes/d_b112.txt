@@ -1,0 +1,18 @@
+# usure b112
+px O 16 8 17 8
+px L 16 9 17 9
+px . 19 9
+px O 19 10
+px n 13 38
+px m 14 38 17 25 16 70 17 70
+px L 14 39 17 26
+line d 19 52 18 56
+line d 18 56 19 60
+px L 18 57
+px . 6 59
+px D 7 59
+px B 7 60
+px . 31 84
+px O 30 84 31 85
+px L 30 85
+line m 3 96 5 99

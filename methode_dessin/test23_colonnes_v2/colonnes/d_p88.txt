@@ -1,0 +1,7 @@
+# usure p88
+px n 16 50
+px m 17 50
+px L 17 51
+line d 20 36 19 40
+px d 9 80 9 81 10 82
+px L 10 80

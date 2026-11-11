@@ -16,3 +16,9 @@ La première série (test22) restait plate : un fût vu de face posé sur un rec
 ## Passage au style Platine
 
 La colonne reprend la gamme crème olive du sol de Platine (#eee6c5 à #736a41, contour #4f4628), sans violet ni noir. Le fût porte de grandes facettes plates au lieu de cannelures. Le dessus de la cassure montre des fissures en étoile autour d'un point d'impact, et les joints côté ombre passent en brun clair pour adoucir le contour.
+
+## Série complète
+
+`assembler.sh nom type hauteur "joints"` monte une colonne à partir des pièces de `pieces/` : la base (dalle, tore, ombre) en bas, le fût répété, le pied, puis le sommet. Le type `brise` pose `cassure.txt`, `brise2` pose `cassure2.txt` (cassure en biais, haute à gauche) et `pointe` pose la pointe à facettes et son collier. Les fichiers `colonnes/d_*.txt` ajoutent l'usure propre à chaque colonne.
+
+Les ruines (`c_ruine_g`, `c_ruine_d`) assemblent deux blocs dressés à coins cassés (`blocA`, `blocB`, faits de `bloc.txt` et des coins) et trois cubes. `gravats.txt` dessine un tas de trois pierres rondes. `composer.py` (test16) pose le tout sur la carte.

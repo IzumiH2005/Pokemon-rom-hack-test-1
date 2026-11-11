@@ -1,0 +1,61 @@
+# colonne b84 : brise, hauteur 84, joints à 30 45
+stamp pieces/base.txt 0 56
+stamp pieces/fut.txt 6 20
+stamp pieces/fut.txt 6 21
+stamp pieces/fut.txt 6 22
+stamp pieces/fut.txt 6 23
+stamp pieces/fut.txt 6 24
+stamp pieces/fut.txt 6 25
+stamp pieces/fut.txt 6 26
+stamp pieces/fut.txt 6 27
+stamp pieces/fut.txt 6 28
+stamp pieces/fut.txt 6 29
+stamp pieces/fut.txt 6 30
+stamp pieces/fut.txt 6 31
+stamp pieces/fut.txt 6 32
+stamp pieces/fut.txt 6 33
+stamp pieces/fut.txt 6 34
+stamp pieces/fut.txt 6 35
+stamp pieces/fut.txt 6 36
+stamp pieces/fut.txt 6 37
+stamp pieces/fut.txt 6 38
+stamp pieces/fut.txt 6 39
+stamp pieces/fut.txt 6 40
+stamp pieces/fut.txt 6 41
+stamp pieces/fut.txt 6 42
+stamp pieces/fut.txt 6 43
+stamp pieces/fut.txt 6 44
+stamp pieces/fut.txt 6 45
+stamp pieces/fut.txt 6 46
+stamp pieces/fut.txt 6 47
+stamp pieces/fut.txt 6 48
+stamp pieces/fut.txt 6 49
+stamp pieces/fut.txt 6 50
+stamp pieces/fut.txt 6 51
+stamp pieces/fut.txt 6 52
+stamp pieces/fut.txt 6 53
+stamp pieces/fut.txt 6 54
+stamp pieces/fut.txt 6 55
+stamp pieces/fut.txt 6 56
+stamp pieces/fut.txt 6 57
+stamp pieces/fut.txt 6 58
+stamp pieces/fut.txt 6 59
+stamp pieces/fut.txt 6 60
+stamp pieces/fut.txt 6 61
+stamp pieces/fut.txt 6 62
+stamp pieces/pied.txt 6 63
+stamp pieces/cassure.txt 6 4
+stamp pieces/joint.txt 6 30
+stamp pieces/joint.txt 6 45
+# usure b84
+px O 16 8 17 8
+px L 16 9 17 9
+px . 19 9
+px O 19 10
+px n 14 38
+px m 15 38
+px L 15 39
+line d 20 50 19 54
+px . 31 56
+px O 30 56 31 57
+px L 30 57
