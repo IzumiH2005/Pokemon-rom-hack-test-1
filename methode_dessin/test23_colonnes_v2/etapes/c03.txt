@@ -1,0 +1,132 @@
+# dalle
+frame O 0 52 31 77
+rect L 1 53 30 70
+hline W 1 30 53
+vline W 1 53 70
+hline W 1 30 71
+rect m 1 72 30 76
+vline B 1 72 76
+rect n 23 72 30 76
+hline d 1 30 76
+# ombre au sol
+rect g 32 55 33 79
+rect g 3 78 33 79
+# AO sur la dalle autour du tore
+rows B 58 1 30 1 30 1 30 1 30 1 30 1 30 1 30 1 30 1 30 1 30 2 29 3 28 4 27
+stamp tore.txt 2 54
+# fût
+stamp fut.txt 6 20
+stamp fut.txt 6 21
+stamp fut.txt 6 22
+stamp fut.txt 6 23
+stamp fut.txt 6 24
+stamp fut.txt 6 25
+stamp fut.txt 6 26
+stamp fut.txt 6 27
+stamp fut.txt 6 28
+stamp fut.txt 6 29
+stamp fut.txt 6 30
+stamp fut.txt 6 31
+stamp fut.txt 6 32
+stamp fut.txt 6 33
+stamp fut.txt 6 34
+stamp fut.txt 6 35
+stamp fut.txt 6 36
+stamp fut.txt 6 37
+stamp fut.txt 6 38
+stamp fut.txt 6 39
+stamp fut.txt 6 40
+stamp fut.txt 6 41
+stamp fut.txt 6 42
+stamp fut.txt 6 43
+stamp fut.txt 6 44
+stamp fut.txt 6 45
+stamp fut.txt 6 46
+stamp fut.txt 6 47
+stamp fut.txt 6 48
+stamp fut.txt 6 49
+stamp fut.txt 6 50
+stamp fut.txt 6 51
+stamp fut.txt 6 52
+stamp fut.txt 6 53
+stamp fut.txt 6 54
+stamp fut.txt 6 55
+stamp fut.txt 6 56
+stamp fut.txt 6 57
+stamp fut.txt 6 58
+stamp f59.txt 6 59
+stamp f60.txt 6 60
+stamp f61.txt 6 61
+# AO au pied du fût
+px B 6 59 7 60
+hline B 8 10 61
+hline m 11 16 62
+hline n 17 20 62
+hline m 21 23 61
+px m 24 60 25 59
+# joints des tambours
+px n 7 30
+px W 7 31
+px n 8 31
+px W 8 32
+px n 9 31
+px W 9 32
+px n 10 31
+px W 10 32
+px n 11 32
+px W 11 33
+px n 12 32
+px W 12 33
+px n 13 32
+px W 13 33
+px n 14 32
+px W 14 33
+px n 15 32
+px W 15 33
+px n 16 32
+px W 16 33
+px n 17 32
+px n 18 32
+px O 19 32
+px n 19 33
+px O 20 32
+px n 20 33
+px O 21 31
+px n 21 32
+px O 22 31
+px n 22 32
+px O 23 31
+px O 24 30
+px n 7 45
+px W 7 46
+px n 8 46
+px W 8 47
+px n 9 46
+px W 9 47
+px n 10 46
+px W 10 47
+px n 11 47
+px W 11 48
+px n 12 47
+px W 12 48
+px n 13 47
+px W 13 48
+px n 14 47
+px W 14 48
+px n 15 47
+px W 15 48
+px n 16 47
+px W 16 48
+px n 17 47
+px n 18 47
+px O 19 47
+px n 19 48
+px O 20 47
+px n 20 48
+px O 21 46
+px n 21 47
+px O 22 46
+px n 22 47
+px O 23 46
+px O 24 45
+stamp cassure.txt 6 4

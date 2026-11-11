@@ -1,0 +1,36 @@
+# usure : bord arrière de la cassure dentelé
+px O 16 8 17 8
+px L 16 9 17 9
+px . 19 9
+px O 19 10
+# piqûres (creux sombre, lèvre claire dessous)
+px n 13 38
+px m 14 38
+px L 14 39
+px m 17 25
+px L 17 26
+px n 16 53
+px m 17 53
+px m 10 56
+px m 20 40
+px n 18 22
+# fissure du tambour du milieu
+line d 19 34 18 38
+line d 18 38 19 42
+px L 18 39
+# éclat sur l'arête gauche au joint bas
+px . 6 44
+px D 7 44
+px B 7 45
+# éclat sur l'arête droite, haut du fût
+px . 25 23
+px O 24 23
+# dalle : coin arrière droit ébréché, fissures
+px . 31 52
+px O 30 52
+px O 31 53
+px L 30 53
+line m 3 64 5 67
+px d 9 72 9 73 10 74
+px L 10 72
+px B 26 72 27 72
