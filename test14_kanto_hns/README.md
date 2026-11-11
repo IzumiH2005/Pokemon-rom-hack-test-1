@@ -40,3 +40,19 @@ d'histoire retirés.
 - Lieux absents de HnS (Tour Pokémon, Manoir, Parc Safari, Centrale, Repaire Rocket, Sylphe, Océane) :
   à redessiner avec les tilesets HnS.
 - Animations de porte de HnS non reprises.
+
+## Intérieurs des villes et des routes
+
+`outils/basculer_interieurs.py <pokemonHnS> <jeu>` se lance après `basculer_exterieurs.py`. Il associe chaque
+intérieur de Rouge Feu à celui de Heart & Soul par les portes : deux portes posées sur la même case d'un extérieur
+mènent au même bâtiment. Les étages sans porte sur l'extérieur sont listés dans `ETAGES`. Le résultat est écrit dans
+`outils/paires_interieurs.json` (78 intérieurs).
+
+Chaque intérieur reprend le décor et les portes de Heart & Soul. Les PNJ de Rouge Feu gardent leurs scripts et
+prennent la place d'un PNJ de Heart & Soul de même rôle (infirmière, vendeur, dresseur, passant, objet), sinon la
+case accessible la plus proche. `outils/tables.py` contient les tables écrites à la main : `PORTES` pour les
+extérieurs et `PLACES` pour les scènes à placer case par case (Labo de Chen).
+
+`outils/rapport_interieurs.txt` liste ce qui reste à reprendre : les étages des Centres Pokémon (Heart & Soul n'a
+qu'un niveau), l'ascenseur du Centre Commercial, l'entrée du Repaire Rocket au Casino, les étages des postes de
+garde et les déclencheurs retirés.
