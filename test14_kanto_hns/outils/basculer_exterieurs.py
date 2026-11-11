@@ -25,7 +25,7 @@ VILLES = ['PalletTown', 'ViridianCity', 'PewterCity', 'CeruleanCity', 'LavenderT
 CARTES = VILLES + [f'Route{i}' for i in range(1, 21)] + ['Route21_North', 'Route22', 'Route24', 'Route25']
 # Route 23 et Plateau Indigo attendent la zone de la Ligue (Routes 26 et 27, Route Victoire).
 
-from tables import PORTES, PORTE_DEPLACEE, RETOUCHES
+from tables import PORTES, PORTE_DEPLACEE, RETOUCHES, DECLENCHEURS, PANNEAUX, TRANSFERTS
 
 EAU = set(range(0x10, 0x18))
 rapport = []
@@ -267,5 +267,11 @@ for e in s['heal_locations']:
     if e['map'] in pc and e['id'].startswith('HEAL_LOCATION_') and 'respawn_map' in e and 'POKEMON_CENTER' in e['respawn_map']:
         e['x'], e['y'] = pc[e['map']]
 ecrire(p, s)
+# Les déclencheurs et panneaux que `basculer_interieurs.py` repose à la main ne sont pas des pertes.
+def repose(ligne):
+    nom, _, reste = ligne.partition(': ')
+    poses = list(DECLENCHEURS.get(nom, {})) + list(PANNEAUX.get(nom, {})) + [t[1] for t in TRANSFERTS if t[0] == nom]
+    return any(f' {s} retiré' in reste for s in poses)
+rapport = [l for l in rapport if not repose(l)]
 open(f'{ICI}/rapport_exterieurs.txt', 'w').write('\n'.join(rapport) + '\n')
 print(len(rapport), 'points dans le rapport')

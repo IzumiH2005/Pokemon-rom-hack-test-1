@@ -90,7 +90,7 @@ commandes `setmetatile` des scripts sont mises en commentaire, car elles redessi
 Huit entrées ont été vérifiées en jeu : Caverne Azurée, Arène des Îles Écume, Centrale, souterrain de la Route 5,
 boutique du Mont Sélénite, Portail vers la Route 26, Chutes Tohjo, maison de la Route 26.
 
-Points ouverts : les scènes du fossile et d'Artikodin sont à réécrire sur les nouveaux étages, les énigmes à
+Points ouverts : les énigmes à
 interrupteurs (Carmin, Route Victoire, Arène d'Auguste) sont désactivées, la maison de la Route 27 et la grotte de
 la Route 19 n'ont pas d'accès.
 
@@ -110,5 +110,29 @@ bord (`SCRIPTS_AJOUTES`, `DECLENCHEURS_AJOUTES`). Le ferry des îles Sevii accos
 Vérifié en jeu : paiement à l'entrée du Safari, arrivée dans la zone, retour et sortie ; jetée de Carmin, hall du
 port, refus sans billet, embarquement avec le billet, retour à quai et sortie vers la jetée.
 
-Points ouverts : la scène du départ de l'Océane et l'arrivée du ferry ne sont pas encore jouées en jeu, la maison du
-Gardien et le bureau du Safari n'ont pas de bâtiment à Parmanie.
+La scène du départ de l'Océane a été jouée en jeu : le navire quitte le quai puis le joueur ressort sur la jetée.
+L'arrivée du ferry des îles Sevii reste à jouer en jeu.
+
+## Dernière passe : scènes et portes perdues
+
+Le Mont Sélénite retrouve la scène des fossiles. Miguel, les deux fossiles et le déclencheur passent du B2F de
+Rouge Feu à la salle équivalente du 1F de Heart & Soul (`TRANSFERTS`), et une retouche de décor ouvre le passage.
+L'Arène d'Auguste garde la grotte de Heart & Soul mais s'ouvre sur Cramois'Île, avec le verrou de la Clé Secrète
+et la scène de Léo ; l'échelle des Îles Écume mène chez Artikodin (`PORTES_FORCEES`).
+
+Plusieurs bâtiments de Rouge Feu n'avaient pas de porte dans le décor importé. Une porte est dessinée sur une
+façade libre (`RETOUCHES`) et reliée par `PORTES` : maison du Gardien et maison 3 à Parmanie, une maison et le
+Fan Club à Safran, les maisons 4 et 5 à Azuria, la salle des lots, l'hôtel et une maison à Céladopole. Chacune a
+été vérifiée en jeu, à l'entrée et à la sortie.
+
+Les postes à étage de Rouge Feu n'ont qu'un niveau dans Heart & Soul : les occupants de l'étage des Routes 15, 16
+et 18 descendent au rez-de-chaussée (`HABITANTS`, `PLACES`).
+
+Scènes vérifiées en jeu : guide d'Argenta, garde du poste de Safran, rival de la Route 22 (déclencheurs en place),
+premier garde de badge de la Route 23, départ de l'Océane. Sur la Route 23, les gardes se tiennent après la Route
+Victoire, car Heart & Soul place la route entre la grotte et le Plateau Indigo.
+
+Le rapport des extérieurs ne liste plus les déclencheurs et panneaux reposés à la main par l'étape des intérieurs.
+
+Points ouverts : bureau du Safari sans bâtiment, étage des Centres Pokémon sans accès, ascenseur du Grand Magasin,
+étages fusionnés des Îles Écume et du Mont Sélénite, énigmes à interrupteurs désactivées, Repaire Rocket reporté.

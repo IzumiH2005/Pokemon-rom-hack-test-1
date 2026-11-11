@@ -1,10 +1,3 @@
-PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerTop retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerMid retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerBottom retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerRight retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerTop retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerMid retiré, à réécrire
-PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerBottom retiré, à réécrire
 CeruleanCity: porte (10, 8) vers MAP_CERULEAN_CITY_HOUSE1 sans bâtiment dans HnS
 CeruleanCity: porte (31, 8) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
 CeruleanCity: porte (31, 9) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
@@ -13,18 +6,13 @@ CeruleanCity: panneau CeruleanCity_BikeShop_EventScript_Bicycle retiré (aucun p
 VermilionCity: porte (22, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
 VermilionCity: porte (23, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
 VermilionCity: porte (24, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
-VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketLeft retiré, à réécrire
 VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketRight retiré, à réécrire
-VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
-VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
 CeladonCity: panneau CeladonCity_EventScript_DeptStoreSign retiré (aucun panneau libre dans le décor)
 CeladonCity: panneau CeladonCity_EventScript_GymSign retiré (aucun panneau libre dans le décor)
 FuchsiaCity: porte (28, 16) vers MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE sans bâtiment dans HnS
 FuchsiaCity: panneau FuchsiaCity_EventScript_LaprasSign retiré (aucun panneau libre dans le décor)
 FuchsiaCity: panneau FuchsiaCity_EventScript_SafariGameSign retiré (aucun panneau libre dans le décor)
-CinnabarIsland: panneau CinnabarIsland_EventScript_GymSign retiré (aucun panneau libre dans le décor)
 CinnabarIsland: panneau CinnabarIsland_EventScript_PokemonLabSign retiré (aucun panneau libre dans le décor)
-CinnabarIsland: déclencheur CinnabarIsland_EventScript_GymDoorLocked retiré, à réécrire
 SaffronCity: panneau SaffronCity_EventScript_SilphProductSign retiré (aucun panneau libre dans le décor)
 SaffronCity: panneau SaffronCity_EventScript_TrainerTips2 retiré (aucun panneau libre dans le décor)
 SaffronCity: panneau SaffronCity_EventScript_TrainerFanClubSign retiré (aucun panneau libre dans le décor)
@@ -53,9 +41,3 @@ Route17: panneau Route17_EventScript_CyclingRoadSign retiré (aucun panneau libr
 Route18: panneau Route18_EventScript_CyclingRoadSign retiré (aucun panneau libre dans le décor)
 Route20: dresseur PICNICKER_FRLG placé au plus près en (17,14)
 Route21_North: dresseur FISHER placé au plus près en (7,28)
-Route22: déclencheur Route22_EventScript_EarlyRivalTriggerTop retiré, à réécrire
-Route22: déclencheur Route22_EventScript_EarlyRivalTriggerMid retiré, à réécrire
-Route22: déclencheur Route22_EventScript_EarlyRivalTriggerBottom retiré, à réécrire
-Route22: déclencheur Route22_EventScript_LateRivalTriggerTop retiré, à réécrire
-Route22: déclencheur Route22_EventScript_LateRivalTriggerMid retiré, à réécrire
-Route22: déclencheur Route22_EventScript_LateRivalTriggerBottom retiré, à réécrire
