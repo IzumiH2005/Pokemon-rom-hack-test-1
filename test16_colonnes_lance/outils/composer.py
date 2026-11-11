@@ -70,8 +70,8 @@ for n, wx, wz in props:
         # nord-sud côté allée centrale (est pour le groupe ouest)
         x0, y0 = int(wx) - 24, int(wz) + 104
         ouest = wx < 256
-        # à l'ouest, seule la première reste : la seconde masquait sa voisine
-        for c, nom in ((x0 + 19, 'b84'),) if ouest else ((x0 + 21, 'b70'), (x0 + 61, 'b84')):
+        # une seule reste de chaque côté : l'autre masquait sa voisine
+        for c, nom in ((x0 + 19, 'b84'),) if ouest else ((x0 + 61, 'b84'),):
             im = np.array(Image.open(f'{DESS}/{nom}.png').convert('RGBA'))
             h, w = im.shape[:2]
             elems.append((im, c - w // 2, y0 + 61 - h + 1, [(0, h - 1, y0 + 61)]))
