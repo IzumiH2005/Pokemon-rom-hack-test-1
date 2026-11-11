@@ -22,12 +22,21 @@ l'école). Deux panneaux « Astuces » manquent dans le décor HnS : le script r
 Portes des maisons, du labo, du Centre et de l'école, raccords Bourg Palette / Route 1 / Jadielle,
 script de Chen, Arène fermée et panneaux fonctionnent.
 
+## Tous les extérieurs
+
+`outils/basculer_exterieurs.py <pokemonHnS> <jeu>` passe les dix villes et les Routes 1 à 22, 24 et
+25 sur le décor HnS. Les portes suivent une table écrite à la main, les connexions reprennent celles
+de HnS, et les PNJ de Rouge Feu se replacent seuls : case d'origine décalée si elle reste valide,
+sinon place d'un PNJ HnS de même rôle. `outils/rapport_exterieurs.txt` liste ce que le script n'a
+pas pu placer : portes de bâtiments absents du Kanto de HnS, panneaux sans support, déclencheurs
+d'histoire retirés.
+
 ## Ce qui reste
 
-- Les intérieurs de la zone gardent le décor de Rouge Feu. Ceux de HnS ont d'autres dimensions :
-  chaque PNJ et chaque porte doit être replacé à la main.
-- Route 2, Route 22 et Route 21 gardent leur ancien tileset, donc le raccord visuel avec la zone 1
-  est faux tant qu'elles ne sont pas basculées.
-- Les animations de porte de HnS ne sont pas reprises.
-- Les autres villes ont été redessinées dans HnS (tailles et portes différentes). Les Routes 3, 5,
-  18, 19, 20 et 24 sont identiques, les Routes 4, 9, 14, 15, 16 et 17 presque.
+- Zone de la Ligue : Route 23, Plateau Indigo, Routes 26 et 27, Route Victoire. La Route 22 mène
+  encore à l'ancienne Route 23.
+- Port de Carmin, extérieur du Mont Sélénite : cartes HnS sans équivalent, à créer.
+- Intérieurs et donjons : encore en décor Rouge Feu.
+- Lieux absents de HnS (Tour Pokémon, Manoir, Parc Safari, Centrale, Repaire Rocket, Sylphe, Océane) :
+  à redessiner avec les tilesets HnS.
+- Animations de porte de HnS non reprises.

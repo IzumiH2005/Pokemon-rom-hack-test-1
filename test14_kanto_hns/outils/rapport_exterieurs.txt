@@ -1,0 +1,71 @@
+PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerTop retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerMid retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerBottom retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_GymGuideTriggerRight retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerTop retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerMid retiré, à réécrire
+PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerBottom retiré, à réécrire
+CeruleanCity: porte (10, 8) vers MAP_CERULEAN_CITY_HOUSE1 sans bâtiment dans HnS
+CeruleanCity: porte (31, 8) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
+CeruleanCity: porte (31, 9) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
+CeruleanCity: porte (23, 28) vers MAP_CERULEAN_CITY_HOUSE4 sans bâtiment dans HnS
+CeruleanCity: porte (17, 11) vers MAP_CERULEAN_CITY_HOUSE5 sans bâtiment dans HnS
+CeruleanCity: panneau CeruleanCity_BikeShop_EventScript_Bicycle retiré (aucun panneau libre dans le décor)
+CeruleanCity: panneau CeruleanCity_BikeShop_EventScript_Bicycle retiré (aucun panneau libre dans le décor)
+VermilionCity: porte (22, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
+VermilionCity: porte (23, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
+VermilionCity: porte (24, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
+VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketLeft retiré, à réécrire
+VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketRight retiré, à réécrire
+VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
+VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
+CeladonCity: porte (39, 20) vers MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM sans bâtiment dans HnS
+CeladonCity: porte (49, 29) vers MAP_CELADON_CITY_HOTEL sans bâtiment dans HnS
+CeladonCity: panneau CeladonCity_EventScript_DeptStoreSign retiré (aucun panneau libre dans le décor)
+CeladonCity: panneau CeladonCity_EventScript_GymSign retiré (aucun panneau libre dans le décor)
+FuchsiaCity: porte (33, 31) vers MAP_FUCHSIA_CITY_WARDENS_HOUSE sans bâtiment dans HnS
+FuchsiaCity: porte (28, 16) vers MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE sans bâtiment dans HnS
+FuchsiaCity: panneau FuchsiaCity_EventScript_LaprasSign retiré (aucun panneau libre dans le décor)
+FuchsiaCity: panneau FuchsiaCity_EventScript_SafariGameSign retiré (aucun panneau libre dans le décor)
+CinnabarIsland: porte (8, 3) vers MAP_POKEMON_MANSION_1F sans bâtiment dans HnS
+CinnabarIsland: porte (20, 4) vers MAP_CINNABAR_ISLAND_GYM sans bâtiment dans HnS
+CinnabarIsland: porte (8, 9) vers MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE sans bâtiment dans HnS
+CinnabarIsland: porte (19, 11) vers MAP_CINNABAR_ISLAND_MART sans bâtiment dans HnS
+CinnabarIsland: panneau CinnabarIsland_EventScript_GymSign retiré (aucun panneau libre dans le décor)
+CinnabarIsland: panneau CinnabarIsland_EventScript_PokemonLabSign retiré (aucun panneau libre dans le décor)
+SaffronCity: porte (27, 21) vers MAP_SAFFRON_CITY_HOUSE sans bâtiment dans HnS
+SaffronCity: porte (47, 21) vers MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB sans bâtiment dans HnS
+SaffronCity: panneau SaffronCity_EventScript_SilphProductSign retiré (aucun panneau libre dans le décor)
+SaffronCity: panneau SaffronCity_EventScript_TrainerTips2 retiré (aucun panneau libre dans le décor)
+SaffronCity: panneau SaffronCity_EventScript_TrainerFanClubSign retiré (aucun panneau libre dans le décor)
+Route4: panneau Route4_EventScript_RouteSign retiré (aucun panneau libre dans le décor)
+Route9: arbre CUTTABLE_TREE_FRLG placé au plus près en (2,8)
+Route9: panneau Route9_EventScript_RouteSign retiré (aucun panneau libre dans le décor)
+Route11: porte (6, 7) vers MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE sans bâtiment dans HnS
+Route11: porte (58, 10) vers MAP_ROUTE11_EAST_ENTRANCE_1F sans bâtiment dans HnS
+Route11: porte (65, 10) vers MAP_ROUTE11_EAST_ENTRANCE_1F sans bâtiment dans HnS
+Route11: objet ITEM_BALL placé au plus près en (63,17)
+Route11: objet ITEM_BALL placé au plus près en (13,7)
+Route11: panneau Route11_EventScript_DiglettsCaveSign retiré (aucun panneau libre dans le décor)
+Route12: porte (14, 15) vers MAP_ROUTE12_NORTH_ENTRANCE_1F sans bâtiment dans HnS
+Route12: porte (15, 15) vers MAP_ROUTE12_NORTH_ENTRANCE_1F sans bâtiment dans HnS
+Route12: porte (14, 21) vers MAP_ROUTE12_NORTH_ENTRANCE_1F sans bâtiment dans HnS
+Route14: arbre CUTTABLE_TREE_FRLG placé au plus près en (1,47)
+Route14: panneau Route14_EventScript_RouteSign retiré (aucun panneau libre dans le décor)
+Route16: arbre CUTTABLE_TREE_FRLG placé au plus près en (41,11)
+Route16: panneau Route16_EventScript_CyclingRoadSign retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_RouteSign retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_TrainerTips2 retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_TrainerTips1 retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_ItemsNotice retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_BallsNotice retiré (aucun panneau libre dans le décor)
+Route17: panneau Route17_EventScript_CyclingRoadSign retiré (aucun panneau libre dans le décor)
+Route18: panneau Route18_EventScript_CyclingRoadSign retiré (aucun panneau libre dans le décor)
+Route20: dresseur PICNICKER_FRLG placé au plus près en (17,14)
+Route21_North: dresseur FISHER placé au plus près en (7,28)
+Route22: déclencheur Route22_EventScript_EarlyRivalTriggerTop retiré, à réécrire
+Route22: déclencheur Route22_EventScript_EarlyRivalTriggerMid retiré, à réécrire
+Route22: déclencheur Route22_EventScript_EarlyRivalTriggerBottom retiré, à réécrire
+Route22: déclencheur Route22_EventScript_LateRivalTriggerTop retiré, à réécrire
+Route22: déclencheur Route22_EventScript_LateRivalTriggerMid retiré, à réécrire
+Route22: déclencheur Route22_EventScript_LateRivalTriggerBottom retiré, à réécrire
