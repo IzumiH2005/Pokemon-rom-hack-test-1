@@ -145,6 +145,7 @@ for nom in CARTES:
         w['_n'] = b
     for w in j['warp_events']:
         if '_n' in w: w['x'], w['y'] = w.pop('_n')
+        w['elevation'] = 0      # la porte vaut pour toute altitude : celles de Rouge Feu ne suivent pas le relief HnS
         if 'POKEMON_CENTER' in w['dest_map']: pc[j['id']] = (w['x'], w['y'] + 1)
     portes = {(w['x'], w['y']) for w in j['warp_events']}
 
