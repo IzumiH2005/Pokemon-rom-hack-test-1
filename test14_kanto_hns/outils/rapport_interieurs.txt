@@ -35,10 +35,13 @@ Route4_PokemonCenter_1F_Frlg: accès perdu vers MAP_ROUTE4_POKEMON_CENTER_2F
 Route10_PokemonCenter_1F_Frlg: accès perdu vers MAP_ROUTE10_POKEMON_CENTER_2F
 Route12_FishingHouse_Frlg: 1 élément(s) de décor retiré(s)
 Route15_WestEntrance_1F_Frlg: accès perdu vers MAP_ROUTE15_WEST_ENTRANCE_2F
+Route15_WestEntrance_2F: bâtiment absent de Heart & Soul, ses occupants sont dehors dans Route15_WestEntrance_1F
 Route16_NorthEntrance_1F_Frlg: accès perdu vers MAP_ROUTE16_NORTH_ENTRANCE_2F
+Route16_NorthEntrance_2F: bâtiment absent de Heart & Soul, ses occupants sont dehors dans Route16_NorthEntrance_1F
 Route16_NorthEntrance_1F_Frlg: déclencheur Route16_NorthEntrance_1F_EventScript_NeedBikeTriggerMidBottom retiré, à réécrire
 Route16_NorthEntrance_1F_Frlg: déclencheur Route16_NorthEntrance_1F_EventScript_NeedBikeTriggerBottom retiré, à réécrire
 Route18_EastEntrance_1F_Frlg: accès perdu vers MAP_ROUTE18_EAST_ENTRANCE_2F
+Route18_EastEntrance_2F: bâtiment absent de Heart & Soul, ses occupants sont dehors dans Route18_EastEntrance_1F
 Route18_EastEntrance_1F_Frlg: déclencheur Route18_EastEntrance_1F_EventScript_NeedBikeTriggerMidBottom retiré, à réécrire
 Route18_EastEntrance_1F_Frlg: déclencheur Route18_EastEntrance_1F_EventScript_NeedBikeTriggerBottom retiré, à réécrire
 Route25_SeaCottage_Frlg: 1 élément(s) de décor retiré(s)

@@ -8,8 +8,6 @@ PewterCity: déclencheur PewterCity_EventScript_RunningShoesAideTriggerBottom re
 CeruleanCity: porte (10, 8) vers MAP_CERULEAN_CITY_HOUSE1 sans bâtiment dans HnS
 CeruleanCity: porte (31, 8) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
 CeruleanCity: porte (31, 9) vers MAP_CERULEAN_CITY_HOUSE2 sans bâtiment dans HnS
-CeruleanCity: porte (23, 28) vers MAP_CERULEAN_CITY_HOUSE4 sans bâtiment dans HnS
-CeruleanCity: porte (17, 11) vers MAP_CERULEAN_CITY_HOUSE5 sans bâtiment dans HnS
 CeruleanCity: panneau CeruleanCity_BikeShop_EventScript_Bicycle retiré (aucun panneau libre dans le décor)
 CeruleanCity: panneau CeruleanCity_BikeShop_EventScript_Bicycle retiré (aucun panneau libre dans le décor)
 VermilionCity: porte (22, 34) vers MAP_SSANNE_EXTERIOR sans bâtiment dans HnS
@@ -19,19 +17,14 @@ VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketLeft retiré, �
 VermilionCity: déclencheur VermilionCity_EventScript_CheckTicketRight retiré, à réécrire
 VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
 VermilionCity: déclencheur VermilionCity_EventScript_ExitedTicketCheck retiré, à réécrire
-CeladonCity: porte (39, 20) vers MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM sans bâtiment dans HnS
-CeladonCity: porte (49, 29) vers MAP_CELADON_CITY_HOTEL sans bâtiment dans HnS
 CeladonCity: panneau CeladonCity_EventScript_DeptStoreSign retiré (aucun panneau libre dans le décor)
 CeladonCity: panneau CeladonCity_EventScript_GymSign retiré (aucun panneau libre dans le décor)
-FuchsiaCity: porte (33, 31) vers MAP_FUCHSIA_CITY_WARDENS_HOUSE sans bâtiment dans HnS
 FuchsiaCity: porte (28, 16) vers MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE sans bâtiment dans HnS
 FuchsiaCity: panneau FuchsiaCity_EventScript_LaprasSign retiré (aucun panneau libre dans le décor)
 FuchsiaCity: panneau FuchsiaCity_EventScript_SafariGameSign retiré (aucun panneau libre dans le décor)
 CinnabarIsland: panneau CinnabarIsland_EventScript_GymSign retiré (aucun panneau libre dans le décor)
 CinnabarIsland: panneau CinnabarIsland_EventScript_PokemonLabSign retiré (aucun panneau libre dans le décor)
 CinnabarIsland: déclencheur CinnabarIsland_EventScript_GymDoorLocked retiré, à réécrire
-SaffronCity: porte (27, 21) vers MAP_SAFFRON_CITY_HOUSE sans bâtiment dans HnS
-SaffronCity: porte (47, 21) vers MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB sans bâtiment dans HnS
 SaffronCity: panneau SaffronCity_EventScript_SilphProductSign retiré (aucun panneau libre dans le décor)
 SaffronCity: panneau SaffronCity_EventScript_TrainerTips2 retiré (aucun panneau libre dans le décor)
 SaffronCity: panneau SaffronCity_EventScript_TrainerFanClubSign retiré (aucun panneau libre dans le décor)

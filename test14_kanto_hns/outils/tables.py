@@ -6,19 +6,19 @@ PORTES = {
                 (17,25):(19,29), (9,30):(11,34)},
  'CeruleanCity': {(10,11):(18,11), (30,11):(38,11), (15,17):(23,17), (22,19):(30,19), (31,21):(39,21),
                   (13,28):(21,28), (29,28):(37,28), (1,12):(9,12), (10,8):None, (31,8):None, (31,9):None,
-                  (14,28):(22,28), (23,28):None, (17,11):None},
+                  (14,28):(22,28), (23,28):(31,28), (17,11):(25,11)},
  'LavenderTown': {(18,6):(22,6), (6,5):(10,5), (10,11):(12,11), (5,16):(5,16), (10,16):(12,16), (20,15):(4,6)},
  'VermilionCity': {(22,34):None, (23,34):None, (24,34):None, (9,6):(15,4), (15,6):(22,4), (12,17):(18,16),
                    (19,17):(25,16), (29,17):(38,16), (28,24):(38,22), (14,25):(21,23)},
  'CeladonCity': {(34,21):(35,21), (11,14):(11,14), (15,14):(15,14), (30,11):(30,11), (48,11):(48,11),
-                 (39,20):None, (11,30):(12,30), (37,29):(37,29), (41,29):(41,29), (49,29):None,
+                 (39,20):(26,18), (11,30):(12,30), (37,29):(37,29), (41,29):(41,29), (49,29):(49,29),
                  (29,5):(30,4), (30,4):(30,4), (31,5):(30,4)},
- 'FuchsiaCity': {(24,5):(26,5), (33,31):None, (11,15):(11,15), (28,16):None, (9,32):(9,32), (14,31):(14,31),
-                 (25,31):(25,31), (38,31):(38,31), (39,28):(39,28), (39,29):(39,28), (19,31):(19,30)},
+ 'FuchsiaCity': {(24,5):(26,5), (33,31):(33,31), (11,15):(11,15), (28,16):None, (9,32):(9,32), (14,31):(14,31),
+                 (25,31):(25,31), (38,31):(38,31), (39,28):(39,28), (39,29):(39,28), (19,31):(19,31)},
  'CinnabarIsland': {(8,3):(34,15), (20,4):(30,24), (8,9):(33,25), (14,11):(45,29), (19,11):(48,30)},
- 'SaffronCity': {(33,30):(25,30), (22,14):(19,21), (40,12):(32,12), (46,12):(38,12), (27,21):None,
+ 'SaffronCity': {(33,30):(25,30), (22,14):(19,21), (40,12):(32,12), (46,12):(38,12), (27,21):(39,21),
                  (40,21):(32,21), (24,38):(16,38), (43,38):(35,38), (8,27):(0,27), (34,5):(26,5),
-                 (58,27):(50,27), (34,46):(26,46), (35,46):(27,46), (35,5):(27,5), (47,21):None},
+                 (58,27):(50,27), (34,46):(26,46), (35,46):(27,46), (35,5):(27,5), (47,21):(13,14)},
  'Route2': {(5,13):(5,13), (6,13):(6,13), (5,51):(5,51), (17,11):(17,11), (17,22):(17,22), (18,46):(18,46),
             (18,41):(18,40), (19,41):(19,40), (19,46):(19,46), (6,51):(6,51)},
  'Route4': {(19,5):(18,9), (32,5):(32,5), (12,5):(12,5)},
@@ -38,7 +38,25 @@ PORTES = {
 }
 # Entrées creusées dans un décor Heart & Soul : dossier du layout -> [(x, y, bloc)]. 0x30A9 = entrée de grotte.
 # Cramois'Île est celle d'après l'éruption : Manoir, Arène, Labo et Boutique s'ouvrent dans la falaise.
-RETOUCHES = {'Hns_CinnabarIsland': [(34, 15, 0x30A9), (30, 24, 0x30A9), (33, 25, 0x30A9), (48, 30, 0x30A9)]}
+RETOUCHES = {'Hns_CinnabarIsland': [(34, 15, 0x30A9), (30, 24, 0x30A9), (33, 25, 0x30A9), (48, 30, 0x30A9)],
+             # Mont Sélénite : un passage dans les éboulis rouvre la salle des fossiles, murée dans Heart & Soul.
+             'Hns_MtMoon_Cave': [(6, 9, 0x3281), (6, 8, 0x3281), (6, 7, 0x3284), (6, 6, 0x3281), (6, 5, 0x3281),
+                                 (7, 5, 0x3281), (8, 5, 0x3281)],
+             # Maisons de Rouge Feu sans porte dans Heart & Soul : la porte du modèle voisin est posée sur une façade libre.
+             # Parmanie : maison du Gardien (33,31) et maison du frère du Maître Pêcheur (19,31).
+             'Hns_FuchsiaCity': [(x + dx, 30 + dy, b) for x in (19, 33)
+                                 for dx, dy, b in ((0, 0, 0x06B1), (1, 0, 0x06B2), (0, 1, 0x06BF), (1, 1, 0x06B9))],
+             # Safran : maison aux Roucool (39,21) ; le Fan Club prend la porte de la gare (13,14).
+             'Hns_SaffronCity': [(38, 20, 0x06BE), (39, 20, 0x06BF), (40, 20, 0x06AF),
+                                 (38, 21, 0x06AE), (39, 21, 0x075C), (40, 21, 0x068C)],
+             # Azuria : maisons 5 (25,11) et 4 (31,28).
+             'Hns_CeruleanCity': [(x + dx, y + dy, b) for x, y in ((24, 10), (30, 27))
+                                  for dx, dy, b in ((0, 0, 0x06C3), (1, 0, 0x0690), (2, 0, 0x06C4),
+                                                    (0, 1, 0x06C1), (1, 1, 0x0698), (2, 1, 0x06C2))],
+             # Céladopole : maison (41,29) et hôtel (49,29) ; la salle des lots prend le bâtiment bleu (26,18).
+             'Hns_CeladonCity': [(x + dx, 28 + dy, b) for x in (40, 48)
+                                 for dx, dy, b in ((0, 0, 0x0714), (1, 0, 0x0715), (2, 0, 0x0716),
+                                                   (0, 1, 0x06E5), (1, 1, 0x043D), (2, 1, 0x06E7))]}
 # Panneaux reposés à la main : carte -> {script: case}.
 PANNEAUX = {'CinnabarIsland': {'CinnabarIsland_EventScript_GymSign': (31, 25),
                                'CinnabarIsland_EventScript_IslandSign': (41, 33)}}
@@ -61,6 +79,11 @@ PLACES = {
                            'CinnabarIsland_Gym_EventScript_Erik': (23, 9), 'LOCALID_AVERY': (16, 12),
                            'LOCALID_DEREK': (25, 11), 'CinnabarIsland_Gym_EventScript_GymGuy': (20, 23),
                            'LOCALID_DUSTY': (12, 14), 'LOCALID_ZAC': (13, 17), 'LOCALID_RAMON': (21, 16)},
+    # Occupants de l'étage disparu du poste : hors du passage et des déclencheurs.
+    'Route16_NorthEntrance_1F': {'Route16_NorthEntrance_2F_EventScript_LittleBoy': (3, 4),
+                                 'Route16_NorthEntrance_2F_EventScript_LittleGirl': (8, 6),
+                                 'Route16_NorthEntrance_2F_EventScript_Aide': (9, 4)},
+    'MtMoon_1F': {'MtMoon_1F_EventScript_Josh': (17, 9), 'MtMoon_1F_EventScript_Robby': (20, 15), 'MtMoon_1F_EventScript_Jovan': (40, 27)},
     'SaffronCity_Dojo': {'LOCALID_KARATE_MASTER': (14, 6)},
     'CinnabarIsland': {'LOCALID_CINNABAR_BILL': (30, 27)},
     'IndigoPlateau_PokemonCenter_1F': {'LOCALID_LEAGUE_DOOR_GUARD': (33, 4)},
@@ -131,7 +154,10 @@ SCRIPTS_RETIRES = {'SeafoamIslands_B4F': ('MAP_SCRIPT_ON_LOAD', 'MAP_SCRIPT_ON_W
 # Bâtiments de Rouge Feu absents de Heart & Soul : leurs occupants se tiennent dehors, dans la carte indiquée.
 HABITANTS = {'SafariZone_Center': ['SafariZone_Center_RestHouse'],
              'SafariZone_West': ['SafariZone_SecretHouse', 'SafariZone_West_RestHouse'],
-             'SafariZone_North': ['SafariZone_North_RestHouse'], 'SafariZone_East': ['SafariZone_East_RestHouse']}
+             'SafariZone_North': ['SafariZone_North_RestHouse'], 'SafariZone_East': ['SafariZone_East_RestHouse'],
+             # Postes de Heart & Soul sans étage : l'aide du Prof. Chen et les autres occupants descendent au rez-de-chaussée.
+             'Route15_WestEntrance_1F': ['Route15_WestEntrance_2F'], 'Route16_NorthEntrance_1F': ['Route16_NorthEntrance_2F'],
+             'Route18_EastEntrance_1F': ['Route18_EastEntrance_2F']}
 # Déclencheurs gardés : carte -> script -> case dans le décor Heart & Soul.
 P = 'FuchsiaCity_SafariZone_Entrance_EventScript_EntryTrigger'
 # Une case, ou une liste de cases : la i-ème case reçoit le i-ème déclencheur d'origine du script.
@@ -194,6 +220,15 @@ TRANSFERTS = [
     ('VermilionCity', 'LOCALID_VERMILION_FERRY_SAILOR', 'SSAnne_Exterior', 9, 9),
     ('VermilionCity', 'VermilionCity_EventScript_CheckTicketLeft', 'SSAnne_Exterior', 8, 9),
     ('VermilionCity', 'VermilionCity_EventScript_ExitedTicketCheck', 'SSAnne_Exterior', 8, 8),
+    # Scène du fossile : même salle que dans Rouge Feu, aux mêmes cases.
+    ('MtMoon_B2F', 'LOCALID_MIGUEL', 'MtMoon_1F', 13, 11),
+    ('MtMoon_B2F', 'LOCALID_DOME_FOSSIL', 'MtMoon_1F', 13, 7),
+    ('MtMoon_B2F', 'LOCALID_HELIX_FOSSIL', 'MtMoon_1F', 14, 7),
+    ('MtMoon_B2F', 'MtMoon_B2F_EventScript_MiguelTrigger', 'MtMoon_1F', 14, 11),
+    # Postes des Routes 11 et 12 absents de Heart & Soul : leurs occupants attendent sur la route.
+    ('Route11_EastEntrance_2F', 'Route11_EastEntrance_2F_EventScript_Aide', 'Route11', 56, 9),
+    ('Route11_EastEntrance_2F', 'Route11_EastEntrance_2F_EventScript_Turner', 'Route11', 55, 12),
+    ('Route12_NorthEntrance_2F', 'Route12_NorthEntrance_2F_EventScript_Lass', 'Route12', 13, 8),
 ]
 # Scripts ajoutés à la fin du fichier d'une carte.
 SCRIPTS_AJOUTES = {'SSAnne_Exterior': """
