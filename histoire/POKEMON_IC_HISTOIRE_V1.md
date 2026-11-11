@@ -331,6 +331,12 @@ Si ces trois prototypes tiennent, l'histoire tient. Les sprites des dresseurs in
 3. Le joueur choisit son nom en cours de partie, quand on lui demande qui il est.
 4. Red parle parfois à la fin, parce qu'il a changé.
 5. Le D du cube veut dire « dé ».
+6. On montre au lieu de raconter. La boîte de texte ne décrit pas le sol qui se fend : le jeu le fait voir par des effets, des émotes (le « ? » au-dessus de Luka) et des animations. Cette règle vaut pour tout le jeu.
+7. Le Pikachu de Red est un mâle. Il obéit toujours à Red, même après le prologue.
+8. Red possède déjà le Pokédex de Kanto complet.
+9. Le combat Luka contre Red ne montre que l'ouverture : lancers de Poké Ball, cinématique de duel, musique entraînante. L'écran passe au noir, et au retour Luka a visiblement perdu.
+10. L'IA de Red B ajoute le drapeau « Risky ». Sur 120 combats simulés Red contre Red, ce réglage gagne 12 fois sur 12 en 27 tours en moyenne, contre 35 avant, et gagne 7 fois sans filet de sécurité, contre 2.
+11. La boîte de dialogue suit METHODE_PIXEL_ART : fond gris foncé, bordure claire, rivets aux coins, bandeau du nom en orange avec un bord droit en biseau. Pour les grands dialogues, le haut du portrait du locuteur dépasse à droite de la boîte. Un PNJ sans portrait n'a que la boîte et le bandeau. Un locuteur caché (« ??? ») n'a jamais de portrait.
 
 ### Encore ouvert
 
