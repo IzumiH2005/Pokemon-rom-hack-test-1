@@ -1,0 +1,68 @@
+# sommet brisé 20x26 : pointe à gauche (x1..4), cassure en pente vers la droite
+# le fût continue dessous ; on efface au-dessus de la cassure
+stamp fut.txt 0 0
+stamp fut.txt 0 1
+stamp fut.txt 0 2
+stamp fut.txt 0 3
+stamp fut.txt 0 4
+stamp fut.txt 0 5
+stamp fut.txt 0 6
+stamp fut.txt 0 7
+stamp fut.txt 0 8
+stamp fut.txt 0 9
+stamp fut.txt 0 10
+stamp fut.txt 0 11
+stamp fut.txt 0 12
+stamp fut.txt 0 13
+stamp fut.txt 0 14
+stamp fut.txt 0 15
+stamp fut.txt 0 16
+stamp fut.txt 0 17
+stamp fut.txt 0 18
+stamp fut.txt 0 19
+stamp fut.txt 0 20
+stamp fut.txt 0 21
+stamp fut.txt 0 22
+stamp fut.txt 0 23
+stamp fut.txt 0 24
+stamp fut.txt 0 25
+# effacer au-dessus de la cassure (haut décidé colonne par colonne)
+vline . 0 0 2
+vline . 1 0 1
+vline . 3 0 0
+vline . 4 0 2
+vline . 5 0 3
+vline . 6 0 5
+vline . 7 0 9
+vline . 8 0 9
+vline . 9 0 10
+vline . 10 0 10
+vline . 11 0 11
+vline . 12 0 11
+vline . 13 0 12
+vline . 14 0 12
+vline . 15 0 13
+vline . 16 0 13
+vline . 17 0 14
+vline . 18 0 14
+vline . 19 0 15
+# contour du haut
+px O 0 3 0 4 1 2 2 0 3 1 4 3 5 4 5 5 6 6 6 7 6 8 7 10 8 10 9 11 10 11 11 12 12 12 13 13 14 13 15 14 16 14 17 15 18 15 19 16
+px O 2 1
+# face de cassure : W près de la pointe, L au milieu, B à droite (s'éloigne de la lumière)
+vline W 5 6 9
+vline W 6 9 13
+vline W 7 11 14
+vline L 8 11 14
+vline L 9 12 16
+vline L 10 12 15
+vline L 11 13 16
+vline L 12 13 17
+vline L 13 14 18
+vline B 14 14 17
+vline B 15 15 18
+vline B 16 15 19
+vline B 17 16 19
+vline B 18 16 19
+# lèvre : ombre sous la cassure
+px D 5 10 6 14 7 15 8 15 9 17 10 16 11 17 12 18 13 19 14 18 15 19 16 20 17 20 18 20

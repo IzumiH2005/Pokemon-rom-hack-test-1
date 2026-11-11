@@ -1,0 +1,6 @@
+# bloc effondré, groupe est : même paire de blocs, cubes couchés côté allée (ouest)
+stamp pieces/blocA.txt 0 0
+stamp pieces/blocB.txt 43 0
+stamp pieces/cube.txt 2 62
+stamp pieces/cube.txt 1 82
+stamp pieces/cube.txt 3 102

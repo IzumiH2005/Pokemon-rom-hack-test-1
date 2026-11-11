@@ -1,0 +1,4 @@
+# usure : fissure dans le tambour du haut, éclat sur le bord droit (côté ombre)
+px D 10 29 10 30 11 31 11 32 12 33
+px . 24 79 24 80 24 81
+px O 23 79 23 80 23 81

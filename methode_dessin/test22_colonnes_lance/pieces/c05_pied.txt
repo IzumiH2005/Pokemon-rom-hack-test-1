@@ -1,0 +1,13 @@
+# pied du fût : bas du cylindre posé sur le socle (rangées socle y3..y5), bord bas en D
+stamp fut.txt 0 0
+stamp fut.txt 0 1
+stamp fut.txt 0 2
+hline . 0 1 1
+hline . 18 19 1
+hline . 0 4 2
+hline . 15 19 2
+hline D 0 1 0
+hline D 18 19 0
+hline D 2 4 1
+hline D 15 17 1
+hline D 5 14 2

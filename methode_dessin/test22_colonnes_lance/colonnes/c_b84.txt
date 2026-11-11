@@ -1,0 +1,58 @@
+# colonne b84 : brise, hauteur 84, joints à 52
+stamp pieces/socle.txt 0 70
+stamp pieces/fut.txt 5 26
+stamp pieces/fut.txt 5 27
+stamp pieces/fut.txt 5 28
+stamp pieces/fut.txt 5 29
+stamp pieces/fut.txt 5 30
+stamp pieces/fut.txt 5 31
+stamp pieces/fut.txt 5 32
+stamp pieces/fut.txt 5 33
+stamp pieces/fut.txt 5 34
+stamp pieces/fut.txt 5 35
+stamp pieces/fut.txt 5 36
+stamp pieces/fut.txt 5 37
+stamp pieces/fut.txt 5 38
+stamp pieces/fut.txt 5 39
+stamp pieces/fut.txt 5 40
+stamp pieces/fut.txt 5 41
+stamp pieces/fut.txt 5 42
+stamp pieces/fut.txt 5 43
+stamp pieces/fut.txt 5 44
+stamp pieces/fut.txt 5 45
+stamp pieces/fut.txt 5 46
+stamp pieces/fut.txt 5 47
+stamp pieces/fut.txt 5 48
+stamp pieces/fut.txt 5 49
+stamp pieces/fut.txt 5 50
+stamp pieces/fut.txt 5 51
+stamp pieces/fut.txt 5 52
+stamp pieces/fut.txt 5 53
+stamp pieces/fut.txt 5 54
+stamp pieces/fut.txt 5 55
+stamp pieces/fut.txt 5 56
+stamp pieces/fut.txt 5 57
+stamp pieces/fut.txt 5 58
+stamp pieces/fut.txt 5 59
+stamp pieces/fut.txt 5 60
+stamp pieces/fut.txt 5 61
+stamp pieces/fut.txt 5 62
+stamp pieces/fut.txt 5 63
+stamp pieces/fut.txt 5 64
+stamp pieces/fut.txt 5 65
+stamp pieces/fut.txt 5 66
+stamp pieces/fut.txt 5 67
+stamp pieces/fut.txt 5 68
+stamp pieces/fut.txt 5 69
+stamp pieces/fut.txt 5 70
+stamp pieces/fut.txt 5 71
+stamp pieces/fut.txt 5 72
+stamp pieces/pied.txt 5 73
+stamp pieces/brise.txt 5 0
+stamp pieces/joint.txt 5 52
+# ombre portée du fût sur le dessus du socle (côté droit, loin de la lumière)
+hline d 20 22 75
+hline d 23 24 74
+hline d 23 24 75
+# fissure courte au milieu du fût
+px D 12 62 12 63 13 64 13 65

@@ -1,0 +1,3 @@
+# éclat sur le bord gauche
+px . 5 52 5 53
+px O 6 52 6 53

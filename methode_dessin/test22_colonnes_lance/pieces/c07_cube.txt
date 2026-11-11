@@ -1,0 +1,15 @@
+# cube couché 17x20 vu de dessus : dessus y0..13 (L, bord gauche W), face avant y14..18 (m)
+# pierre : une fissure qui serpente, coin arrière droit ébréché
+rect L 0 0 16 13
+vline W 1 1 12
+hline W 1 15 13
+rect m 0 14 16 18
+hline d 1 15 18
+line D 5 2 7 5
+line D 7 5 7 8
+line D 8 9 10 11
+px D 6 7
+frame O 0 0 16 19
+px . 13 0 14 0 15 0 16 0 15 1 16 1 16 2
+px O 12 0 13 1 14 1 15 2 16 3
+px B 13 2 14 2 15 3

@@ -1,0 +1,43 @@
+# gros bloc dressé 37x62, biseau vertical à l'angle avant droit (b = face du biseau, recolorée ensuite)
+# silhouette : dessus y0..7, face avant x0..27 y8..61, biseau x28..36
+rect L 0 0 36 7
+rows L 3 0 35 0 33 0 31 0 29 0 27
+rows b 3 36 36 34 36 32 36 30 36 28 36
+rect B 0 8 27 60
+rect b 28 8 36 56
+rows b 57 28 34 28 32 28 30 28 28
+hline d 0 27 61
+# liseré avant du dessus : il accroche la lumière
+hline W 1 27 7
+px W 29 6 31 5 33 4 35 3
+px W 28 7 30 6 32 5 34 4
+# corniche basse : lèvre claire, ombre dessous, denticules
+hline W 1 27 45
+hline d 1 27 46
+hline B 29 35 45
+hline D 29 35 46
+rect D 3 49 4 52
+rect D 7 49 8 52
+rect D 11 49 12 52
+rect D 15 49 16 52
+rect D 19 49 20 52
+rect D 23 49 24 52
+# losange gravé au haut de la face
+px D 14 13 13 14 15 14 12 15 16 15 13 16 15 16 14 17
+px W 14 15
+# fissure en biais, une branche
+line D 6 22 10 28
+line D 10 28 11 36
+line D 10 30 14 33
+# contour
+hline O 0 36 0
+vline O 0 0 61
+hline O 0 28 61
+vline O 36 0 56
+px O 35 57 34 57 33 58 32 58 31 59 30 59 29 60 28 60
+# usure : coin avant gauche du dessus cassé, encoche dans l'arête arrière
+px . 0 0 1 0 2 0 0 1 0 2
+px O 3 0 1 1 2 1 0 3 1 2
+hline . 9 13 0
+hline O 9 13 1
+px B 9 2 10 2 11 2 12 2 13 2

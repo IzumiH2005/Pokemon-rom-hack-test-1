@@ -1,0 +1,26 @@
+# socle octogonal 30x14 en vue 3/4, grille décidée rangée par rangée
+# silhouette : dessus y0..y7 (octogone écrasé), faces avant de 6 px dessous
+# dessus (L), liseré avant éclairé (W/L), face gauche B, face avant m, face droite d
+rows O 0 8 21 5 24 3 26 2 27 2 27 2 27 2 27 2 27 2 27 2 27 2 27 3 26 5 24 8 21
+# dessus
+rows L 1 8 21 5 24 3 26 3 26 3 26 5 24 8 21
+# liseré avant du dessus : rangée qui accroche la lumière
+px W 3 5 4 5 5 6 6 6 7 6
+hline W 8 16 7
+hline L 17 21 7
+px B 22 6 23 6 24 6 25 5 26 5
+# face gauche (diagonale) : B
+rows B 6 3 4
+rows B 7 3 7 3 7 3 7 3 7 5 7
+# face avant : m, dernière rangée d (contact au sol)
+rect m 8 8 21 11
+hline d 8 21 12
+# face droite : d
+rows d 6 25 26 22 26 22 26 22 26 22 26 22 24
+# contour : bord de la silhouette
+hline O 8 21 0
+px O 5 1 6 1 7 1 22 1 23 1 24 1 3 2 4 2 25 2 26 2
+vline O 2 3 10
+vline O 27 3 10
+px O 3 11 4 11 25 11 26 11 5 12 6 12 7 12 22 12 23 12 24 12
+hline O 8 21 13

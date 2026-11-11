@@ -1,0 +1,7 @@
+# joint de tambour : arc qui descend au centre (ellipse vue d'en haut), d côté lumière, D côté ombre
+hline d 1 3 0
+hline D 16 18 0
+hline d 4 6 1
+hline D 13 15 1
+hline d 7 9 2
+hline D 10 12 2
