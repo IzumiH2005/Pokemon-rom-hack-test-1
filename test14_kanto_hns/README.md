@@ -10,6 +10,8 @@ cartes de HnS restent hors du dépôt : les scripts les copient depuis un clone 
 2. `outils/importer_kanto_hns.py <pokemonHnS> <jeu>` importe 55 tilesets et 170 layouts sous le
    préfixe `Hns_`. Aucune carte du jeu ne change à cette étape.
 3. `outils/basculer_zone1.py <jeu>` passe Bourg Palette, la Route 1 et Jadielle sur le décor HnS.
+4. `outils/creer_cartes.py <pokemonHnS> <jeu>` crée vides les cartes absentes de Rouge Feu.
+5. `outils/basculer_exterieurs.py` puis `outils/basculer_interieurs.py`, avec les deux mêmes arguments.
 
 `outils/layouts_kanto_hns.json` donne, pour chaque carte HnS, l'identifiant du layout importé.
 
@@ -67,7 +69,27 @@ Le trajet suit Heart & Soul : Route 22, Portail, Route Victoire (trois niveaux),
 membres du Conseil de Rouge Feu occupent les salles de Clément, Koga, Aldo et Marion. Le Portail mène aussi à la
 Route 28 et au Mont Argenté.
 
-Points ouverts, listés dans `outils/rapport_interieurs.txt` : la Route 26 nord n'existe pas encore côté jeu (la porte
-sud du Portail reste fermée sur elle-même), les contrôles de badges de la Route 23 sont retirés, les deux sorties
-hautes du Mont Sélénite mènent aux anciens sous-sols de Rouge Feu en attendant la carte extérieure, l'entrée de la
-Cave Taupiqueur côté Route 11 n'a plus de sortie de son côté.
+Points ouverts, listés dans `outils/rapport_interieurs.txt` : les contrôles de badges de la Route 23 sont retirés,
+l'entrée de la Cave Taupiqueur côté Route 11 n'a plus de sortie de son côté.
+
+## Donjons restants et cartes nouvelles
+
+`creer_cartes.py` se lance après `importer_kanto_hns.py` et avant les deux bascules. Il crée vides les douze cartes de
+Heart & Soul sans équivalent dans Rouge Feu (table `NOUVELLES`) : l'extérieur et la boutique du Mont Sélénite,
+l'arrière-salle de la Centrale, les Routes 26 et 27 avec leurs maisons, les Chutes Tohjo, la grotte de la Route 19 et
+la salle du Dojo. Aucun personnage d'Or et Argent n'y est importé.
+
+Le lot bascule aussi la Caverne Azurée (trois niveaux), les Îles Écume, la Centrale et les quatre accès des
+souterrains des Routes 5 à 8. L'Arène d'Auguste quitte Cramois'Île pour les Îles Écume, comme dans Heart & Soul.
+
+Trois règles s'ajoutent à `basculer_interieurs.py`. Les étages sans équivalent (table `FUSIONS`) cèdent leurs
+dresseurs et leurs objets à l'étage conservé : B2F et B3F des Îles Écume, B1F et B2F du Mont Sélénite. Les rochers
+à pousser, les rochers à briser et les arbustes à couper restent seulement là où Heart & Soul en pose un. Les
+commandes `setmetatile` des scripts sont mises en commentaire, car elles redessineraient l'ancien décor.
+
+Huit entrées ont été vérifiées en jeu : Caverne Azurée, Arène des Îles Écume, Centrale, souterrain de la Route 5,
+boutique du Mont Sélénite, Portail vers la Route 26, Chutes Tohjo, maison de la Route 26.
+
+Points ouverts : les scènes du fossile et d'Artikodin sont à réécrire sur les nouveaux étages, les énigmes à
+interrupteurs (Carmin, Route Victoire, Arène d'Auguste) sont désactivées, la maison de la Route 27 et la grotte de
+la Route 19 n'ont pas d'accès.

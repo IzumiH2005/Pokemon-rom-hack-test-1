@@ -64,8 +64,33 @@ PAIRES_FIXES = {
     'DiglettsCave_B1F': 'DiglettsCave_Tunnel', 'DiglettsCave_NorthEntrance': 'DiglettsCave_EntranceNorth',
     'DiglettsCave_SouthEntrance': 'DiglettsCave_EntranceSouth',
     'RockTunnel_1F': 'RockTunnel_1F', 'RockTunnel_B1F': 'RockTunnel_B1F',
+    'CeruleanCave_1F': 'CeruleanCave_1F', 'CeruleanCave_2F': 'CeruleanCave_B1F', 'CeruleanCave_B1F': 'CeruleanCave_B2F',
+    'SeafoamIslands_1F': 'SeafoamIslands_1F', 'SeafoamIslands_B1F': 'SeafoamIslands_B1F',
+    'SeafoamIslands_B4F': 'SeafoamIslands_SecretCave',      # salle d'Artikodin
+    'CinnabarIsland_Gym': 'SeafoamIslands_Gym',             # comme dans Or et Argent : l'Arène d'Auguste est aux Îles Écume
+    'PowerPlant': 'Route10_PowerPlantEntrance',
+    'UndergroundPath_NorthEntrance': 'Route5_TunnelEntrance', 'UndergroundPath_SouthEntrance': 'Route6_TunnelEntrance',
+    'UndergroundPath_WestEntrance': 'Route7_TunnelEntrance', 'UndergroundPath_EastEntrance': 'Route8_TunnelEntrance',
+    'UndergroundPath_NorthSouthTunnel': 'SaffronCity_Tunnel_NS', 'UndergroundPath_EastWestTunnel': 'SaffronCity_Tunnel_SW',
 }
 # Cartes déjà reprises de Heart & Soul par un travail antérieur (Mont Argenté) : elles servent seulement de cible.
 DEJA = {'Route28': 'Route28', 'Route28_House': 'Route28_House'}
 # Étages de Rouge Feu sans équivalent : leurs dresseurs et leurs objets rejoignent l'étage indiqué.
-FUSIONS = {}
+FUSIONS = {'SeafoamIslands_B1F': ['SeafoamIslands_B2F', 'SeafoamIslands_B3F'],
+           'MtMoon_1F': ['MtMoon_B1F', 'MtMoon_B2F']}
+# Cartes de Heart & Soul sans équivalent dans Rouge Feu, créées vides : nom -> (musique, zone de la carte).
+NOUVELLES = {
+    'MtMoon_Outside': ('MUS_RG_ROUTE3', 'MAPSEC_MT_MOON'), 'MtMoon_Shop': ('MUS_RG_ROUTE3', 'MAPSEC_MT_MOON'),
+    'Route10_PowerPlantBackRoom': ('MUS_RG_POKE_MANSION', 'MAPSEC_POWER_PLANT'),
+    'Route26North': ('MUS_RG_ROUTE24', 'MAPSEC_ROUTE_26'), 'Route26': ('MUS_RG_ROUTE24', 'MAPSEC_ROUTE_26'),
+    'Route26_House1': ('MUS_RG_ROUTE24', 'MAPSEC_ROUTE_26'), 'Route26_House2': ('MUS_RG_ROUTE24', 'MAPSEC_ROUTE_26'),
+    'Route27': ('MUS_RG_ROUTE24', 'MAPSEC_ROUTE_27'),
+    'TohjoFalls_Cavern': ('MUS_RG_MT_MOON', 'MAPSEC_TOHJO_FALLS'),
+    'TohjoFalls_GiovanniRoom': ('MUS_RG_MT_MOON', 'MAPSEC_TOHJO_FALLS'),
+    'Route19_Cave': ('MUS_RG_MT_MOON', 'MAPSEC_ROUTE_19'),
+    'SaffronCity_FightingDojoVIP': ('MUS_RG_GYM', 'MAPSEC_SAFFRON_CITY'),
+}
+ZONES = {'MAPSEC_ROUTE_26': ('ROUTE 26', 1, 10), 'MAPSEC_ROUTE_27': ('ROUTE 27', 0, 12),
+         'MAPSEC_TOHJO_FALLS': ('CHUTES TOHJO', 0, 12)}
+# Scripts de carte de Rouge Feu liés à l'ancien décor (courants, portes) : types retirés de la table de la carte.
+SCRIPTS_RETIRES = {'SeafoamIslands_B4F': ('MAP_SCRIPT_ON_LOAD', 'MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE', 'MAP_SCRIPT_ON_FRAME_TABLE')}

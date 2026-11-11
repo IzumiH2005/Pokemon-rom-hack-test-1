@@ -33,9 +33,9 @@ CeladonCity_GameCorner_Frlg: 15 élément(s) de décor retiré(s)
 CeladonCity_DepartmentStore_1F_Frlg: accès perdu vers MAP_CELADON_CITY_DEPARTMENT_STORE_ELEVATOR
 CeladonCity_DepartmentStore_1F_Frlg: 1 élément(s) de décor retiré(s)
 CeladonCity_PokemonCenter_1F_Frlg: accès perdu vers MAP_CELADON_CITY_POKEMON_CENTER_2F
+CeladonCity_Gym_Frlg: dresseur placé au plus près en (8,8)
 FuchsiaCity_PokemonCenter_1F_Frlg: accès perdu vers MAP_FUCHSIA_CITY_POKEMON_CENTER_2F
 CinnabarIsland_PokemonCenter_1F_Frlg: accès perdu vers MAP_CINNABAR_ISLAND_POKEMON_CENTER_2F
-SaffronCity_Dojo_Frlg: porte 1 (14,4) vers MAP_SAFFRON_CITY_FIGHTING_DOJO_VIP sans carte
 SaffronCity_Dojo_Frlg: objet placé au plus près en (12,5)
 SaffronCity_Dojo_Frlg: objet placé au plus près en (16,5)
 SaffronCity_Dojo_Frlg: déclencheur SaffronCity_Dojo_EventScript_TriggerMasterBattleLeft retiré, à réécrire
@@ -82,7 +82,6 @@ Route18_EastEntrance_1F_Frlg: déclencheur EventScript_SetExitingCyclingRoad ret
 Route18_EastEntrance_1F_Frlg: déclencheur EventScript_SetExitingCyclingRoad retiré, à réécrire
 Route18_EastEntrance_1F_Frlg: déclencheur EventScript_SetEnteringCyclingRoad retiré, à réécrire
 Route18_EastEntrance_1F_Frlg: déclencheur EventScript_SetEnteringCyclingRoad retiré, à réécrire
-Route22_NorthEntrance_Frlg: porte 0 (11,19) vers MAP_ROUTE26NORTH sans carte
 Route22_NorthEntrance_Frlg: déclencheur Route22_NorthEntrance_EventScript_BoulderBadgeGuardTrigger retiré, à réécrire
 Route25_SeaCottage_Frlg: 1 élément(s) de décor retiré(s)
 PalletTown_PlayersHouse_2F_Frlg: 1 élément(s) de décor retiré(s)
@@ -146,30 +145,100 @@ IndigoPlateau_PokemonCenter_1F_Frlg: accès perdu vers MAP_INDIGO_PLATEAU_POKEMO
 VictoryRoad_1F_Frlg: 2 élément(s) de décor retiré(s)
 VictoryRoad_1F_Frlg: déclencheur VictoryRoad_1F_EventScript_FloorSwitch retiré, à réécrire
 VictoryRoad_2F_Frlg: objet placé au plus près en (16,18)
+VictoryRoad_2F_Frlg: BOULDER placé au plus près en (42,26)
 VictoryRoad_2F_Frlg: déclencheur VictoryRoad_2F_EventScript_FloorSwitch1 retiré, à réécrire
 VictoryRoad_2F_Frlg: déclencheur VictoryRoad_2F_EventScript_FloorSwitch2 retiré, à réécrire
+VictoryRoad_3F_Frlg: BOULDER placé au plus près en (21,19)
+VictoryRoad_3F_Frlg: BOULDER placé au plus près en (38,7)
+VictoryRoad_3F_Frlg: dresseur placé au plus près en (43,17)
+VictoryRoad_3F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
 VictoryRoad_3F_Frlg: déclencheur VictoryRoad_3F_EventScript_FloorSwitch retiré, à réécrire
 ViridianForest_Frlg: 8 élément(s) de décor retiré(s)
-MtMoon_1F_Frlg: porte 2 (24,10) reliée à MAP_MT_MOON_B1F, carte de Rouge Feu gardée
-MtMoon_1F_Frlg: porte 3 (32,21) reliée à MAP_MT_MOON_B1F, carte de Rouge Feu gardée
 MtMoon_1F_Frlg: accès perdu vers MAP_MT_MOON_B1F
+MtMoon_1F_Frlg: accès perdu vers MAP_MT_MOON_B1F
+MtMoon_1F_Frlg: accès perdu vers MAP_MT_MOON_B1F
+MtMoon_B1F: étage sans équivalent, dresseurs et objets déplacés dans MtMoon_1F, scènes à réécrire
+MtMoon_B2F: étage sans équivalent, dresseurs et objets déplacés dans MtMoon_1F, scènes à réécrire
 MtMoon_1F_Frlg: objet placé au plus près en (8,22)
 MtMoon_1F_Frlg: objet placé au plus près en (11,35)
 MtMoon_1F_Frlg: objet placé au plus près en (27,37)
 MtMoon_1F_Frlg: objet placé au plus près en (43,35)
 MtMoon_1F_Frlg: objet placé au plus près en (47,21)
 MtMoon_1F_Frlg: objet placé au plus près en (3,8)
+MtMoon_1F_Frlg: objet placé au plus près en (31,22)
+MtMoon_1F_Frlg: objet placé au plus près en (36,5)
+MtMoon_1F_Frlg: objet placé au plus près en (25,6)
+MtMoon_1F_Frlg: objet placé au plus près en (3,11)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (8,11)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (27,13)
 RockTunnel_1F_Frlg: objet placé au plus près en (23,29)
 RockTunnel_1F_Frlg: 1 élément(s) de décor retiré(s)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (45,5)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (28,23)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (18,33)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (35,35)
+RockTunnel_B1F_Frlg: 8 obstacle(s) BREAKABLE_ROCK sans place dans le décor, retiré(s)
+CeruleanCave_1F_Frlg: 1 élément(s) de décor retiré(s)
+CeruleanCave_B1F_Frlg: 4 obstacle(s) BREAKABLE_ROCK sans place dans le décor, retiré(s)
+SeafoamIslands_1F_Frlg: objet placé au plus près en (19,21)
+SeafoamIslands_1F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
+SeafoamIslands_B2F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
+SeafoamIslands_B3F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (33,44)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (42,34)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (31,35)
+SeafoamIslands_B1F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
+SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
+SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
+SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
+SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
+SeafoamIslands_B4F_Frlg: objet placé au plus près en (20,17)
+SeafoamIslands_B4F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
+SeafoamIslands_B4F_Frlg: 3 élément(s) de décor retiré(s)
+SeafoamIslands_B4F_Frlg: déclencheur SeafoamIslands_B4F_EventScript_UpwardCurrent retiré, à réécrire
+SeafoamIslands_B4F_Frlg: déclencheur SeafoamIslands_B4F_EventScript_UpwardCurrent retiré, à réécrire
+SeafoamIslands_B4F_Frlg: déclencheur SeafoamIslands_B4F_EventScript_UpwardCurrent retiré, à réécrire
+CinnabarIsland_Gym_Frlg: 13 élément(s) de décor retiré(s)
+PowerPlant_Frlg: objet placé au plus près en (3,15)
+PowerPlant_Frlg: objet placé au plus près en (19,13)
+PowerPlant_Frlg: objet placé au plus près en (21,21)
+PowerPlant_Frlg: objet placé au plus près en (21,4)
+PowerPlant_Frlg: objet placé au plus près en (13,13)
+PowerPlant_Frlg: objet placé au plus près en (18,4)
+PowerPlant_Frlg: objet placé au plus près en (14,21)
+PowerPlant_Frlg: 2 élément(s) de décor retiré(s)
+UndergroundPath_NorthSouthTunnel_Frlg: 7 élément(s) de décor retiré(s)
+UndergroundPath_EastWestTunnel_Frlg: 7 élément(s) de décor retiré(s)
+Route27_Frlg: porte 2 (40,21) vers MAP_ROUTE27_HOUSE sans carte
+Route19_Cave_Frlg: sortie 0 sans porte côté extérieur
 Route11_Frlg: porte (6,7) vers DiglettsCave_SouthEntrance_Frlg sans porte Heart & Soul sur la même case
 Route15_WestEntrance_2F_Frlg: plus de retour depuis Route15_WestEntrance_1F_Frlg
+SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
+SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
+SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
+SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
 CinnabarIsland_PokemonCenter_2F_Frlg: plus de retour depuis CinnabarIsland_PokemonCenter_1F_Frlg
+MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
+MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
+MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
 IndigoPlateau_PokemonCenter_2F_Frlg: plus de retour depuis IndigoPlateau_PokemonCenter_1F_Frlg
 ViridianCity_PokemonCenter_2F_Frlg: plus de retour depuis ViridianCity_PokemonCenter_1F_Frlg
 Route4_PokemonCenter_2F_Frlg: plus de retour depuis Route4_PokemonCenter_1F_Frlg
 CeladonCity_PokemonCenter_2F_Frlg: plus de retour depuis CeladonCity_PokemonCenter_1F_Frlg
 CeruleanCity_PokemonCenter_2F_Frlg: plus de retour depuis CeruleanCity_PokemonCenter_1F_Frlg
 VermilionCity_PokemonCenter_2F_Frlg: plus de retour depuis VermilionCity_PokemonCenter_1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
+SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
 Route18_EastEntrance_2F_Frlg: plus de retour depuis Route18_EastEntrance_1F_Frlg
 LavenderTown_PokemonCenter_2F_Frlg: plus de retour depuis LavenderTown_PokemonCenter_1F_Frlg
 RocketHideout_B1F_Frlg: plus de retour depuis CeladonCity_GameCorner_Frlg
@@ -178,3 +247,12 @@ FuchsiaCity_PokemonCenter_2F_Frlg: plus de retour depuis FuchsiaCity_PokemonCent
 SaffronCity_PokemonCenter_2F_Frlg: plus de retour depuis SaffronCity_PokemonCenter_1F_Frlg
 PewterCity_PokemonCenter_2F_Frlg: plus de retour depuis PewterCity_PokemonCenter_1F_Frlg
 Route16_NorthEntrance_2F_Frlg: plus de retour depuis Route16_NorthEntrance_1F_Frlg
+ViridianCity_Mart_Frlg: 2 commande(s) de script liées à l'ancien décor neutralisées
+VermilionCity_Gym_Frlg: 30 commande(s) de script liées à l'ancien décor neutralisées
+CeladonCity_GameCorner_Frlg: 10 commande(s) de script liées à l'ancien décor neutralisées
+VictoryRoad_1F_Frlg: 4 commande(s) de script liées à l'ancien décor neutralisées
+VictoryRoad_2F_Frlg: 8 commande(s) de script liées à l'ancien décor neutralisées
+VictoryRoad_3F_Frlg: 4 commande(s) de script liées à l'ancien décor neutralisées
+PokemonLeague_LancesRoom_Frlg: 8 commande(s) de script liées à l'ancien décor neutralisées
+SeafoamIslands_B4F_Frlg: 5 commande(s) de script liées à l'ancien décor neutralisées
+CinnabarIsland_Gym_Frlg: 38 commande(s) de script liées à l'ancien décor neutralisées

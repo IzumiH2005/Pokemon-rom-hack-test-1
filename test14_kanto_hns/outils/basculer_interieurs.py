@@ -11,7 +11,8 @@ Le script repart des copies `map.json.rougefeu` et écrit `rapport_interieurs.tx
 import json, os, struct, sys, re, shutil, copy
 from collections import deque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tables import PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS
+from tables import PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS, NOUVELLES, SCRIPTS_RETIRES
+PAIRES_FIXES = dict(PAIRES_FIXES, **{n: n for n in NOUVELLES})
 
 HNS, JEU = sys.argv[1], sys.argv[2]
 ICI = os.path.dirname(os.path.abspath(__file__))
@@ -135,11 +136,16 @@ def plus_proche(decor, x, y, pris, sol):
     return x, y
 
 
+OBSTACLES = ('BOULDER', 'BREAKABLE_ROCK', 'CUTTABLE_TREE')   # liés au relief : seulement sur ceux de HnS
+
+
 def role(o):
     g = o['graphics_id']
     if 'NURSE' in g: return 'infirmiere'
     if 'MART_EMPLOYEE' in g or 'CLERK' in g: return 'vendeur'
     if 'ITEM_BALL' in g: return 'objet'
+    for k in OBSTACLES:
+        if k in g: return k
     if o.get('trainer_type', 'TRAINER_TYPE_NONE') not in ('TRAINER_TYPE_NONE', '0'): return 'dresseur'
     return 'passant'
 
@@ -155,7 +161,7 @@ for fd in interieurs:
                and DOSSIER.get(w['dest_map']) not in inverse.values()]
     portes = []
     for i, w in enumerate(h['warp_events']):
-        n = {'x': w['x'], 'y': w['y'], 'elevation': w['elevation'], 'dest_map': f['id'], 'dest_warp_id': str(i)}
+        n = {'x': max(w['x'], 0), 'y': max(w['y'], 0), 'elevation': w['elevation'], 'dest_map': f['id'], 'dest_warp_id': str(i)}
         cible = inverse.get(HDOSSIER.get(w['dest_map']))
         if cible in exterieurs:
             ext = lire(chemin(cible)); hext = hns(paire[cible])
@@ -189,6 +195,7 @@ for fd in interieurs:
                 o['_dim'] = dim; f['object_events'].append(o)
         rapport.append(f'{autre}: étage sans équivalent, dresseurs et objets déplacés dans {fd[:-5]}, scènes à réécrire')
     f['object_events'] = f['object_events'][:64]
+    retires = {}
     for o in sorted(f['object_events'], key=lambda o: role(o) == 'passant'):
         dw, dh = o.pop('_dim'); cx, cy = round(o['x'] * decor.w / dw), round(o['y'] * decor.h / dh); r = role(o)
         cand = [c for c in libres if role(c) == r and (c['x'], c['y']) not in pris]
@@ -196,6 +203,8 @@ for fd in interieurs:
             o['x'], o['y'] = fixes[o['local_id']]; pris.add((o['x'], o['y'])); continue
         if not cand and r in ('dresseur', 'passant'):
             cand = [c for c in libres if role(c) in ('dresseur', 'passant') and (c['x'], c['y']) not in pris]
+        if not cand and r in OBSTACLES and not o.get('local_id'):
+            o['_retire'] = True; retires[r] = retires.get(r, 0) + 1; continue
         if cand:
             c = min(cand, key=lambda c: abs(c['x'] - cx) + abs(c['y'] - cy)); libres.remove(c)
             o['x'], o['y'] = c['x'], c['y']
@@ -207,6 +216,8 @@ for fd in interieurs:
         e = decor.brut(o['x'], o['y']) >> 12
         if 1 <= e <= 14: o['elevation'] = e
         pris.add((o['x'], o['y']))
+    f['object_events'] = [o for o in f['object_events'] if not o.pop('_retire', False)]
+    for r, k in retires.items(): rapport.append(f'{fd}: {k} obstacle(s) {r} sans place dans le décor, retiré(s)')
     # Éléments de décor interactifs : sur ceux de HnS, le reste est retiré.
     fonds = [b for b in h['bg_events']]
     garde = []
@@ -228,6 +239,19 @@ for fd in interieurs:
 
 for fd, f in nouveau.items(): ecrire(chemin(fd), f)
 
+def relier(f, h):
+    """Ajoute les connexions HnS vers les cartes créées, absentes de Rouge Feu."""
+    f['connections'] = f['connections'] or []
+    for c in h['connections'] or []:
+        cible = inverse.get(HDOSSIER.get(c['map']))
+        if cible and cible[:-5] in NOUVELLES:
+            ident = nouveau[cible]['id']
+            f['connections'] = [x for x in f['connections'] if x['direction'] != c['direction'] or x['map'] == ident]
+            if not any(x['map'] == ident for x in f['connections']):
+                f['connections'].append({'map': ident, 'offset': c['offset'], 'direction': c['direction']})
+    f['connections'] = f['connections'] or None
+
+
 # 3. Portes des extérieurs : numéro d'arrivée repris de la porte HnS posée sur la même case.
 for n in EXT:
     fd = n + '_Frlg'; f = lire(chemin(fd)); h = hns(paire[fd])
@@ -239,7 +263,10 @@ for n in EXT:
         if not hw and cible not in nouveau: continue
         w['dest_warp_id'] = str(hw['dest_warp_id']) if hw else '0'
         if not hw: rapport.append(f'{fd}: porte ({w["x"]},{w["y"]}) vers {cible} sans porte Heart & Soul sur la même case')
+    relier(f, h)
     ecrire(chemin(fd), f)
+for fd, hd in DEJA.items():
+    f = lire(chemin(fd + '_Frlg')); relier(f, hns(hd)); ecrire(chemin(fd + '_Frlg'), f)
 
 # 4. Cartes restées en place : leurs portes vers un intérieur basculé visent la porte qui revient vers elles.
 for d in DOSSIER.values():
@@ -253,6 +280,18 @@ for d in DOSSIER.values():
             w['dest_warp_id'] = str(retour[0]) if retour else '0'; change = True
             if not retour: rapport.append(f'{d}: plus de retour depuis {cible}')
     if change: ecrire(chemin(d), j)
+
+# 5. Scripts : sur un décor Heart & Soul, les commandes qui redessinent l'ancien décor sont neutralisées.
+for fd in interieurs:
+    p = f'{JEU}/data/maps/{fd}/scripts.inc'
+    if not os.path.exists(p + '.rougefeu'): shutil.copy(p, p + '.rougefeu')
+    lignes = open(p + '.rougefeu').read().split('\n'); k = 0
+    for i, l in enumerate(lignes):
+        if l.strip().startswith('setmetatile'): lignes[i] = '\t@ ancien décor : ' + l.strip(); k += 1
+        if any(l.strip().startswith('map_script ' + s) for s in SCRIPTS_RETIRES.get(fd[:-5], ())):
+            lignes[i] = '\t@ ancien décor : ' + l.strip(); k += 1
+    open(p, 'w').write('\n'.join(lignes))
+    if k: rapport.append(f'{fd}: {k} commande(s) de script liées à l\'ancien décor neutralisées')
 
 open(f'{ICI}/rapport_interieurs.txt', 'w').write('\n'.join(rapport) + '\n')
 json.dump({k: v for k, v in sorted(paire.items()) if k not in exterieurs}, open(f'{ICI}/paires_interieurs.json', 'w'), indent=1)
