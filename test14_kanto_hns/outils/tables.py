@@ -47,3 +47,25 @@ PLACES = {
         'LOCALID_POKEDEX_1': (9, 10), 'LOCALID_POKEDEX_2': (10, 10),
     },
 }
+
+# Cartes associées à la main : Rouge Feu -> Heart & Soul (zone de la Ligue et donjons redessinés).
+# Dans Heart & Soul, la Route Victoire se traverse avant la Route 23 : Portail -> B2F -> B1F -> 1F -> Route 23.
+PAIRES_FIXES = {
+    'Route22_NorthEntrance': 'ReceptionGate', 'Route23': 'Route23', 'IndigoPlateau_Exterior': 'IndigoPlateau',
+    'IndigoPlateau_PokemonCenter_1F': 'IndigoPlateau_PokemonCenter',
+    'VictoryRoad_1F': 'VictoryRoadKanto_B2F', 'VictoryRoad_2F': 'VictoryRoadKanto_B1F',
+    'VictoryRoad_3F': 'VictoryRoadKanto_1F',
+    'PokemonLeague_LoreleisRoom': 'PokemonLeague_WillsRoom', 'PokemonLeague_BrunosRoom': 'PokemonLeague_KogasRoom',
+    'PokemonLeague_AgathasRoom': 'PokemonLeague_BrunosRoom', 'PokemonLeague_LancesRoom': 'PokemonLeague_KarensRoom',
+    'PokemonLeague_ChampionsRoom': 'PokemonLeague_ChampionsRoom', 'PokemonLeague_HallOfFame': 'PokemonLeague_HallOfFame',
+    'ViridianForest': 'ViridianForest', 'Route2_ViridianForest_SouthEntrance': 'Gate_Route2_ViridianForest',
+    'Route2_ViridianForest_NorthEntrance': 'Gate_ViridianForest_Route2',
+    'MtMoon_1F': 'MtMoon_Cave',
+    'DiglettsCave_B1F': 'DiglettsCave_Tunnel', 'DiglettsCave_NorthEntrance': 'DiglettsCave_EntranceNorth',
+    'DiglettsCave_SouthEntrance': 'DiglettsCave_EntranceSouth',
+    'RockTunnel_1F': 'RockTunnel_1F', 'RockTunnel_B1F': 'RockTunnel_B1F',
+}
+# Cartes déjà reprises de Heart & Soul par un travail antérieur (Mont Argenté) : elles servent seulement de cible.
+DEJA = {'Route28': 'Route28', 'Route28_House': 'Route28_House'}
+# Étages de Rouge Feu sans équivalent : leurs dresseurs et leurs objets rejoignent l'étage indiqué.
+FUSIONS = {}

@@ -11,7 +11,7 @@ Le script repart des copies `map.json.rougefeu` et écrit `rapport_interieurs.tx
 import json, os, struct, sys, re, shutil, copy
 from collections import deque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tables import PORTES, PLACES
+from tables import PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS
 
 HNS, JEU = sys.argv[1], sys.argv[2]
 ICI = os.path.dirname(os.path.abspath(__file__))
@@ -88,7 +88,11 @@ for n in EXT:
 for fd, hd in ETAGES.items():
     if os.path.exists(chemin(fd + '_Frlg')) and hd in LAYOUTS_HNS: paire[fd + '_Frlg'] = hd
     else: rapport.append(f'{fd}: étage introuvable')
+for fd, hd in PAIRES_FIXES.items():
+    if os.path.exists(chemin(fd + '_Frlg')) and hd in LAYOUTS_HNS: paire[fd + '_Frlg'] = hd
+    else: rapport.append(f'{fd}: carte ou décor introuvable ({hd})')
 inverse = {v: k for k, v in paire.items()}
+for fd, hd in DEJA.items(): inverse[hd] = fd + '_Frlg'
 interieurs = [f for f in paire if f not in exterieurs]
 
 LAY = {x['id']: x for x in lire(f'{JEU}/data/layouts/layouts.json')['layouts'] if x}
@@ -147,7 +151,8 @@ for fd in interieurs:
     avant = LAY[f['layout']]; f['layout'] = LAYOUTS_HNS[hd]; decor = Decor(f['layout'])
     # Portes : la liste HnS, traduite. Les portes HnS vers une carte non reprise reçoivent, dans l'ordre,
     # les portes Rouge Feu qui mènent à une carte restée en place.
-    restees = [w for w in f['warp_events'] if DOSSIER.get(w['dest_map']) not in paire]
+    restees = [w for w in f['warp_events'] if DOSSIER.get(w['dest_map']) not in paire
+               and DOSSIER.get(w['dest_map']) not in inverse.values()]
     portes = []
     for i, w in enumerate(h['warp_events']):
         n = {'x': w['x'], 'y': w['y'], 'elevation': w['elevation'], 'dest_map': f['id'], 'dest_warp_id': str(i)}
@@ -157,6 +162,7 @@ for fd in interieurs:
             k = int(w['dest_warp_id'])
             pos = (hext['warp_events'][k]['x'], hext['warp_events'][k]['y']) if k < len(hext['warp_events']) else None
             idx = [a for a, e in enumerate(ext['warp_events']) if (e['x'], e['y']) == pos and e['dest_map'] == f['id']] \
+                or [a for a, e in enumerate(ext['warp_events']) if (e['x'], e['y']) == pos] \
                 or [a for a, e in enumerate(ext['warp_events']) if e['dest_map'] == f['id']]
             if idx: n['dest_map'] = ext['id']; n['dest_warp_id'] = str(idx[0])
             else: rapport.append(f'{fd}: sortie {i} sans porte côté extérieur')
@@ -164,6 +170,7 @@ for fd in interieurs:
             n['dest_map'] = lire(chemin(cible))['id']; n['dest_warp_id'] = str(w['dest_warp_id'])
         elif restees:
             r = restees.pop(0); n['dest_map'] = r['dest_map']; n['dest_warp_id'] = r['dest_warp_id']
+            rapport.append(f'{fd}: porte {i} ({w["x"]},{w["y"]}) reliée à {r["dest_map"]}, carte de Rouge Feu gardée')
         else:
             rapport.append(f'{fd}: porte {i} ({w["x"]},{w["y"]}) vers {w["dest_map"]} sans carte')
         portes.append(n)
@@ -172,10 +179,18 @@ for fd in interieurs:
     # PNJ sur les emplacements des PNJ HnS.
     sx, sy = decor.w / avant['width'], decor.h / avant['height']
     libres = [o for o in h['object_events'] if 'LIGHT_SPRITE' not in o['graphics_id']]
-    pris = {(w['x'], w['y']) for w in portes} | {(w['x'], w['y'] - 1) for w in portes}
+    pris = {(w['x'], w['y']) for w in portes} | {(w['x'], w['y'] - 1) for w in portes} | {(w['x'], w['y'] + 1) for w in portes}
     sol = accessibles(decor, portes); fixes = PLACES.get(fd[:-5], {})
+    for o in f['object_events']: o['_dim'] = (avant['width'], avant['height'])
+    for autre in FUSIONS.get(fd[:-5], []):
+        a = origine(autre + '_Frlg'); dim = (LAY[a['layout']]['width'], LAY[a['layout']]['height'])
+        for o in a['object_events']:
+            if role(o) in ('dresseur', 'objet') and not o.get('local_id'):
+                o['_dim'] = dim; f['object_events'].append(o)
+        rapport.append(f'{autre}: étage sans équivalent, dresseurs et objets déplacés dans {fd[:-5]}, scènes à réécrire')
+    f['object_events'] = f['object_events'][:64]
     for o in sorted(f['object_events'], key=lambda o: role(o) == 'passant'):
-        cx, cy = round(o['x'] * sx), round(o['y'] * sy); r = role(o)
+        dw, dh = o.pop('_dim'); cx, cy = round(o['x'] * decor.w / dw), round(o['y'] * decor.h / dh); r = role(o)
         cand = [c for c in libres if role(c) == r and (c['x'], c['y']) not in pris]
         if o.get('local_id') in fixes:
             o['x'], o['y'] = fixes[o['local_id']]; pris.add((o['x'], o['y'])); continue
@@ -204,7 +219,11 @@ for fd in interieurs:
     f['bg_events'] = garde
     for c in f['coord_events']: rapport.append(f'{fd}: déclencheur {c.get("script")} retiré, à réécrire')
     f['coord_events'] = []
-    f['connections'] = None
+    conn = []
+    for c in h['connections'] or []:
+        cible = inverse.get(HDOSSIER.get(c['map']))
+        if cible: conn.append({'map': lire(chemin(cible))['id'], 'offset': c['offset'], 'direction': c['direction']})
+    f['connections'] = conn or None
     nouveau[fd] = f
 
 for fd, f in nouveau.items(): ecrire(chemin(fd), f)
@@ -214,10 +233,12 @@ for n in EXT:
     fd = n + '_Frlg'; f = lire(chemin(fd)); h = hns(paire[fd])
     for w in f['warp_events']:
         cible = DOSSIER.get(w['dest_map'])
-        if cible not in nouveau: continue
         hw = next((x for x in h['warp_events'] if (x['x'], x['y']) == (w['x'], w['y'])
-                   and inverse.get(HDOSSIER.get(x['dest_map'])) == cible), None)
+                   and inverse.get(HDOSSIER.get(x['dest_map'])) in nouveau), None)
+        if hw: w['dest_map'] = nouveau[inverse[HDOSSIER[hw['dest_map']]]]['id']
+        if not hw and cible not in nouveau: continue
         w['dest_warp_id'] = str(hw['dest_warp_id']) if hw else '0'
+        if not hw: rapport.append(f'{fd}: porte ({w["x"]},{w["y"]}) vers {cible} sans porte Heart & Soul sur la même case')
     ecrire(chemin(fd), f)
 
 # 4. Cartes restées en place : leurs portes vers un intérieur basculé visent la porte qui revient vers elles.

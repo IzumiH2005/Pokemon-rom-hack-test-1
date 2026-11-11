@@ -56,3 +56,18 @@ extérieurs et `PLACES` pour les scènes à placer case par case (Labo de Chen).
 `outils/rapport_interieurs.txt` liste ce qui reste à reprendre : les étages des Centres Pokémon (Heart & Soul n'a
 qu'un niveau), l'ascenseur du Centre Commercial, l'entrée du Repaire Rocket au Casino, les étages des postes de
 garde et les déclencheurs retirés.
+
+## Zone de la Ligue et donjons redessinés
+
+`basculer_interieurs.py` traite aussi les cartes de la table `PAIRES_FIXES` (`outils/tables.py`) : le Portail de la
+Ligue, la Route Victoire, la Route 23, le Plateau Indigo, son Centre, les salles du Conseil, la Forêt de Jade et ses
+postes, le Mont Sélénite, la Cave Taupiqueur et la Grotte. Le total passe à 100 cartes.
+
+Le trajet suit Heart & Soul : Route 22, Portail, Route Victoire (trois niveaux), Route 23, Plateau Indigo. Les quatre
+membres du Conseil de Rouge Feu occupent les salles de Clément, Koga, Aldo et Marion. Le Portail mène aussi à la
+Route 28 et au Mont Argenté.
+
+Points ouverts, listés dans `outils/rapport_interieurs.txt` : la Route 26 nord n'existe pas encore côté jeu (la porte
+sud du Portail reste fermée sur elle-même), les contrôles de badges de la Route 23 sont retirés, les deux sorties
+hautes du Mont Sélénite mènent aux anciens sous-sols de Rouge Feu en attendant la carte extérieure, l'entrée de la
+Cave Taupiqueur côté Route 11 n'a plus de sortie de son côté.

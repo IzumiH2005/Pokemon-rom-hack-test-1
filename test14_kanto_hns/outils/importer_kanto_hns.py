@@ -78,6 +78,7 @@ for g in GROUPES_ENTIERS:
     cartes += G[g]
 cartes += [m for m in G['gMapGroup_Dungeons'] if m.startswith(DONJONS)]
 cartes = [m for m in cartes if not m.startswith(EXCLUES)]
+cartes += [m for m in ('ReceptionGate',) if m not in cartes]   # portail de la Ligue, rangé hors de Kanto dans HnS
 
 hl = {x['id']: x for x in json.load(open(f'{HNS}/data/layouts/layouts.json'))['layouts'] if x}
 layouts = {}  # id HnS -> (carte, layout)
