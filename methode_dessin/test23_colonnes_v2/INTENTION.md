@@ -12,3 +12,7 @@ La première série (test22) restait plate : un fût vu de face posé sur un rec
 - L'ombre portée tombe en bas à droite.
 
 Étapes : `etapes/c03.txt` (volumes et ombrage), puis `etapes/c04.txt` (usure). Pièces : `fut.txt`, `tore.txt`, `cassure.txt`.
+
+## Passage au style Platine
+
+La colonne reprend la gamme crème olive du sol de Platine (#eee6c5 à #736a41, contour #4f4628), sans violet ni noir. Le fût porte de grandes facettes plates au lieu de cannelures. Le dessus de la cassure montre des fissures en étoile autour d'un point d'impact, et les joints côté ombre passent en brun clair pour adoucir le contour.
