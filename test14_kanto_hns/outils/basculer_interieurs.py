@@ -128,6 +128,27 @@ class Decor:
 
     def sec(self, x, y): return self.libre(x, y) and not self.eau(x, y)
 
+    def comp(self, x, y):
+        if not (0 <= x < self.w and 0 <= y < self.h): return 0
+        m = self.brut(x, y) & 0x3FF
+        a = attributs(self.l['primary_tileset' if m < 640 else 'secondary_tileset']); i = m if m < 640 else m - 640
+        return a[i] & 0x1FF if i < len(a) else 0
+
+    def haut(self, x, y): return self.brut(x, y) >> 12
+
+    def pas(self, x, y, e, dx, dy):
+        """Case et hauteur atteintes par un pas à pied, ou None : mur, eau, ou écart de hauteur (falaise, toit).
+        Les rebords se sautent dans leur sens."""
+        n = (x + dx, y + dy)
+        if SAUTS.get(self.comp(*n)) == (dx, dy): n = (x + 2 * dx, y + 2 * dy)
+        if not self.sec(*n): return None
+        h = self.haut(*n)
+        if e != 0 and h not in (0, 15) and h != e: return None
+        return n, (e if h == 15 else h)
+
+
+SAUTS = {56: (1, 0), 57: (-1, 0), 58: (0, -1), 59: (0, 1)}     # MB_JUMP_EAST, WEST, NORTH, SOUTH
+
 
 def accessibles(decor, portes):
     """Cases où le joueur peut marcher à pied depuis une porte. Sans porte : depuis les bords de la carte."""
@@ -136,13 +157,22 @@ def accessibles(decor, portes):
     if not portes:
         departs = [(x, y) for x in range(decor.w) for y in range(decor.h) if x in (0, decor.w - 1) or y in (0, decor.h - 1)]
     for c in departs:
-        if decor.sec(*c) and c not in vus: vus.add(c); file.append(c)
+        if decor.sec(*c):
+            k = (c, 3 if decor.haut(*c) == 15 else decor.haut(*c))
+            if k not in vus: vus.add(k); file.append(k)
     while file:
-        cx, cy = file.popleft()
+        (cx, cy), e = file.popleft()
         for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)):
-            c = (cx + dx, cy + dy)
-            if c not in vus and decor.sec(*c): vus.add(c); file.append(c)
-    return vus
+            k = decor.pas(cx, cy, e, dx, dy)
+            if k and k not in vus: vus.add(k); file.append(k)
+    return {c for c, e in vus}
+
+
+def joignable(decor, sol, x, y):
+    """On peut parler à un PNJ posé là : case ou voisine accessible, ou comptoir entre les deux."""
+    if (x, y) in sol: return True
+    return any((x + dx, y + dy) in sol or (decor.comp(x + dx, y + dy) == 0x80 and (x + 2 * dx, y + 2 * dy) in sol)
+               for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)))
 
 
 def plus_proche(decor, x, y, pris, sol):
@@ -233,6 +263,7 @@ for fd in interieurs:
     libres = [o for o in h['object_events'] if 'LIGHT_SPRITE' not in o['graphics_id']]
     pris = {(w['x'], w['y']) for w in portes} | {(w['x'], w['y'] - 1) for w in portes} | {(w['x'], w['y'] + 1) for w in portes}
     sol = accessibles(decor, portes); fixes = PLACES.get(fd[:-5], {})
+    libres = [o for o in libres if joignable(decor, sol, o['x'], o['y'])]
     for o in f['object_events']: o['_dim'] = (avant['width'], avant['height'])
     for autre in FUSIONS.get(fd[:-5], []):
         a = origine(autre + '_Frlg'); dim = (LAY[a['layout']]['width'], LAY[a['layout']]['height'])
@@ -352,7 +383,7 @@ for nom in sorted(set(PLACES) | set(DECLENCHEURS) | set(PANNEAUX)):
     if fd in interieurs: continue
     av = origine(fd); c = lire(chemin(fd)); decor = Decor(c['layout'])
     for o in c['object_events']:
-        cle = next((k for k in (o.get('local_id'), o['script']) if k in PLACES.get(nom, {})), None)
+        cle = next((k for k in (o.get('local_id'), o.get('script')) if k in PLACES.get(nom, {})), None)
         if cle: fixer(o, PLACES[nom][cle], decor)
     if nom in DECLENCHEURS:
         hors = [e for e in c['coord_events'] if e.get('script') not in {a.get('script') for a in av['coord_events']}]

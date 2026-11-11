@@ -61,17 +61,29 @@ CeladonCity_Condominiums_RoofRoom_Frlg: 3 élément(s) de décor retiré(s)
 SaffronCity_CopycatsHouse_2F_Frlg: 3 élément(s) de décor retiré(s)
 Route23_Frlg: 5 élément(s) de décor retiré(s)
 IndigoPlateau_PokemonCenter_1F_Frlg: accès perdu vers MAP_INDIGO_PLATEAU_POKEMON_CENTER_2F
+VictoryRoad_1F_Frlg: dresseur placé au plus près en (4,5)
+VictoryRoad_1F_Frlg: dresseur placé au plus près en (12,14)
 VictoryRoad_1F_Frlg: 2 élément(s) de décor retiré(s)
 VictoryRoad_1F_Frlg: déclencheur VictoryRoad_1F_EventScript_FloorSwitch retiré, à réécrire
+VictoryRoad_2F_Frlg: dresseur placé au plus près en (8,5)
+VictoryRoad_2F_Frlg: dresseur placé au plus près en (24,16)
+VictoryRoad_2F_Frlg: dresseur placé au plus près en (36,22)
+VictoryRoad_2F_Frlg: dresseur placé au plus près en (31,12)
+VictoryRoad_2F_Frlg: dresseur placé au plus près en (42,7)
 VictoryRoad_2F_Frlg: objet placé au plus près en (16,18)
 VictoryRoad_2F_Frlg: BOULDER placé au plus près en (42,26)
 VictoryRoad_2F_Frlg: déclencheur VictoryRoad_2F_EventScript_FloorSwitch1 retiré, à réécrire
 VictoryRoad_2F_Frlg: déclencheur VictoryRoad_2F_EventScript_FloorSwitch2 retiré, à réécrire
+VictoryRoad_3F_Frlg: dresseur placé au plus près en (23,10)
+VictoryRoad_3F_Frlg: dresseur placé au plus près en (11,21)
+VictoryRoad_3F_Frlg: dresseur placé au plus près en (12,21)
 VictoryRoad_3F_Frlg: BOULDER placé au plus près en (21,19)
 VictoryRoad_3F_Frlg: BOULDER placé au plus près en (38,7)
+VictoryRoad_3F_Frlg: dresseur placé au plus près en (42,17)
 VictoryRoad_3F_Frlg: dresseur placé au plus près en (43,17)
 VictoryRoad_3F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
 VictoryRoad_3F_Frlg: déclencheur VictoryRoad_3F_EventScript_FloorSwitch retiré, à réécrire
+ViridianForest_Frlg: dresseur placé au plus près en (22,6)
 ViridianForest_Frlg: 8 élément(s) de décor retiré(s)
 MtMoon_1F_Frlg: accès perdu vers MAP_MT_MOON_B1F
 MtMoon_1F_Frlg: accès perdu vers MAP_MT_MOON_B1F
@@ -82,16 +94,24 @@ MtMoon_1F_Frlg: objet placé au plus près en (8,22)
 MtMoon_1F_Frlg: objet placé au plus près en (11,35)
 MtMoon_1F_Frlg: objet placé au plus près en (27,37)
 MtMoon_1F_Frlg: objet placé au plus près en (43,35)
-MtMoon_1F_Frlg: objet placé au plus près en (47,21)
+MtMoon_1F_Frlg: objet placé au plus près en (45,22)
 MtMoon_1F_Frlg: objet placé au plus près en (3,8)
 MtMoon_1F_Frlg: objet placé au plus près en (31,22)
 MtMoon_1F_Frlg: objet placé au plus près en (36,5)
 MtMoon_1F_Frlg: objet placé au plus près en (25,6)
 MtMoon_1F_Frlg: objet placé au plus près en (3,11)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (39,35)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (45,29)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (20,21)
+RockTunnel_1F_Frlg: dresseur placé au plus près en (5,25)
 RockTunnel_1F_Frlg: dresseur placé au plus près en (8,11)
 RockTunnel_1F_Frlg: dresseur placé au plus près en (27,13)
 RockTunnel_1F_Frlg: objet placé au plus près en (23,29)
 RockTunnel_1F_Frlg: 1 élément(s) de décor retiré(s)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (2,6)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (5,11)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (13,16)
+RockTunnel_B1F_Frlg: dresseur placé au plus près en (44,11)
 RockTunnel_B1F_Frlg: dresseur placé au plus près en (45,5)
 RockTunnel_B1F_Frlg: dresseur placé au plus près en (28,23)
 RockTunnel_B1F_Frlg: dresseur placé au plus près en (18,33)
@@ -109,9 +129,9 @@ SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
 SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
 SeafoamIslands_B2F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
 SeafoamIslands_B3F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
-SeafoamIslands_B1F_Frlg: objet placé au plus près en (33,44)
-SeafoamIslands_B1F_Frlg: objet placé au plus près en (40,39)
-SeafoamIslands_B1F_Frlg: objet placé au plus près en (31,40)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (33,46)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (42,52)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (31,47)
 SeafoamIslands_B1F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
 SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
 SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
@@ -162,6 +182,8 @@ SSAnne_Exterior_Frlg: 1 élément(s) de décor retiré(s)
 Route27_Frlg: porte 2 (40,21) vers MAP_ROUTE27_HOUSE sans carte
 Route19_Cave_Frlg: sortie 0 sans porte côté extérieur
 CinnabarIsland_Frlg: porte (30,24) vers CinnabarIsland_Gym_Frlg sans porte Heart & Soul sur la même case
+Route7_Frlg: porte (7,34) vers UndergroundPath_WestEntrance_Frlg sans porte Heart & Soul sur la même case
+Route8_Frlg: porte (9,4) vers UndergroundPath_EastEntrance_Frlg sans porte Heart & Soul sur la même case
 Route11_Frlg: porte (6,7) vers DiglettsCave_SouthEntrance_Frlg sans porte Heart & Soul sur la même case
 Route15_WestEntrance_2F_Frlg: plus de retour depuis Route15_WestEntrance_1F_Frlg
 SafariZone_SecretHouse_Frlg: plus de retour depuis SafariZone_West_Frlg

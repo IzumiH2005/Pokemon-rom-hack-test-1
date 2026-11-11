@@ -136,3 +136,19 @@ Le rapport des extérieurs ne liste plus les déclencheurs et panneaux reposés 
 
 Points ouverts : bureau du Safari sans bâtiment, étage des Centres Pokémon sans accès, ascenseur du Grand Magasin,
 étages fusionnés des Îles Écume et du Mont Sélénite, énigmes à interrupteurs désactivées, Repaire Rocket reporté.
+
+## Audit des collisions et des PNJ
+
+`audit_cartes.py` relit chaque carte importée et signale les PNJ posés sur une case bloquée, les portes qui
+tombent dans un mur et les cases franchissables sur une tuile d'ordinaire bloquante (façade, barrière, rocher).
+Lancé depuis le dossier du jeu, après les deux imports : `python3 audit_cartes.py .` (`LISTE=1` détaille les tuiles).
+
+Les trous repérés sont bouchés par la table `COLLISIONS` de `tables.py`, que `basculer_exterieurs.py` applique en
+dernier : rocher de la Route 2, mur à lampes des entrées du Souterrain, coins de toits et de rochers sur les Routes
+3 à 7, 21 et 23, quai de Carmin, Chutes Tohjo, comptoirs des postes. Le garde du badge Cascade monte en tête du
+couloir de la Route 23 avec ses déclencheurs, Crissy quitte le plateau fleuri fermé de la Route 4, et les
+occupants de la maison de repos du Safari Ouest attendent sur le chemin près du gardien.
+
+L'audit passe de 34 à 14 signalements. Les 14 restants sont voulus : vendeurs et gardes derrière un comptoir,
+glace et lave des Îles Écume, passage au-dessus d'un escalier au Safari Est, mur invisible de l'arène de Koga,
+navires jamais affichés. Route 2, Safari Ouest et Souterrain ont été vérifiés en jeu.

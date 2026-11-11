@@ -25,7 +25,7 @@ VILLES = ['PalletTown', 'ViridianCity', 'PewterCity', 'CeruleanCity', 'LavenderT
 CARTES = VILLES + [f'Route{i}' for i in range(1, 21)] + ['Route21_North', 'Route22', 'Route24', 'Route25']
 # Route 23 et Plateau Indigo attendent la zone de la Ligue (Routes 26 et 27, Route Victoire).
 
-from tables import PORTES, PORTE_DEPLACEE, RETOUCHES, DECLENCHEURS, PANNEAUX, TRANSFERTS
+from tables import PORTES, PORTE_DEPLACEE, RETOUCHES, COLLISIONS, DECLENCHEURS, PANNEAUX, TRANSFERTS
 
 EAU = set(range(0x10, 0x18))
 rapport = []
@@ -67,6 +67,45 @@ class Decor:
         return ((v >> 10) & 3, comp in EAU)
 
 
+    def brut(self, x, y): return struct.unpack_from('<H', self.d, 2 * (x + y * self.w))[0]
+
+    def comp(self, x, y):
+        if not (0 <= x < self.w and 0 <= y < self.h): return 0
+        m = self.brut(x, y) & 0x3FF
+        a = attributs(self.l['primary_tileset' if m < 640 else 'secondary_tileset']); i = m if m < 640 else m - 640
+        return a[i] & 0x1FF if i < len(a) else 0
+
+    def accessibles(self, graines):
+        """Cases atteintes à pied ou en surf depuis les graines. Bloquent : collision, écart de hauteur (toit, falaise),
+        sauf entre l'eau (hauteur 1) et la rive ; les rebords se sautent dans leur sens."""
+        vus = set(); file = deque()
+        for c in graines:
+            k = self.case(*c)
+            if k and k[0] == 0:
+                h = self.brut(*c) >> 12; vus.add((c, 3 if h == 15 else h)); file.append((c, 3 if h == 15 else h))
+        while file:
+            (x, y), e = file.popleft()
+            for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)):
+                n = (x + dx, y + dy)
+                if SAUTS.get(self.comp(*n)) == (dx, dy): n = (x + 2 * dx, y + 2 * dy)
+                k = self.case(*n)
+                if not k or k[0] != 0: continue
+                h = self.brut(*n) >> 12
+                if e != 0 and h not in (0, 15) and h != e and 1 not in (e, h): continue
+                r = (n, e if h == 15 else h)
+                if r not in vus: vus.add(r); file.append(r)
+        return {c for c, e in vus}
+
+    def joignable(self, sol, x, y):
+        """On peut parler à un PNJ posé là : case ou voisine accessible, ou comptoir entre les deux."""
+        if (x, y) in sol: return True
+        return any((x + dx, y + dy) in sol or (self.comp(x + dx, y + dy) == 0x80 and (x + 2 * dx, y + 2 * dy) in sol)
+                   for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)))
+
+
+SAUTS = {56: (1, 0), 57: (-1, 0), 58: (0, -1), 59: (0, 1)}     # MB_JUMP_EAST, WEST, NORTH, SOUTH
+
+
 def niveau(decor, o):
     """Aligne l'élévation d'un PNJ sur celle de sa case."""
     e = struct.unpack_from('<H', decor.d, 2 * (o['x'] + o['y'] * decor.w))[0] >> 12
@@ -83,13 +122,13 @@ def role(o):
     return 'passant'
 
 
-def plus_proche(decor, x, y, eau, pris):
-    """Case libre de même nature la plus proche de (x, y)."""
+def plus_proche(decor, x, y, eau, pris, sol=None):
+    """Case libre de même nature la plus proche de (x, y), accessible au joueur quand sol est donné."""
     x = min(max(x, 0), decor.w - 1); y = min(max(y, 0), decor.h - 1)
     vus = {(x, y)}; file = deque([(x, y)])
     while file:
         cx, cy = file.popleft()
-        if decor.case(cx, cy) == (0, eau) and (cx, cy) not in pris: return cx, cy
+        if decor.case(cx, cy) == (0, eau) and (cx, cy) not in pris and (sol is None or (cx, cy) in sol): return cx, cy
         for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)):
             n = (cx + dx, cy + dy)
             if n not in vus and decor.case(*n) is not None: vus.add(n); file.append(n)
@@ -110,6 +149,14 @@ for dossier, blocs in RETOUCHES.items():
     p = f'{JEU}/data/layouts/{dossier}/map.bin'; d = bytearray(open(p, 'rb').read())
     w = next(l['width'] for l in LAY.values() if l['blockdata_filepath'].endswith(f'/{dossier}/map.bin'))
     for x, y, bloc in blocs: struct.pack_into('<H', d, 2 * (x + y * w), bloc)
+    open(p, 'wb').write(d)
+# Collisions manquantes : la case garde son dessin et devient infranchissable.
+for dossier, cases in COLLISIONS.items():
+    p = f'{JEU}/data/layouts/{dossier}/map.bin'; d = bytearray(open(p, 'rb').read())
+    w = next(l['width'] for l in LAY.values() if l['blockdata_filepath'].endswith(f'/{dossier}/map.bin'))
+    for x, y in cases:
+        if 0 <= x < w and 2 * (x + y * w) < len(d):
+            v = struct.unpack_from('<H', d, 2 * (x + y * w))[0]; struct.pack_into('<H', d, 2 * (x + y * w), v | 0x400)
     open(p, 'wb').write(d)
 
 ID = {NOM_HNS.get(n, n): lire(chemin(n))['id'] for n in CARTES}
@@ -162,20 +209,23 @@ for nom in CARTES:
         if any(k in o['graphics_id'] for k in ('BERRY_TREE', 'POKE_BALL', 'LIGHT_SPRITE')): continue
         libres.setdefault(role(o), []).append(o)
     pris = set(portes) | {(x, y + 1) for x, y in portes}
+    sol = apres.accessibles(list(portes) + [(x, y) for x in range(apres.w) for y in range(apres.h)
+                                            if x in (0, apres.w - 1) or y in (0, apres.h - 1)])
     places = 0
     en_attente = []
     for o in j['object_events']:
         k = apres.case(o['x'] + dx, o['y'] + dy); k0 = avant.case(o['x'], o['y'])
         eau = bool(k0 and k0[1])
         r = role(o)
-        if k == (0, eau) and (o['x'] + dx, o['y'] + dy) not in pris and r in ('passant', 'dresseur', 'objet'):
+        if k == (0, eau) and (o['x'] + dx, o['y'] + dy) not in pris and r in ('passant', 'dresseur', 'objet') \
+                and apres.joignable(sol, o['x'] + dx, o['y'] + dy):
             o['x'] += dx; o['y'] += dy; pris.add((o['x'], o['y'])); places += 1
         else:
             en_attente.append((o, eau, r))
     for o, eau, r in en_attente:
         cx, cy = o['x'] + dx, o['y'] + dy
         cand = [c for c in libres.get(r, []) if (c['x'], c['y']) not in pris
-                and (apres.case(c['x'], c['y']) or (1, 0))[1] == eau]
+                and (apres.case(c['x'], c['y']) or (1, 0))[1] == eau and apres.joignable(sol, c['x'], c['y'])]
         if cand:
             c = min(cand, key=lambda c: abs(c['x'] - cx) + abs(c['y'] - cy))
             o['x'], o['y'] = c['x'], c['y']
@@ -185,7 +235,7 @@ for nom in CARTES:
         elif r in ('arbre', 'rocher', 'bloc') and 'local_id' not in o:
             o['_retire'] = True; continue          # obstacle sans équivalent dans le décor HnS
         else:
-            o['x'], o['y'] = plus_proche(apres, cx, cy, eau, pris)
+            o['x'], o['y'] = plus_proche(apres, cx, cy, eau, pris, sol)
             if r != 'passant': rapport.append(f'{nom}: {r} {o["graphics_id"][14:]} placé au plus près en ({o["x"]},{o["y"]})')
         pris.add((o['x'], o['y']))
     j['object_events'] = [o for o in j['object_events'] if not o.get('_retire')]
@@ -195,7 +245,7 @@ for nom in CARTES:
                            ('rocher', 'OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG', 'EventScript_RockSmash'),
                            ('bloc', 'OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG', 'EventScript_StrengthBoulder')):
         for c in libres.get(r, []):
-            if (c['x'], c['y']) in pris: continue
+            if (c['x'], c['y']) in pris or apres.case(c['x'], c['y']) is None: continue   # HnS range parfois un objet hors carte
             j['object_events'].append({"type": "object", "graphics_id": gfx, "x": c['x'], "y": c['y'],
                 "elevation": 3, "movement_type": "MOVEMENT_TYPE_FACE_DOWN", "movement_range_x": 1,
                 "movement_range_y": 1, "trainer_type": "TRAINER_TYPE_NONE",

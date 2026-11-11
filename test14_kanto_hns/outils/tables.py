@@ -24,8 +24,8 @@ PORTES = {
  'Route4': {(19,5):(18,9), (32,5):(32,5), (12,5):(12,5)},
  'Route5': {(31,31):(31,31), (23,25):(23,25), (24,32):(24,32), (25,32):(25,32)},
  'Route6': {(19,13):(49,13), (12,5):(42,5), (13,5):(43,5)},
- 'Route7': {(7,14):(7,33), (15,10):(15,30)},
- 'Route8': {(13,4):(9,3), (7,10):(3,9)},
+ 'Route7': {(7,14):(7,34), (15,10):(15,30)},
+ 'Route8': {(13,4):(9,4), (7,10):(3,9)},
  'Route10': {(8,19):(16,19), (8,57):(16,57), (7,40):(15,40), (13,20):(21,20), (2,37):(10,37)},
  'Route11': {(6,7):None, (58,10):None, (65,10):None},
  'Route12': {(12,86):(12,85), (14,15):None, (15,15):None, (14,21):None},
@@ -38,6 +38,27 @@ PORTES = {
 }
 # Entrées creusées dans un décor Heart & Soul : dossier du layout -> [(x, y, bloc)]. 0x30A9 = entrée de grotte.
 # Cramois'Île est celle d'après l'éruption : Manoir, Arène, Labo et Boutique s'ouvrent dans la falaise.
+# Collisions oubliées par Heart & Soul (case marchable sur un rocher, un toit, un mur, une plante) : décor -> cases à bloquer.
+_GALERIE = [(x, 6) for x in range(27)]        # mur des lampes au fond des entrées du Souterrain
+COLLISIONS = {
+    'Hns_Route2': [(x, 5) for x in range(14, 20)],                         # rebord du rocher sous la barrière
+    'Hns_Route23': [(19, 17)],                                             # coin du rocher (le garde Cascade monte en tête du couloir)
+    'Hns_Route21': [(21, 38), (22, 38), (21, 39), (22, 39)],               # rocher dans l'eau
+    'Hns_TohjoFalls_Cavern': [(14, 22), (15, 22), (14, 23), (15, 23)],     # rocher dans l'eau
+    'Hns_VermilionCity_PortOutside': [(41, 0), (42, 0), (41, 1), (42, 1)],  # rocher dans l'eau
+    'Hns_PalletTownHouseRedsHouse2': [(x, 0) for x in range(20)],          # mur du fond de la chambre
+    'Hns_Route5_TunnelEntrance': _GALERIE, 'Hns_Route6_TunnelEntrance': _GALERIE,
+    'Hns_Route7_TunnelEntrance': _GALERIE, 'Hns_Route8_TunnelEntrance': _GALERIE,
+    # Plante en pot à l'entrée des postes de garde.
+    'Hns_FuchsiaCity_Route15_Gate': [(1, 7)], 'Hns_Gate_CeladonCity_Route16': [(1, 7)],
+    'Hns_Gate_FuchsiaCity_Route18': [(1, 7)], 'Hns_Gate_SaffronCity_Route7': [(1, 7)], 'Hns_Gate_SaffronCity_Route8': [(1, 7)],
+    # Buissons isolés.
+    'Hns_CeladonCity': [(53, 33)], 'Hns_Route3': [(75, 14)], 'Hns_Route4': [(48, 3)],
+    # Rang du haut du toit des cabanes du Souterrain : le joueur passait derrière.
+    'Hns_Route5': [(30, 28), (31, 28), (32, 28)], 'Hns_Route6': [(48, 10), (49, 10), (50, 10), (51, 10)],
+    'Hns_Route7': [(6, 31), (7, 31), (8, 31), (9, 31), (16, 27), (17, 27), (18, 27)],
+}
+
 RETOUCHES = {'Hns_CinnabarIsland': [(34, 15, 0x30A9), (30, 24, 0x30A9), (33, 25, 0x30A9), (48, 30, 0x30A9)],
              # Mont Sélénite : un passage dans les éboulis rouvre la salle des fossiles, murée dans Heart & Soul.
              'Hns_MtMoon_Cave': [(6, 9, 0x3281), (6, 8, 0x3281), (6, 7, 0x3284), (6, 6, 0x3281), (6, 5, 0x3281),
@@ -56,7 +77,9 @@ RETOUCHES = {'Hns_CinnabarIsland': [(34, 15, 0x30A9), (30, 24, 0x30A9), (33, 25,
              # Céladopole : maison (41,29) et hôtel (49,29) ; la salle des lots prend le bâtiment bleu (26,18).
              'Hns_CeladonCity': [(x + dx, 28 + dy, b) for x in (40, 48)
                                  for dx, dy, b in ((0, 0, 0x0714), (1, 0, 0x0715), (2, 0, 0x0716),
-                                                   (0, 1, 0x06E5), (1, 1, 0x043D), (2, 1, 0x06E7))]}
+                                                   (0, 1, 0x06E5), (1, 1, 0x043D), (2, 1, 0x06E7))]
+                                # Clôture ouverte à l'ouest : l'enclos de la salle des lots ne s'atteignait qu'en Surf.
+                                + [(23, 20, 0x3008)]}
 # Panneaux reposés à la main : carte -> {script: case}.
 PANNEAUX = {'CinnabarIsland': {'CinnabarIsland_EventScript_GymSign': (31, 25),
                                'CinnabarIsland_EventScript_IslandSign': (41, 33)}}
@@ -73,7 +96,11 @@ PLACES = {
     },
     # Clé : local_id, script, ou rang du PNJ dans la carte.
     'FuchsiaCity_SafariZone_Entrance': {0: (2, 5), 'FuchsiaCity_SafariZone_Entrance_EventScript_InfoAttendant': (2, 10)},
-    'SafariZone_West': {'SafariZone_SecretHouse_EventScript_Attendant': (9, 8)},      # donne la CS Surf
+    'SafariZone_West': {'SafariZone_SecretHouse_EventScript_Attendant': (9, 8),
+                        # Occupants de la maison de repos, absente de Heart & Soul : près du gardien, sur le chemin.
+                        'SafariZone_West_RestHouse_EventScript_Scientist': (8, 10, D),
+                        'SafariZone_West_RestHouse_EventScript_Man': (8, 9, D),
+                        'SafariZone_West_RestHouse_EventScript_CooltrainerF': (38, 22)},      # donne la CS Surf
     'SSAnne_Exterior': {'LOCALID_SS_ANNE': (6, 12)},
     'CinnabarIsland_Gym': {'CinnabarIsland_Gym_EventScript_Blaine': (18, 10), 'LOCALID_QUINN': (25, 13),
                            'CinnabarIsland_Gym_EventScript_Erik': (23, 9), 'LOCALID_AVERY': (16, 12),
@@ -90,12 +117,21 @@ PLACES = {
     # Gardes des badges : au Portail, le garde tient le bord gauche du couloir ; sur la Route 23, réduite à sa sortie
     # de la Route Victoire, les sept gardes s'alignent le long du dernier couloir, un contrôle par rangée.
     'Route22_NorthEntrance': {'Route22_NorthEntrance_EventScript_BoulderBadgeGuard': (9, 6, D)},
-    'Route23': {'LOCALID_CASCADE_BADGE_GUARD': (19, 17, D), 'LOCALID_THUNDER_BADGE_GUARD': (19, 16, D),
+    'Route23': {'LOCALID_CASCADE_BADGE_GUARD': (19, 10, D), 'LOCALID_THUNDER_BADGE_GUARD': (19, 16, D),
                 'LOCALID_RAINBOW_BADGE_GUARD': (19, 15, D), 'LOCALID_SOUL_BADGE_GUARD': (19, 14, D),
                 'LOCALID_MARSH_BADGE_GUARD': (19, 13, D), 'LOCALID_VOLCANO_BADGE_GUARD': (19, 12, D),
                 'LOCALID_EARTH_BADGE_GUARD': (19, 11, D)},
     # Extérieurs.
     'Route22': {'LOCALID_ROUTE22_RIVAL': (29, 8)},
+    # Crissy : le plateau fleuri de Heart & Soul est fermé, elle attend sur le chemin du dessous.
+    'Route4': {'Route4_EventScript_Crissy': (80, 6, D)},
+    # Sbires de Safrania : chacun devant la porte qu'il garde (maison de Copieuse, arène, maison aux Roucool).
+    'SaffronCity': {'SaffronCity_EventScript_RocketGrunt1': (19, 22), 'SaffronCity_EventScript_RocketGrunt3': (38, 13),
+                    'SaffronCity_EventScript_RocketGrunt4': (39, 22)},
+    # Maître d'E-Coque : dans l'enclos derrière la salle des lots, rouvert côté ouest.
+    'CeladonCity': {'CeladonCity_EventScript_SoftboiledTutor': (28, 20)},
+    'CeladonCity_DepartmentStore_2F': {'CeladonCity_DepartmentStore_2F_EventScript_Woman': (6, 3)},
+    'PewterCity_Museum_1F': {'PewterCity_Museum_1F_EventScript_OldAmberScientist': (23, 3)},
 }
 
 # Cartes associées à la main : Rouge Feu -> Heart & Soul (zone de la Ligue et donjons redessinés).
@@ -198,7 +234,7 @@ DECLENCHEURS = {
     'Route18_EastEntrance_1F': _poste_velo('Route18_EastEntrance_1F'),
     'Route22_NorthEntrance': {'Route22_NorthEntrance_EventScript_BoulderBadgeGuardTrigger': [(10, 6), (11, 6), (12, 6)]},
     'Route23': {G % b: [(20, y), (21, y)] for b, y in zip(('Cascade', 'Thunder', 'Rainbow', 'Soul', 'Marsh', 'Volcano', 'Earth'),
-                                                          range(17, 10, -1))},
+                                                          (10, 16, 15, 14, 13, 12, 11))},
     # Extérieurs : mêmes scènes, décalées avec la ville.
     'PewterCity': dict(_trio('PewterCity_EventScript_GymGuideTrigger', ('Top', 'Mid', 'Bottom', 'Right'),
                              [(44, 25), (44, 26), (44, 27), (45, 27)]),
@@ -258,6 +294,10 @@ REMPLACEMENTS = {
         ('LOCALID_OAKS_LAB_PROF_OAK, 6, 3', 'LOCALID_OAKS_LAB_PROF_OAK, 13, 11'),
         ('LOCALID_OAKS_LAB_RIVAL, 5, 10', 'LOCALID_OAKS_LAB_RIVAL, 12, 18'),
         ('LOCALID_OAKS_LAB_RIVAL, 6, 10', 'LOCALID_OAKS_LAB_RIVAL, 13, 18')],
+    # Chen ramène le joueur au labo : il arrive sur le tapis de la porte Heart & Soul, plus dans le vide.
+    'data/maps/PalletTown_Frlg/scripts.inc': [('warp MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB, 6, 12', 'warp MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB, 13, 20')],
+    # Le courant d'Écume mène à la grotte d'Artikodin : arrivée devant la sortie au lieu d'un mur.
+    'data/maps/SeafoamIslands_B3F_Frlg/scripts.inc': [('warp MAP_SEAFOAM_ISLANDS_B4F, 27, 21', 'warp MAP_SEAFOAM_ISLANDS_B4F, 16, 16')],
     'data/maps/Route22_Frlg/scripts.inc': [('LOCALID_ROUTE22_RIVAL, 25, 5', 'LOCALID_ROUTE22_RIVAL, 29, 9')],
     'data/maps/CeruleanCity_Frlg/scripts.inc': [
         ('LOCALID_CERULEAN_POLICEMAN, 30, 12', 'LOCALID_CERULEAN_POLICEMAN, 38, 12'),
@@ -310,6 +350,8 @@ REMPLACEMENTS = {
     ],
     'data/maps/SSAnne_Exterior_Frlg/scripts.inc': [
         ('SSAnne_Exterior_Movement_Exit::\n\twalk_up\n', 'SSAnne_Exterior_Movement_Exit::\n'),      # 8 pas jusqu'à la porte
+        # Entrée par la porte du hall : 8 pas jusqu'au bout de la passerelle, pas un de plus (sinon le joueur marche sur l'eau).
+        ('SSAnne_Exterior_Movement_WalkDown::\n\twalk_down\n', 'SSAnne_Exterior_Movement_WalkDown::\n'),
         ('setvar VAR_MAP_SCENE_VERMILION_CITY, 2', 'setvar VAR_MAP_SCENE_VERMILION_CITY, 3'),
         ('warp MAP_VERMILION_CITY, 23, 34', 'warp MAP_VERMILION_CITY_PORT_OUTSIDE, 15, 9'),
     ],
