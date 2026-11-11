@@ -1,80 +1,69 @@
-"""Écrit pieces/c_pointe.txt : lame et collier d'une colonne pointue, vue plongeante (~30°).
-Géométrie relevée sur un modèle three.js : lame conique à 8 facettes, pointe centrée,
-hauteur 1,9 fois le rayon, posée sur un collier rond dont on voit le dessus en ellipse.
-Vue de face, la lame fait /\\ : côté gauche clair, facette avant moyenne, côté droit sombre.
-Chaque règle (largeur par rangée, frontières de facettes, ellipses) est décidée ici ;
-trace.py ne fait que poser les segments.
-Le script donne les rangées 0 à 12 (lame) ; les rangées 13 à 24 (entrée de la lame dans le
-collier, dessus et lèvre du collier) sont tracées à la main dans pointe.txt (22x25)."""
+"""Écrit pieces/pointe.txt (22 de large) : lame conique et bague d'une colonne pointue, vue à 30°.
+Géométrie reprise du modèle three.js (rayon du fût = 10 px) :
+  cône à 8 facettes, rayon 10, hauteur 1,9 x rayon, une arête tournée vers l'avant ;
+  bague de rayon 11, épaisseur 0,3 x rayon, posée sous le cône.
+À 30°, un cercle de rayon r se voit en ellipse r x r/2, et une hauteur h se voit 0,87 h.
+Chaque règle est décidée ici ; les retouches de détail se font ensuite dans pointe.txt."""
 import math
-W, C = 22, 11.0                    # pièce 22 de large, axe entre x10 et x11
-HAUT = 24
-# collier : dessus en ellipse, lèvre de 3 px teintée comme le fût
-CA, CB, CY = 11.0, 3.5, 15.5
-LEVRE = 3
-FUT = 'DBBmWWWWWBLLLmnnddDD'       # tons du fût par colonne x1..x20 ; x0 et x21 font le contour
-# lame : rangée 0 = pointe (2 px), demi-largeur +3 toutes les 5 rangées jusqu'à 8 (rangée 12) ;
-# hauteur vue ~0,85 fois la largeur, comme le cône du modèle (1,9 x rayon) vu à 30°
-# base de la lame : ellipse plus petite que le dessus du collier, même centre en x
-LA, LB, LY = 8.5, 2.3, 14.5
-# tons des facettes selon la distance à l'axe (fraction de la demi-largeur), symétriques
-def ton(f, gauche):
-    if f < 0.36: return 'B'
-    if f < 0.78: return 'L' if gauche else 'n'
-    return 'W' if gauche else 'd'
+W, C = 22, 11.0                     # axe entre x10 et x11
+HL = 1.9 * 10 * .866                # hauteur vue de la lame : 16,5 px
+CY = HL                             # centre de l'ellipse de base du cône (apex en y = 0)
+RA, RB = 10.0, 5.0                  # ellipse de base du cône
+BA, BB = 11.0, 5.5                  # dessus de la bague
+BY2 = CY + 2.6                      # centre de l'ellipse du bas de la bague
+HAUT = 26
+# sortie : pointe_geo.txt ; pointe.txt en reprend les rangées 0 à 13 et trace le reste à la main
+FUT = 'DBBmWWWWWBLLLmnnddDO'        # tons du fût, x1..x20
+# tons des quatre facettes vues, de gauche à droite (lumière en haut à gauche)
+FACETTES = 'WLnd'
+
+def facette(X, Y):
+    """angle (degrés) du point de base visé depuis l'apex, ou None hors du cône"""
+    best = None
+    for i in range(-900, 901):
+        p = math.radians(i / 10)
+        bx, by = RA * math.sin(p), CY + RB * math.cos(p)
+        s = Y / by
+        if s <= 0 or s > 1.0001: continue
+        e = abs(s * bx - X)
+        if best is None or e < best[0]: best = (e, i / 10)
+    return best[1] if best and best[0] < .5 else None
+
+def dans_cone(X, Y):
+    if Y < 0: return False
+    tx, ty = RA * math.sqrt(1 - (RB / CY) ** 2), CY - RB * RB / CY   # points de tangence
+    if Y <= ty: return abs(X) <= tx * Y / ty
+    u = X / RA
+    return abs(u) <= 1 and Y <= CY + RB * math.sqrt(1 - u * u)
+
+def dans_ellipse(X, Y, a, b, cy):
+    u = X / a
+    return abs(u) <= 1 and abs(Y - cy) <= b * math.sqrt(1 - u * u)
 
 g = [['.'] * W for _ in range(HAUT)]
-def bas_ellipse(x, a, b, cy):
-    u = (x + .5 - C) / a
-    return None if abs(u) > 1 else cy + b * math.sqrt(1 - u * u)
-def haut_ellipse(x, a, b, cy):
-    u = (x + .5 - C) / a
-    return None if abs(u) > 1 else cy - b * math.sqrt(1 - u * u)
-
-# 1. collier : dessus W, bord avant L, lèvre aux tons du fût, contour O
-for x in range(W):
-    yt, yb = haut_ellipse(x, CA, CB, CY), bas_ellipse(x, CA, CB, CY)
-    if yt is None: continue
-    yt, yb = round(yt), round(yb)
-    for y in range(yt, yb + 1): g[y][x] = 'W'
-    g[yt - 1][x] = 'O'
-    g[yb][x] = 'L'
-    for y in range(yb + 1, yb + LEVRE + 1): g[y][x] = FUT[min(19, max(0, x - 1))]
-    g[yb + LEVRE + 1][x] = 'O'
-    if x in (0, W - 1):
-        for y in range(yt - 1, yb + LEVRE + 2): g[y][x] = 'O'
-
-# 2. lame, coupée en bas par l'ellipse de sa base
-for y in range(0, 18):
-    h = min(8, 1 + 3 * y // 5)
-    for x in range(10 - h, 12 + h):
-        yb = bas_ellipse(x, LA, LB, LY)
-        if yb is None or y > round(yb): continue
-        if y == 0: c = 'O' if x in (10, 11) else None
-        elif x in (10 - h, 11 + h): c = 'O'
-        else:
-            k = (10 - x) if x <= 10 else (x - 11)
-            c = ton((k + .5) / h, x <= 10)
-        if c: g[y][x] = c
-
-# 3. ombre portée par la lame sur le dessus du collier : un pixel sous l'arc de sa base
-for x in range(W):
-    yb = bas_ellipse(x, LA, LB, LY)
-    if yb is None: continue
-    yb = round(yb)
-    u = abs(x + .5 - C) / LA
-    # pli sombre au contact : d sur les côtés, n devant ; contour O au bas des deux colonnes extrêmes
-    if g[yb + 1][x] in 'WL': g[yb + 1][x] = 'd' if u > .6 else 'n'
-    if u > .75: g[yb][x] = 'O'
-
-# commandes : un segment hline par suite de même ton
-cmds = []
-for y, r in enumerate(g):
-    x = 0
-    while x < W:
-        if r[x] == '.': x += 1; continue
-        e = x
-        while e + 1 < W and r[e + 1] == r[x]: e += 1
-        cmds.append(f'hline {r[x]} {x} {e} {y}')
-        x = e + 1
-open('pieces/c_pointe.txt', 'w').write('# lame et collier, écrits par geo_pointe.py\n' + '\n'.join(cmds) + '\n')
+for y in range(HAUT):
+    for x in range(W):
+        X, Y = x + .5 - C, y + 1.5         # apex dans la rangée 0
+        if dans_cone(X, Y):
+            f = facette(X, Y)
+            k = 0 if f is None or f < -45 else 1 if f < 0 else 2 if f < 45 else 3
+            g[y][x] = FACETTES[k]
+        elif dans_ellipse(X, Y, BA, BB, CY):
+            g[y][x] = 'W'                                   # rebord du dessus de la bague
+        elif abs(X) <= BA and Y > CY and (dans_ellipse(X, Y, BA, BB, BY2) or Y < BY2):
+            g[y][x] = FUT[min(19, max(0, x - 1))]           # flanc de la bague
+# pli à la base du cône, là où il touche le rebord ou le flanc de la bague
+for y in range(HAUT - 1):
+    for x in range(W):
+        if g[y][x] in FACETTES and g[y + 1][x] not in FACETTES + '.':
+            g[y][x] = 'd' if x <= 10 else 'D'
+# contour : tout pixel posé qui touche le vide
+out = [r[:] for r in g]
+for y in range(HAUT):
+    for x in range(W):
+        if g[y][x] == '.': continue
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            xx, yy = x + dx, y + dy
+            if not (0 <= xx < W and 0 <= yy < HAUT) or g[yy][xx] == '.':
+                if not (dy == 1 and yy >= HAUT): out[y][x] = 'O'
+open('pieces/pointe_geo.txt', 'w').write('\n'.join(''.join(r) for r in out) + '\n')

@@ -11,6 +11,9 @@ REND, PLAT, DESS = sys.argv[1:4]
 # modèle Platine -> dessin
 DESSIN = {508: 'b100', 510: 'b84', 512: 'b70', 509: 'p104', 511: 'p88', 513: 'p72'}
 
+# colonnes retirées à la demande (centre x, bas du socle) : elles s'entassaient avec leurs voisines
+RETIREES = {(144, 601), (384, 601)}
+
 # objets des quatre blocs (même lecture que rendu2.py)
 props = []
 for k, (cx, cy) in zip(range(375, 379), [(0, 0), (1, 0), (0, 1), (1, 1)]):
@@ -57,6 +60,7 @@ TERRAIN = [(175, 223, 'b100'), (351, 223, 'p104'), (143, 255, 'p120'), (383, 255
 elems = []
 for n, wx, wz in props:
     cx, pied = int(wx) + 16, int(wz) + 217          # centre et bas du socle, repère de la carte
+    if (cx, pied) in RETIREES: continue
     if n in DESSIN:
         im = np.array(Image.open(f'{DESS}/{DESSIN[n]}.png').convert('RGBA'))
         h, w = im.shape[:2]
@@ -66,7 +70,8 @@ for n, wx, wz in props:
         # nord-sud côté allée centrale (est pour le groupe ouest)
         x0, y0 = int(wx) - 24, int(wz) + 104
         ouest = wx < 256
-        for c, nom in ((x0 + 19, 'b84'), (x0 + 59, 'b70')) if ouest else ((x0 + 21, 'b70'), (x0 + 61, 'b84')):
+        # à l'ouest, seule la première reste : la seconde masquait sa voisine
+        for c, nom in ((x0 + 19, 'b84'),) if ouest else ((x0 + 21, 'b70'), (x0 + 61, 'b84')):
             im = np.array(Image.open(f'{DESS}/{nom}.png').convert('RGBA'))
             h, w = im.shape[:2]
             elems.append((im, c - w // 2, y0 + 61 - h + 1, [(0, h - 1, y0 + 61)]))
