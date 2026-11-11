@@ -1,328 +1,176 @@
 # lame et collier, écrits par geo_pointe.py
-vline W 0 34 38
-px L 0 38
-px O 0 33
-vline D 0 39 40
-px O 0 41
-vline W 1 34 38
-px L 1 38
-px O 1 33
-vline D 1 39 40
-px O 1 41
-vline W 2 33 39
-px L 2 39
-px O 2 32
-vline B 2 40 41
-px O 2 42
-vline W 3 33 39
-px L 3 39
-px O 3 32
-vline B 3 40 41
-px O 3 42
-vline W 4 33 39
-px L 4 39
-px O 4 32
-vline m 4 40 41
-px O 4 42
-vline W 5 32 40
-px L 5 40
-px O 5 31
-vline W 5 41 42
-px O 5 43
-vline W 6 32 40
-px L 6 40
-px O 6 31
-vline W 6 41 42
-px O 6 43
-vline W 7 32 40
-px L 7 40
-px O 7 31
-vline W 7 41 42
-px O 7 43
-vline W 8 32 40
-px L 8 40
-px O 8 31
-vline W 8 41 42
-px O 8 43
-vline W 9 32 40
-px L 9 40
-px O 9 31
-vline W 9 41 42
-px O 9 43
-vline W 10 32 40
-px L 10 40
-px O 10 31
-vline B 10 41 42
-px O 10 43
-vline W 11 32 40
-px L 11 40
-px O 11 31
-vline L 11 41 42
-px O 11 43
-vline W 12 32 40
-px L 12 40
-px O 12 31
-vline L 12 41 42
-px O 12 43
-vline W 13 32 40
-px L 13 40
-px O 13 31
-vline L 13 41 42
-px O 13 43
-vline W 14 32 40
-px L 14 40
-px O 14 31
-vline m 14 41 42
-px O 14 43
-vline W 15 32 40
-px L 15 40
-px O 15 31
-vline n 15 41 42
-px O 15 43
-vline W 16 33 39
-px L 16 39
-px O 16 32
-vline n 16 40 41
-px O 16 42
-vline W 17 33 39
-px L 17 39
-px O 17 32
-vline d 17 40 41
-px O 17 42
-vline W 18 33 39
-px L 18 39
-px O 18 32
-vline d 18 40 41
-px O 18 42
-vline W 19 34 38
-px L 19 38
-px O 19 33
-vline D 19 39 40
-px O 19 41
-vline W 20 34 38
-px L 20 38
-px O 20 33
-vline O 20 39 40
-px O 20 41
-vline W 21 36 36
-px L 21 36
-px O 21 35
-vline O 21 37 38
-px O 21 39
-vline O 0 35 39
-vline O 21 35 39
-hline D 13 13 3
-hline D 13 13 4
-hline D 13 13 5
-hline D 12 13 6
-hline D 12 13 7
-hline D 12 12 8
-hline D 11 12 9
-hline D 11 12 10
-hline D 11 12 11
-hline D 10 12 12
-hline D 10 12 13
-hline D 10 12 14
-hline D 9 12 15
-hline D 9 12 16
-hline D 9 12 17
-hline D 8 12 18
-hline D 8 12 19
-hline D 8 12 20
-hline D 7 11 21
-hline D 7 11 22
-hline D 7 11 23
-hline D 6 11 24
-hline D 6 11 25
-hline D 6 11 26
-hline D 6 11 27
-hline D 5 11 28
-hline D 5 11 29
-hline D 5 11 30
-hline D 4 11 31
-hline D 4 5 32
-hline D 14 14 5
-hline D 14 14 6
-hline D 14 14 7
-hline D 13 14 8
-hline D 13 14 9
-hline D 13 14 10
-hline D 13 14 11
-hline D 13 15 12
-hline D 13 15 13
-hline D 13 15 14
-hline D 13 15 15
-hline D 13 15 16
-hline D 13 15 17
-hline D 13 15 18
-hline D 13 16 19
-hline D 13 16 20
-hline D 12 16 21
-hline D 12 16 22
-hline D 12 16 23
-hline D 12 16 24
-hline D 12 16 25
-hline D 12 17 26
-hline D 12 17 27
-hline D 12 17 28
-hline D 12 17 29
-hline D 12 17 30
-hline D 12 17 31
-hline D 15 17 32
-hline D 13 13 2
-hline D 12 12 5
-hline D 11 11 8
-hline D 10 10 10
-hline D 10 10 11
-hline D 9 9 13
-hline D 9 9 14
-hline D 8 8 16
-hline D 8 8 17
-hline D 7 7 18
-hline D 7 7 19
-hline D 7 7 20
-hline D 6 6 21
-hline D 6 6 22
-hline D 6 6 23
-hline D 5 5 24
-hline D 5 5 25
-hline D 4 5 26
-hline D 4 5 27
-hline D 4 4 28
-hline D 3 4 29
-hline D 3 4 30
-hline D 2 3 31
-hline D 2 3 32
-hline D 2 2 33
-hline D 1 1 34
-hline d 14 14 4
-hline d 15 15 11
-hline d 16 16 17
-hline d 16 16 18
-hline d 17 17 24
-hline d 17 17 25
-hline d 18 18 30
-hline d 18 18 31
-hline d 18 18 32
-hline W 13 13 2
-hline W 12 12 5
-hline W 12 12 6
-hline W 11 11 8
-hline W 11 11 9
-hline W 10 11 10
-hline W 10 11 11
-hline W 10 10 12
-hline W 9 10 13
-hline W 9 10 14
-hline W 9 10 15
-hline W 8 9 16
-hline W 8 9 17
-hline W 7 9 18
-hline W 7 9 19
-hline W 7 8 20
-hline W 6 8 21
-hline W 6 8 22
-hline W 6 8 23
-hline W 5 7 24
-hline W 5 7 25
-hline W 4 7 26
-hline W 4 7 27
-hline W 4 7 28
-hline W 3 6 29
-hline W 3 6 30
-hline W 2 6 31
-hline W 2 6 32
-hline W 2 5 33
-hline W 1 5 34
-hline W 1 5 35
-hline W 3 5 36
-hline n 14 14 4
-hline n 14 14 5
-hline n 14 14 6
-hline n 14 14 7
-hline n 14 14 8
-hline n 14 14 9
-hline n 14 14 10
+hline O 10 11 0
+hline O 9 9 1
+hline L 10 10 1
+hline n 11 11 1
+hline O 12 12 1
+hline O 8 8 2
+hline L 9 9 2
+hline B 10 11 2
+hline n 12 12 2
+hline O 13 13 2
+hline O 8 8 3
+hline L 9 9 3
+hline B 10 11 3
+hline n 12 12 3
+hline O 13 13 3
+hline O 7 7 4
+hline W 8 8 4
+hline L 9 9 4
+hline B 10 11 4
+hline n 12 12 4
+hline d 13 13 4
+hline O 14 14 4
+hline O 6 6 5
+hline W 7 7 5
+hline L 8 9 5
+hline B 10 11 5
+hline n 12 13 5
+hline d 14 14 5
+hline O 15 15 5
+hline O 6 6 6
+hline W 7 7 6
+hline L 8 9 6
+hline B 10 11 6
+hline n 12 13 6
+hline d 14 14 6
+hline O 15 15 6
+hline O 5 5 7
+hline W 6 6 7
+hline L 7 8 7
+hline B 9 12 7
+hline n 13 14 7
+hline d 15 15 7
+hline O 16 16 7
+hline O 5 5 8
+hline W 6 6 8
+hline L 7 8 8
+hline B 9 12 8
+hline n 13 14 8
+hline d 15 15 8
+hline O 16 16 8
+hline O 4 4 9
+hline W 5 5 9
+hline L 6 8 9
+hline B 9 12 9
+hline n 13 15 9
+hline d 16 16 9
+hline O 17 17 9
+hline O 3 3 10
+hline W 4 5 10
+hline L 6 7 10
+hline B 8 13 10
+hline n 14 15 10
+hline d 16 17 10
+hline O 18 18 10
+hline O 3 3 11
+hline W 4 5 11
+hline L 6 7 11
+hline B 8 13 11
 hline n 14 15 11
-hline n 14 15 12
-hline n 14 15 13
-hline n 14 15 14
-hline n 14 15 15
-hline n 14 15 16
-hline n 14 16 17
-hline n 14 16 18
-hline n 14 16 19
-hline n 14 16 20
-hline n 14 16 21
-hline n 14 16 22
-hline n 14 16 23
-hline n 14 17 24
-hline n 14 17 25
-hline n 14 17 26
-hline n 14 17 27
-hline n 14 17 28
-hline n 14 17 29
-hline n 14 18 30
-hline n 14 18 31
-hline n 14 18 32
-hline n 14 18 33
-hline n 14 18 34
-hline n 14 18 35
-hline n 14 17 36
-hline n 14 14 37
-hline B 13 13 3
-hline B 13 13 4
-hline B 13 13 5
-hline B 13 13 6
-hline B 12 13 7
-hline B 12 13 8
-hline B 12 13 9
-hline B 12 13 10
-hline B 12 13 11
-hline B 11 13 12
-hline B 11 13 13
-hline B 11 13 14
-hline B 11 13 15
-hline B 10 13 16
-hline B 10 13 17
-hline B 10 13 18
-hline B 10 13 19
-hline B 9 13 20
-hline B 9 13 21
-hline B 9 13 22
-hline B 9 13 23
-hline B 8 13 24
-hline B 8 13 25
-hline B 8 13 26
-hline B 8 13 27
-hline B 8 13 28
-hline B 7 13 29
-hline B 7 13 30
-hline B 7 13 31
-hline B 7 13 32
-hline B 6 13 33
-hline B 6 13 34
-hline B 6 13 35
-hline B 6 13 36
-hline B 5 13 37
-px n 1 37
-px n 2 38
-px n 3 38
-px n 4 38
-px n 5 39
-px n 6 39
-px n 7 39
-px n 8 39
-px n 9 39
-px n 10 39
-px n 11 39
-px n 12 39
-px n 13 39
-px n 14 39
-px n 15 39
-px n 16 38
-px n 17 38
-px n 18 38
-px n 19 37
-line O 14 1 0 35
-line O 14 1 19 36
+hline d 16 17 11
+hline O 18 18 11
+hline O 2 2 12
+hline W 3 4 12
+hline L 5 7 12
+hline B 8 13 12
+hline n 14 16 12
+hline d 17 18 12
+hline O 19 19 12
+hline O 0 2 13
+hline W 3 4 13
+hline L 5 7 13
+hline B 8 13 13
+hline n 14 16 13
+hline d 17 18 13
+hline O 19 21 13
+hline O 0 0 14
+hline W 1 1 14
+hline O 2 2 14
+hline W 3 4 14
+hline L 5 7 14
+hline B 8 13 14
+hline n 14 16 14
+hline d 17 18 14
+hline O 19 19 14
+hline W 20 20 14
+hline O 21 21 14
+hline O 0 0 15
+hline W 1 1 15
+hline d 2 2 15
+hline W 3 4 15
+hline L 5 7 15
+hline B 8 13 15
+hline n 14 16 15
+hline d 17 19 15
+hline W 20 20 15
+hline O 21 21 15
+hline O 0 0 16
+hline W 1 2 16
+hline O 3 4 16
+hline L 5 7 16
+hline B 8 13 16
+hline n 14 16 16
+hline O 17 18 16
+hline W 19 20 16
+hline O 21 21 16
+hline O 0 0 17
+hline L 1 1 17
+hline W 2 2 17
+hline d 3 5 17
+hline n 6 6 17
+hline L 7 7 17
+hline B 8 13 17
+hline n 14 15 17
+hline d 16 18 17
+hline W 19 19 17
+hline L 20 20 17
+hline O 21 21 17
+hline O 0 0 18
+hline D 1 1 18
+hline L 2 4 18
+hline W 5 6 18
+hline n 7 14 18
+hline W 15 16 18
+hline L 17 19 18
+hline D 20 20 18
+hline O 21 21 18
+hline O 0 0 19
+hline D 1 1 19
+hline B 2 3 19
+hline m 4 4 19
+hline L 5 16 19
+hline d 17 18 19
+hline D 19 20 19
+hline O 21 21 19
+hline O 0 0 20
+hline D 1 1 20
+hline B 2 3 20
+hline m 4 4 20
+hline W 5 9 20
+hline B 10 10 20
+hline L 11 13 20
+hline m 14 14 20
+hline n 15 16 20
+hline d 17 18 20
+hline D 19 20 20
+hline O 21 21 20
+hline O 0 1 21
+hline B 2 3 21
+hline m 4 4 21
+hline W 5 9 21
+hline B 10 10 21
+hline L 11 13 21
+hline m 14 14 21
+hline n 15 16 21
+hline d 17 18 21
+hline D 19 19 21
+hline O 20 21 21
+hline O 2 4 22
+hline W 5 9 22
+hline B 10 10 22
+hline L 11 13 22
+hline m 14 14 22
+hline n 15 16 22
+hline O 17 19 22
+hline O 5 16 23

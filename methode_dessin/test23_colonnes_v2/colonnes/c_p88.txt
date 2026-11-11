@@ -30,7 +30,7 @@ stamp pieces/fut.txt 6 64
 stamp pieces/fut.txt 6 65
 stamp pieces/fut.txt 6 66
 stamp pieces/pied.txt 6 67
-stamp pieces/pointe.txt 5 0
+stamp pieces/pointe.txt 5 19
 stamp pieces/joint.txt 6 50
 stamp pieces/joint.txt 6 63
 # usure p88

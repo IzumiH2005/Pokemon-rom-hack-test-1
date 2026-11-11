@@ -14,7 +14,7 @@ stamp pieces/fut.txt 6 48
 stamp pieces/fut.txt 6 49
 stamp pieces/fut.txt 6 50
 stamp pieces/pied.txt 6 51
-stamp pieces/pointe.txt 5 0
+stamp pieces/pointe.txt 5 19
 # usure p72
 px n 13 45
 px m 14 45

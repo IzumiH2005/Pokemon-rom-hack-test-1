@@ -12,7 +12,7 @@ echo "stamp pieces/pied.txt 6 $((59+dy))"
 case $type in
   brise)  echo "stamp pieces/cassure.txt 6 4";;
   brise2) echo "stamp pieces/cassure2.txt 6 5";;
-  pointe) echo "stamp pieces/pointe.txt 5 0";;
+  pointe) echo "stamp pieces/pointe.txt 5 19";;
 esac
 for j in $joints; do echo "stamp pieces/joint.txt 6 $j"; done
 [ -f colonnes/d_$nom.txt ] && cat colonnes/d_$nom.txt

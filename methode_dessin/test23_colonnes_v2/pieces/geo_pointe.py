@@ -1,65 +1,80 @@
-"""Écrit pieces/c_pointe.txt : commandes de la lame et du collier en vue plongeante (~25°).
-# Le script pose la lame (rangées 0 à 31) ; collier (32 à 43) retouché à la main dans pointe.txt.
-Géométrie relevée sur un modèle three.js (colonne à 16 pans, lame à 7 facettes, pointe
-décalée) ; les sommets, les couleurs de facette et l'ordre de pose sont décidés ici, trace.py
-ne fait que remplir les rangées et tirer les segments donnés."""
+"""Écrit pieces/c_pointe.txt : lame et collier d'une colonne pointue, vue plongeante (~30°).
+Géométrie relevée sur un modèle three.js : lame conique à 8 facettes, pointe centrée,
+hauteur 1,9 fois le rayon, posée sur un collier rond dont on voit le dessus en ellipse.
+Vue de face, la lame fait /\\ : côté gauche clair, facette avant moyenne, côté droit sombre.
+Chaque règle (largeur par rangée, frontières de facettes, ellipses) est décidée ici ;
+trace.py ne fait que poser les segments.
+Le script donne les rangées 0 à 12 (lame) ; les rangées 13 à 24 (entrée de la lame dans le
+collier, dessus et lèvre du collier) sont tracées à la main dans pointe.txt (22x25)."""
 import math
-W, CX, CY = 22, 10.5, 36          # pièce 22 de large ; centre de l'ellipse du collier
-A, B = 11, 4                      # demi-axes du dessus du collier
-LIP = 3                           # épaisseur visible du collier
-a, b, cyb = 9.5, 3.2, 35.0        # base de la lame, posée sur le collier
-APEX = (14.0, 1.0)                # pointe, décalée à droite et vers l'arrière
-N, T0 = 7, 0.35
-# couleur de chaque facette selon l'angle de sa normale (0 = droite, pi/2 = devant)
-def teinte(phi):
-    # lumière venue d'en haut à gauche et de devant
-    l = -math.cos(phi) * 0.9 + math.sin(phi) * 0.2
-    for s, c in [(0.55, 'W'), (0.3, 'L'), (0.05, 'B'), (-0.2, 'm'), (-0.45, 'n'), (-0.7, 'd')]:
-        if l > s: return c
-    return 'D'
-cmds = []
-def tri(c, p, q, r):
-    ys = range(math.floor(min(p[1], q[1], r[1])), math.ceil(max(p[1], q[1], r[1])) + 1)
-    for y in ys:
-        xs = []
-        for (x1, y1), (x2, y2) in ((p, q), (q, r), (r, p)):
-            if (y1 <= y + .5 < y2) or (y2 <= y + .5 < y1):
-                xs.append(x1 + (y + .5 - y1) * (x2 - x1) / (y2 - y1))
-        if len(xs) >= 2:
-            x1, x2 = round(min(xs)), round(max(xs)) - 1
-            if x2 >= x1: cmds.append(f'hline {c} {x1} {x2} {y}')
-# collier : dessus clair, rebord arrière éclairé, lèvre avant teintée comme le fût
-FUT = 'DBBmWWWWWBLLLmnnddDO'
+W, C = 22, 11.0                    # pièce 22 de large, axe entre x10 et x11
+HAUT = 24
+# collier : dessus en ellipse, lèvre de 3 px teintée comme le fût
+CA, CB, CY = 11.0, 3.5, 15.5
+LEVRE = 3
+FUT = 'DBBmWWWWWBLLLmnnddDD'       # tons du fût par colonne x1..x20 ; x0 et x21 font le contour
+# lame : rangée 0 = pointe (2 px), demi-largeur +3 toutes les 5 rangées jusqu'à 8 (rangée 12) ;
+# hauteur vue ~0,85 fois la largeur, comme le cône du modèle (1,9 x rayon) vu à 30°
+# base de la lame : ellipse plus petite que le dessus du collier, même centre en x
+LA, LB, LY = 8.5, 2.3, 14.5
+# tons des facettes selon la distance à l'axe (fraction de la demi-largeur), symétriques
+def ton(f, gauche):
+    if f < 0.36: return 'B'
+    if f < 0.78: return 'L' if gauche else 'n'
+    return 'W' if gauche else 'd'
+
+g = [['.'] * W for _ in range(HAUT)]
+def bas_ellipse(x, a, b, cy):
+    u = (x + .5 - C) / a
+    return None if abs(u) > 1 else cy + b * math.sqrt(1 - u * u)
+def haut_ellipse(x, a, b, cy):
+    u = (x + .5 - C) / a
+    return None if abs(u) > 1 else cy - b * math.sqrt(1 - u * u)
+
+# 1. collier : dessus W, bord avant L, lèvre aux tons du fût, contour O
 for x in range(W):
-    dx = (x + .5 - CX) / A
-    if abs(dx) > 1: continue
-    h = B * math.sqrt(1 - dx * dx)
-    yt, yb = round(CY - h), round(CY + h)
-    cmds.append(f'vline W {x} {yt} {yb}')
-    cmds.append(f'px L {x} {yb}')
-    cmds.append(f'px O {x} {yt - 1}')
-    c = FUT[min(19, max(0, x - 1))]
-    cmds.append(f'vline {c} {x} {yb + 1} {yb + LIP - 1}')
-    cmds.append(f'px O {x} {yb + LIP}')
-cmds.append(f'vline O 0 {CY - 1} {CY + LIP}')
-cmds.append(f'vline O {W - 1} {CY - 1} {CY + LIP}')
-# lame : facettes de l'arrière vers l'avant
-v = [(CX + a * math.cos(T0 + k * 2 * math.pi / N), cyb + b * math.sin(T0 + k * 2 * math.pi / N)) for k in range(N)]
-fac = sorted(range(N), key=lambda k: math.sin(T0 + (k + .5) * 2 * math.pi / N))
-# tons des facettes vues (normale vers l'avant), de gauche à droite : W, m, d (4 vues : W, B, n, d)
-mid = {k: T0 + (k + .5) * 2 * math.pi / N for k in range(N)}
-vues = sorted([k for k in range(N) if math.sin(mid[k]) > -0.25], key=lambda k: math.cos(mid[k]))
-TONS = {1: 'm', 2: 'Wd', 3: 'Wmd', 4: 'WBnd', 5: 'WBmnd'}[len(vues)]
-ton = {k: TONS[i] for i, k in enumerate(vues)}
-for k in fac:
-    tri(ton.get(k, 'D'), APEX, v[k], v[(k + 1) % N])
-# ombre au pied de la lame : arc avant de sa base
-for x in range(1, W - 1):
-    dx = (x + .5 - CX) / a
-    if abs(dx) <= 1:
-        cmds.append(f'px n {x} {round(cyb + b * math.sqrt(1 - dx * dx)) + 1}')
-# contour : les deux arêtes extrêmes et l'arc avant
-g = min(v, key=lambda p: p[0]); d = max(v, key=lambda p: p[0])
-cmds.append(f'line O {round(APEX[0])} {round(APEX[1])} {round(g[0])-1} {round(g[1])}')
-cmds.append(f'line O {round(APEX[0])} {round(APEX[1])} {round(d[0])} {round(d[1])}')
+    yt, yb = haut_ellipse(x, CA, CB, CY), bas_ellipse(x, CA, CB, CY)
+    if yt is None: continue
+    yt, yb = round(yt), round(yb)
+    for y in range(yt, yb + 1): g[y][x] = 'W'
+    g[yt - 1][x] = 'O'
+    g[yb][x] = 'L'
+    for y in range(yb + 1, yb + LEVRE + 1): g[y][x] = FUT[min(19, max(0, x - 1))]
+    g[yb + LEVRE + 1][x] = 'O'
+    if x in (0, W - 1):
+        for y in range(yt - 1, yb + LEVRE + 2): g[y][x] = 'O'
+
+# 2. lame, coupée en bas par l'ellipse de sa base
+for y in range(0, 18):
+    h = min(8, 1 + 3 * y // 5)
+    for x in range(10 - h, 12 + h):
+        yb = bas_ellipse(x, LA, LB, LY)
+        if yb is None or y > round(yb): continue
+        if y == 0: c = 'O' if x in (10, 11) else None
+        elif x in (10 - h, 11 + h): c = 'O'
+        else:
+            k = (10 - x) if x <= 10 else (x - 11)
+            c = ton((k + .5) / h, x <= 10)
+        if c: g[y][x] = c
+
+# 3. ombre portée par la lame sur le dessus du collier : un pixel sous l'arc de sa base
+for x in range(W):
+    yb = bas_ellipse(x, LA, LB, LY)
+    if yb is None: continue
+    yb = round(yb)
+    u = abs(x + .5 - C) / LA
+    # pli sombre au contact : d sur les côtés, n devant ; contour O au bas des deux colonnes extrêmes
+    if g[yb + 1][x] in 'WL': g[yb + 1][x] = 'd' if u > .6 else 'n'
+    if u > .75: g[yb][x] = 'O'
+
+# commandes : un segment hline par suite de même ton
+cmds = []
+for y, r in enumerate(g):
+    x = 0
+    while x < W:
+        if r[x] == '.': x += 1; continue
+        e = x
+        while e + 1 < W and r[e + 1] == r[x]: e += 1
+        cmds.append(f'hline {r[x]} {x} {e} {y}')
+        x = e + 1
 open('pieces/c_pointe.txt', 'w').write('# lame et collier, écrits par geo_pointe.py\n' + '\n'.join(cmds) + '\n')

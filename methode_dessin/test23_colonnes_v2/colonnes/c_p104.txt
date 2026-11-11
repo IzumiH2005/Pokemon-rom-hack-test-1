@@ -46,7 +46,7 @@ stamp pieces/fut.txt 6 80
 stamp pieces/fut.txt 6 81
 stamp pieces/fut.txt 6 82
 stamp pieces/pied.txt 6 83
-stamp pieces/pointe.txt 5 0
+stamp pieces/pointe.txt 5 19
 stamp pieces/joint.txt 6 50
 stamp pieces/joint.txt 6 64
 stamp pieces/joint.txt 6 78
