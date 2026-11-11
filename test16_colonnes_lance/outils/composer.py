@@ -72,9 +72,10 @@ for cx, pied, nom in TERRAIN:
     im = np.array(Image.open(f'{DESS}/{nom}.png').convert('RGBA'))
     h, w = im.shape[:2]
     elems.append((im, cx - w // 2, pied - h + 1, [(0, h - 1, pied)]))
-g = np.array(Image.open(f'{DESS}/gravats.png').convert('RGBA'))
-for i, (cx, pied) in enumerate(gravats):
-    im = g[:, ::-1] if i % 2 else g                 # un tas sur deux en miroir
+# à la place des gravats de Platine : une souche de colonne brisée au ras du socle
+g = np.array(Image.open(f'{DESS}/souche.png').convert('RGBA'))
+for cx, pied in gravats:
+    im = g
     h, w = im.shape[:2]
     elems.append((im, cx - w // 2, pied - h + 1, [(0, h - 1, pied)]))
 
