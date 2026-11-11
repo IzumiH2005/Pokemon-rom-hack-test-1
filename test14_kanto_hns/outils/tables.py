@@ -46,6 +46,10 @@ PLACES = {
         'LOCALID_BULBASAUR_BALL': (15, 13), 'LOCALID_SQUIRTLE_BALL': (16, 13), 'LOCALID_CHARMANDER_BALL': (17, 13),
         'LOCALID_POKEDEX_1': (9, 10), 'LOCALID_POKEDEX_2': (10, 10),
     },
+    # Clé : local_id, script, ou rang du PNJ dans la carte.
+    'FuchsiaCity_SafariZone_Entrance': {0: (2, 5), 'FuchsiaCity_SafariZone_Entrance_EventScript_InfoAttendant': (2, 10)},
+    'SafariZone_West': {'SafariZone_SecretHouse_EventScript_Attendant': (9, 8)},      # donne la CS Surf
+    'SSAnne_Exterior': {'LOCALID_SS_ANNE': (6, 12)},
 }
 
 # Cartes associées à la main : Rouge Feu -> Heart & Soul (zone de la Ligue et donjons redessinés).
@@ -72,6 +76,11 @@ PAIRES_FIXES = {
     'UndergroundPath_NorthEntrance': 'Route5_TunnelEntrance', 'UndergroundPath_SouthEntrance': 'Route6_TunnelEntrance',
     'UndergroundPath_WestEntrance': 'Route7_TunnelEntrance', 'UndergroundPath_EastEntrance': 'Route8_TunnelEntrance',
     'UndergroundPath_NorthSouthTunnel': 'SaffronCity_Tunnel_NS', 'UndergroundPath_EastWestTunnel': 'SaffronCity_Tunnel_SW',
+    # Parc Safari : quatre zones reliées par des connexions, plus une grotte.
+    'FuchsiaCity_SafariZone_Entrance': 'FuchsiaCity_SafariZoneEntrance', 'SafariZone_Center': 'FuchsiaCity_SafariZoneBeach',
+    'SafariZone_West': 'FuchsiaCity_SafariZoneBrush', 'SafariZone_North': 'FuchsiaCity_SafariZoneMountain',
+    'SafariZone_East': 'FuchsiaCity_SafariZoneCave',
+    'SSAnne_Exterior': 'VermilionCity_PortInside',          # le quai de l'Océane
 }
 # Cartes déjà reprises de Heart & Soul par un travail antérieur (Mont Argenté) : elles servent seulement de cible.
 DEJA = {'Route28': 'Route28', 'Route28_House': 'Route28_House'}
@@ -89,8 +98,65 @@ NOUVELLES = {
     'TohjoFalls_GiovanniRoom': ('MUS_RG_MT_MOON', 'MAPSEC_TOHJO_FALLS'),
     'Route19_Cave': ('MUS_RG_MT_MOON', 'MAPSEC_ROUTE_19'),
     'SaffronCity_FightingDojoVIP': ('MUS_RG_GYM', 'MAPSEC_SAFFRON_CITY'),
+    'VermilionCity_PortOutside': ('MUS_RG_VERMILLION', 'MAPSEC_VERMILION_CITY'),
 }
 ZONES = {'MAPSEC_ROUTE_26': ('ROUTE 26', 1, 10), 'MAPSEC_ROUTE_27': ('ROUTE 27', 0, 12),
          'MAPSEC_TOHJO_FALLS': ('CHUTES TOHJO', 0, 12)}
 # Scripts de carte de Rouge Feu liés à l'ancien décor (courants, portes) : types retirés de la table de la carte.
 SCRIPTS_RETIRES = {'SeafoamIslands_B4F': ('MAP_SCRIPT_ON_LOAD', 'MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE', 'MAP_SCRIPT_ON_FRAME_TABLE')}
+
+# Bâtiments de Rouge Feu absents de Heart & Soul : leurs occupants se tiennent dehors, dans la carte indiquée.
+HABITANTS = {'SafariZone_Center': ['SafariZone_Center_RestHouse'],
+             'SafariZone_West': ['SafariZone_SecretHouse', 'SafariZone_West_RestHouse'],
+             'SafariZone_North': ['SafariZone_North_RestHouse'], 'SafariZone_East': ['SafariZone_East_RestHouse']}
+# Déclencheurs gardés : carte -> script -> case dans le décor Heart & Soul.
+P = 'FuchsiaCity_SafariZone_Entrance_EventScript_EntryTrigger'
+DECLENCHEURS = {'FuchsiaCity_SafariZone_Entrance': {P + 'Mid': (5, 5), P + 'Right': (6, 5), P + 'Left': (4, 5)}}
+# Portes ajoutées à un décor Heart & Soul : (x, y, carte, numéro de porte d'arrivée).
+PORTES_AJOUTEES = {'SSAnne_Exterior': [(8, 10, 'MAP_SSANNE_1F_CORRIDOR', '2')]}
+# PNJ (local_id ou script) et déclencheurs (script) d'un extérieur déplacés dans une autre carte : (source, clé, cible, x, y).
+TRANSFERTS = [
+    ('VermilionCity', 'LOCALID_VERMILION_FERRY_SAILOR', 'SSAnne_Exterior', 9, 9),
+    ('VermilionCity', 'VermilionCity_EventScript_CheckTicketLeft', 'SSAnne_Exterior', 8, 9),
+    ('VermilionCity', 'VermilionCity_EventScript_ExitedTicketCheck', 'SSAnne_Exterior', 8, 8),
+]
+# Scripts ajoutés à la fin du fichier d'une carte.
+SCRIPTS_AJOUTES = {'SSAnne_Exterior': """
+@ Bout de la passerelle : le décor Heart & Soul n'a pas de case de porte, un déclencheur fait monter à bord.
+SSAnne_Exterior_EventScript_Embarquer::
+	lockall
+	warp MAP_SSANNE_1F_CORRIDOR, 2
+	waitstate
+	releaseall
+	end
+"""}
+DECLENCHEURS_AJOUTES = {'SSAnne_Exterior': [(8, 10, 'VAR_TEMP_1', 'SSAnne_Exterior_EventScript_Embarquer')]}
+# Scripts qui visent une case précise de l'ancien décor : fichier -> [(texte de Rouge Feu, texte adapté)].
+E = 'FuchsiaCity_SafariZone_Entrance_'
+REMPLACEMENTS = {
+    # Ferry des îles Sevii : il accoste au quai du port, là où se tient désormais le marin.
+    'src/seagallop.c': [
+        ('MAP_GROUP(MAP_VERMILION_CITY), MAP_NUM(MAP_VERMILION_CITY),      0x17, 0x20',
+         'MAP_GROUP(MAP_SSANNE_EXTERIOR), MAP_NUM(MAP_SSANNE_EXTERIOR),      8, 8'),
+        ('mapGroup == MAP_GROUP(MAP_VERMILION_CITY)', 'mapGroup == MAP_GROUP(MAP_SSANNE_EXTERIOR)'),
+        ('mapNum == MAP_NUM(MAP_VERMILION_CITY)', 'mapNum == MAP_NUM(MAP_SSANNE_EXTERIOR)'),
+        ('pos.x < 24', 'pos.x < 9'),
+    ],
+    'data/scripts/safari_zone.inc': [('MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 4, 1', 'MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 5, 2')],
+    'data/maps/FuchsiaCity_SafariZone_Entrance_Frlg/scripts.inc': [
+        ('MAP_SAFARI_ZONE_CENTER, 26, 30', 'MAP_SAFARI_ZONE_CENTER, 20, 39'),
+        ('MAP_SAFARI_ZONE_CENTER, 255, 26, 30', 'MAP_SAFARI_ZONE_CENTER, 255, 20, 39'),
+        # L'employé du guichet est à gauche du couloir, et la porte du parc une case plus loin.
+        ('Common_Movement_WalkInPlaceFasterRight\n\twaitmovement 0\n\tshowmoneybox',
+         'Common_Movement_WalkInPlaceFasterLeft\n\twaitmovement 0\n\tshowmoneybox'),
+        (E + 'Movement_Exit::\n', E + 'Movement_Exit::\n\twalk_down\n'),
+        (E + 'Movement_EnterSafariZoneMid::\n', E + 'Movement_EnterSafariZoneMid::\n\twalk_up\n'),
+        (E + 'Movement_EnterSafariZoneRight::\n', E + 'Movement_EnterSafariZoneRight::\n\twalk_up\n'),
+        (E + 'Movement_EnterSafariZoneLeft::\n', E + 'Movement_EnterSafariZoneLeft::\n\twalk_up\n'),
+    ],
+    'data/maps/SSAnne_Exterior_Frlg/scripts.inc': [
+        ('SSAnne_Exterior_Movement_Exit::\n\twalk_up\n', 'SSAnne_Exterior_Movement_Exit::\n'),      # 8 pas jusqu'à la porte
+        ('setvar VAR_MAP_SCENE_VERMILION_CITY, 2', 'setvar VAR_MAP_SCENE_VERMILION_CITY, 3'),
+        ('warp MAP_VERMILION_CITY, 23, 34', 'warp MAP_VERMILION_CITY_PORT_OUTSIDE, 15, 9'),
+    ],
+}

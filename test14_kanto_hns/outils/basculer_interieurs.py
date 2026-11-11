@@ -11,7 +11,9 @@ Le script repart des copies `map.json.rougefeu` et écrit `rapport_interieurs.tx
 import json, os, struct, sys, re, shutil, copy
 from collections import deque
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from tables import PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS, NOUVELLES, SCRIPTS_RETIRES
+from tables import (PORTES, PLACES, PAIRES_FIXES, DEJA, FUSIONS, NOUVELLES, SCRIPTS_RETIRES, HABITANTS, DECLENCHEURS,
+                    PORTES_AJOUTEES, TRANSFERTS, REMPLACEMENTS, SCRIPTS_AJOUTES,
+                    DECLENCHEURS_AJOUTES)
 PAIRES_FIXES = dict(PAIRES_FIXES, **{n: n for n in NOUVELLES})
 
 HNS, JEU = sys.argv[1], sys.argv[2]
@@ -97,6 +99,17 @@ for fd, hd in DEJA.items(): inverse[hd] = fd + '_Frlg'
 interieurs = [f for f in paire if f not in exterieurs]
 
 LAY = {x['id']: x for x in lire(f'{JEU}/data/layouts/layouts.json')['layouts'] if x}
+META = open(f'{JEU}/src/data/tilesets/metatiles.h').read()
+EAU = set(range(0x10, 0x18))      # comportements de métatuile : eau
+_attr = {}
+
+
+def attributs(sym):
+    if sym not in _attr:
+        m = re.search(r'gMetatileAttributes_%s\[\]\s*=\s*INCBIN_U\d+\("([^"]+)"' % sym[len('gTileset_'):], META)
+        d = open(f'{JEU}/{m.group(1)}', 'rb').read() if m else b''
+        _attr[sym] = struct.unpack('<%dI' % (len(d) // 4), d)
+    return _attr[sym]
 
 
 class Decor:
@@ -108,19 +121,27 @@ class Decor:
 
     def libre(self, x, y): return 0 <= x < self.w and 0 <= y < self.h and (self.brut(x, y) >> 10) & 3 == 0
 
+    def eau(self, x, y):
+        m = self.brut(x, y) & 0x3FF
+        a = attributs(self.l['primary_tileset' if m < 640 else 'secondary_tileset']); i = m if m < 640 else m - 640
+        return (a[i] & 0x1FF if i < len(a) else 0) in EAU
+
+    def sec(self, x, y): return self.libre(x, y) and not self.eau(x, y)
+
 
 def accessibles(decor, portes):
-    """Cases où le joueur peut marcher depuis une porte."""
+    """Cases où le joueur peut marcher à pied depuis une porte. Sans porte : depuis les bords de la carte."""
     vus = set(); file = deque()
-    for w in portes:
-        for dx, dy in ((0, 0), (0, -1), (0, 1), (1, 0), (-1, 0)):
-            c = (w['x'] + dx, w['y'] + dy)
-            if decor.libre(*c) and c not in vus: vus.add(c); file.append(c)
+    departs = [(w['x'] + dx, w['y'] + dy) for w in portes for dx, dy in ((0, 0), (0, -1), (0, 1), (1, 0), (-1, 0))]
+    if not portes:
+        departs = [(x, y) for x in range(decor.w) for y in range(decor.h) if x in (0, decor.w - 1) or y in (0, decor.h - 1)]
+    for c in departs:
+        if decor.sec(*c) and c not in vus: vus.add(c); file.append(c)
     while file:
         cx, cy = file.popleft()
         for dx, dy in ((0, 1), (1, 0), (0, -1), (-1, 0)):
             c = (cx + dx, cy + dy)
-            if c not in vus and decor.libre(*c): vus.add(c); file.append(c)
+            if c not in vus and decor.sec(*c): vus.add(c); file.append(c)
     return vus
 
 
@@ -180,6 +201,9 @@ for fd in interieurs:
         else:
             rapport.append(f'{fd}: porte {i} ({w["x"]},{w["y"]}) vers {w["dest_map"]} sans carte')
         portes.append(n)
+    for x, y, carte, num in PORTES_AJOUTEES.get(fd[:-5], []):
+        portes.append({'x': x, 'y': y, 'elevation': 0, 'dest_map': carte, 'dest_warp_id': num})
+        restees = [r for r in restees if r['dest_map'] != carte]
     for r in restees: rapport.append(f'{fd}: accès perdu vers {r["dest_map"]}')
     f['warp_events'] = portes
     # PNJ sur les emplacements des PNJ HnS.
@@ -194,13 +218,18 @@ for fd in interieurs:
             if role(o) in ('dresseur', 'objet') and not o.get('local_id'):
                 o['_dim'] = dim; f['object_events'].append(o)
         rapport.append(f'{autre}: étage sans équivalent, dresseurs et objets déplacés dans {fd[:-5]}, scènes à réécrire')
+    for autre in HABITANTS.get(fd[:-5], []):
+        a = origine(autre + '_Frlg'); dim = (LAY[a['layout']]['width'], LAY[a['layout']]['height'])
+        for o in a['object_events']: o['_dim'] = dim; f['object_events'].append(o)
+        rapport.append(f'{autre}: bâtiment absent de Heart & Soul, ses occupants sont dehors dans {fd[:-5]}')
     f['object_events'] = f['object_events'][:64]
     retires = {}
+    for k, o in enumerate(f['object_events']): o['_cle'] = next((c for c in (o.get('local_id'), o['script'], k) if c in fixes), None)
     for o in sorted(f['object_events'], key=lambda o: role(o) == 'passant'):
-        dw, dh = o.pop('_dim'); cx, cy = round(o['x'] * decor.w / dw), round(o['y'] * decor.h / dh); r = role(o)
+        cle = o.pop('_cle'); dw, dh = o.pop('_dim'); cx, cy = round(o['x'] * decor.w / dw), round(o['y'] * decor.h / dh); r = role(o)
         cand = [c for c in libres if role(c) == r and (c['x'], c['y']) not in pris]
-        if o.get('local_id') in fixes:
-            o['x'], o['y'] = fixes[o['local_id']]; pris.add((o['x'], o['y'])); continue
+        if cle is not None:
+            o['x'], o['y'] = fixes[cle]; pris.add((o['x'], o['y'])); continue
         if not cand and r in ('dresseur', 'passant'):
             cand = [c for c in libres if role(c) in ('dresseur', 'passant') and (c['x'], c['y']) not in pris]
         if not cand and r in OBSTACLES and not o.get('local_id'):
@@ -228,8 +257,13 @@ for fd in interieurs:
             b['x'], b['y'] = c['x'], c['y']; garde.append(b)
     if len(garde) < len(f['bg_events']): rapport.append(f'{fd}: {len(f["bg_events"]) - len(garde)} élément(s) de décor retiré(s)')
     f['bg_events'] = garde
-    for c in f['coord_events']: rapport.append(f'{fd}: déclencheur {c.get("script")} retiré, à réécrire')
-    f['coord_events'] = []
+    places = DECLENCHEURS.get(fd[:-5], {}); gardes = []
+    for c in f['coord_events']:
+        if c.get('script') in places: c['x'], c['y'] = places[c['script']]; c['elevation'] = 0; gardes.append(c)
+        else: rapport.append(f'{fd}: déclencheur {c.get("script")} retiré, à réécrire')
+    f['coord_events'] = gardes + [{'type': 'trigger', 'x': x, 'y': y, 'elevation': 0, 'var': v, 'var_value': '0', 'script': s}
+                                  for x, y, v, s in DECLENCHEURS_AJOUTES.get(fd[:-5], [])]
+    for c in f['coord_events']: c['elevation'] = decor.brut(c['x'], c['y']) >> 12
     conn = []
     for c in h['connections'] or []:
         cible = inverse.get(HDOSSIER.get(c['map']))
@@ -281,6 +315,19 @@ for d in DOSSIER.values():
             if not retour: rapport.append(f'{d}: plus de retour depuis {cible}')
     if change: ecrire(chemin(d), j)
 
+# 4 bis. PNJ et déclencheurs d'un extérieur qui suivent leur lieu dans une autre carte.
+for source, cle, cible, x, y in TRANSFERTS:
+    av = origine(source + '_Frlg'); s = lire(chemin(source + '_Frlg')); c = lire(chemin(cible + '_Frlg'))
+    o = next((o for o in av['object_events'] if cle in (o.get('local_id'), o['script'])), None)
+    if o:
+        s['object_events'] = [e for e in s['object_events'] if cle not in (e.get('local_id'), e['script'])]
+        o = dict(o, x=x, y=y, elevation=Decor(c['layout']).brut(x, y) >> 12 or 3); c['object_events'].append(o)
+    else:
+        e = dict(next(e for e in av['coord_events'] if e.get('script') == cle), x=x, y=y,
+                 elevation=Decor(c['layout']).brut(x, y) >> 12)
+        c['coord_events'].append(e)
+    ecrire(chemin(source + '_Frlg'), s); ecrire(chemin(cible + '_Frlg'), c)
+
 # 5. Scripts : sur un décor Heart & Soul, les commandes qui redessinent l'ancien décor sont neutralisées.
 for fd in interieurs:
     p = f'{JEU}/data/maps/{fd}/scripts.inc'
@@ -290,8 +337,18 @@ for fd in interieurs:
         if l.strip().startswith('setmetatile'): lignes[i] = '\t@ ancien décor : ' + l.strip(); k += 1
         if any(l.strip().startswith('map_script ' + s) for s in SCRIPTS_RETIRES.get(fd[:-5], ())):
             lignes[i] = '\t@ ancien décor : ' + l.strip(); k += 1
-    open(p, 'w').write('\n'.join(lignes))
+    open(p, 'w').write('\n'.join(lignes) + SCRIPTS_AJOUTES.get(fd[:-5], ''))
     if k: rapport.append(f'{fd}: {k} commande(s) de script liées à l\'ancien décor neutralisées')
+
+# 6. Scripts qui visent une case précise de l'ancien décor : coordonnées et pas réécrits.
+for rel, echanges in REMPLACEMENTS.items():
+    p = f'{JEU}/{rel}'; deja = os.path.exists(p + '.rougefeu')
+    if not deja: shutil.copy(p, p + '.rougefeu')
+    t = open(p if rel.split('/')[-2] in interieurs else p + '.rougefeu').read()
+    for a, b in echanges:
+        if a not in t: rapport.append(f'{rel}: texte à remplacer introuvable ({a.strip()[:40]})')
+        t = t.replace(a, b)
+    open(p, 'w').write(t)
 
 open(f'{ICI}/rapport_interieurs.txt', 'w').write('\n'.join(rapport) + '\n')
 json.dump({k: v for k, v in sorted(paire.items()) if k not in exterieurs}, open(f'{ICI}/paires_interieurs.json', 'w'), indent=1)

@@ -191,8 +191,8 @@ SeafoamIslands_B1F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B2F
 SeafoamIslands_B2F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
 SeafoamIslands_B3F: étage sans équivalent, dresseurs et objets déplacés dans SeafoamIslands_B1F, scènes à réécrire
 SeafoamIslands_B1F_Frlg: objet placé au plus près en (33,44)
-SeafoamIslands_B1F_Frlg: objet placé au plus près en (42,34)
-SeafoamIslands_B1F_Frlg: objet placé au plus près en (31,35)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (40,39)
+SeafoamIslands_B1F_Frlg: objet placé au plus près en (31,40)
 SeafoamIslands_B1F_Frlg: 2 obstacle(s) BOULDER sans place dans le décor, retiré(s)
 SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
 SeafoamIslands_B4F_Frlg: accès perdu vers MAP_SEAFOAM_ISLANDS_B3F
@@ -215,15 +215,51 @@ PowerPlant_Frlg: objet placé au plus près en (14,21)
 PowerPlant_Frlg: 2 élément(s) de décor retiré(s)
 UndergroundPath_NorthSouthTunnel_Frlg: 7 élément(s) de décor retiré(s)
 UndergroundPath_EastWestTunnel_Frlg: 7 élément(s) de décor retiré(s)
+SafariZone_Center_Frlg: accès perdu vers MAP_SAFARI_ZONE_CENTER_REST_HOUSE
+SafariZone_Center_RestHouse: bâtiment absent de Heart & Soul, ses occupants sont dehors dans SafariZone_Center
+SafariZone_Center_Frlg: objet placé au plus près en (21,22)
+SafariZone_Center_Frlg: 4 élément(s) de décor retiré(s)
+SafariZone_West_Frlg: accès perdu vers MAP_SAFARI_ZONE_SECRET_HOUSE
+SafariZone_West_Frlg: accès perdu vers MAP_SAFARI_ZONE_WEST_REST_HOUSE
+SafariZone_SecretHouse: bâtiment absent de Heart & Soul, ses occupants sont dehors dans SafariZone_West
+SafariZone_West_RestHouse: bâtiment absent de Heart & Soul, ses occupants sont dehors dans SafariZone_West
+SafariZone_West_Frlg: objet placé au plus près en (29,12)
+SafariZone_West_Frlg: objet placé au plus près en (18,11)
+SafariZone_West_Frlg: objet placé au plus près en (17,22)
+SafariZone_West_Frlg: objet placé au plus près en (28,20)
+SafariZone_West_Frlg: 5 élément(s) de décor retiré(s)
+SafariZone_North_Frlg: accès perdu vers MAP_SAFARI_ZONE_NORTH_REST_HOUSE
+SafariZone_North_RestHouse: bâtiment absent de Heart & Soul, ses occupants sont dehors dans SafariZone_North
+SafariZone_North_Frlg: objet placé au plus près en (37,13)
+SafariZone_North_Frlg: objet placé au plus près en (33,10)
+SafariZone_North_Frlg: objet placé au plus près en (35,11)
+SafariZone_North_Frlg: 5 élément(s) de décor retiré(s)
+SafariZone_East_Frlg: accès perdu vers MAP_SAFARI_ZONE_EAST_REST_HOUSE
+SafariZone_East_RestHouse: bâtiment absent de Heart & Soul, ses occupants sont dehors dans SafariZone_East
+SafariZone_East_Frlg: objet placé au plus près en (12,11)
+SafariZone_East_Frlg: objet placé au plus près en (33,14)
+SafariZone_East_Frlg: objet placé au plus près en (31,15)
+SafariZone_East_Frlg: objet placé au plus près en (33,15)
+SafariZone_East_Frlg: 3 élément(s) de décor retiré(s)
+SSAnne_Exterior_Frlg: 1 élément(s) de décor retiré(s)
 Route27_Frlg: porte 2 (40,21) vers MAP_ROUTE27_HOUSE sans carte
 Route19_Cave_Frlg: sortie 0 sans porte côté extérieur
 Route11_Frlg: porte (6,7) vers DiglettsCave_SouthEntrance_Frlg sans porte Heart & Soul sur la même case
 Route15_WestEntrance_2F_Frlg: plus de retour depuis Route15_WestEntrance_1F_Frlg
+SafariZone_SecretHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
+SafariZone_SecretHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
+SafariZone_SecretHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
 SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
 SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
 SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
 SeafoamIslands_B3F_Frlg: plus de retour depuis SeafoamIslands_B4F_Frlg
+SafariZone_North_RestHouse_Frlg: plus de retour depuis SafariZone_North_Frlg
+SafariZone_North_RestHouse_Frlg: plus de retour depuis SafariZone_North_Frlg
+SafariZone_North_RestHouse_Frlg: plus de retour depuis SafariZone_North_Frlg
 CinnabarIsland_PokemonCenter_2F_Frlg: plus de retour depuis CinnabarIsland_PokemonCenter_1F_Frlg
+SafariZone_West_RestHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
+SafariZone_West_RestHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
+SafariZone_West_RestHouse_Frlg: plus de retour depuis SafariZone_West_Frlg
 MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
 MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
 MtMoon_B1F_Frlg: plus de retour depuis MtMoon_1F_Frlg
@@ -242,10 +278,16 @@ SeafoamIslands_B2F_Frlg: plus de retour depuis SeafoamIslands_B1F_Frlg
 Route18_EastEntrance_2F_Frlg: plus de retour depuis Route18_EastEntrance_1F_Frlg
 LavenderTown_PokemonCenter_2F_Frlg: plus de retour depuis LavenderTown_PokemonCenter_1F_Frlg
 RocketHideout_B1F_Frlg: plus de retour depuis CeladonCity_GameCorner_Frlg
+SafariZone_Center_RestHouse_Frlg: plus de retour depuis SafariZone_Center_Frlg
+SafariZone_Center_RestHouse_Frlg: plus de retour depuis SafariZone_Center_Frlg
+SafariZone_Center_RestHouse_Frlg: plus de retour depuis SafariZone_Center_Frlg
 Route10_PokemonCenter_2F_Frlg: plus de retour depuis Route10_PokemonCenter_1F_Frlg
 FuchsiaCity_PokemonCenter_2F_Frlg: plus de retour depuis FuchsiaCity_PokemonCenter_1F_Frlg
 SaffronCity_PokemonCenter_2F_Frlg: plus de retour depuis SaffronCity_PokemonCenter_1F_Frlg
 PewterCity_PokemonCenter_2F_Frlg: plus de retour depuis PewterCity_PokemonCenter_1F_Frlg
+SafariZone_East_RestHouse_Frlg: plus de retour depuis SafariZone_East_Frlg
+SafariZone_East_RestHouse_Frlg: plus de retour depuis SafariZone_East_Frlg
+SafariZone_East_RestHouse_Frlg: plus de retour depuis SafariZone_East_Frlg
 Route16_NorthEntrance_2F_Frlg: plus de retour depuis Route16_NorthEntrance_1F_Frlg
 ViridianCity_Mart_Frlg: 2 commande(s) de script liées à l'ancien décor neutralisées
 VermilionCity_Gym_Frlg: 30 commande(s) de script liées à l'ancien décor neutralisées

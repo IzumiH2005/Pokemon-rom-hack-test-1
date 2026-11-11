@@ -74,7 +74,7 @@ l'entrée de la Cave Taupiqueur côté Route 11 n'a plus de sortie de son côté
 
 ## Donjons restants et cartes nouvelles
 
-`creer_cartes.py` se lance après `importer_kanto_hns.py` et avant les deux bascules. Il crée vides les douze cartes de
+`creer_cartes.py` se lance après `importer_kanto_hns.py` et avant les deux bascules. Il crée vides les treize cartes de
 Heart & Soul sans équivalent dans Rouge Feu (table `NOUVELLES`) : l'extérieur et la boutique du Mont Sélénite,
 l'arrière-salle de la Centrale, les Routes 26 et 27 avec leurs maisons, les Chutes Tohjo, la grotte de la Route 19 et
 la salle du Dojo. Aucun personnage d'Or et Argent n'y est importé.
@@ -93,3 +93,22 @@ boutique du Mont Sélénite, Portail vers la Route 26, Chutes Tohjo, maison de l
 Points ouverts : les scènes du fossile et d'Artikodin sont à réécrire sur les nouveaux étages, les énigmes à
 interrupteurs (Carmin, Route Victoire, Arène d'Auguste) sont désactivées, la maison de la Route 27 et la grotte de
 la Route 19 n'ont pas d'accès.
+
+## Parc Safari et port de Carmin
+
+Le Parc Safari prend les quatre zones de Heart & Soul : Beach pour le centre, Brush à l'ouest, Mountain au nord et
+Cave à l'est. Les objets et les scripts de Rouge Feu sont replacés sur le nouveau décor. Les occupants des maisons
+de repos et de la Maison Secrète attendent dehors, dans leur zone (table `HABITANTS`), car ces maisons n'existent
+pas dans Heart & Soul. L'entrée garde son guichet, placé à gauche du couloir : les pas et les regards du script
+sont réécrits par la table `REMPLACEMENTS`.
+
+Le port suit le trajet de Heart & Soul. La jetée de Carmin mène à `VermilionCity_PortOutside`, carte nouvelle, puis
+au hall du port, qui remplace l'ancien quai de l'Océane. Le marin et le contrôle du billet quittent Carmin pour le
+hall (table `TRANSFERTS`). Le bout de la passerelle n'est pas une case de porte, donc un déclencheur fait monter à
+bord (`SCRIPTS_AJOUTES`, `DECLENCHEURS_AJOUTES`). Le ferry des îles Sevii accoste au même quai (`src/seagallop.c`).
+
+Vérifié en jeu : paiement à l'entrée du Safari, arrivée dans la zone, retour et sortie ; jetée de Carmin, hall du
+port, refus sans billet, embarquement avec le billet, retour à quai et sortie vers la jetée.
+
+Points ouverts : la scène du départ de l'Océane et l'arrivée du ferry ne sont pas encore jouées en jeu, la maison du
+Gardien et le bureau du Safari n'ont pas de bâtiment à Parmanie.

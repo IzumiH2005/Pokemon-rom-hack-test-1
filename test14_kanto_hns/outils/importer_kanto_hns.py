@@ -22,8 +22,7 @@ GROUPES_ENTIERS = ['gMapGroup_IndoorPallet', 'gMapGroup_IndoorViridian', 'gMapGr
                    'gMapGroup_IndoorCinnabar', 'gMapGroup_IndoorIndigo', 'gMapGroup_IndoorKantoRoutes']
 DONJONS = ('VictoryRoadKanto', 'ViridianForest', 'MtMoon', 'RockTunnel', 'CeruleanCave', 'DiglettsCave',
            'SeafoamIslands', 'Route19_Cave', 'TohjoFalls')
-EXCLUES = ('MtSilver', 'Route28',          # déjà importées par le test 13
-           'FuchsiaCity_SafariZone')      # tileset absent de Heart & Soul
+EXCLUES = ('MtSilver', 'Route28')          # déjà importées par le test 13
 
 # Cases redessinées après import : carte -> {(x, y): valeur de bloc}.
 RETOUCHES = {'Route4': {(19, 5): 0x079 | 1 << 10}}   # fausse entrée de grotte hors d'atteinte, remplacée par la paroi
@@ -100,8 +99,10 @@ for s in besoin:
     bloc = re.search(r'const struct Tileset %s =\s*\{(.*?)\};' % s, entetes, re.S).group(1)
     champ = lambda c: re.search(r'\.%s = (\w+)' % c, bloc).group(1)
     chemin = lambda source, sym: re.search(r'\b%s\[\].*?"(data/tilesets/\w+/\w+)/' % sym, source, re.S).group(1)
-    dt, dp = chemin(graphismes, champ('tiles')), chemin(graphismes, champ('palettes'))
     dm, da = chemin(metatuiles, champ('metatiles')), chemin(metatuiles, champ('metatileAttributes'))
+    # gTileset_General (Parc Safari) n'a pas ses graphismes déclarés dans HnS : son dossier fait foi.
+    declare = re.search(r'\b%s\[\]' % champ('tiles'), graphismes)
+    dt, dp = (chemin(graphismes, champ('tiles')), chemin(graphismes, champ('palettes'))) if declare else (dm, dm)
     rappel = ANIMS.get(champ('callback'), 'NULL')
     typ, sym = ('secondary' if champ('isSecondary') == 'TRUE' else 'primary'), symbole(s)[len('gTileset_'):]
     rel = f'data/tilesets/{typ}/hns_{nom.lower()}'
