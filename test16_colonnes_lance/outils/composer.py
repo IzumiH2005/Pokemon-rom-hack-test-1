@@ -62,22 +62,34 @@ for n, wx, wz in props:
         h, w = im.shape[:2]
         elems.append((im, cx - w // 2, pied - h + 1, [(0, h - 1, pied)]))
     elif n == 514:
-        # bloc effondré : cubes couchés côté allée centrale (est pour le groupe ouest)
-        im = np.array(Image.open(f'{DESS}/{"ruine_g" if wx < 256 else "ruine_d"}.png').convert('RGBA'))
+        # bloc effondré de Platine : deux colonnes brisées debout et une colonne couchée
+        # nord-sud côté allée centrale (est pour le groupe ouest)
         x0, y0 = int(wx) - 24, int(wz) + 104
-        bandes = [(0, 61, y0 + 61), (62, 81, y0 + 81), (82, 101, y0 + 101), (102, 121, y0 + 121)]
-        elems.append((im, x0, y0, bandes))
+        ouest = wx < 256
+        for c, nom in ((x0 + 19, 'b84'), (x0 + 59, 'b70')) if ouest else ((x0 + 21, 'b70'), (x0 + 61, 'b84')):
+            im = np.array(Image.open(f'{DESS}/{nom}.png').convert('RGBA'))
+            h, w = im.shape[:2]
+            elems.append((im, c - w // 2, y0 + 61 - h + 1, [(0, h - 1, y0 + 61)]))
+        im = np.array(Image.open(f'{DESS}/couchee.png').convert('RGBA'))
+        xc = x0 + 59 if ouest else x0
+        # une bande par rangée de tuiles : toute la colonne couchée reste au sol
+        Y = y0 + 62
+        bandes = [(a - Y, min(61, a + 15 - Y), a + 15) for a in range(Y // 16 * 16, Y + 62, 16)]
+        bandes[0] = (0, bandes[0][1], bandes[0][2])
+        elems.append((im, xc, y0 + 62, bandes))
 
 for cx, pied, nom in TERRAIN:
     im = np.array(Image.open(f'{DESS}/{nom}.png').convert('RGBA'))
     h, w = im.shape[:2]
     elems.append((im, cx - w // 2, pied - h + 1, [(0, h - 1, pied)]))
-# à la place des gravats de Platine : une souche de colonne brisée au ras du socle
-g = np.array(Image.open(f'{DESS}/souche.png').convert('RGBA'))
-for cx, pied in gravats:
-    im = g
+g = np.array(Image.open(f'{DESS}/gravats.png').convert('RGBA'))
+for i, (cx, pied) in enumerate(gravats):
+    im = g[:, ::-1] if i % 2 else g                 # un tas sur deux en miroir
     h, w = im.shape[:2]
     elems.append((im, cx - w // 2, pied - h + 1, [(0, h - 1, pied)]))
+
+# pas[ty, tx] : pixels d'éléments posés au sol dans la tuile ; sert aux collisions
+pas = np.zeros((H // 16, W // 16), int)
 
 # de l'arrière vers l'avant : un élément plus au sud recouvre les précédents
 for im, x0, y0, bandes in sorted(elems, key=lambda e: e[3][0][2]):
@@ -94,7 +106,9 @@ for im, x0, y0, bandes in sorted(elems, key=lambda e: e[3][0][2]):
                 else:
                     bas[Y, X] = im[y, x, :3]
                     haut[Y, X, 3] = 0
+                    pas[Y // 16, X // 16] += 1
 
 Image.fromarray(bas).save(f'{REND}/carte_bas.png')
+np.save(f'{REND}/pas.npy', pas)
 Image.fromarray(haut, 'RGBA').save(f'{REND}/carte_haut.png')
 print(f'{len(elems)} objets posés')

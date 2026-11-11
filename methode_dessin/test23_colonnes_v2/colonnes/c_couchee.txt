@@ -1,0 +1,73 @@
+# colonne couchée nord-sud, vue de dessus : les pans du fût deviennent des bandes en long,
+# la cassure sud montre la section ronde du fût
+rect O 0 0 21 0
+stamp pieces/fut.txt 1 1
+stamp pieces/fut.txt 1 2
+stamp pieces/fut.txt 1 3
+stamp pieces/fut.txt 1 4
+stamp pieces/fut.txt 1 5
+stamp pieces/fut.txt 1 6
+stamp pieces/fut.txt 1 7
+stamp pieces/fut.txt 1 8
+stamp pieces/fut.txt 1 9
+stamp pieces/fut.txt 1 10
+stamp pieces/fut.txt 1 11
+stamp pieces/fut.txt 1 12
+stamp pieces/fut.txt 1 13
+stamp pieces/fut.txt 1 14
+stamp pieces/fut.txt 1 15
+stamp pieces/fut.txt 1 16
+stamp pieces/fut.txt 1 17
+stamp pieces/fut.txt 1 18
+stamp pieces/fut.txt 1 19
+stamp pieces/fut.txt 1 20
+stamp pieces/fut.txt 1 21
+stamp pieces/fut.txt 1 22
+stamp pieces/fut.txt 1 23
+stamp pieces/fut.txt 1 24
+stamp pieces/fut.txt 1 25
+stamp pieces/fut.txt 1 26
+stamp pieces/fut.txt 1 27
+stamp pieces/fut.txt 1 28
+stamp pieces/fut.txt 1 29
+stamp pieces/fut.txt 1 30
+stamp pieces/fut.txt 1 31
+stamp pieces/fut.txt 1 32
+stamp pieces/fut.txt 1 33
+stamp pieces/fut.txt 1 34
+stamp pieces/fut.txt 1 35
+stamp pieces/fut.txt 1 36
+stamp pieces/fut.txt 1 37
+stamp pieces/fut.txt 1 38
+stamp pieces/fut.txt 1 39
+stamp pieces/fut.txt 1 40
+stamp pieces/fut.txt 1 41
+stamp pieces/fut.txt 1 42
+stamp pieces/fut.txt 1 43
+stamp pieces/fut.txt 1 44
+stamp pieces/fut.txt 1 45
+vline O 0 1 45
+vline O 21 1 45
+# joints : anneaux vus de dessus
+hline n 2 18 15
+hline n 2 18 30
+px D 1 15 1 30 19 15 19 30
+px W 3 16 4 16 5 16 3 31 4 31 5 31
+# section sud : disque cassé vu en biais (ellipse 20x14), dessus éclairé, bord avant sombre
+rows m 46 2 19 1 20 0 21 0 21 0 21 0 21 0 21 0 21 0 21 0 21 1 20 2 19 4 17 6 15
+rows O 46 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 2 3 4 5 6 15
+rows O 46 20 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 20 20 18 19 16 17
+hline O 6 15 60
+rows W 46 2 10 2 7 2 5 2 4
+rows L 47 8 12 6 10 5 8 5 7 4 6 4 5
+rows n 54 2 19 3 18 4 17
+rows d 57 5 16 7 14
+# fissures de la cassure
+line D 9 49 12 53
+line D 12 53 11 57
+line d 15 48 17 51
+px D 6 52 7 53
+# ombre portée à droite
+vline g 22 2 58
+vline g 23 3 59
+hline g 7 18 61

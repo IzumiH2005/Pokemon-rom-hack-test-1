@@ -1,6 +1,0 @@
-# bloc effondré, groupe ouest : deux blocs dressés (coins cassés face à face), trois cubes côté allée (est)
-stamp pieces/blocA.txt 0 0
-stamp pieces/blocB.txt 41 0
-stamp pieces/cube.txt 61 62
-stamp pieces/cube.txt 62 82
-stamp pieces/cube.txt 60 102

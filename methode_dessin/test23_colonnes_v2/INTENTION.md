@@ -19,6 +19,8 @@ La colonne reprend la gamme crème olive du sol de Platine (#eee6c5 à #736a41, 
 
 ## Série complète
 
-`assembler.sh nom type hauteur "joints"` monte une colonne à partir des pièces de `pieces/` : la base (dalle, tore, ombre) en bas, le fût répété, le pied, puis le sommet. Le type `brise` pose `cassure.txt`, `brise2` pose `cassure2.txt` (cassure en biais, haute à gauche) et `pointe` pose la pointe à facettes et son collier. Les fichiers `colonnes/d_*.txt` ajoutent l'usure propre à chaque colonne.
+`assembler.sh nom type hauteur "joints"` monte une colonne à partir des pièces de `pieces/` : la base (dalle, tore, ombre) en bas, le fût répété, le pied, puis le sommet. Le type `brise` pose `cassure.txt`, `brise2` pose `cassure2.txt` (cassure en biais, haute à gauche) et `pointe` pose `pieces/pointe.txt`, qui porte la lame et le collier. Les fichiers `colonnes/d_*.txt` ajoutent l'usure propre à chaque colonne.
 
-Les ruines (`c_ruine_g`, `c_ruine_d`) assemblent deux blocs dressés à coins cassés (`blocA`, `blocB`, faits de `bloc.txt` et des coins) et trois cubes. `c_souche.txt` dessine une colonne brisée au ras du socle, sur un anneau rond (`pieces/anneau.txt`) ; elle remplace les gravats aux douze points de petit relief. La pointe (`pieces/pointe.txt`, 30 rangées) est un éclat asymétrique : un grand plan clair à gauche, tourné vers le haut, et une face sombre à droite. `composer.py` (test16) pose le tout sur la carte.
+La pointe (`pieces/pointe.txt`, 44 rangées) est vue légèrement de haut. `pieces/geo_pointe.py` la calcule d'après un modèle 3D maison rendu avec three.js à 30° de plongée : un cône à sept facettes dont la pointe penche à droite, posé sur un collier dont on voit le dessus en anneau elliptique. Les tons vont du clair à gauche au sombre à droite. Les rangées du collier sont retouchées à la main.
+
+`colonnes/c_couchee.txt` dessine une colonne tombée dans l'axe nord-sud, cassée en section ronde au sud. Elle remplace les gros blocs effondrés de Platine (modèle 514), à côté de deux colonnes brisées debout. Les gravats (`colonnes/gravats.txt`) restent aux douze points de petit relief. `composer.py` (test16) pose le tout sur la carte.

@@ -152,12 +152,17 @@ for genre, tuiles, mts in (('primary', prim, liste_metas[:640]), ('secondary', s
     open(f'{dos}/metatile_attributes.bin', 'wb').write(b''.join(struct.pack('<I', 0) for _ in mts))
 
 # grille : collision Platine (bit 15) ; élévation 3 partout
+PAS = np.load(f'{REND}/pas.npy') if os.path.exists(f'{REND}/pas.npy') else None
 lay = f'{JEU}/data/layouts/ColonnesLance'
 os.makedirs(lay, exist_ok=True)
 blk = bytearray()
 for my in range(MH):
     for mx in range(MW):
         col = 1 if G[my + Y0, mx + X0] & 0x8000 else 0
+        # sur l'esplanade, les collisions suivent les dessins posés par composer.py :
+        # une case est bloquée si un élément couvre au moins un quart de la tuile au sol
+        if PAS is not None and 23 <= mx + X0 <= 39 and 14 <= my + Y0 <= 48:
+            col = 1 if PAS[my, mx] >= 64 else 0
         # palier et escalier nord (y Platine <= 13) : ils descendent derrière l'esplanade et
         # restent invisibles en vue GBA, on les ferme
         if my + Y0 <= 13: col = 1

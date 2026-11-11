@@ -1,9 +1,5 @@
-# colonne p88 : pointe, hauteur 88, joints à 42 56
+# colonne p88 : pointe, hauteur 88, joints à 50 63
 stamp pieces/base.txt 0 60
-stamp pieces/fut.txt 6 34
-stamp pieces/fut.txt 6 35
-stamp pieces/fut.txt 6 36
-stamp pieces/fut.txt 6 37
 stamp pieces/fut.txt 6 38
 stamp pieces/fut.txt 6 39
 stamp pieces/fut.txt 6 40
@@ -34,10 +30,9 @@ stamp pieces/fut.txt 6 64
 stamp pieces/fut.txt 6 65
 stamp pieces/fut.txt 6 66
 stamp pieces/pied.txt 6 67
-stamp pieces/pointe.txt 6 0
-stamp pieces/collier.txt 5 30
-stamp pieces/joint.txt 6 42
-stamp pieces/joint.txt 6 56
+stamp pieces/pointe.txt 5 0
+stamp pieces/joint.txt 6 50
+stamp pieces/joint.txt 6 63
 # usure p88
 px n 16 50
 px m 17 50

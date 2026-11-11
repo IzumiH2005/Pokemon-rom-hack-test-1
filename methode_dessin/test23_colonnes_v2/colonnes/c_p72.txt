@@ -1,9 +1,5 @@
-# colonne p72 : pointe, hauteur 72, joints à 41
+# colonne p72 : pointe, hauteur 72, joints à 
 stamp pieces/base.txt 0 44
-stamp pieces/fut.txt 6 34
-stamp pieces/fut.txt 6 35
-stamp pieces/fut.txt 6 36
-stamp pieces/fut.txt 6 37
 stamp pieces/fut.txt 6 38
 stamp pieces/fut.txt 6 39
 stamp pieces/fut.txt 6 40
@@ -18,9 +14,7 @@ stamp pieces/fut.txt 6 48
 stamp pieces/fut.txt 6 49
 stamp pieces/fut.txt 6 50
 stamp pieces/pied.txt 6 51
-stamp pieces/pointe.txt 6 0
-stamp pieces/collier.txt 5 30
-stamp pieces/joint.txt 6 41
+stamp pieces/pointe.txt 5 0
 # usure p72
 px n 13 45
 px m 14 45

@@ -1,8 +1,0 @@
-# souche : colonne brisée au ras du socle, posée sur un anneau rond
-stamp pieces/anneau.txt 0 16
-stamp pieces/fut.txt 3 15
-stamp pieces/fut.txt 3 16
-stamp pieces/fut.txt 3 17
-stamp pieces/fut.txt 3 18
-stamp pieces/pied.txt 3 19
-stamp pieces/cassure2.txt 3 0

@@ -1,6 +1,0 @@
-# bloc effondré, groupe est : deux blocs dressés (coins cassés face à face), trois cubes côté allée (ouest)
-stamp pieces/blocA.txt 0 0
-stamp pieces/blocB.txt 41 0
-stamp pieces/cube.txt 2 62
-stamp pieces/cube.txt 1 82
-stamp pieces/cube.txt 3 102

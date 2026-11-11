@@ -1,9 +1,5 @@
-# colonne p104 : pointe, hauteur 104, joints à 42 57 72
+# colonne p104 : pointe, hauteur 104, joints à 50 64 78
 stamp pieces/base.txt 0 76
-stamp pieces/fut.txt 6 34
-stamp pieces/fut.txt 6 35
-stamp pieces/fut.txt 6 36
-stamp pieces/fut.txt 6 37
 stamp pieces/fut.txt 6 38
 stamp pieces/fut.txt 6 39
 stamp pieces/fut.txt 6 40
@@ -50,11 +46,10 @@ stamp pieces/fut.txt 6 80
 stamp pieces/fut.txt 6 81
 stamp pieces/fut.txt 6 82
 stamp pieces/pied.txt 6 83
-stamp pieces/pointe.txt 6 0
-stamp pieces/collier.txt 5 30
-stamp pieces/joint.txt 6 42
-stamp pieces/joint.txt 6 57
-stamp pieces/joint.txt 6 72
+stamp pieces/pointe.txt 5 0
+stamp pieces/joint.txt 6 50
+stamp pieces/joint.txt 6 64
+stamp pieces/joint.txt 6 78
 # usure p104
 px n 12 62
 px m 13 62 20 48

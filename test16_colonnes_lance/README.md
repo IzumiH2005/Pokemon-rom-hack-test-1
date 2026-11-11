@@ -36,7 +36,8 @@ Pour tester, on place le joueur sur l'escalier sud en (16, 49) ou (16, 50). L'au
 
 ## Limites
 
-- Les colonnes viennent de `methode_dessin/test23_colonnes_v2` (style Platine) : quatre pointues et quatre brisées, deux groupes de ruines et une souche de colonne brisée (posée là où Platine met ses pierres), tous dessinés au pixel.
+- Les colonnes viennent de `methode_dessin/test23_colonnes_v2` (style Platine) : quatre pointues et quatre brisées, deux groupes de colonnes effondrées (deux brisées debout et une couchée) et des gravats, tous dessinés au pixel.
+- Sur l'esplanade, les collisions suivent les dessins : `composer.py` compte les pixels posés au sol par tuile (`pas.npy`) et `construire.py` bloque une case dès qu'un quart de la tuile est couvert. Ailleurs, la grille de Platine reste en place.
 - La vue oblique écrase les reliefs : les colonnes debout couvrent jusqu'à quatre métatuiles vers le haut.
 - Les lumières et le brouillard de Platine manquent.
 - La scène elle-même (PNJ, Dialga, Palkia, combat) reste à écrire.
