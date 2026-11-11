@@ -39,3 +39,19 @@
 **Erreur :** la simulation faisait combattre l'IA de Red B contre une IA de même niveau. Les deux camps changeaient de Pokémon à chaque tour et le combat ne finissait jamais.
 
 **Règle :** on mesure l'IA de Red B contre l'IA des dresseurs ordinaires. Un changement de Pokémon coûte un tour : l'IA ne change que si le gain est net, et jamais deux fois de suite sans raison forte.
+
+## 6. Accesseur d'attaque appelé sur une attaque qui ne le permet pas
+
+**Erreur :** le duel plantait sur un écran bleu « not a recoil move: Queue de Fer ».
+
+**Cause :** l'IA de Red B appelait `GetMoveRecoil` sur toutes les attaques. Cet accesseur contient une assertion et ne vaut que pour `EFFECT_RECOIL`. Dans la simulation, l'assertion passait sans bloquer et l'IA lisait un faux contrecoup.
+
+**Règle :** avant d'appeler `GetMoveRecoil`, `GetMoveAbsorbPercentage` ou un autre accesseur qui vérifie l'effet, on teste l'effet de l'attaque. Une simulation qui compte des assertions non nulles signale un bug, même si les combats finissent.
+
+## 7. Changement de Pokémon choisi pendant un tour de recharge
+
+**Erreur :** Dracaufeu et Florizarre restaient en place et tombaient alors que l'IA avait choisi de les retirer.
+
+**Cause :** après Ultralaser ou Végé-Attak, le Pokémon doit récupérer. Le moteur ignore toute action choisie ce tour-là.
+
+**Règle :** l'IA ne décide rien quand `rechargeTimer` est actif, et sa recherche suppose que le Pokémon qui recharge ne fait rien ce tour.
