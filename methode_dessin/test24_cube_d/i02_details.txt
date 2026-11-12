@@ -1,0 +1,31 @@
+# coins arrondis
+px . 0 6 22 6 0 17 22 17
+px O 1 6 21 6 1 17 21 17
+# arêtes du dessus éclairées (arrière gauche, puis les deux bords avant)
+px e 10 2 11 2 8 3 9 3 6 4 7 4 4 5 5 5 2 6 3 6
+px e 2 7 3 7 19 7 20 7 4 8 5 8 17 8 18 8 6 9 7 9 15 9 16 9 8 10 9 10 13 10 14 10 10 11 11 11 12 11
+# trois points éteints du dessus (2 rangées : paroi haute sombre, fond, paroi basse claire)
+hline a 5 7 6
+hline a 10 12 6
+hline a 15 17 6
+px a 5 7 10 7 15 7
+px b 6 7 11 7 16 7
+px d 7 7 12 7 17 7
+# face gauche émissive : bords sombres (2), centre (3)
+vline 2 1 7 16
+vline 2 10 12 21
+px 2 2 8 3 8 4 9 5 9 6 10 7 10 8 11 9 11
+px 2 2 17 3 17 4 18 5 18 6 19 7 19 8 20 9 20
+# gros point de la face 1 (Pikachu) : cœur 5, halo 4
+px 4 4 12 5 12 3 13 6 13 3 14 7 14 4 15 7 15 5 16 6 16
+px 5 4 13 5 13 4 14 5 14 6 14 5 15 6 15
+# face droite émissive : bords sombres (7), centre (8)
+vline 7 21 7 16
+vline 7 12 12 21
+px 7 20 8 19 8 18 9 17 9 16 10 15 10 14 11 13 11
+px 7 20 17 19 17 18 18 17 18 16 19 15 19 14 20 13 20
+# deux points de la face 2 (Dracaufeu) : cœur 0, halo 9 cisaillé vers le haut à droite
+px 0 18 10 19 10 18 11 19 11
+px 9 17 11 20 10 18 12 19 9
+px 0 14 17 15 17 14 18 15 18
+px 9 13 18 16 17 14 19 15 16

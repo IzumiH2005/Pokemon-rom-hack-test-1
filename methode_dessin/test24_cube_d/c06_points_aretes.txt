@@ -1,0 +1,9 @@
+# points de dé (pièces écrites à la main)
+stamp pieces/point1_jaune.txt 12 35
+stamp pieces/point2_orange.txt 48 29
+stamp pieces/point2_orange.txt 38 44
+stamp pieces/point3_creux.txt 15 17
+stamp pieces/point3_creux.txt 28 17
+stamp pieces/point3_creux.txt 41 17
+# arête verticale centrale arrondie : accroche la lumière
+vline d 31 33 59

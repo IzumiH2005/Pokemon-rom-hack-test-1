@@ -1,0 +1,38 @@
+# Icône 24×24 redessinée (A4b). Sommets : arrière (11,1), gauche (0,6), droite (22,6),
+# avant (11,11), bas (11,22). Marqueurs : coin, points, jaune à gauche, orange à droite.
+# dessus (rangées 1..11, marches de 2 px)
+hline d 10 12 1
+hline d 8 14 2
+hline d 6 16 3
+hline d 4 18 4
+hline d 2 20 5
+hline d 0 22 6
+hline d 2 20 7
+hline d 4 18 8
+hline d 6 16 9
+hline d 8 14 10
+hline d 10 12 11
+# côtés : 11 rangées par colonne, haut = bord du dessus
+vline 3 0 7 17
+vline 3 1 7 17
+vline 3 2 8 18
+vline 3 3 8 18
+vline 3 4 9 19
+vline 3 5 9 19
+vline 3 6 10 20
+vline 3 7 10 20
+vline 3 8 11 21
+vline 3 9 11 21
+vline 3 10 12 22
+vline d 11 12 22
+vline 8 12 12 22
+vline 8 13 11 21
+vline 8 14 11 21
+vline 8 15 10 20
+vline 8 16 10 20
+vline 8 17 9 19
+vline 8 18 9 19
+vline 8 19 8 18
+vline 8 20 8 18
+vline 8 21 7 17
+vline 8 22 7 17

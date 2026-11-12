@@ -1,0 +1,27 @@
+# R = arêtes du cube (fil de fer isométrique 2:1), B = panneaux sertis, V = places des points
+line R 31 4 2 18
+line R 31 4 60 18
+line R 2 18 31 32
+line R 60 18 31 32
+vline R 2 18 46
+vline R 60 18 46
+vline R 31 32 60
+line R 2 46 31 60
+line R 60 46 31 60
+# panneaux (biseau = 4 unités = 1/7 de l'arête)
+line B 31 8 10 18
+line B 31 8 52 18
+line B 10 18 31 28
+line B 52 18 31 28
+line B 6 23 26 33
+line B 6 43 26 53
+vline B 6 23 43
+vline B 26 33 53
+line B 56 23 36 33
+line B 56 43 36 53
+vline B 56 23 43
+vline B 36 33 53
+# points : dessus 3 (diagonale gauche-droite), gauche 1 (centre), droite 2 (diagonale)
+px V 17 18 31 18 45 18
+px V 16 40
+px V 53 29 39 50
