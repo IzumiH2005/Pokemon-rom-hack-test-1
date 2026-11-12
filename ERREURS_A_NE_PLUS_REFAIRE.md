@@ -55,3 +55,9 @@
 **Cause :** après Ultralaser ou Végé-Attak, le Pokémon doit récupérer. Le moteur ignore toute action choisie ce tour-là.
 
 **Règle :** l'IA ne décide rien quand `rechargeTimer` est actif, et sa recherche suppose que le Pokémon qui recharge ne fait rien ce tour.
+
+## 8. IA qui ignore les effets secondaires
+
+**Erreur :** Red B perdait des combats gagnés sur le papier. Son calcul voyait les dégâts mais pas le reste : Blizzard qui ne rate jamais sous la neige, Synthèse qui ne rend qu'un quart des PV sous la neige, Statik du Pikachu adverse, paralysie, brûlure, gel, poison, peur, baisses de Défense, Absorb Eau, Brasier et Torrent sous le tiers des PV.
+
+**Règle :** quand l'IA simule une attaque, elle lit tout ce que le moteur applique : précision réelle (météo, crans, talents), chaque effet secondaire avec sa chance réelle et les immunités de la cible, les talents de contact de la cible, les dégâts de fin de tour et les talents qui changent la puissance. Elle passe par les fonctions du moteur (`GetTotalAccuracy`, `CanSetNonVolatileStatus`, `CalcSecondaryEffectChance`) au lieu de valeurs recopiées à la main.
