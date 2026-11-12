@@ -61,3 +61,11 @@
 **Erreur :** Red B perdait des combats gagnés sur le papier. Son calcul voyait les dégâts mais pas le reste : Blizzard qui ne rate jamais sous la neige, Synthèse qui ne rend qu'un quart des PV sous la neige, Statik du Pikachu adverse, paralysie, brûlure, gel, poison, peur, baisses de Défense, Absorb Eau, Brasier et Torrent sous le tiers des PV.
 
 **Règle :** quand l'IA simule une attaque, elle lit tout ce que le moteur applique : précision réelle (météo, crans, talents), chaque effet secondaire avec sa chance réelle et les immunités de la cible, les talents de contact de la cible, les dégâts de fin de tour et les talents qui changent la puissance. Elle passe par les fonctions du moteur (`GetTotalAccuracy`, `CanSetNonVolatileStatus`, `CalcSecondaryEffectChance`) au lieu de valeurs recopiées à la main.
+
+## 9. IA qui devine les talents, se soigne en boucle et devient passive
+
+**Erreur :** au test réel, Red B a lancé Surf sur un Lokhlass doté d'Absorb Eau, a laissé Florizarre répéter Synthèse face à Pikachu sans jamais le menacer, et a envoyé Pikachu encaisser un Plaquage alors que Lokhlass tenait le coup.
+
+**Cause :** l'IA estimait les talents et objets au lieu de lire ceux du Pokémon en face. Un soin comptait comme un gain même quand l'adversaire reprenait les PV au tour suivant. Une « riposte » pessimiste ajoutée à l'évaluation de chaque option faisait préférer les Pokémon qui encaissent sans frapper : la version testée ne gagnait plus que 6 combats sur 12.
+
+**Règle :** l'IA de Red B lit le vrai talent et le vrai objet de chaque Pokémon. Un soin ne vaut que s'il rend plus de PV que l'adversaire n'en reprend et qu'il reste une menace à jouer après. Un Pokémon qui tient sans pouvoir blesser l'adversaire n'est pas un bon choix de relève. Chaque nouvelle règle de l'IA passe par une ablation en simulation (règle activée contre règle désactivée) avant de rester dans le jeu.
