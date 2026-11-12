@@ -31,3 +31,8 @@ grisent vers le bas, trait sombre `#181818` posé sur les 8 voisins, profondeur 
 Les lettres suivent l'arc de « ROUGE FEU » : celles du bord descendent de 2 px, les suivantes de 1 px.
 Les flammes (sprites de priorité 3) passent derrière. « Appuyez sur Start » reprend sa place d'origine.
 Fichiers : `c11_logo.txt`, `c12_couleurs.txt`, `palette_v2.json`, `build_v2.sh`, `planche_v2.png`.
+
+## Version 3 (retenue) : « CONVERGENCE » seul
+Le mot tient sur une seule ligne sous « ROUGE FEU », avec les mêmes lettres, le même arc et
+le même style que la version 2 (BG2, colonnes 5 à 15, rangées 11 et 12).
+Fichiers : `c21_logo.txt`, `c22_couleurs.txt`, `build_v3.sh`, `planche_v3.png`.
