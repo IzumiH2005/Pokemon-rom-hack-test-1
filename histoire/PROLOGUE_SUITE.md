@@ -6,7 +6,7 @@ Il tient compte des décisions prises depuis `POKEMON_IC_HISTOIRE_V1.md`. Quand 
 
 - Red garde ses six Pokémon après le duel, mais ils sont gris. Seuls Pikachu et Dracaufeu lui obéissent. Les quatre autres Balls ne répondent plus.
 - Red garde ses huit badges et sa carte de dresseur, gris eux aussi.
-- Red ne dit que « … ». Les phrases entre parenthèses sont ses pensées, affichées sans bandeau de nom.
+- Red ne dit que « … ». Les phrases entre parenthèses sont ses pensées.
 - Luka est le Luka du monde B, celui que Red B a battu aux Colonnes Lances. Il porte le cube D.
 
 ## 1. Ce que la suite doit faire
@@ -240,7 +240,7 @@ Au bout de la route, la vue s'ouvre sur Kanto. Luka s'arrête.
 > *(Pause.)*
 > LUKA : Chez la sienne, pour lui.
 
-Red avance seul de deux pas. Il s'arrête. Il regarde vers le sud. Ses pensées s'affichent, sans bandeau.
+Red avance seul de deux pas. Il s'arrête. Il regarde vers le sud. Ses pensées s’affichent.
 
 > (Elle avait…)
 > (Je ne lui ai rien dit, en partant.)
