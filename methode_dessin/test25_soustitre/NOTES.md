@@ -23,3 +23,11 @@ crème en haut, jaune, orange, rouge en bas.
   le rouge `#c81c14` (comparaison de trois variantes à l'écran).
 - La palette 14 garde les couleurs 0, 6 et 11, que le cadre du BG3 utilise.
 - « Appuyez sur Start » descend d'une rangée de tuiles pour laisser la place.
+
+## Version 2 (retenue) : sous le logo
+Le sous-titre quitte la bande noire et se place sous « VERSION ROUGE FEU », centré sur lui
+(BG2, colonnes 5 à 15, rangées 11 à 13). Il reprend le style du logo : faces blanches qui
+grisent vers le bas, trait sombre `#181818` posé sur les 8 voisins, profondeur `#293131`.
+Les lettres suivent l'arc de « ROUGE FEU » : celles du bord descendent de 2 px, les suivantes de 1 px.
+Les flammes (sprites de priorité 3) passent derrière. « Appuyez sur Start » reprend sa place d'origine.
+Fichiers : `c11_logo.txt`, `c12_couleurs.txt`, `palette_v2.json`, `build_v2.sh`, `planche_v2.png`.
