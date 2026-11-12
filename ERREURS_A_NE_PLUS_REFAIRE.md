@@ -69,3 +69,19 @@
 **Cause :** l'IA estimait les talents et objets au lieu de lire ceux du Pokémon en face. Un soin comptait comme un gain même quand l'adversaire reprenait les PV au tour suivant. Une « riposte » pessimiste ajoutée à l'évaluation de chaque option faisait préférer les Pokémon qui encaissent sans frapper : la version testée ne gagnait plus que 6 combats sur 12.
 
 **Règle :** l'IA de Red B lit le vrai talent et le vrai objet de chaque Pokémon. Un soin ne vaut que s'il rend plus de PV que l'adversaire n'en reprend et qu'il reste une menace à jouer après. Un Pokémon qui tient sans pouvoir blesser l'adversaire n'est pas un bon choix de relève. Chaque nouvelle règle de l'IA passe par une ablation en simulation (règle activée contre règle désactivée) avant de rester dans le jeu.
+
+## 10. Deux mouvements de suite sur le même PNJ sans attente
+
+**Erreur :** dans la scène 5, Pikachu restait sur place pendant que Red avançait de trois pas.
+
+**Cause :** le script lançait `applymovement` sur Pikachu (se tourner), puis un second `applymovement` sur lui (marcher) sans attendre la fin du premier. Le moteur ignore un mouvement envoyé à un PNJ qui en exécute déjà un.
+
+**Règle :** entre deux `applymovement` sur le même PNJ, toujours mettre `waitmovement` avec son identifiant. On ne lance en parallèle que des mouvements sur des PNJ différents.
+
+## 11. Croire qu'un déclencheur ne marche pas sans vérifier la position
+
+**Erreur :** j'ai pensé que la case devant la grotte ne déclenchait rien.
+
+**Cause :** Red n'était pas sur la case du déclencheur. Il en était à une case, et le test ne le faisait marcher que d'une case vers le haut.
+
+**Règle :** avant de corriger un déclencheur, vérifier sur une capture où se trouve Red par rapport à la case visée, et le faire marcher assez longtemps pour l'atteindre.
