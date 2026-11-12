@@ -85,3 +85,27 @@
 **Cause :** Red n'était pas sur la case du déclencheur. Il en était à une case, et le test ne le faisait marcher que d'une case vers le haut.
 
 **Règle :** avant de corriger un déclencheur, vérifier sur une capture où se trouve Red par rapport à la case visée, et le faire marcher assez longtemps pour l'atteindre.
+
+## 12. Confondre la touche Droite et la gâchette R dans l'émulateur
+
+**Erreur :** dans un test, Red refusait d'aller vers la droite.
+
+**Cause :** le script envoyait `r`, qui est la gâchette R. La flèche droite s'écrit `R`, et la flèche gauche `L`.
+
+**Règle :** pour les directions, toujours `U`, `D`, `L`, `R` en majuscules. Les minuscules `r` et `l` sont les gâchettes.
+
+## 13. Une fenêtre de texte qui écrase la carte
+
+**Erreur :** après l'écran titre de la scène 8, des tuiles d'eau et des carrés noirs couvraient la route.
+
+**Cause :** les tuiles de BG0 commencent à 0x8000 et la carte de BG2 à 0xE000. Une fenêtre de 30 x 6 tuiles placée à la tuile 0x280 débordait au-delà de la tuile 0x300 et écrivait dans la carte de BG2.
+
+**Règle :** sur le terrain, une fenêtre ajoutée doit finir avant la tuile 0x300 de BG0. Calculer `baseBlock + largeur x hauteur` avant de compiler.
+
+## 14. Répéter le nom du locuteur sur les pages suivantes
+
+**Erreur :** le bandeau affichait « LUKA », puis la deuxième page commençait encore par « LUKA : ».
+
+**Cause :** le jeu retire le préfixe « NOM : » seulement au début du message. Les pages après `\p` le gardent.
+
+**Règle :** dans un même message, écrire « NOM : » sur la première page seulement.
