@@ -1,0 +1,20 @@
+# Étape 3 : couleurs. Bandes horizontales du clair (haut) au foncé (bas), comme le feu.
+# Emblème (faces X, rangées 1 à 18 ; le trait O est déjà posé).
+rep X a 0 0 31 4
+rep X b 0 5 31 8
+rep X c 0 9 31 12
+rep X d 0 13 31 16
+rep X e 0 17 31 19
+# Ligne 1 « CONVERGENCE » (rangées 3 à 9).
+rep T a 36 3 127 4
+rep T b 36 5 127 6
+rep T c 36 7 127 8
+rep T d 36 9 127 9
+# Ligne 2 « IDENTITAIRE » (rangées 12 à 18).
+rep T a 36 12 127 13
+rep T b 36 14 127 15
+rep T c 36 16 127 17
+rep T d 36 18 127 18
+# Filet vertical entre l'emblème et le texte.
+vline d 34 4 17
+px c 34 3 34 18
